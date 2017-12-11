@@ -1,14 +1,26 @@
 #include "system.h"
 
 System::System() {
+	usage_price = USAGE_PRICE;
+	operational_cost = OPERATIONAL_COST;
 
-	std::mt19937 rng;
+	create_cores();
+	create_users();
+}
+
+void System::create_cores() {
+	for (int i = 0; i < NODES_NR; i++) {
+		nodes.push_back(new Node(CORES_NR));
+	}
+}
+
+void System::create_users() {
+	mt19937 rng;
 	rng.seed(std::random_device()());
-	std::uniform_int_distribution<std::mt19937::result_type> nodes_distribution(128, 1024);
-	std::uniform_int_distribution<std::mt19937::result_type> cores_distribution(16, 128);
+	uniform_int_distribution<mt19937::result_type> user_distribution(1, 100);
+	int user_nr = user_distribution(rng);
 
-	int nodes_nr = nodes_distribution(rng);
-	int cores_nr = cores_distribution(rng);
-
-	cout << "Created a system with " << nodes_nr << " nodes, each one with " << cores_nr << " cores" << endl;
+	for (int i = 0; i < user_nr; i++) {
+		
+	}
 }

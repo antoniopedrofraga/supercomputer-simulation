@@ -9,19 +9,23 @@
 #include "node.h"
 #include "../users/user.h"
 #include "../jobs/job.h"
+#include "../utils/utils.h"
 
 using namespace std;
 
 class System {
 private:
-	vector<Node> nodes;
+	vector<Node *> nodes;
 	vector<User> users;
 	set<Job> jobs;
 
-	float usage_price;
-	float running_cost;
+	double usage_price; 
+	double operational_cost;
 public:
 	System();
+
+	void create_cores();
+	void create_users();
 };
 
 #endif

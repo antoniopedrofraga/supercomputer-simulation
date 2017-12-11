@@ -6,6 +6,7 @@ private:
 	int cores;
 	int busy_cores;
 public:
+	Node(int cores);
 };
 
 #endif
