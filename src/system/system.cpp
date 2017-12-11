@@ -6,6 +6,7 @@ System::System() {
 
 	create_cores();
 	create_users();
+	create_jobs();
 }
 
 void System::create_cores() {
@@ -15,12 +16,29 @@ void System::create_cores() {
 }
 
 void System::create_users() {
-	mt19937 rng;
-	rng.seed(std::random_device()());
-	uniform_int_distribution<mt19937::result_type> user_distribution(1, 100);
-	int user_nr = user_distribution(rng);
-
+	int user_nr = generate_random(1, 100);
 	for (int i = 0; i < user_nr; i++) {
-		
+		users.push_back(new User(i));
 	}
+}
+
+void System::create_jobs() {
+	int nr_users = users.size();
+	int nr_jobs = generate_random(LOW_JOBS, HIGH_JOBS);
+	unsigned long long int now = (unsigned long long int)time(0);
+	
+	for (int i = 0; i < nr_jobs; i++) {
+		unsigned long long int rand_seconds = (rand() * rand()) % (ONE_WEEK + 1);
+    	time_t time = (time_t)(now + rand_seconds);
+		int user_id = generate_random(0, nr_users - 1);
+
+		User * user = users[user_id];
+		Job * job = new Job(user, time);
+
+		jobs.insert(job);
+	}
+}
+
+void System::schedule() {
+	
 }

@@ -1,6 +1,6 @@
 #ifndef TYPE_H
 #define TYPE_H
 
-enum Type { shrt, medium, large, huge };
+enum Type { Short, Medium, Large, Huge };
 
 #endif

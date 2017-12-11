@@ -8,7 +8,13 @@ class Job {
 private:
 	Type type;
 	User * user;
+	time_t time;
+	unsigned int occupation;
 public:
+	Job(User * user, time_t time);
+	const bool inline operator<(const Job & job) const {
+		return this->time < job.time;
+	}
 };
 
 #endif
