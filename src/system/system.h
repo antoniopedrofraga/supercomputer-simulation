@@ -5,26 +5,29 @@
 #include <set>
 #include <iostream>
 #include <ctime>
+#include <algorithm>
 
 #include "node.h"
 #include "../users/user.h"
 #include "../jobs/job.h"
 #include "../utils/utils.h"
+#include "state.h"
 
 using namespace std;
 
 class System {
 private:
-	vector<Node *> nodes;
 	vector<User *> users;
-	set<Job *> jobs;
+	vector<Job> jobs;
+	vector<State> states;
 
 	double usage_price; 
 	double operational_cost;
+
+	void insert_states(int &index, Job job);
 public:
 	System();
 
-	void create_cores();
 	void create_users();
 	void create_jobs();
 	void schedule();

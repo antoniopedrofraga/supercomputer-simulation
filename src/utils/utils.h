@@ -16,6 +16,10 @@ const int LOW_JOBS = 20;
 const int HIGH_JOBS = 500;
 
 const unsigned long long ONE_WEEK = 60 * 60 * 24 * 8;
+const unsigned long long ONE_HOUR = 60 * 60;
+const unsigned long long EIGHT_HOURS = 60 * 60 * 8;
+const unsigned long long SIXTEEN_HOURS = 60 * 60 * 16;
+const unsigned long long TWENTY_SEVEN_HOURS = 60 * 60 * 27;
 
 int generate_random(int low, int high);
 double generate_random(double low, double high);

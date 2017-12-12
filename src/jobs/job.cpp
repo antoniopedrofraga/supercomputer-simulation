@@ -4,18 +4,40 @@ Job::Job(User * user, time_t time) {
 	this->user;
 	this->time = time;
 
+	int total_nodes = NODES_NR * CORES_NR;
 	int random_type = generate_random(1, 4);
 	if (random_type == 1) {
 		this->type = Short;
-		this->occupation = 10;
+		this->duration = (rand() * rand()) % (ONE_HOUR + 1);
+		this->cores = generate_random(1, 2 * CORES_NR);
 	} else if (random_type == 2) {
 		this->type = Medium;
-		this->occupation = 20;
+		this->duration = (rand() * rand()) % (EIGHT_HOURS + (ONE_HOUR + 1));
+		this->cores = generate_random(2 * CORES_NR + 1, (int)(total_nodes * 0.1));
 	} else if (random_type == 3) {
 		this->type = Large;
-		this->occupation = 50;
+		this->duration = (rand() * rand()) % (SIXTEEN_HOURS + (EIGHT_HOURS + 1));
+		this->cores = generate_random((int)(total_nodes * 0.1 + 1), (int)(total_nodes * 0.5));
 	} else {
 		this->type = Huge;
-		this->occupation = 100;
+		this->duration = TWENTY_SEVEN_HOURS;
+		this->cores = total_nodes;
 	}
+}
+
+bool Job::is_short() { return this->type == Short; }
+bool Job::is_medium() { return this->type == Medium; }
+bool Job::is_large() { return this->type == Large; }
+bool Job::is_huge() { return this->type == Huge; }
+
+time_t Job::get_time() {
+	return this->time;
+}
+
+int Job::get_cores() {
+	return this->cores;
+}
+
+unsigned long long int Job::get_duration() {
+	return this->duration;
 }
