@@ -3,6 +3,7 @@
 
 using namespace std;
 #include <string>
+#include <iostream>
 
 #include "../jobs/job.h"
 
@@ -30,6 +31,8 @@ public:
 	long long int get_medium_cores();
 	long long int get_large_cores();
 	long long int get_total_cores();
+
+	friend ostream& operator<<(ostream& os, const State& state);
 };
 
 #endif

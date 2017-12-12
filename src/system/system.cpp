@@ -18,7 +18,7 @@ void System::create_users() {
 
 void System::create_jobs() {
 	int nr_users = users.size();
-	int nr_jobs = 10/*generate_random(LOW_JOBS, HIGH_JOBS)*/;
+	int nr_jobs = 5/*generate_random(LOW_JOBS, HIGH_JOBS)*/;
 	unsigned long long int now = (unsigned long long int)time(0);
 	
 	/*
@@ -63,25 +63,39 @@ void System::insert_states(int &index, Job job) {
 		end = start + job.get_duration();
 		insert_state_at_the_end(start, end, job);
 	} else {
+		//cout << "Initial Start: " << ctime(&start);
 		while (index < states.size() && states[index].get_time() <= start) {
 			index++;
 		}
-		int i = index, j = index + 1;
+		int i = index, j = index;
 		end = start + job.get_duration();
 		while (j < states.size() && states[j].get_time() <= end) {
 			if (!states[j].can_insert_job(job)) {
+				//cout << "Can't " << job.get_name() << endl;
+				//cout << states[j];
+
 				start = states[j].get_time() + 1;
 				end = start + job.get_duration();
 				i = j;
 			}
 			j++;
 		}
-		if (i == states.size()) {
+		//cout << "End Start: " << ctime(&start) << endl << endl;
+		/*if (i == states.size() - 1) {
+			//cout << states[i];
+			//cout << "[Inserting HERE] " << ctime(&start) << endl << "[END]" << endl << endl << endl;
 			insert_state_at_the_end(start, end, job);
-		} else {
+		} else {*/
+			//cout << states[i];
+			//cout << "[Inserting HERE] " << ctime(&start) << endl;
+			//cout << states[i + 1] << endl << endl;
 			insert_state_and_update(i, j, start, end, job);
-		}
+		//}
 	}
+	for (int i = 0; i < states.size(); i++) {
+		cout << states[i];
+	}
+	cout << "[EndOfStates]" << endl << endl << endl;
 } 
 
 void System::schedule() {
@@ -89,12 +103,7 @@ void System::schedule() {
 	for (int i = 0; i < jobs.size(); i++) {
 		insert_states(index, jobs[i]);
 	}
-	for (int i = 0; i < states.size(); i++) {
-		time_t time = states[i].get_time();
-		cout << states[i].get_name() << " " << ctime(&time);
-		cout << "Short: " << states[i].get_short_cores() << endl;
-		cout << "Medium: " << states[i].get_medium_cores() << endl;
-		cout << "Large: " << states[i].get_large_cores() << endl;
-		cout << endl;
-	}
+	/*for (int i = 0; i < states.size(); i++) {
+		cout << states[i];
+	}*/
 }

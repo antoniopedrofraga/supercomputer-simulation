@@ -52,3 +52,13 @@ long long int State::get_short_cores() { return this->short_cores; }
 long long int State::get_medium_cores() { return this->medium_cores; }
 long long int State::get_large_cores() { return this->large_cores; }
 long long int State::get_total_cores() { return this->total_cores; }
+
+ostream& operator<<(ostream& os, const State& state) {  
+	time_t time = state.time;
+	os << state.name << " " << ctime(&time);
+	os << "Short: " << state.short_cores << endl;
+	os << "Medium: " << state.medium_cores << endl;
+	os << "Large: " << state.large_cores << endl;
+	os << endl;
+	return os;  
+} 
