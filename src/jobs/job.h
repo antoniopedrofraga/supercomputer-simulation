@@ -1,6 +1,8 @@
 #ifndef JOB_H
 #define JOB_H
 
+using namespace std;
+#include <string>
 #include "type.h"
 #include "../users/user.h"
 
@@ -17,6 +19,7 @@ public:
 	time_t get_time();
 	unsigned long long int get_duration();
 	int get_cores();
+	string get_name();
 
 	bool is_short();
 	bool is_medium();

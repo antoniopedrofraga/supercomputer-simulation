@@ -5,7 +5,7 @@ Job::Job(User * user, time_t time) {
 	this->time = time;
 
 	int total_nodes = NODES_NR * CORES_NR;
-	int random_type = generate_random(1, 4);
+	int random_type = generate_random(1, 3);
 	if (random_type == 1) {
 		this->type = Short;
 		this->duration = (rand() * rand()) % (ONE_HOUR + 1);
@@ -36,6 +36,21 @@ time_t Job::get_time() {
 
 int Job::get_cores() {
 	return this->cores;
+}
+
+string Job::get_name() {
+	string name = "";
+	if (this->type == Short) {
+		name += "Short";
+	} else if (this->type == Medium) {
+		name += "Medium";
+	} else if (this->type == Large) {
+		name += "Large";
+	} else if (this->type == Huge) {
+		name += "Huge";
+	}
+	name += " " + to_string(this->cores);
+	return name;
 }
 
 unsigned long long int Job::get_duration() {

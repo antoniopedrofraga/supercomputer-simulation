@@ -31,6 +31,9 @@ public:
 	void create_users();
 	void create_jobs();
 	void schedule();
+
+	void insert_state_at_the_end(time_t start, time_t end, Job job);
+	void insert_state_and_update(int i, int j, time_t start, time_t end, Job job);
 };
 
 #endif
