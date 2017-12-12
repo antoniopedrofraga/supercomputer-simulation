@@ -7,7 +7,6 @@
 #include <ctime>
 #include <algorithm>
 
-#include "node.h"
 #include "../users/user.h"
 #include "../jobs/job.h"
 #include "../utils/utils.h"
