@@ -18,14 +18,14 @@ void System::create_users() {
 
 void System::create_jobs() {
 	int nr_users = users.size();
-	int nr_jobs = generate_random(/*LOW_JOBS*/100, /*HIGH_JOBS*/150);
+	int nr_jobs = 10/*generate_random(LOW_JOBS, HIGH_JOBS)*/;
 	unsigned long long int now = (unsigned long long int)time(0);
 	
 	/*
 		TODO - Exponential probability
 	*/
 	for (int i = 0; i < nr_jobs; i++) {
-		unsigned long long int rand_seconds = (rand() * rand()) % (ONE_HOUR + 1);
+		unsigned long long int rand_seconds = (rand() * rand()) % (10 + 1);
 		time_t time = (time_t)(now + rand_seconds);
 		int user_id = generate_random(0, nr_users - 1);
 
@@ -52,6 +52,8 @@ void System::insert_state_and_update(int i, int j, time_t start, time_t end, Job
 	for (int k = i + 1; k < j; k++) {
 		states[k].insert_job(job);
 	}
+	states.insert(states.begin() + j, *end_state);
+	states.insert(states.begin() + i, *start_state);
 }
 
 void System::insert_states(int &index, Job job) {
@@ -80,7 +82,7 @@ void System::insert_states(int &index, Job job) {
 			insert_state_and_update(i, j, start, end, job);
 		}
 	}
-}
+} 
 
 void System::schedule() {
 	int index = -1;
