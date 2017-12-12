@@ -18,7 +18,7 @@ void System::create_users() {
 
 void System::create_jobs() {
 	int nr_users = users.size();
-	int nr_jobs = 5/*generate_random(LOW_JOBS, HIGH_JOBS)*/;
+	int nr_jobs = 30/*generate_random(LOW_JOBS, HIGH_JOBS)*/;
 	unsigned long long int now = (unsigned long long int)time(0);
 	
 	/*
@@ -63,7 +63,6 @@ void System::insert_states(int &index, Job job) {
 		end = start + job.get_duration();
 		insert_state_at_the_end(start, end, job);
 	} else {
-		//cout << "Initial Start: " << ctime(&start);
 		while (index < states.size() && states[index].get_time() <= start) {
 			index++;
 		}
@@ -71,31 +70,14 @@ void System::insert_states(int &index, Job job) {
 		end = start + job.get_duration();
 		while (j < states.size() && states[j].get_time() <= end) {
 			if (!states[j].can_insert_job(job)) {
-				//cout << "Can't " << job.get_name() << endl;
-				//cout << states[j];
-
 				start = states[j].get_time() + 1;
 				end = start + job.get_duration();
-				i = j;
+				i = j + 1;
 			}
 			j++;
 		}
-		//cout << "End Start: " << ctime(&start) << endl << endl;
-		/*if (i == states.size() - 1) {
-			//cout << states[i];
-			//cout << "[Inserting HERE] " << ctime(&start) << endl << "[END]" << endl << endl << endl;
-			insert_state_at_the_end(start, end, job);
-		} else {*/
-			//cout << states[i];
-			//cout << "[Inserting HERE] " << ctime(&start) << endl;
-			//cout << states[i + 1] << endl << endl;
-			insert_state_and_update(i, j, start, end, job);
-		//}
+		insert_state_and_update(i, j, start, end, job);
 	}
-	for (int i = 0; i < states.size(); i++) {
-		cout << states[i];
-	}
-	cout << "[EndOfStates]" << endl << endl << endl;
 } 
 
 void System::schedule() {
@@ -103,7 +85,7 @@ void System::schedule() {
 	for (int i = 0; i < jobs.size(); i++) {
 		insert_states(index, jobs[i]);
 	}
-	/*for (int i = 0; i < states.size(); i++) {
+	for (int i = 0; i < states.size(); i++) {
 		cout << states[i];
-	}*/
+	}
 }
