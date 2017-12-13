@@ -49,7 +49,7 @@ void System::insert_state_and_update(int i, int j, time_t start, time_t end, Job
 	State * start_state = new State(states[i - 1], start, "IN " + job.get_name());
 	start_state->insert_job(job);
 	State * end_state = new State(states[j - 1], end, "OUT " + job.get_name());
-	for (int k = i + 1; k < j; k++) {
+	for (int k = i; k < j; k++) {
 		states[k].insert_job(job);
 	}
 	states.insert(states.begin() + j, *end_state);
