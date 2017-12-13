@@ -46,7 +46,7 @@ void System::insert_state_at_the_end(time_t start, time_t end, Job job) {
 }
 
 void System::insert_state_and_update(int i, int j, time_t start, time_t end, Job job) {
-	State * start_state = new State(states[i], start, "IN " + job.get_name());
+	State * start_state = new State(states[i - 1], start, "IN " + job.get_name());
 	start_state->insert_job(job);
 	State * end_state = new State(states[j - 1], end, "OUT " + job.get_name());
 	for (int k = i + 1; k < j; k++) {
@@ -66,15 +66,26 @@ void System::insert_states(int &index, Job job) {
 		while (index < states.size() && states[index].get_time() <= start) {
 			index++;
 		}
-		int i = index, j = index;
+		int i = index, j;
+		while (i - 1 < states.size() && !states[i - 1].can_insert_job(job)) {
+			i++;
+			start = states[i - 1].get_time() + 1;
+		}
+		j = i;
 		end = start + job.get_duration();
 		while (j < states.size() && states[j].get_time() <= end) {
 			if (!states[j].can_insert_job(job)) {
-				start = states[j].get_time() + 1;
+				i = j + 2;
+				start = states[i - 1].get_time() + 1;
+				while (i - 1 < states.size() && !states[i - 1].can_insert_job(job)) {
+					i++;
+					start = states[i - 1].get_time() + 1;
+				}
 				end = start + job.get_duration();
-				i = j + 1;
+				j = i;
+			} else {
+				j++;
 			}
-			j++;
 		}
 		insert_state_and_update(i, j, start, end, job);
 	}

@@ -49,7 +49,7 @@ string Job::get_name() {
 	} else if (this->type == Huge) {
 		name += "Huge";
 	}
-	name += " " + to_string(this->cores);
+	name += " " + to_string(this->cores) + "\nSub: " + ctime(&time);
 	return name;
 }
 

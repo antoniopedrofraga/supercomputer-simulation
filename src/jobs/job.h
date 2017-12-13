@@ -3,6 +3,7 @@
 
 using namespace std;
 #include <string>
+#include <ctime>
 #include "type.h"
 #include "../users/user.h"
 
