@@ -18,7 +18,7 @@ void System::create_users() {
 
 void System::create_jobs() {
 	int nr_users = users.size();
-	int nr_jobs = 20/*generate_random(LOW_JOBS, HIGH_JOBS)*/;
+	int nr_jobs = 4/*generate_random(LOW_JOBS, HIGH_JOBS)*/;
 	unsigned long long int now = (unsigned long long int)time(0);
 	
 	/*
@@ -38,22 +38,77 @@ void System::create_jobs() {
 }
 
 void System::insert_state_at_the_end(time_t start, time_t end, Job job) {
-	State * start_state = new State(NODES_NR * CORES_NR, start, "IN " + job.get_name());
+	State * start_state = new State(NODES_NR * CORES_NR, start, "Started " + job.get_name());
 	start_state->insert_job(job);
-	State * end_state = new State(NODES_NR * CORES_NR, end, "OUT " + job.get_name());
+	State * end_state = new State(NODES_NR * CORES_NR, end, "Ended " + job.get_name());
 	states.push_back(*start_state);
 	states.push_back(*end_state);
 }
 
 void System::insert_state_and_update(int i, int j, time_t start, time_t end, Job job) {
-	State * start_state = new State(states[i - 1], start, "IN " + job.get_name());
+	State * start_state = new State(states[i - 1], start, "Started " + job.get_name());
 	start_state->insert_job(job);
-	State * end_state = new State(states[j - 1], end, "OUT " + job.get_name());
+	State * end_state = !job.is_huge() ? new State(states[j - 1], end, "Ended " + job.get_name()) : new State(NODES_NR * CORES_NR, end, "Ended " + job.get_name());
 	for (int k = i; k < j; k++) {
 		states[k].insert_job(job);
 	}
 	states.insert(states.begin() + j, *end_state);
 	states.insert(states.begin() + i, *start_state);
+}
+
+void System::insert_week_state(time_t start, int i, Job job) {
+	time_t end;
+	int j;
+	while (i - 1 < states.size() && !states[i - 1].can_insert_job(job)) {
+		i++;
+		start = states[i - 1].get_time() + 1;
+	}
+	j = i;
+	end = start + job.get_duration();
+	if (is_weekend(start, end)) {
+		start = advance_weekend(start);
+		end = start + job.get_duration();
+	}
+	while (j < states.size() && states[j].get_time() <= end) {
+		if (!states[j].can_insert_job(job)) {
+			i = j + 2;
+			start = states[i - 1].get_time() + 1;
+			while (i - 1 < states.size() && !states[i - 1].can_insert_job(job)) {
+				i++;
+				start = states[i - 1].get_time() + 1;
+			}
+			end = start + job.get_duration();
+			j = i;
+			if (is_weekend(start, end)) {
+				start = advance_weekend(start);
+				end = start + job.get_duration();
+			}
+		} else {
+			j++;
+		}
+	}
+	insert_state_and_update(i, j, start, end, job);
+}
+
+void System::insert_weekend_state(time_t start, int index, Job job) {
+	time_t end;
+	int i =  index;
+	while (i < states.size() && states[i].get_time() <= start) {
+		i++;
+	}
+	while (i < states.size() && states[i].get_time() == start) {
+		start = advance_to_friday(start);
+		while (i < states.size() && states[i].get_time() <= start) {
+			i++;
+		}
+		cout << i << endl;
+	}
+	end = start + job.get_duration();
+	if (i < states.size()) {
+		insert_state_and_update(i + 1, i + 1, start, end, job);
+	} else {
+		insert_state_at_the_end(start, end, job);
+	}
 }
 
 void System::insert_state(int &index, Job job) {
@@ -66,36 +121,12 @@ void System::insert_state(int &index, Job job) {
 		while (index < states.size() && states[index].get_time() <= start) {
 			index++;
 		}
-		int i = index, j;
-		while (i - 1 < states.size() && !states[i - 1].can_insert_job(job)) {
-			i++;
-			start = states[i - 1].get_time() + 1;
+		if (!job.is_huge()) {
+			insert_week_state(start, index, job);
+		} else {
+			start = advance_to_friday(start);
+			insert_weekend_state(start, index, job);
 		}
-		j = i;
-		end = start + job.get_duration();
-		if (is_weekend(start, end)) {
-			start = advance_weekend(start);
-			end = start + job.get_duration();
-		}
-		while (j < states.size() && states[j].get_time() <= end) {
-			if (!states[j].can_insert_job(job)) {
-				i = j + 2;
-				start = states[i - 1].get_time() + 1;
-				while (i - 1 < states.size() && !states[i - 1].can_insert_job(job)) {
-					i++;
-					start = states[i - 1].get_time() + 1;
-				}
-				end = start + job.get_duration();
-				j = i;
-				if (is_weekend(start, end)) {
-					start = advance_weekend(start);
-					end = start + job.get_duration();
-				}
-			} else {
-				j++;
-			}
-		}
-		insert_state_and_update(i, j, start, end, job);
 	}
 	/*for (int i = 0; i < states.size(); i++) {
 		cout << states[i];
@@ -104,9 +135,9 @@ void System::insert_state(int &index, Job job) {
 } 
 
 void System::schedule() {
-	int week_index = -1;
+	int index = -1;
 	for (int i = 0; i < jobs.size(); i++) {
-		insert_state(week_index, jobs[i]);
+		insert_state(index, jobs[i]);
 	}
 	for (int i = 0; i < states.size(); i++) {
 		cout << states[i];

@@ -24,6 +24,8 @@ private:
 	double operational_cost;
 
 	void insert_state(int &index, Job job);
+	void insert_week_state(time_t start, int i, Job job);
+	void insert_weekend_state(time_t start, int i, Job job);
 public:
 	System();
 

@@ -5,7 +5,7 @@ Job::Job(User * user, time_t time) {
 	this->time = time;
 
 	int total_nodes = NODES_NR * CORES_NR;
-	int random_type = generate_random(3, 3);
+	int random_type = generate_random(1, 4);
 	if (random_type == 1) {
 		this->type = Short;
 		this->duration = (rand() * rand()) % (ONE_HOUR + 1);
@@ -20,7 +20,7 @@ Job::Job(User * user, time_t time) {
 		this->cores = generate_random((int)(total_nodes * 0.1 + 1), (int)(total_nodes * 0.5));
 	} else {
 		this->type = Huge;
-		this->duration = TWENTY_SEVEN_HOURS;
+		this->duration = THIRTY_EIGHT_HOURS;
 		this->cores = total_nodes;
 	}
 }
@@ -49,7 +49,7 @@ string Job::get_name() {
 	} else if (this->type == Huge) {
 		name += "Huge";
 	}
-	name += " " + to_string(this->cores) + "\nSub: " + ctime(&time);
+	name += " " + to_string(this->cores) + "\nSubmited: " + ctime(&time);
 	return name;
 }
 

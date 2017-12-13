@@ -25,6 +25,10 @@ void State::insert_job(Job job) {
 		this->medium_cores -= job.get_cores();
 	} else if (job.is_large()) {
 		this->large_cores -= job.get_cores();
+	} else if (job.is_huge()) {
+		this->short_cores = 0;
+		this->medium_cores = 0;
+		this->large_cores = 0;
 	}
 }
 
@@ -55,7 +59,7 @@ long long int State::get_total_cores() { return this->total_cores; }
 
 ostream& operator<<(ostream& os, const State& state) {  
 	time_t time = state.time;
-	os << state.name << "Run: " << ctime(&time);
+	os << state.name << "Occurence: " << ctime(&time);
 	os << "Short: " << state.short_cores << endl;
 	os << "Medium: " << state.medium_cores << endl;
 	os << "Large: " << state.large_cores << endl;
