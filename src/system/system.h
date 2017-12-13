@@ -23,7 +23,7 @@ private:
 	double usage_price; 
 	double operational_cost;
 
-	void insert_states(int &index, Job job);
+	void insert_state(int &index, Job job);
 public:
 	System();
 

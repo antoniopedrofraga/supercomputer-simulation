@@ -24,9 +24,11 @@ const unsigned long long ONE_HOUR = 60 * 60;
 const unsigned long long EIGHT_HOURS = 60 * 60 * 8;
 const unsigned long long SIXTEEN_HOURS = 60 * 60 * 16;
 const unsigned long long TWENTY_SEVEN_HOURS = 60 * 60 * 27;
+const unsigned long long ONE_DAY = 60 * 60 * 24;
 
 int generate_random(int low, int high);
 double generate_random(double low, double high);
 bool is_weekend(time_t start, time_t end);
+time_t advance_weekend(time_t start);
 
 #endif
