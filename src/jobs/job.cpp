@@ -1,7 +1,6 @@
 #include "job.h"
 
-Job::Job(User * user, time_t time, unsigned long long int duration) {
-	this->user;
+Job::Job(time_t time, unsigned long long int duration) {
 	this->time = time;
 	int total_nodes = NODES_NR * CORES_NR;
 	if (duration <= ONE_HOUR) {
@@ -31,6 +30,14 @@ time_t Job::get_time() {
 
 int Job::get_cores() {
 	return this->cores;
+}
+
+double Job::get_price() {
+	return (double)duration * cores * USAGE_PRICE;
+}
+
+void Job::set_user(User * user) {
+	this->user = user;
 }
 
 string Job::get_name() {

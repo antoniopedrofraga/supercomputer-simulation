@@ -2,15 +2,35 @@
 #define UTILS_H
 
 #include <random>
+#include <float.h>
 
 const int NODES_NR = 128;
 const int CORES_NR = 16;
 
-const double USAGE_PRICE = 0.03;
-const double OPERATIONAL_COST = 0.01;
+/*
+Cost per core, per hour. Same price as ARCHER.
+*/
+const double USAGE_PRICE = 0.05 / 60 / 60;
+/*
+[ENERGY]
+Our computer is a green computer, with a power supply of 60 KW
+In the UK, the a KW per hour costs £0.0285.
+We get a value of 0.0285 per minute, and 0.0285/60 per second
+*/
+const double ENERGY_COST = 0.0285 / 60;
+/*
+[PERSONEL]
+This system has a 6 elements team winning £60.000 per year
+*/
+const double PERSONEL_COST = 60000 * 6 / 365 / 24 / 60 / 60;
+/*
+We shall ignore the building maintenance. It won't add a sgnificantly high price to everything
+*/
+const double OPERATIONAL_COST = ENERGY_COST + PERSONEL_COST;
 
-const double LOW_BUDGET = 10.0;
-const double HIGH_BUDGET = 100.0;
+const double STUDENT_BUDGET = 100.0;
+const double RESEARCHER_BUDGET = 200.0;
+const double IT_BUDGET = DBL_MAX;
 
 const int LOW_JOBS = 20;
 const int HIGH_JOBS = 500;

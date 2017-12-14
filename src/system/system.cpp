@@ -29,9 +29,12 @@ void System::create_jobs() {
 		unsigned long long int rand_seconds = 10 * rng(rnd_gen), duration = THIRTY_EIGHT_HOURS * rng(rnd_gen);
 		time_t time = (time_t)(now + rand_seconds);
 		int user_id = generate_random(0, nr_users - 1);
-
-		User * user = users[user_id];
-		Job * job = new Job(user, time, duration);
+		Job * job = new Job(time, duration);
+		while (!users[user_id]->can_afford(job)) {
+			user_id = generate_random(0, nr_users - 1);
+		}
+		users[user_id]->pay(job);
+		job->set_user(users[user_id]);
 
 		jobs.push_back(*job);
 	}
