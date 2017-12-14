@@ -18,19 +18,20 @@ void System::create_users() {
 
 void System::create_jobs() {
 	int nr_users = users.size();
-	int nr_jobs = 4/*generate_random(LOW_JOBS, HIGH_JOBS)*/;
+	int nr_jobs = 150/*generate_random(LOW_JOBS, HIGH_JOBS)*/;
 	unsigned long long int now = (unsigned long long int)time(0);
+
+	random_device rd; 
+	exponential_distribution<double> rng(6);
+	mt19937 rnd_gen(rd());
 	
-	/*
-		TODO - Exponential probability
-	*/
 	for (int i = 0; i < nr_jobs; i++) {
-		unsigned long long int rand_seconds = (rand() * rand()) % (10 + 1);
+		unsigned long long int rand_seconds = 10 * rng(rnd_gen), duration = THIRTY_EIGHT_HOURS * rng(rnd_gen);
 		time_t time = (time_t)(now + rand_seconds);
 		int user_id = generate_random(0, nr_users - 1);
 
 		User * user = users[user_id];
-		Job * job = new Job(user, time);
+		Job * job = new Job(user, time, duration);
 
 		jobs.push_back(*job);
 	}

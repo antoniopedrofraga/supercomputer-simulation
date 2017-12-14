@@ -15,7 +15,7 @@ private:
 	unsigned long long int duration;
 	int cores;
 public:
-	Job(User * user, time_t time);
+	Job(User * user, time_t time, unsigned long long int duration);
 	
 	time_t get_time();
 	unsigned long long int get_duration();

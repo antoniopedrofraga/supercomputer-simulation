@@ -1,28 +1,23 @@
 #include "job.h"
 
-Job::Job(User * user, time_t time) {
+Job::Job(User * user, time_t time, unsigned long long int duration) {
 	this->user;
 	this->time = time;
-
 	int total_nodes = NODES_NR * CORES_NR;
-	int random_type = generate_random(1, 4);
-	if (random_type == 1) {
+	if (duration <= ONE_HOUR) {
 		this->type = Short;
-		this->duration = (rand() * rand()) % (ONE_HOUR + 1);
 		this->cores = generate_random(1, 2 * CORES_NR);
-	} else if (random_type == 2) {
+	} else if (duration > ONE_HOUR && duration <= EIGHT_HOURS) {
 		this->type = Medium;
-		this->duration = (rand() * rand()) % (EIGHT_HOURS + (ONE_HOUR + 1));
 		this->cores = generate_random(2 * CORES_NR + 1, (int)(total_nodes * 0.1));
-	} else if (random_type == 3) {
+	} else if (duration > EIGHT_HOURS && duration <= SIXTEEN_HOURS) {
 		this->type = Large;
-		this->duration = (rand() * rand()) % (SIXTEEN_HOURS + (EIGHT_HOURS + 1));
 		this->cores = generate_random((int)(total_nodes * 0.1 + 1), (int)(total_nodes * 0.5));
 	} else {
 		this->type = Huge;
-		this->duration = THIRTY_EIGHT_HOURS;
 		this->cores = total_nodes;
 	}
+	this->duration = duration;
 }
 
 bool Job::is_short() { return this->type == Short; }
