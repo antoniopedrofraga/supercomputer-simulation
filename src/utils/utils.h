@@ -49,6 +49,7 @@ const unsigned long long ONE_DAY = 60 * 60 * 24;
 int generate_random(int low, int high);
 double generate_random(double low, double high);
 bool is_weekend(time_t start, time_t end);
+bool is_weekend(time_t start);
 time_t advance_weekend(time_t start);
 time_t advance_to_friday(time_t start);
 
