@@ -19,7 +19,7 @@ void System::create_users() {
 void System::create_jobs() {
 	int nr_users = users.size();
 	int nr_jobs = 10/*generate_random(LOW_JOBS, HIGH_JOBS)*/;
-	unsigned long long int now = (unsigned long long int)time(0);
+	unsigned long long int now = /*(unsigned long long int)time(0)*/1513265102;
 
 	random_device rd; 
 	exponential_distribution<double> rng(6);
@@ -73,6 +73,9 @@ void System::insert_week_state(time_t start, int i, Job job) {
 	if (is_weekend(start, end)) {
 		start = advance_weekend(start);
 		end = start + job.get_duration();
+		while (i < states.size() &&  states[i].get_time() <= start) {
+			i++;
+		}
 	}
 	j = i;
 	while (j < states.size() && states[j].get_time() <= end) {
@@ -83,12 +86,13 @@ void System::insert_week_state(time_t start, int i, Job job) {
 				i++;
 				start = states[i - 1].get_time() + 1;
 				end = start + job.get_duration();
-			}
-			end = start + job.get_duration();
-			if (is_weekend(start, end)) {
-				start = advance_weekend(start);
-				end = start + job.get_duration();
-				return;
+				if (is_weekend(start, end)) {
+					start = advance_weekend(start);
+					end = start + job.get_duration();
+					while (i < states.size() &&  states[i].get_time() <= start) {
+						i++;
+					}
+				}
 			}
 			j = i;
 		} else {
