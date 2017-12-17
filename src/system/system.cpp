@@ -147,7 +147,7 @@ void System::schedule() {
 	for (int i = 0; i < jobs.size(); i++) {
 		insert_state(index, jobs[i]);
 	}
-	/*for (int i = 0; i < states.size(); i++) {
+	for (int i = 0; i < states.size(); i++) {
 		cout << states[i];
-	}*/
+	}
 }
