@@ -9,6 +9,18 @@ System::System() {
 	schedule();
 }
 
+
+bool System::exist_negatives() {
+	for (int i = 0; i < states.size(); i++) {
+		if (states[i].get_short_cores() < 0 || 
+			states[i].get_medium_cores() < 0 ||
+			states[i].get_large_cores() < 0) {
+			return true;
+	}
+}
+return false;
+}
+
 void System::create_users() {
 	int user_nr = generate_random(1, 100);
 	for (int i = 0; i < user_nr; i++) {
@@ -18,7 +30,7 @@ void System::create_users() {
 
 void System::create_jobs() {
 	int nr_users = users.size();
-	int nr_jobs = 50/*generate_random(LOW_JOBS, HIGH_JOBS)*/;
+	int nr_jobs = 10/*generate_random(LOW_JOBS, HIGH_JOBS)*/;
 	unsigned long long int now = /*(unsigned long long int)time(0)*/1513265102;
 
 	random_device rd; 
@@ -64,10 +76,13 @@ void System::insert_state_and_update(int i, int j, time_t start, time_t end, Job
 void System::insert_week_state(time_t start, int i, Job job) {
 	time_t end = start + job.get_duration();
 	int j;
+	if (i == 0) {
+		i++;
+	}
 	while (i - 1 < states.size() && !states[i - 1].can_insert_job(job)) {
 		i++;
 		start = states[i - 1].get_time() + 1;
-		end = start + job.get_duration();
+		end = start + job.get_duration() + 1;
 		if (is_weekend(start, end)) {
 			start = advance_weekend(start);
 			end = start + job.get_duration();
@@ -98,12 +113,13 @@ void System::insert_week_state(time_t start, int i, Job job) {
 			j++;
 		}
 	}
+	cout << "i: " << i << ", j: " << j << " size: " << states.size() << endl;
 	insert_state_and_update(i, j, start, end, job);
 }
 
 void System::insert_weekend_state(time_t s, int index, Job job) {
 	time_t start = advance_to_friday(s), end;
-	int i =  index;
+	int i = index;
 	while (i < states.size() && states[i].get_time() < start) {
 		i++;
 	}
@@ -140,6 +156,14 @@ void System::insert_state(int &index, Job job) {
 			insert_weekend_state(start, index, job);
 		}
 	}
+	for (int i = 0; i < states.size(); i++) {
+		cout << states[i];
+	}
+	cout << "[End of states]" << endl << endl << endl << endl;
+	if (!is_sorted(states.begin(),states.end())) {
+		cout << "Not sorted" << endl;
+		exit(1);
+	}
 } 
 
 void System::schedule() {
@@ -150,4 +174,7 @@ void System::schedule() {
 	for (int i = 0; i < states.size(); i++) {
 		cout << states[i];
 	}
+	cout << endl;
+	cout << "Is sorted: " << (std::is_sorted(states.begin(),states.end()) ? "true" : "false") << endl;
+	cout << "Exist negatives: " << (exist_negatives() ? "true" : "false") << endl;
 }

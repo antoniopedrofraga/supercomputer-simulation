@@ -29,6 +29,7 @@ private:
 public:
 	System();
 
+	bool exist_negatives();
 	void create_users();
 	void create_jobs();
 	void schedule();

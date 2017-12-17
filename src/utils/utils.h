@@ -3,6 +3,7 @@
 
 #include <random>
 #include <float.h>
+#include <vector>
 
 const int NODES_NR = 128;
 const int CORES_NR = 16;

@@ -33,6 +33,10 @@ public:
 	long long int get_total_cores();
 
 	friend ostream& operator<<(ostream& os, const State& state);
+
+	const bool inline operator<(const State & state) const {
+		return this->time < state.time;
+	}
 };
 
 #endif
