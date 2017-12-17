@@ -1,14 +1,14 @@
 #include "user.h"
 
 
-User::User(int id) {
+User::User(int id, bool support) {
 	this->id = id;
-	generate_group();
+	generate_group(support);
 }
 
 
-void User::generate_group() {
-	int rand = generate_random(1, 3);
+void User::generate_group(bool support) {
+	int rand = support ? 1 : generate_random(1, 3);
 	if (rand == 1) {
 		this->group = ITsupport;
 		this->budget = IT_BUDGET;

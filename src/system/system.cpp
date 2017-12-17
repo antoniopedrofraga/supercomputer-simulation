@@ -1,8 +1,8 @@
 #include "system.h"
 
 System::System() {
-	usage_price = USAGE_PRICE;
-	operational_cost = OPERATIONAL_COST;
+	usage_price = 0;
+	operational_cost = 0;
 
 	create_users();
 	create_jobs();
@@ -24,13 +24,14 @@ return false;
 void System::create_users() {
 	int user_nr = generate_random(1, 100);
 	for (int i = 0; i < user_nr; i++) {
-		users.push_back(new User(i));
+		users.push_back(new User(i, false));
 	}
+	users.push_back(new User(user_nr, true));
 }
 
 void System::create_jobs() {
 	int nr_users = users.size();
-	int nr_jobs = 10/*generate_random(LOW_JOBS, HIGH_JOBS)*/;
+	int nr_jobs = 100/*generate_random(LOW_JOBS, HIGH_JOBS)*/;
 	unsigned long long int now = /*(unsigned long long int)time(0)*/1513265102;
 
 	random_device rd; 
@@ -40,11 +41,12 @@ void System::create_jobs() {
 	for (int i = 0; i < nr_jobs; i++) {
 		unsigned long long int rand_seconds = 10 * rng(rnd_gen), duration = THIRTY_EIGHT_HOURS * rng(rnd_gen);
 		time_t time = (time_t)(now + rand_seconds);
-		int user_id = generate_random(0, nr_users - 1);
+		int user_id = 0;
 		Job * job = new Job(time, duration);
 		while (!users[user_id]->can_afford(job)) {
-			user_id = generate_random(0, nr_users - 1);
+			user_id++;
 		}
+		usage_price += job->get_price();
 		users[user_id]->pay(job);
 		job->set_user(users[user_id]);
 
@@ -54,17 +56,17 @@ void System::create_jobs() {
 }
 
 void System::insert_state_at_the_end(time_t start, time_t end, Job job) {
-	State * start_state = new State(NODES_NR * CORES_NR, start, "Started " + job.get_name());
+	State * start_state = new State(NODES_NR * CORES_NR, start, Start, job.get_name());
 	start_state->insert_job(job);
-	State * end_state = new State(NODES_NR * CORES_NR, end, "Ended " + job.get_name());
+	State * end_state = new State(NODES_NR * CORES_NR, end, End, job.get_name());
 	states.push_back(*start_state);
 	states.push_back(*end_state);
 }
 
 void System::insert_state_and_update(int i, int j, time_t start, time_t end, Job job) {
-	State * start_state = i - 1 >= 0 ? new State(states[i - 1], start, "Started " + job.get_name()) : new State(NODES_NR * CORES_NR, end, "Started " + job.get_name());
+	State * start_state = i - 1 >= 0 ? new State(states[i - 1], start, Start, job.get_name()) : new State(NODES_NR * CORES_NR, end, Start, job.get_name());
 	start_state->insert_job(job);
-	State * end_state = !job.is_huge() && j - 1 >= 0 ? new State(states[j - 1], end, "Ended " + job.get_name()) : new State(NODES_NR * CORES_NR, end, "Ended " + job.get_name());
+	State * end_state = !job.is_huge() && j - 1 >= 0 ? new State(states[j - 1], end, End, job.get_name()) : new State(NODES_NR * CORES_NR, end, End, job.get_name());
 	for (int k = i; k < j; k++) {
 		states[k].insert_job(job);
 	}
@@ -158,11 +160,6 @@ void System::insert_state(int &index, Job job) {
 	}
 	for (int i = 0; i < states.size(); i++) {
 		cout << states[i];
-	}
-	cout << "[End of states]" << endl << endl << endl << endl;
-	if (!is_sorted(states.begin(),states.end())) {
-		cout << "Not sorted" << endl;
-		exit(1);
 	}
 } 
 

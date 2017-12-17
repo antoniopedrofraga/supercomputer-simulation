@@ -11,9 +11,9 @@ private:
 	Group group;
 	double budget;
 
-	void generate_group();
+	void generate_group(bool support);
 public:
-	User(int id);
+	User(int id, bool support);
 	bool can_afford(Job * job);
 	void pay(Job * job);
 };

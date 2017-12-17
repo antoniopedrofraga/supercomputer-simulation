@@ -1,20 +1,22 @@
 #include "state.h"
 
-State::State(long long int total_cores, time_t time, string name) {
+State::State(long long int total_cores, time_t time, StateType state_type, string name) {
 	this->total_cores = total_cores;
 	this->short_cores = total_cores * 0.1;
 	this->medium_cores = total_cores * 0.2;
 	this->large_cores = total_cores * 0.7;
 	this->time = time;
+	this->state_type = state_type;
 	this->name = name;
 }
 
-State::State(State state, time_t time, string name) {
+State::State(State state, time_t time, StateType state_type, string name) {
 	this->total_cores = state.get_total_cores();
 	this->short_cores = state.get_short_cores();
 	this->medium_cores = state.get_medium_cores();
 	this->large_cores = state.get_large_cores();
 	this->time = time;
+	this->state_type = state_type;
 	this->name = name;
 }
 
@@ -59,7 +61,7 @@ long long int State::get_total_cores() { return this->total_cores; }
 
 ostream& operator<<(ostream& os, const State& state) {  
 	time_t time = state.time;
-	os << state.name << "Occurence: " << ctime(&time);
+	os << (state.state_type == Start ? "Started " : "Ended ") << state.name << "Occurence: " << ctime(&time);
 	os << "Short: " << state.short_cores << endl;
 	os << "Medium: " << state.medium_cores << endl;
 	os << "Large: " << state.large_cores << endl;
