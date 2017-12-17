@@ -1,5 +1,6 @@
 //#include "libs/gnuplot-iostream.h"
 #include "system/system.h"
+#include <ctime>
 
 using namespace std;
 
