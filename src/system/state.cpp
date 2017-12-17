@@ -54,6 +54,10 @@ string State::get_name() {
 	return this->name;
 }
 
+StateType State::get_type() {
+	return this->state_type;
+}
+
 long long int State::get_short_cores() { return this->short_cores; }
 long long int State::get_medium_cores() { return this->medium_cores; }
 long long int State::get_large_cores() { return this->large_cores; }

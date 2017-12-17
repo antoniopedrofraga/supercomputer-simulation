@@ -1,6 +1,7 @@
 #ifndef UTILS_H
 #define UTILS_H
 
+//#include "../system//state.h"
 #include <random>
 #include <float.h>
 #include <vector>
@@ -53,5 +54,6 @@ bool is_weekend(time_t start, time_t end);
 bool is_weekend(time_t start);
 time_t advance_weekend(time_t start);
 time_t advance_to_friday(time_t start);
+//bool compare_state_ptr(State* a, State* b);
 
 #endif

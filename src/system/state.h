@@ -28,6 +28,7 @@ public:
 	bool can_insert_job(Job job);
 	time_t get_time();
 	string get_name();
+	StateType get_type();
 
 	long long int get_short_cores();
 	long long int get_medium_cores();

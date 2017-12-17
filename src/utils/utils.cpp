@@ -15,6 +15,8 @@ double generate_random(double low, double high) {
 	return distribution(rng);
 }
 
+//bool compare_state_ptr(State* a, State* b) { return (*a < *b); }
+
 /*
 	Sunday = 0, Monday = 1, Tuesday = 2, Wednesday = 3 (...)
 */
