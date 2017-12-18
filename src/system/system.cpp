@@ -57,7 +57,7 @@ void System::create_jobs() {
 }
 
 void System::insert_state_at_the_end(time_t start, time_t end, Job job) {
-	statistics->add_waiting_time(start, job);
+	statistics->add_job(start, job);
 
 	State * start_state = new State(NODES_NR * CORES_NR, start, Start, job.get_name());
 	start_state->insert_job(job);
@@ -67,7 +67,7 @@ void System::insert_state_at_the_end(time_t start, time_t end, Job job) {
 }
 
 void System::insert_state_and_update(int i, int j, time_t start, time_t end, Job job) {
-	statistics->add_waiting_time(start, job);
+	statistics->add_job(start, job);
 
 	State * start_state = i - 1 >= 0 ? new State(states[i - 1], start, Start, job.get_name()) : new State(NODES_NR * CORES_NR, end, Start, job.get_name());
 	start_state->insert_job(job);
@@ -213,5 +213,7 @@ void System::print_results() {
 	cout << "Economic Balance: £" << statistics->get_economic_balance() << endl;
 	cout << "Average waiting time (seconds):" << " Short(" << statistics->get_short_wt() << "), Medium(" << statistics->get_medium_wt() << "), Large(" << statistics->get_large_wt() << "), Huge(" << statistics->get_huge_wt() << ")" << endl;
 	cout << "Average turnaround ratio:" << " Short(" << statistics->get_short_ta() << "), Medium(" << statistics->get_medium_ta() << "), Large(" << statistics->get_large_ta() << "), Huge(" << statistics->get_huge_ta() << ")" << endl;
+	cout << endl;
+	cout << "Queues weekly usage: " << endl << statistics->get_weekly_usage() << endl; 
 	//cout << "Price paid by users: £" << usage_price << endl;
 }

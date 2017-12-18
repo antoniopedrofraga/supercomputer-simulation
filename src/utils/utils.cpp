@@ -49,6 +49,11 @@ bool is_weekend(time_t start) {
 
 time_t advance_weekend(time_t start) {
 	struct tm *tm_start = localtime(&start);
+	if (tm_start->tm_wday == SUNDAY && tm_start->tm_hour >= 9) {
+		start += ONE_DAY;
+		tm_start = localtime(&start);
+	}
+
 	while (tm_start->tm_wday != SUNDAY) {
 		start += ONE_DAY;
 		tm_start = localtime(&start);
@@ -70,6 +75,22 @@ time_t advance_to_friday(time_t start) {
 		tm_start = localtime(&start);
 	}
 	tm_start->tm_hour = 17;
+	tm_start->tm_min = 0;
+	tm_start->tm_sec = 0;
+	return mktime(tm_start);
+}
+
+time_t get_back_to_sunday(time_t start) {
+	struct tm *tm_start = localtime(&start);
+	if (tm_start->tm_wday == SUNDAY && tm_start->tm_hour < 9) {
+		start -= ONE_DAY;
+		tm_start = localtime(&start);
+	}
+	while (tm_start->tm_wday != SUNDAY) {
+		start -= ONE_DAY;
+		tm_start = localtime(&start);
+	}
+	tm_start->tm_hour = 9;
 	tm_start->tm_min = 0;
 	tm_start->tm_sec = 0;
 	return mktime(tm_start);

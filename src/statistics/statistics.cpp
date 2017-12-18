@@ -14,7 +14,7 @@ void Statistics::add_operational_cost(double cost) {
 void Statistics::add_machine_time(unsigned long long int time) {
 	this->machine_time += time;
 }
-void Statistics::add_waiting_time(time_t start, Job job) {
+void Statistics::add_job(time_t start, Job job) {
 	unsigned long long int wt = start - job.get_time();
 	double ta = (double) wt / (double) job.get_duration();
 	if (job.is_short()) {
@@ -29,6 +29,27 @@ void Statistics::add_waiting_time(time_t start, Job job) {
 	} else {
 		this->huge_queue_wt.push_back(wt);
 		this->huge_queue_ta.push_back(ta);
+	}
+
+	bool added = false;
+	for (int i = 0; i < this->weeks.size(); i++) {
+		if (this->weeks[i].get_start() <= start && this->weeks[i].get_end() > start + job.get_duration()) {
+			this->weeks[i].add_job(job);
+			added = true;
+		}
+	}
+	if (!added) {
+		time_t s, e;
+		unsigned int i = 0;
+		if (this->weeks.size() == 0) {
+			s = start;
+		} else {
+			s = get_back_to_sunday(start);
+		}
+		e = advance_weekend(s);
+		this->weeks.push_back(*(new Week(s, e)));
+		i = this->weeks.size() - 1;
+		this->weeks[i].add_job(job);
 	}
 }
 
@@ -110,5 +131,13 @@ string Statistics::get_machine_time() {
 string Statistics::get_usage_price() {
 	stringstream stream;
 	stream << fixed << setprecision(2) << this->usage_price;
+	return stream.str();
+}
+
+string Statistics::get_weekly_usage() {
+	stringstream stream;
+	for (int i = 0; i < weeks.size(); i++) {
+		stream << "Week " << (i + 1) << " " << weeks[i] << endl;
+	}
 	return stream.str();
 }

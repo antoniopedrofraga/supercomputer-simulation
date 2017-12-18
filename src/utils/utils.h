@@ -55,6 +55,7 @@ bool is_weekend(time_t start, time_t end);
 bool is_weekend(time_t start);
 time_t advance_weekend(time_t start);
 time_t advance_to_friday(time_t start);
+time_t get_back_to_sunday(time_t start);
 void print_queues_stats();
 //bool compare_state_ptr(State* a, State* b);
 

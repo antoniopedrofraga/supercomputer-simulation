@@ -6,7 +6,10 @@
 #include <iomanip>
 #include <sstream>
 #include <ctime>
+#include <tuple>
 #include "../jobs/job.h"
+#include "../utils/utils.h"
+#include "week.h"
 
 using namespace std;
 
@@ -22,6 +25,8 @@ private:
 	vector<double> large_queue_ta;
 	vector<double> huge_queue_ta;
 
+	vector<Week> weeks;
+
 	double usage_price;
 	double operational_cost;
 	unsigned long long int machine_time;
@@ -32,6 +37,7 @@ public:
 	string get_machine_time();
 	string get_operational_cost();
 	string get_economic_balance();
+	string get_weekly_usage();
 
 	string get_short_ta();
 	string get_medium_ta();
@@ -46,7 +52,7 @@ public:
 	void add_usage_price(double price);
 	void add_operational_cost(double cost);
 	void add_machine_time(unsigned long long int time);
-	void add_waiting_time(time_t start, Job job);
+	void add_job(time_t start, Job job);
 };
 
 #endif
