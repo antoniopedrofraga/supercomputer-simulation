@@ -5,6 +5,8 @@ State::State(long long int total_cores, time_t time, StateType state_type, strin
 	this->short_cores = total_cores * 0.1;
 	this->medium_cores = total_cores * 0.2;
 	this->large_cores = total_cores * 0.7;
+	this->used_cores = 0;
+
 	this->time = time;
 	this->state_type = state_type;
 	this->name = name;
@@ -15,6 +17,8 @@ State::State(State state, time_t time, StateType state_type, string name) {
 	this->short_cores = state.get_short_cores();
 	this->medium_cores = state.get_medium_cores();
 	this->large_cores = state.get_large_cores();
+	this->used_cores = state.get_used_cores();
+
 	this->time = time;
 	this->state_type = state_type;
 	this->name = name;
@@ -32,6 +36,7 @@ void State::insert_job(Job job) {
 		this->medium_cores = 0;
 		this->large_cores = 0;
 	}
+	this->used_cores += job.get_cores();
 }
 
 bool State::can_insert_job(Job job) {
@@ -62,6 +67,7 @@ long long int State::get_short_cores() { return this->short_cores; }
 long long int State::get_medium_cores() { return this->medium_cores; }
 long long int State::get_large_cores() { return this->large_cores; }
 long long int State::get_total_cores() { return this->total_cores; }
+long long int State::get_used_cores() { return this->used_cores; }
 
 ostream& operator<<(ostream& os, const State& state) {  
 	time_t time = state.time;

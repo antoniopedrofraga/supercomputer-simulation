@@ -16,6 +16,8 @@ private:
 	long long int large_cores;
 	long long int total_cores;
 
+	long long int used_cores;
+
 	StateType state_type;
 
 	string name;
@@ -34,6 +36,7 @@ public:
 	long long int get_medium_cores();
 	long long int get_large_cores();
 	long long int get_total_cores();
+	long long int get_used_cores();
 
 	friend ostream& operator<<(ostream& os, const State& state);
 

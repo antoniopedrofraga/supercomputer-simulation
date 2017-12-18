@@ -1,12 +1,13 @@
 #include "system.h"
 
 System::System() {
-	usage_price = 0;
-	operational_cost = 0;
+	statistics = new Statistics();
 
 	create_users();
 	create_jobs();
 	schedule();
+	calculate_op_cost();
+	print_results();
 }
 
 
@@ -46,7 +47,7 @@ void System::create_jobs() {
 		while (!users[user_id]->can_afford(job)) {
 			user_id++;
 		}
-		usage_price += job->get_price();
+		statistics->add_usage_price(job->get_price());
 		users[user_id]->pay(job);
 		job->set_user(users[user_id]);
 
@@ -56,6 +57,8 @@ void System::create_jobs() {
 }
 
 void System::insert_state_at_the_end(time_t start, time_t end, Job job) {
+	statistics->add_waiting_time(start, job);
+
 	State * start_state = new State(NODES_NR * CORES_NR, start, Start, job.get_name());
 	start_state->insert_job(job);
 	State * end_state = new State(NODES_NR * CORES_NR, end, End, job.get_name());
@@ -64,6 +67,8 @@ void System::insert_state_at_the_end(time_t start, time_t end, Job job) {
 }
 
 void System::insert_state_and_update(int i, int j, time_t start, time_t end, Job job) {
+	statistics->add_waiting_time(start, job);
+
 	State * start_state = i - 1 >= 0 ? new State(states[i - 1], start, Start, job.get_name()) : new State(NODES_NR * CORES_NR, end, Start, job.get_name());
 	start_state->insert_job(job);
 	State * end_state = !job.is_huge() && j - 1 >= 0 ? new State(states[j - 1], end, End, job.get_name()) : new State(NODES_NR * CORES_NR, end, End, job.get_name());
@@ -115,7 +120,6 @@ void System::insert_week_state(time_t start, int i, Job job) {
 			j++;
 		}
 	}
-	//cout << "i: " << i << ", j: " << j << " size: " << states.size() << endl;
 	insert_state_and_update(i, j, start, end, job);
 }
 
@@ -158,15 +162,6 @@ void System::insert_state(int &index, Job job) {
 			insert_weekend_state(start, index, job);
 		}
 	}
-	/*for (int i = 0; i < states.size(); i++){
-		cout << *(states[i]) << endl;
-	}
-	cout << endl;*/
-
-	/*if (!(std::is_sorted(states.begin(),states.end(), StateCompare()))) {
-		cout << "Isn't sorted" << endl;
-		exit(1);
-	}*/
 } 
 
 void System::schedule() {
@@ -174,20 +169,6 @@ void System::schedule() {
 	for (int i = 0; i < jobs.size(); i++) {
 		insert_state(index, jobs[i]);
 	}
-	if (!std::is_sorted(states.begin(),states.end())) {
-		for (int i = 0; i < states.size(); i++){
-			cout << states[i] << endl;
-			if (i + 1 < states.size()) {
-				if (states[i + 1] < states[i]) {
-					cout << "[HERE!HERE!HERE!]" << endl << "[HERE!HERE!HERE!]" << endl << "[HERE!HERE!HERE!]" << endl;
-				}
-			}
-		}
-		cout << endl;
-	}
-	
-	cout << "Is sorted: " << (std::is_sorted(states.begin(),states.end()) ? "true" : "false") << endl;
-	cout << "Exist negatives: " << (exist_negatives() ? "true" : "false") << endl;
 }
 
 void System::calculate_op_cost() {
@@ -202,9 +183,35 @@ void System::calculate_op_cost() {
 		} else {
 			level--;
 			if (level == 0) {
-				operational_cost = states[i].get_time() - start;
+				statistics->add_machine_time(states[i].get_time() - start);
 			}
 		}
 	}
+	if (states.size() >= 2) {
+		statistics->add_operational_cost((states[states.size() - 1].get_time() - states[0].get_time()) * OPERATIONAL_COST);
+	}
+}
 
+void System::print_results() {
+	if (!std::is_sorted(states.begin(),states.end())) {
+		for (int i = 0; i < states.size(); i++){
+			cout << states[i] << endl;
+			if (i + 1 < states.size()) {
+				if (states[i + 1] < states[i]) {
+					cout << "[HERE!HERE!HERE!]" << endl << "[HERE!HERE!HERE!]" << endl << "[HERE!HERE!HERE!]" << endl;
+				}
+			}
+		}
+		cout << endl;
+	}
+	print_queues_stats();
+	cout << "Is sorted: " << (std::is_sorted(states.begin(),states.end()) ? "true" : "false") << endl;
+	cout << "Exist negatives: " << (exist_negatives() ? "true" : "false") << endl;
+	cout << "Machine time consumed by jobs: " << statistics->get_machine_time() << endl;
+	cout << "Price paid by users: £" << statistics->get_usage_price() << endl;
+	cout << "Operational Cost: £" << statistics->get_operational_cost() << endl;
+	cout << "Economic Balance: £" << statistics->get_economic_balance() << endl;
+	cout << "Average waiting time (seconds):" << " Short(" << statistics->get_short_wt() << "), Medium(" << statistics->get_medium_wt() << "), Large(" << statistics->get_large_wt() << "), Huge(" << statistics->get_huge_wt() << ")" << endl;
+	cout << "Average turnaround ratio:" << " Short(" << statistics->get_short_ta() << "), Medium(" << statistics->get_medium_ta() << "), Large(" << statistics->get_large_ta() << "), Huge(" << statistics->get_huge_ta() << ")" << endl;
+	//cout << "Price paid by users: £" << usage_price << endl;
 }

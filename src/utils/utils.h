@@ -5,6 +5,7 @@
 #include <random>
 #include <float.h>
 #include <vector>
+#include <iostream>
 
 const int NODES_NR = 128;
 const int CORES_NR = 16;
@@ -54,6 +55,7 @@ bool is_weekend(time_t start, time_t end);
 bool is_weekend(time_t start);
 time_t advance_weekend(time_t start);
 time_t advance_to_friday(time_t start);
+void print_queues_stats();
 //bool compare_state_ptr(State* a, State* b);
 
 #endif

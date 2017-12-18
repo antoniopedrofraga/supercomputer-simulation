@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-	System * system = new System();
+	new System();
 	/*for (int lambda = 1; lambda < 10; lambda++) {
 		random_device rd; 
 		exponential_distribution<double> rng(lambda);
