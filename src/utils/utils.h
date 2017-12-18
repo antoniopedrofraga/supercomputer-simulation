@@ -10,6 +10,9 @@
 const int NODES_NR = 128;
 const int CORES_NR = 16;
 
+const int USERS_NR = 100;
+const int JOBS_NR = 100;
+
 /*
 Cost per core, per hour. Same price as ARCHER.
 */
@@ -27,7 +30,7 @@ This system has a 6 elements team winning £60.000 per year
 */
 const double PERSONEL_COST = 60000 * 6 / 365 / 24 / 60 / 60;
 /*
-We shall ignore the building maintenance. It won't add a sgnificantly high price to everything
+We shall ignore the building maintenance. It won't add a sgnificant value to the simulation.
 */
 const double OPERATIONAL_COST = ENERGY_COST + PERSONEL_COST;
 
@@ -49,6 +52,8 @@ const unsigned long long SIXTEEN_HOURS = 60 * 60 * 16;
 const unsigned long long THIRTY_EIGHT_HOURS = 60 * 60 * 38;
 const unsigned long long ONE_DAY = 60 * 60 * 24;
 
+const unsigned long long REQUESTS_SPAN = 10;
+
 int generate_random(int low, int high);
 double generate_random(double low, double high);
 bool is_weekend(time_t start, time_t end);
@@ -57,6 +62,5 @@ time_t advance_weekend(time_t start);
 time_t advance_to_friday(time_t start);
 time_t get_back_to_sunday(time_t start);
 void print_queues_stats();
-//bool compare_state_ptr(State* a, State* b);
 
 #endif

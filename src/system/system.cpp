@@ -1,13 +1,13 @@
 #include "system.h"
 
-System::System() {
-	statistics = new Statistics();
-
+System::System(Configuration * config) {
+	this->config = config;
+	this->statistics = new Statistics(config);
+	this->total_cores_nr = config->get_cores_nr() * config->get_nodes_nr();
 	create_users();
 	create_jobs();
 	schedule();
 	calculate_op_cost();
-	print_results();
 }
 
 
@@ -23,16 +23,16 @@ return false;
 }
 
 void System::create_users() {
-	int user_nr = generate_random(1, 100);
+	int user_nr = config->get_jobs_nr();
 	for (int i = 0; i < user_nr; i++) {
-		users.push_back(new User(i, false));
+		users.push_back(new User(config, i, false));
 	}
-	users.push_back(new User(user_nr, true));
+	users.push_back(new User(config, user_nr, true));
 }
 
 void System::create_jobs() {
 	int nr_users = users.size();
-	int nr_jobs = 100/*generate_random(LOW_JOBS, HIGH_JOBS)*/;
+	int nr_jobs = config->get_jobs_nr();
 	unsigned long long int now = /*(unsigned long long int)time(0)*/1513265102;
 
 	random_device rd; 
@@ -40,10 +40,10 @@ void System::create_jobs() {
 	mt19937 rnd_gen(rd());
 	
 	for (int i = 0; i < nr_jobs; i++) {
-		unsigned long long int rand_seconds = 10 * rng(rnd_gen), duration = THIRTY_EIGHT_HOURS * rng(rnd_gen);
+		unsigned long long int rand_seconds = config->get_requests_span() * rng(rnd_gen), duration = THIRTY_EIGHT_HOURS * rng(rnd_gen);
 		time_t time = (time_t)(now + rand_seconds);
 		int user_id = 0;
-		Job * job = new Job(time, duration);
+		Job * job = new Job(config, time, duration);
 		while (!users[user_id]->can_afford(job)) {
 			user_id++;
 		}
@@ -59,9 +59,9 @@ void System::create_jobs() {
 void System::insert_state_at_the_end(time_t start, time_t end, Job job) {
 	statistics->add_job(start, job);
 
-	State * start_state = new State(NODES_NR * CORES_NR, start, Start, job.get_name());
+	State * start_state = new State(this->total_cores_nr, start, Start, job.get_name());
 	start_state->insert_job(job);
-	State * end_state = new State(NODES_NR * CORES_NR, end, End, job.get_name());
+	State * end_state = new State(this->total_cores_nr, end, End, job.get_name());
 	states.push_back(*start_state);
 	states.push_back(*end_state);
 }
@@ -69,9 +69,9 @@ void System::insert_state_at_the_end(time_t start, time_t end, Job job) {
 void System::insert_state_and_update(int i, int j, time_t start, time_t end, Job job) {
 	statistics->add_job(start, job);
 
-	State * start_state = i - 1 >= 0 ? new State(states[i - 1], start, Start, job.get_name()) : new State(NODES_NR * CORES_NR, end, Start, job.get_name());
+	State * start_state = i - 1 >= 0 ? new State(states[i - 1], start, Start, job.get_name()) : new State(this->total_cores_nr, end, Start, job.get_name());
 	start_state->insert_job(job);
-	State * end_state = !job.is_huge() && j - 1 >= 0 ? new State(states[j - 1], end, End, job.get_name()) : new State(NODES_NR * CORES_NR, end, End, job.get_name());
+	State * end_state = !job.is_huge() && j - 1 >= 0 ? new State(states[j - 1], end, End, job.get_name()) : new State(this->total_cores_nr, end, End, job.get_name());
 	for (int k = i; k < j; k++) {
 		states[k].insert_job(job);
 	}
@@ -188,32 +188,21 @@ void System::calculate_op_cost() {
 		}
 	}
 	if (states.size() >= 2) {
-		statistics->add_operational_cost((states[states.size() - 1].get_time() - states[0].get_time()) * OPERATIONAL_COST);
+		statistics->add_operational_cost((states[states.size() - 1].get_time() - states[0].get_time()) * config->get_operational_cost());
 	}
 }
 
-void System::print_results() {
-	if (!std::is_sorted(states.begin(),states.end())) {
-		for (int i = 0; i < states.size(); i++){
-			cout << states[i] << endl;
-			if (i + 1 < states.size()) {
-				if (states[i + 1] < states[i]) {
-					cout << "[HERE!HERE!HERE!]" << endl << "[HERE!HERE!HERE!]" << endl << "[HERE!HERE!HERE!]" << endl;
-				}
-			}
-		}
-		cout << endl;
-	}
-	print_queues_stats();
-	cout << "Is sorted: " << (std::is_sorted(states.begin(),states.end()) ? "true" : "false") << endl;
-	cout << "Exist negatives: " << (exist_negatives() ? "true" : "false") << endl;
-	cout << "Machine time consumed by jobs: " << statistics->get_machine_time() << endl;
-	cout << "Price paid by users: £" << statistics->get_usage_price() << endl;
-	cout << "Operational Cost: £" << statistics->get_operational_cost() << endl;
-	cout << "Economic Balance: £" << statistics->get_economic_balance() << endl;
-	cout << "Average waiting time (seconds):" << " Short(" << statistics->get_short_wt() << "), Medium(" << statistics->get_medium_wt() << "), Large(" << statistics->get_large_wt() << "), Huge(" << statistics->get_huge_wt() << ")" << endl;
-	cout << "Average turnaround ratio:" << " Short(" << statistics->get_short_ta() << "), Medium(" << statistics->get_medium_ta() << "), Large(" << statistics->get_large_ta() << "), Huge(" << statistics->get_huge_ta() << ")" << endl;
-	cout << endl;
-	cout << "Queues weekly usage: " << endl << statistics->get_weekly_usage() << endl; 
-	//cout << "Price paid by users: £" << usage_price << endl;
+string System::get_results() {
+	stringstream results;
+	results << "Is sorted: " << (std::is_sorted(states.begin(),states.end()) ? "true" : "false") << endl;
+	results << "Exist negatives: " << (exist_negatives() ? "true" : "false") << endl;
+	results << "Machine time consumed by jobs: " << statistics->get_machine_time() << endl;
+	results << "Price paid by users: £" << statistics->get_usage_price() << endl;
+	results << "Operational Cost: £" << statistics->get_operational_cost() << endl;
+	results << "Economic Balance: £" << statistics->get_economic_balance() << endl;
+	results << "Average waiting time (seconds):" << " Short(" << statistics->get_short_wt() << "), Medium(" << statistics->get_medium_wt() << "), Large(" << statistics->get_large_wt() << "), Huge(" << statistics->get_huge_wt() << ")" << endl;
+	results << "Average turnaround ratio:" << " Short(" << statistics->get_short_ta() << "), Medium(" << statistics->get_medium_ta() << "), Large(" << statistics->get_large_ta() << "), Huge(" << statistics->get_huge_ta() << ")" << endl;
+	results << endl;
+	results << "Queues weekly usage: " << endl << statistics->get_weekly_usage() << endl; 
+	return results.str();
 }

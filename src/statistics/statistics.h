@@ -9,12 +9,15 @@
 #include <tuple>
 #include "../jobs/job.h"
 #include "../utils/utils.h"
+#include "../configuration/configuration.h"
 #include "week.h"
 
 using namespace std;
 
 class Statistics {
 private:
+	Configuration * config;
+
 	vector<unsigned long long int> short_queue_wt;
 	vector<unsigned long long int> medium_queue_wt;
 	vector<unsigned long long int> large_queue_wt;
@@ -31,7 +34,7 @@ private:
 	double operational_cost;
 	unsigned long long int machine_time;
 public:
-	Statistics();
+	Statistics(Configuration * config);
 
 	string get_usage_price();
 	string get_machine_time();

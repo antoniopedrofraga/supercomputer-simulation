@@ -1,8 +1,9 @@
 #include "job.h"
 
-Job::Job(time_t time, unsigned long long int duration) {
+Job::Job(Configuration * config, time_t time, unsigned long long int duration) {
+	this->config = config;
 	this->time = time;
-	int total_nodes = NODES_NR * CORES_NR;
+	unsigned long long int total_nodes = config->get_cores_nr() * config->get_nodes_nr();
 	if (duration <= ONE_HOUR) {
 		this->type = Short;
 		this->cores = generate_random(1, 2 * CORES_NR);
@@ -33,7 +34,7 @@ int Job::get_cores() {
 }
 
 double Job::get_price() {
-	return (double)duration * cores * USAGE_PRICE;
+	return (double)duration * cores * config->get_usage_price();
 }
 
 void Job::set_user(User * user) {

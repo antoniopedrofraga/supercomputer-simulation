@@ -1,6 +1,7 @@
 #include "statistics.h"
 
-Statistics::Statistics() {
+Statistics::Statistics(Configuration * config) {
+	this->config = config;
 	this->usage_price = 0;
 	this->operational_cost = 0;
 }
@@ -8,12 +9,15 @@ Statistics::Statistics() {
 void Statistics::add_usage_price(double price) {
 	this->usage_price += price;
 }
+
 void Statistics::add_operational_cost(double cost) {
 	this->operational_cost += cost;
 }
+
 void Statistics::add_machine_time(unsigned long long int time) {
 	this->machine_time += time;
 }
+
 void Statistics::add_job(time_t start, Job job) {
 	unsigned long long int wt = start - job.get_time();
 	double ta = (double) wt / (double) job.get_duration();

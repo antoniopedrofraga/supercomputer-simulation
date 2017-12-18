@@ -1,7 +1,8 @@
 #include "user.h"
 
 
-User::User(int id, bool support) {
+User::User(Configuration * config, int id, bool support) {
+	this->config = config;
 	this->id = id;
 	generate_group(support);
 }
@@ -14,10 +15,10 @@ void User::generate_group(bool support) {
 		this->budget = IT_BUDGET;
 	} else if (rand == 2) {
 		this->group = Researcher;
-		this->budget = RESEARCHER_BUDGET;
+		this->budget = config->get_researcher_budget();
 	} else {
 		this->group = Student;
-		this->budget = STUDENT_BUDGET;
+		this->budget = config->get_student_budget();
 	}
 }
 

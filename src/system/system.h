@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <set>
-#include <iostream>
+#include <sstream>
 #include <ctime>
 #include <algorithm>
 
@@ -11,6 +11,7 @@
 #include "../jobs/job.h"
 #include "../utils/utils.h"
 #include "../statistics/statistics.h"
+#include "../configuration/configuration.h"
 #include "state.h"
 
 using namespace std;
@@ -21,7 +22,10 @@ private:
 	vector<Job> jobs;
 	vector<State> states;
 
+	Configuration * config;
 	Statistics * statistics;
+
+	unsigned long long int total_cores_nr;
 
 	void insert_state(int &index, Job job);
 	void insert_week_state(time_t start, int i, Job job);
@@ -32,12 +36,12 @@ private:
 	void create_jobs();
 	void calculate_op_cost();
 	void schedule();
-	void print_results();
 
 	void insert_state_at_the_end(time_t start, time_t end, Job job);
 	void insert_state_and_update(int i, int j, time_t start, time_t end, Job job);
 public:
-	System();
+	System(Configuration * config);
+	string get_results();
 };
 
 #endif
