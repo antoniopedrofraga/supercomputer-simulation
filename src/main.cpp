@@ -1,4 +1,3 @@
-//#include "libs/gnuplot-iostream.h"
 #include "system/system.h"
 #include "configuration/configuration.h"
 #include <ctime>

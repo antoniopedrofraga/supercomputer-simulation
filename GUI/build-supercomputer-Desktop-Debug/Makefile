@@ -14,7 +14,7 @@ CC            = gcc
 CXX           = g++
 DEFINES       = -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -m64 -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-CXXFLAGS      = -m64 -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+CXXFLAGS      = -m64 -pipe -g -std=c++1y -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 INCPATH       = -I../supercomputer -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64
 QMAKE         = /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 DEL_FILE      = rm -f
@@ -49,9 +49,25 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../supercomputer/main.cpp \
-		../supercomputer/mainwindow.cpp moc_mainwindow.cpp
+		../supercomputer/mainwindow.cpp \
+		../supercomputer/configuration/configuration.cpp \
+		../supercomputer/jobs/job.cpp \
+		../supercomputer/statistics/statistics.cpp \
+		../supercomputer/statistics/week.cpp \
+		../supercomputer/system/state.cpp \
+		../supercomputer/system/system.cpp \
+		../supercomputer/users/user.cpp \
+		../supercomputer/utils/utils.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
+		configuration.o \
+		job.o \
+		statistics.o \
+		week.o \
+		state.o \
+		system.o \
+		user.o \
+		utils.o \
 		moc_mainwindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -102,6 +118,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++11.prf \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++14.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf \
@@ -113,8 +131,27 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		../supercomputer/supercomputer.pro ../supercomputer/mainwindow.h ../supercomputer/main.cpp \
-		../supercomputer/mainwindow.cpp
+		../supercomputer/supercomputer.pro ../supercomputer/mainwindow.h \
+		../supercomputer/configuration/configuration.h \
+		../supercomputer/jobs/job.h \
+		../supercomputer/jobs/type.h \
+		../supercomputer/statistics/statistics.h \
+		../supercomputer/statistics/week.h \
+		../supercomputer/system/state.h \
+		../supercomputer/system/statetype.h \
+		../supercomputer/system/system.h \
+		../supercomputer/users/group.h \
+		../supercomputer/users/user.h \
+		../supercomputer/utils/utils.h ../supercomputer/main.cpp \
+		../supercomputer/mainwindow.cpp \
+		../supercomputer/configuration/configuration.cpp \
+		../supercomputer/jobs/job.cpp \
+		../supercomputer/statistics/statistics.cpp \
+		../supercomputer/statistics/week.cpp \
+		../supercomputer/system/state.cpp \
+		../supercomputer/system/system.cpp \
+		../supercomputer/users/user.cpp \
+		../supercomputer/utils/utils.cpp
 QMAKE_TARGET  = supercomputer
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = supercomputer
@@ -194,6 +231,8 @@ Makefile: ../supercomputer/supercomputer.pro /usr/lib/x86_64-linux-gnu/qt5/mkspe
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++11.prf \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++14.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf \
@@ -259,6 +298,8 @@ Makefile: ../supercomputer/supercomputer.pro /usr/lib/x86_64-linux-gnu/qt5/mkspe
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++11.prf:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++14.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf:
@@ -288,8 +329,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../supercomputer/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../supercomputer/main.cpp ../supercomputer/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../supercomputer/mainwindow.h ../supercomputer/configuration/configuration.h ../supercomputer/jobs/job.h ../supercomputer/jobs/type.h ../supercomputer/statistics/statistics.h ../supercomputer/statistics/week.h ../supercomputer/system/state.h ../supercomputer/system/statetype.h ../supercomputer/system/system.h ../supercomputer/users/group.h ../supercomputer/users/user.h ../supercomputer/utils/utils.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../supercomputer/main.cpp ../supercomputer/mainwindow.cpp ../supercomputer/configuration/configuration.cpp ../supercomputer/jobs/job.cpp ../supercomputer/statistics/statistics.cpp ../supercomputer/statistics/week.cpp ../supercomputer/system/state.cpp ../supercomputer/system/system.cpp ../supercomputer/users/user.cpp ../supercomputer/utils/utils.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../supercomputer/mainwindow.ui $(DISTDIR)/
 
 
@@ -343,6 +384,63 @@ main.o: ../supercomputer/main.cpp ../supercomputer/mainwindow.h
 mainwindow.o: ../supercomputer/mainwindow.cpp ../supercomputer/mainwindow.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../supercomputer/mainwindow.cpp
+
+configuration.o: ../supercomputer/configuration/configuration.cpp ../supercomputer/configuration/configuration.h \
+		../supercomputer/utils/utils.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o configuration.o ../supercomputer/configuration/configuration.cpp
+
+job.o: ../supercomputer/jobs/job.cpp ../supercomputer/jobs/job.h \
+		../supercomputer/utils/utils.h \
+		../supercomputer/configuration/configuration.h \
+		../supercomputer/jobs/type.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o job.o ../supercomputer/jobs/job.cpp
+
+statistics.o: ../supercomputer/statistics/statistics.cpp ../supercomputer/statistics/statistics.h \
+		../supercomputer/jobs/job.h \
+		../supercomputer/utils/utils.h \
+		../supercomputer/configuration/configuration.h \
+		../supercomputer/jobs/type.h \
+		../supercomputer/statistics/week.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o statistics.o ../supercomputer/statistics/statistics.cpp
+
+week.o: ../supercomputer/statistics/week.cpp ../supercomputer/statistics/week.h \
+		../supercomputer/jobs/job.h \
+		../supercomputer/utils/utils.h \
+		../supercomputer/configuration/configuration.h \
+		../supercomputer/jobs/type.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o week.o ../supercomputer/statistics/week.cpp
+
+state.o: ../supercomputer/system/state.cpp ../supercomputer/system/state.h \
+		../supercomputer/system/statetype.h \
+		../supercomputer/jobs/job.h \
+		../supercomputer/utils/utils.h \
+		../supercomputer/configuration/configuration.h \
+		../supercomputer/jobs/type.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o state.o ../supercomputer/system/state.cpp
+
+system.o: ../supercomputer/system/system.cpp ../supercomputer/system/system.h \
+		../supercomputer/users/user.h \
+		../supercomputer/users/group.h \
+		../supercomputer/utils/utils.h \
+		../supercomputer/jobs/job.h \
+		../supercomputer/configuration/configuration.h \
+		../supercomputer/jobs/type.h \
+		../supercomputer/statistics/statistics.h \
+		../supercomputer/statistics/week.h \
+		../supercomputer/system/state.h \
+		../supercomputer/system/statetype.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o system.o ../supercomputer/system/system.cpp
+
+user.o: ../supercomputer/users/user.cpp ../supercomputer/users/user.h \
+		../supercomputer/users/group.h \
+		../supercomputer/utils/utils.h \
+		../supercomputer/jobs/job.h \
+		../supercomputer/configuration/configuration.h \
+		../supercomputer/jobs/type.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o user.o ../supercomputer/users/user.cpp
+
+utils.o: ../supercomputer/utils/utils.cpp ../supercomputer/utils/utils.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o utils.o ../supercomputer/utils/utils.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

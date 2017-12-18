@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "configuration/configuration.h"
+#include "system/system.h"
 
 namespace Ui {
 class MainWindow;
@@ -29,8 +31,11 @@ private slots:
 
     void on_randomJobs_toggled(bool checked);
 
+    void on_simulateButton_released();
+
 private:
     Ui::MainWindow *ui;
+    Configuration * config;
 };
 
 #endif // MAINWINDOW_H

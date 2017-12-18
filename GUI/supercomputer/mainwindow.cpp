@@ -6,6 +6,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    config = new Configuration();
+
     ui->constantUsers->setValue(100);
     ui->fromUsers->setValue(1);
     ui->toUsers->setValue(100);
@@ -76,4 +78,11 @@ void MainWindow::on_randomJobs_toggled(bool checked)
         ui->constantJobs->show();
         show_random_jobs(false);
     }
+}
+
+void MainWindow::on_simulateButton_released()
+{
+    System * system = new System(config);
+    QString qstr = QString::fromStdString(system->get_results());
+    ui->outputBox->setText(qstr);
 }

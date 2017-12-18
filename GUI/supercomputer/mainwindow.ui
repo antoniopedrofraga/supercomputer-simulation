@@ -623,7 +623,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QTextBrowser" name="textBrowser">
+   <widget class="QTextBrowser" name="outputBox">
     <property name="geometry">
      <rect>
       <x>410</x>

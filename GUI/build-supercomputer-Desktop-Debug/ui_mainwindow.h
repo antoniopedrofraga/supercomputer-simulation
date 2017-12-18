@@ -75,7 +75,7 @@ public:
     QDoubleSpinBox *usagePriceSpinBox;
     QGroupBox *operationalCostGroup;
     QDoubleSpinBox *operationalCostSpinBox;
-    QTextBrowser *textBrowser;
+    QTextBrowser *outputBox;
     QLabel *label;
     QMenuBar *menuBar;
     QMenu *menuSupercomputer_Simulation;
@@ -265,9 +265,9 @@ public:
         operationalCostSpinBox->setObjectName(QStringLiteral("operationalCostSpinBox"));
         operationalCostSpinBox->setGeometry(QRect(40, 30, 101, 23));
         operationalCostSpinBox->setDecimals(7);
-        textBrowser = new QTextBrowser(centralWidget);
-        textBrowser->setObjectName(QStringLiteral("textBrowser"));
-        textBrowser->setGeometry(QRect(410, 40, 431, 381));
+        outputBox = new QTextBrowser(centralWidget);
+        outputBox->setObjectName(QStringLiteral("outputBox"));
+        outputBox->setGeometry(QRect(410, 40, 431, 381));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(600, 10, 41, 16));
