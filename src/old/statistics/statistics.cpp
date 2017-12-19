@@ -121,12 +121,12 @@ string Statistics::get_economic_balance() {
 }
 
 string Statistics::get_machine_time() {
-    long long int days = this->machine_time / 60 / 60 / 24;
-    long long int hours = (this->machine_time / 60 / 60) % 24;
-    long long int minutes = (this->machine_time / 60) % 60;
-    long long int seconds = this->machine_time % 60;
+	unsigned long long int days = this->machine_time / 60 / 60 / 24;
+	unsigned long long int hours = (this->machine_time / 60 / 60) % 24;
+	unsigned long long int minutes = (this->machine_time / 60) % 60;
+	unsigned long long int seconds = this->machine_time % 60;
 	stringstream stream;
-    stream << to_string(machine_time) << endl << (days > 0 ? to_string(days) + " days, " : "")
+	stream << (days > 0 ? to_string(days) + " days, " : "")
 	<< (hours > 0 ? to_string(hours) + " hours, " : "")
 	<< (minutes > 0 ? to_string(minutes) + " minutes, " : "")
 	<< (seconds > 0 ? to_string(seconds) + " seconds. " : "");

@@ -62,12 +62,15 @@
       <rect>
        <x>60</x>
        <y>30</y>
-       <width>45</width>
+       <width>51</width>
        <height>23</height>
       </rect>
      </property>
      <property name="showGroupSeparator" stdset="0">
       <bool>true</bool>
+     </property>
+     <property name="maximum">
+      <number>1000</number>
      </property>
     </widget>
     <widget class="QLabel" name="fromUsersLabel">
@@ -88,7 +91,7 @@
       <rect>
        <x>20</x>
        <y>40</y>
-       <width>45</width>
+       <width>61</width>
        <height>23</height>
       </rect>
      </property>
@@ -111,9 +114,15 @@
       <rect>
        <x>100</x>
        <y>40</y>
-       <width>45</width>
+       <width>61</width>
        <height>23</height>
       </rect>
+     </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>1000</number>
      </property>
     </widget>
     <widget class="QCheckBox" name="randomUsers">
@@ -159,12 +168,15 @@
       <rect>
        <x>60</x>
        <y>30</y>
-       <width>45</width>
+       <width>51</width>
        <height>23</height>
       </rect>
      </property>
      <property name="showGroupSeparator" stdset="0">
       <bool>true</bool>
+     </property>
+     <property name="maximum">
+      <number>1000</number>
      </property>
     </widget>
     <widget class="QLabel" name="fromJobsLabel">
@@ -185,9 +197,12 @@
       <rect>
        <x>20</x>
        <y>40</y>
-       <width>45</width>
+       <width>61</width>
        <height>23</height>
       </rect>
+     </property>
+     <property name="maximum">
+      <number>1000</number>
      </property>
     </widget>
     <widget class="QLabel" name="toJobsLabel">
@@ -208,9 +223,12 @@
       <rect>
        <x>100</x>
        <y>40</y>
-       <width>45</width>
+       <width>61</width>
        <height>23</height>
       </rect>
+     </property>
+     <property name="maximum">
+      <number>1000</number>
      </property>
     </widget>
     <widget class="QCheckBox" name="randomJobs">
@@ -254,14 +272,20 @@
     <widget class="QDoubleSpinBox" name="constantResearcher">
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>50</x>
        <y>30</y>
-       <width>45</width>
+       <width>71</width>
        <height>23</height>
       </rect>
      </property>
      <property name="showGroupSeparator" stdset="0">
       <bool>true</bool>
+     </property>
+     <property name="minimum">
+      <double>1.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>1000.000000000000000</double>
      </property>
     </widget>
     <widget class="QLabel" name="fromResearcherLabel">
@@ -282,9 +306,15 @@
       <rect>
        <x>20</x>
        <y>40</y>
-       <width>45</width>
+       <width>61</width>
        <height>23</height>
       </rect>
+     </property>
+     <property name="minimum">
+      <double>1.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>1000.990000000000009</double>
      </property>
     </widget>
     <widget class="QLabel" name="toResearcherLabel">
@@ -305,9 +335,15 @@
       <rect>
        <x>100</x>
        <y>40</y>
-       <width>45</width>
+       <width>61</width>
        <height>23</height>
       </rect>
+     </property>
+     <property name="minimum">
+      <double>1.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>1000.000000000000000</double>
      </property>
     </widget>
     <widget class="QCheckBox" name="randomResearcher">
@@ -351,14 +387,20 @@
     <widget class="QDoubleSpinBox" name="constantStudentBudget">
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>50</x>
        <y>30</y>
-       <width>45</width>
+       <width>71</width>
        <height>23</height>
       </rect>
      </property>
      <property name="showGroupSeparator" stdset="0">
       <bool>true</bool>
+     </property>
+     <property name="minimum">
+      <double>1.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>1000.000000000000000</double>
      </property>
     </widget>
     <widget class="QLabel" name="fromStudentLabel">
@@ -379,9 +421,15 @@
       <rect>
        <x>20</x>
        <y>40</y>
-       <width>45</width>
+       <width>61</width>
        <height>23</height>
       </rect>
+     </property>
+     <property name="minimum">
+      <double>1.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>1000.000000000000000</double>
      </property>
     </widget>
     <widget class="QLabel" name="toStudentLabel">
@@ -402,9 +450,15 @@
       <rect>
        <x>100</x>
        <y>40</y>
-       <width>45</width>
+       <width>61</width>
        <height>23</height>
       </rect>
+     </property>
+     <property name="minimum">
+      <double>1.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>1000.000000000000000</double>
      </property>
     </widget>
     <widget class="QCheckBox" name="randomStudent">
@@ -578,7 +632,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>Usage Price £</string>
+     <string>Usage Price £ (per core)</string>
     </property>
     <widget class="QDoubleSpinBox" name="usagePriceSpinBox">
      <property name="geometry">
@@ -590,7 +644,13 @@
       </rect>
      </property>
      <property name="decimals">
-      <number>7</number>
+      <number>6</number>
+     </property>
+     <property name="minimum">
+      <double>0.000001000000000</double>
+     </property>
+     <property name="maximum">
+      <double>5.000000000000000</double>
      </property>
     </widget>
    </widget>
@@ -619,7 +679,13 @@
       </rect>
      </property>
      <property name="decimals">
-      <number>7</number>
+      <number>6</number>
+     </property>
+     <property name="minimum">
+      <double>0.000001000000000</double>
+     </property>
+     <property name="maximum">
+      <double>5.000000000000000</double>
      </property>
     </widget>
    </widget>

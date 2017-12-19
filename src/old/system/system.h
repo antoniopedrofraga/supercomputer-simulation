@@ -28,8 +28,8 @@ private:
 	unsigned long long int total_cores_nr;
 
 	void insert_state(int &index, Job job);
-    void insert_week_state(time_t start, unsigned int i, Job job);
-    void insert_weekend_state(time_t start, unsigned int i, Job job);
+	void insert_week_state(time_t start, int i, Job job);
+	void insert_weekend_state(time_t start, int i, Job job);
 
 	bool exist_negatives();
 	void create_users();
@@ -38,7 +38,7 @@ private:
 	void schedule();
 
 	void insert_state_at_the_end(time_t start, time_t end, Job job);
-    void insert_state_and_update(unsigned int i, unsigned int j, time_t start, time_t end, Job job);
+	void insert_state_and_update(int i, int j, time_t start, time_t end, Job job);
 public:
 	System(Configuration * config);
 	string get_results();
