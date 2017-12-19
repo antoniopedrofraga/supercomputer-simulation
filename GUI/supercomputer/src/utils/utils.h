@@ -82,6 +82,7 @@ const unsigned long long REQUESTS_SPAN_MIN = 1;
 const unsigned long long REQUESTS_SPAN_MAX = ONE_WEEK;
 
 int generate_random(int low, int high);
+unsigned int generate_random(unsigned int low, unsigned int high);
 double generate_random(double low, double high);
 bool is_weekend(time_t start, time_t end);
 bool is_weekend(time_t start);

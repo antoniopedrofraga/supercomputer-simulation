@@ -120,19 +120,37 @@ void MainWindow::on_randomResearcher_toggled(bool checked)
     }
 }
 
+void MainWindow::on_nowDate_toggled(bool checked)
+{
+    if (checked) {
+        ui->startDateTimeEdit->setEnabled(false);
+    } else {
+        ui->startDateTimeEdit->setEnabled(true);
+        QDateTime dt = QDateTime::currentDateTime();
+        ui->startDateTimeEdit->setDateTime(dt);
+        config->set_time(dt.toTime_t());
+    }
+    config->set_now(checked);
+}
+
+
 void MainWindow::on_constantUsers_valueChanged(int arg1)
 {
-
+    config->set_users_nr(arg1);
 }
+
+void MainWindow::on_constantJobs_valueChanged(int arg1)
+{
+    config->set_jobs_nr(arg1);
+}
+
 
 
 void MainWindow::on_simulateButton_released()
 {
-    ui->simulateButton->setEnabled(false);
     System * system = new System(config);
     QString qstr = QString::fromStdString(system->get_results());
     ui->outputBox->setText(qstr);
-    ui->simulateButton->setEnabled(true);
 }
 
 void MainWindow::set_initial_values() {
@@ -195,5 +213,136 @@ void MainWindow::set_initial_values() {
     ui->requestsSpinBox->setValue(REQUESTS_SPAN);
     ui->requestsSpinBox->setMinimum(REQUESTS_SPAN_MIN);
     ui->requestsSpinBox->setMaximum(REQUESTS_SPAN_MAX);
+
+    QDateTime dt = QDateTime::currentDateTime();
+    ui->startDateTimeEdit->setDateTime(dt);
 }
 
+void MainWindow::on_constantStudentBudget_valueChanged(double arg1)
+{
+    config->set_student_budget(arg1);
+}
+
+void MainWindow::on_constantResearcher_valueChanged(double arg1)
+{
+    config->set_researcher_budget(arg1);
+}
+
+void MainWindow::on_requestsSpinBox_valueChanged(int arg1)
+{
+    config->set_request_span(arg1);
+}
+
+
+void MainWindow::on_usagePriceSpinBox_valueChanged(double arg1)
+{
+    config->set_usage_price(arg1);
+}
+
+void MainWindow::on_operationalCostSpinBox_valueChanged(double arg1)
+{
+    config->set_operational_cost(arg1);
+}
+
+void MainWindow::on_nodesSpinBox_valueChanged(int arg1)
+{
+    config->set_nodes_nr(arg1);
+}
+
+void MainWindow::on_coresSpinBox_valueChanged(int arg1)
+{
+    config->set_cores_nr(arg1);
+}
+
+void MainWindow::on_startDateTimeEdit_dateTimeChanged(const QDateTime &dateTime)
+{
+    config->set_time(dateTime.toTime_t());
+}
+
+void MainWindow::on_fromUsers_valueChanged(int arg1)
+{
+    int to_users = ui->toUsers->value();
+    if (arg1 < to_users) {
+        config->set_users_nr_min(arg1);
+    } else {
+        ui->fromUsers->setValue(to_users - 1);
+        config->set_users_nr_min(to_users - 1);
+    }
+}
+
+void MainWindow::on_toUsers_valueChanged(int arg1)
+{
+    int from_users = ui->fromUsers->value();
+    if (arg1 > from_users) {
+        config->set_users_nr_max(arg1);
+    } else {
+        ui->toUsers->setValue(from_users + 1);
+        config->set_users_nr_max(from_users + 1);
+    }
+}
+
+void MainWindow::on_fromJobs_valueChanged(int arg1)
+{
+    int to_jobs = ui->toJobs->value();
+    if (arg1 < to_jobs) {
+        config->set_jobs_nr_min(arg1);
+    } else {
+        ui->fromJobs->setValue(to_jobs - 1);
+        config->set_jobs_nr_min(to_jobs - 1);
+    }
+}
+
+void MainWindow::on_toJobs_valueChanged(int arg1)
+{
+    int from_jobs = ui->fromJobs->value();
+    if (arg1 > from_jobs) {
+        config->set_jobs_nr_max(arg1);
+    } else {
+        ui->toJobs->setValue(from_jobs + 1);
+        config->set_jobs_nr_max(from_jobs + 1);
+    }
+}
+
+void MainWindow::on_fromStudent_valueChanged(double arg1)
+{
+    double to_student = ui->toStudent->value();
+    if (arg1 < to_student) {
+        config->set_student_budget_min(arg1);
+    } else {
+        ui->fromStudent->setValue(to_student - 0.01);
+        config->set_student_budget_min(to_student - 0.01);
+    }
+}
+
+void MainWindow::on_toStudent_valueChanged(double arg1)
+{
+    double from_student = ui->fromStudent->value();
+    if (arg1 > from_student) {
+        config->set_student_budget_max(arg1);
+    } else {
+        ui->toStudent->setValue(from_student + 0.01);
+        config->set_student_budget_max(from_student + 0.01);
+    }
+}
+
+void MainWindow::on_fromResearcher_valueChanged(double arg1)
+{
+    double to_researcher = ui->toResearcher->value();
+    if (arg1 < to_researcher) {
+        config->set_researcher_budget_min(arg1);
+    } else {
+        ui->fromResearcher->setValue(to_researcher - 0.01);
+        config->set_researcher_budget_min(to_researcher - 0.01);
+    }
+}
+
+void MainWindow::on_toResearcher_valueChanged(double arg1)
+{
+    double from_researcher = ui->fromResearcher->value();
+    if (arg1 > from_researcher) {
+        config->set_researcher_budget_max(arg1);
+    } else {
+        ui->toResearcher->setValue(from_researcher + 0.01);
+        config->set_researcher_budget_max(from_researcher + 0.01);
+    }
+}

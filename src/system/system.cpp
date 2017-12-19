@@ -33,7 +33,7 @@ void System::create_users() {
 void System::create_jobs() {
     int nr_users = users.size();
     int nr_jobs = config->get_jobs_nr();
-    unsigned long long int now = /*(unsigned long long int)time(0)*/1513265102;
+    unsigned long long int now = config->get_time() ;
 
     random_device rd;
     exponential_distribution<double> rng(6);

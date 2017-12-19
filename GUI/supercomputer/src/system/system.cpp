@@ -12,7 +12,7 @@ System::System(Configuration * config) {
 
 
 bool System::exist_negatives() {
-    for (unsigned int i = 0; i < states.size(); i++) {
+    for (int i = 0; i < states.size(); i++) {
         if (states[i].get_short_cores() < 0 ||
                 states[i].get_medium_cores() < 0 ||
                 states[i].get_large_cores() < 0) {
@@ -31,9 +31,9 @@ void System::create_users() {
 }
 
 void System::create_jobs() {
-    unsigned int nr_users = users.size();
-    unsigned int nr_jobs = config->get_jobs_nr();
-    unsigned long long int now = /*(unsigned long long int)time(0)*/1513265102;
+    int nr_users = users.size();
+    int nr_jobs = config->get_jobs_nr();
+    unsigned long long int now = config->get_time();
 
     random_device rd;
     exponential_distribution<double> rng(6);
@@ -66,7 +66,7 @@ void System::insert_state_at_the_end(time_t start, time_t end, Job job) {
     states.push_back(*end_state);
 }
 
-void System::insert_state_and_update(unsigned int i, unsigned int j, time_t start, time_t end, Job job) {
+void System::insert_state_and_update(int i, int j, time_t start, time_t end, Job job) {
     statistics->add_job(start, job);
 
     State * start_state = i - 1 >= 0 ? new State(states[i - 1], start, Start, job.get_name()) : new State(this->total_cores_nr, end, Start, job.get_name());
@@ -80,7 +80,7 @@ void System::insert_state_and_update(unsigned int i, unsigned int j, time_t star
 }
 
 
-void System::insert_week_state(time_t start, unsigned int i, Job job) {
+void System::insert_week_state(time_t start, int i, Job job) {
     time_t end = start + job.get_duration();
     if (i == 0) {
         i++;
@@ -97,7 +97,7 @@ void System::insert_week_state(time_t start, unsigned int i, Job job) {
             }
         }
     }
-    unsigned int j = i;
+    int j = i;
     while (j < states.size() && states[j].get_time() <= end) {
         if (!states[j].can_insert_job(job)) {
             i = j + 1;
@@ -123,9 +123,9 @@ void System::insert_week_state(time_t start, unsigned int i, Job job) {
     insert_state_and_update(i, j, start, end, job);
 }
 
-void System::insert_weekend_state(time_t s, unsigned int index, Job job) {
+void System::insert_weekend_state(time_t s, int index, Job job) {
     time_t start = advance_to_friday(s), end;
-    unsigned int i = index;
+    int i = index;
     while (i < states.size() && states[i].get_time() < start) {
         i++;
     }
@@ -174,7 +174,7 @@ void System::schedule() {
 void System::calculate_op_cost() {
     int level = 0;
     time_t start = 0;
-    for (unsigned int i = 0; i < states.size(); i++) {
+    for (int i = 0; i < states.size(); i++) {
         if (states[i].get_type() == Start) {
             if (level == 0) {
                 start = states[i].get_time();

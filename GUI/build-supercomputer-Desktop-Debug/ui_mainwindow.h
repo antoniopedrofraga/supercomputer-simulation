@@ -99,7 +99,7 @@ public:
         userGroup->setCheckable(false);
         constantUsers = new QSpinBox(userGroup);
         constantUsers->setObjectName(QStringLiteral("constantUsers"));
-        constantUsers->setGeometry(QRect(60, 30, 51, 23));
+        constantUsers->setGeometry(QRect(50, 30, 71, 23));
         constantUsers->setProperty("showGroupSeparator", QVariant(true));
         constantUsers->setMaximum(1000);
         fromUsersLabel = new QLabel(userGroup);
@@ -107,18 +107,18 @@ public:
         fromUsersLabel->setGeometry(QRect(20, 20, 28, 14));
         fromUsers = new QSpinBox(userGroup);
         fromUsers->setObjectName(QStringLiteral("fromUsers"));
-        fromUsers->setGeometry(QRect(20, 40, 61, 23));
+        fromUsers->setGeometry(QRect(10, 40, 71, 23));
         toUsersLabel = new QLabel(userGroup);
         toUsersLabel->setObjectName(QStringLiteral("toUsersLabel"));
         toUsersLabel->setGeometry(QRect(100, 20, 13, 14));
         toUsers = new QSpinBox(userGroup);
         toUsers->setObjectName(QStringLiteral("toUsers"));
-        toUsers->setGeometry(QRect(100, 40, 61, 23));
+        toUsers->setGeometry(QRect(90, 40, 71, 23));
         toUsers->setMinimum(1);
         toUsers->setMaximum(1000);
         randomUsers = new QCheckBox(userGroup);
         randomUsers->setObjectName(QStringLiteral("randomUsers"));
-        randomUsers->setGeometry(QRect(110, 0, 61, 16));
+        randomUsers->setGeometry(QRect(100, 0, 71, 16));
         randomUsers->setCursor(QCursor(Qt::PointingHandCursor));
         toUsers->raise();
         fromUsersLabel->raise();
@@ -132,7 +132,7 @@ public:
         jobsGroup->setCheckable(false);
         constantJobs = new QSpinBox(jobsGroup);
         constantJobs->setObjectName(QStringLiteral("constantJobs"));
-        constantJobs->setGeometry(QRect(60, 30, 51, 23));
+        constantJobs->setGeometry(QRect(50, 30, 71, 23));
         constantJobs->setProperty("showGroupSeparator", QVariant(true));
         constantJobs->setMaximum(1000);
         fromJobsLabel = new QLabel(jobsGroup);
@@ -140,18 +140,18 @@ public:
         fromJobsLabel->setGeometry(QRect(20, 20, 28, 14));
         fromJobs = new QSpinBox(jobsGroup);
         fromJobs->setObjectName(QStringLiteral("fromJobs"));
-        fromJobs->setGeometry(QRect(20, 40, 61, 23));
+        fromJobs->setGeometry(QRect(10, 40, 71, 23));
         fromJobs->setMaximum(1000);
         toJobsLabel = new QLabel(jobsGroup);
         toJobsLabel->setObjectName(QStringLiteral("toJobsLabel"));
         toJobsLabel->setGeometry(QRect(100, 20, 13, 14));
         toJobs = new QSpinBox(jobsGroup);
         toJobs->setObjectName(QStringLiteral("toJobs"));
-        toJobs->setGeometry(QRect(100, 40, 61, 23));
+        toJobs->setGeometry(QRect(90, 40, 71, 23));
         toJobs->setMaximum(1000);
         randomJobs = new QCheckBox(jobsGroup);
         randomJobs->setObjectName(QStringLiteral("randomJobs"));
-        randomJobs->setGeometry(QRect(110, 0, 61, 16));
+        randomJobs->setGeometry(QRect(100, 0, 71, 16));
         randomJobs->setCursor(QCursor(Qt::PointingHandCursor));
         fromJobsLabel->raise();
         fromJobs->raise();
@@ -169,6 +169,7 @@ public:
         constantResearcher->setProperty("showGroupSeparator", QVariant(true));
         constantResearcher->setMinimum(1);
         constantResearcher->setMaximum(1000);
+        constantResearcher->setSingleStep(0.01);
         fromResearcherLabel = new QLabel(researcherGroup);
         fromResearcherLabel->setObjectName(QStringLiteral("fromResearcherLabel"));
         fromResearcherLabel->setGeometry(QRect(20, 20, 28, 14));
@@ -177,6 +178,7 @@ public:
         fromResearcher->setGeometry(QRect(20, 40, 61, 23));
         fromResearcher->setMinimum(1);
         fromResearcher->setMaximum(1000.99);
+        fromResearcher->setSingleStep(0.01);
         toResearcherLabel = new QLabel(researcherGroup);
         toResearcherLabel->setObjectName(QStringLiteral("toResearcherLabel"));
         toResearcherLabel->setGeometry(QRect(100, 20, 13, 14));
@@ -185,9 +187,10 @@ public:
         toResearcher->setGeometry(QRect(100, 40, 61, 23));
         toResearcher->setMinimum(1);
         toResearcher->setMaximum(1000);
+        toResearcher->setSingleStep(0.01);
         randomResearcher = new QCheckBox(researcherGroup);
         randomResearcher->setObjectName(QStringLiteral("randomResearcher"));
-        randomResearcher->setGeometry(QRect(110, 0, 61, 16));
+        randomResearcher->setGeometry(QRect(100, 0, 71, 16));
         randomResearcher->setCursor(QCursor(Qt::PointingHandCursor));
         fromResearcherLabel->raise();
         fromResearcher->raise();
@@ -205,6 +208,7 @@ public:
         constantStudentBudget->setProperty("showGroupSeparator", QVariant(true));
         constantStudentBudget->setMinimum(1);
         constantStudentBudget->setMaximum(1000);
+        constantStudentBudget->setSingleStep(0.01);
         fromStudentLabel = new QLabel(studentGroup);
         fromStudentLabel->setObjectName(QStringLiteral("fromStudentLabel"));
         fromStudentLabel->setGeometry(QRect(20, 20, 28, 14));
@@ -213,6 +217,7 @@ public:
         fromStudent->setGeometry(QRect(20, 40, 61, 23));
         fromStudent->setMinimum(1);
         fromStudent->setMaximum(1000);
+        fromStudent->setSingleStep(0.01);
         toStudentLabel = new QLabel(studentGroup);
         toStudentLabel->setObjectName(QStringLiteral("toStudentLabel"));
         toStudentLabel->setGeometry(QRect(100, 20, 13, 14));
@@ -221,9 +226,10 @@ public:
         toStudent->setGeometry(QRect(100, 40, 61, 23));
         toStudent->setMinimum(1);
         toStudent->setMaximum(1000);
+        toStudent->setSingleStep(0.01);
         randomStudent = new QCheckBox(studentGroup);
         randomStudent->setObjectName(QStringLiteral("randomStudent"));
-        randomStudent->setGeometry(QRect(110, 0, 61, 16));
+        randomStudent->setGeometry(QRect(100, 0, 71, 16));
         randomStudent->setCursor(QCursor(Qt::PointingHandCursor));
         fromStudentLabel->raise();
         fromStudent->raise();
@@ -237,7 +243,7 @@ public:
         dateGroup->setCheckable(false);
         nowDate = new QCheckBox(dateGroup);
         nowDate->setObjectName(QStringLiteral("nowDate"));
-        nowDate->setGeometry(QRect(120, 0, 51, 16));
+        nowDate->setGeometry(QRect(110, 0, 61, 16));
         nowDate->setCursor(QCursor(Qt::PointingHandCursor));
         nowDate->setChecked(true);
         startDateTimeEdit = new QDateTimeEdit(dateGroup);
@@ -255,10 +261,10 @@ public:
         requestsSpinBox->setValue(10);
         nodesGroup = new QGroupBox(centralWidget);
         nodesGroup->setObjectName(QStringLiteral("nodesGroup"));
-        nodesGroup->setGeometry(QRect(30, 360, 101, 71));
+        nodesGroup->setGeometry(QRect(20, 360, 111, 71));
         nodesSpinBox = new QSpinBox(nodesGroup);
         nodesSpinBox->setObjectName(QStringLiteral("nodesSpinBox"));
-        nodesSpinBox->setGeometry(QRect(30, 30, 45, 23));
+        nodesSpinBox->setGeometry(QRect(20, 30, 61, 23));
         nodesSpinBox->setMinimum(128);
         nodesSpinBox->setMaximum(512);
         coresGroup = new QGroupBox(centralWidget);
@@ -266,7 +272,7 @@ public:
         coresGroup->setGeometry(QRect(150, 360, 111, 71));
         coresSpinBox = new QSpinBox(coresGroup);
         coresSpinBox->setObjectName(QStringLiteral("coresSpinBox"));
-        coresSpinBox->setGeometry(QRect(30, 30, 45, 23));
+        coresSpinBox->setGeometry(QRect(20, 30, 61, 23));
         coresSpinBox->setMinimum(16);
         coresSpinBox->setMaximum(64);
         usagePriceGroup = new QGroupBox(centralWidget);
@@ -278,6 +284,7 @@ public:
         usagePriceSpinBox->setDecimals(6);
         usagePriceSpinBox->setMinimum(1e-06);
         usagePriceSpinBox->setMaximum(5);
+        usagePriceSpinBox->setSingleStep(1e-06);
         operationalCostGroup = new QGroupBox(centralWidget);
         operationalCostGroup->setObjectName(QStringLiteral("operationalCostGroup"));
         operationalCostGroup->setGeometry(QRect(210, 280, 171, 71));
@@ -287,6 +294,7 @@ public:
         operationalCostSpinBox->setDecimals(6);
         operationalCostSpinBox->setMinimum(1e-06);
         operationalCostSpinBox->setMaximum(5);
+        operationalCostSpinBox->setSingleStep(1e-06);
         outputBox = new QTextBrowser(centralWidget);
         outputBox->setObjectName(QStringLiteral("outputBox"));
         outputBox->setGeometry(QRect(410, 40, 431, 381));
@@ -310,7 +318,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Supercomputer", 0));
         simulateButton->setText(QApplication::translate("MainWindow", "Run simulation", 0));
         userGroup->setTitle(QApplication::translate("MainWindow", "Number of users", 0));
         fromUsersLabel->setText(QApplication::translate("MainWindow", "From", 0));
@@ -330,6 +338,7 @@ public:
         randomStudent->setText(QApplication::translate("MainWindow", "random", 0));
         dateGroup->setTitle(QApplication::translate("MainWindow", "Starting Date", 0));
         nowDate->setText(QApplication::translate("MainWindow", "now", 0));
+        startDateTimeEdit->setDisplayFormat(QApplication::translate("MainWindow", "dd/MM/yyyy HH:mm:ss", 0));
         requestsEndDate->setTitle(QApplication::translate("MainWindow", "Requests Span (seconds)", 0));
         nodesGroup->setTitle(QApplication::translate("MainWindow", "Number of nodes", 0));
         coresGroup->setTitle(QApplication::translate("MainWindow", "Cores per node", 0));

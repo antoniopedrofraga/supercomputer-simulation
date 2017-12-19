@@ -2,9 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "configuration/configuration.h"
-#include "system/system.h"
-#include "utils/utils.h"
+#include <QDateTime>
+#include <ctime>
+
+#include "src/configuration/configuration.h"
+#include "src/system/system.h"
+#include "src/utils/utils.h"
 
 namespace Ui {
 class MainWindow;
@@ -25,10 +28,6 @@ private slots:
     void show_random_student_budget(bool show);
     void show_random_researcher_budget(bool show);
 
-    void on_randomUser_clicked(bool checked);
-
-    void on_randomUsers_clicked(bool checked);
-
     void on_constantUsers_valueChanged(int arg1);
 
     void on_randomUsers_toggled(bool checked);
@@ -40,6 +39,42 @@ private slots:
     void on_randomStudent_toggled(bool checked);
 
     void on_randomResearcher_toggled(bool checked);
+
+    void on_nowDate_toggled(bool checked);
+
+    void on_constantJobs_valueChanged(int arg1);
+
+    void on_constantStudentBudget_valueChanged(double arg1);
+
+    void on_constantResearcher_valueChanged(double arg1);
+
+    void on_requestsSpinBox_valueChanged(int arg1);
+
+    void on_usagePriceSpinBox_valueChanged(double arg1);
+
+    void on_operationalCostSpinBox_valueChanged(double arg1);
+
+    void on_nodesSpinBox_valueChanged(int arg1);
+
+    void on_coresSpinBox_valueChanged(int arg1);
+
+    void on_startDateTimeEdit_dateTimeChanged(const QDateTime &dateTime);
+
+    void on_fromUsers_valueChanged(int arg1);
+
+    void on_toUsers_valueChanged(int arg1);
+
+    void on_fromJobs_valueChanged(int arg1);
+
+    void on_toJobs_valueChanged(int arg1);
+
+    void on_fromStudent_valueChanged(double arg1);
+
+    void on_toStudent_valueChanged(double arg1);
+
+    void on_fromResearcher_valueChanged(double arg1);
+
+    void on_toResearcher_valueChanged(double arg1);
 
 private:
     Ui::MainWindow *ui;
