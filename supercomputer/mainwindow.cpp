@@ -85,6 +85,7 @@ void MainWindow::on_randomUsers_toggled(bool checked)
         ui->constantUsers->show();
         show_random_users(false);
     }
+     config->set_users_random(checked);
 }
 
 void MainWindow::on_randomJobs_toggled(bool checked)
@@ -96,6 +97,7 @@ void MainWindow::on_randomJobs_toggled(bool checked)
         ui->constantJobs->show();
         show_random_jobs(false);
     }
+    config->set_jobs_random(checked);
 }
 
 void MainWindow::on_randomStudent_toggled(bool checked)
@@ -107,6 +109,7 @@ void MainWindow::on_randomStudent_toggled(bool checked)
         ui->constantStudentBudget->show();
         show_random_student_budget(false);
     }
+    config->set_student_random(checked);
 }
 
 void MainWindow::on_randomResearcher_toggled(bool checked)
@@ -118,6 +121,7 @@ void MainWindow::on_randomResearcher_toggled(bool checked)
         ui->constantResearcher->show();
         show_random_researcher_budget(false);
     }
+     config->set_researcher_random(checked);
 }
 
 void MainWindow::on_nowDate_toggled(bool checked)

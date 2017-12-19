@@ -114,40 +114,72 @@ void Configuration::set_student_budget(double budget) {
 	this->student_budget = budget;
 }
 void Configuration::set_student_budget_min(double min) {
-	this->student_budget_min = min;
+	if (min >= this->student_budget_max) {
+		this->student_budget_min = this->student_budget_max - 0.01;
+	} else {
+		this->student_budget_min = min;
+	}
 }
 void Configuration::set_student_budget_max(double max) {
-	this->student_budget_max = max;
+	if (max <= this->student_budget_min) {
+		this->student_budget_max = this->student_budget_min + 0.01;
+	}else {
+		this->student_budget_max = max;
+	}
 }
 
 void Configuration::set_researcher_budget(double budget) {
 	this->researcher_budget = budget;
 }
 void Configuration::set_researcher_budget_min(double min) {
-	this->researcher_budget_min = min;
+	if (min >= this->researcher_budget_max) {
+		this->researcher_budget_min = this->researcher_budget_max - 0.01;
+	} else {
+		this->researcher_budget_min = min;
+	}
 }
 void Configuration::set_researcher_budget_max(double max) {
-	this->researcher_budget_max = max;
+	if (max <= this->researcher_budget_min) {
+		this->researcher_budget_max = this->researcher_budget_min + 0.01;
+	}else {
+		this->researcher_budget_max = max;
+	}
 }
 
 void Configuration::set_jobs_nr(unsigned int nr) {
 	this->jobs_nr = nr;
 }
 void Configuration::set_jobs_nr_min(unsigned int min) {
-	this->jobs_nr_min = min;
+	if (min >= this->jobs_nr_max) {
+		this->jobs_nr_min = this->jobs_nr_max - 1;
+	} else {
+		this->jobs_nr_min = min;
+	}
 }
 void Configuration::set_jobs_nr_max(unsigned int max) {
-	this->jobs_nr_max = max;
+	if (max <= this->jobs_nr_min) {
+		this->jobs_nr_max = this->jobs_nr_min + 1;
+	}else {
+		this->jobs_nr_max = max;
+	}
 }
 
 void Configuration::set_users_nr(unsigned int nr) {
 	this->users_nr = nr;
 }
 void Configuration::set_users_nr_min(unsigned int min) {
-	this->users_nr_min = min;
+	if (min >= this->users_nr_max) {
+		this->users_nr_min = this->users_nr_max - 1;
+	} else {
+		this->users_nr_min = min;
+	}
 }
 void Configuration::set_users_nr_max(unsigned int max) {
-	this->users_nr_max = max;
+	if (max <= this->users_nr_min) {
+		this->users_nr_max = this->users_nr_min + 1;
+	}else {
+		this->users_nr_max = max;
+	}
 }
 
 void Configuration::set_request_span(unsigned long long int span) {
