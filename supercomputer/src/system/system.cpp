@@ -14,12 +14,12 @@ System::System(Configuration * config) {
 bool System::exist_negatives() {
     for (int i = 0; i < states.size(); i++) {
         if (states[i].get_short_cores() < 0 ||
-                states[i].get_medium_cores() < 0 ||
-                states[i].get_large_cores() < 0) {
+            states[i].get_medium_cores() < 0 ||
+            states[i].get_large_cores() < 0) {
             return true;
-        }
     }
-    return false;
+}
+return false;
 }
 
 void System::create_users() {
@@ -69,7 +69,7 @@ void System::insert_state_at_the_end(time_t start, time_t end, Job job) {
 void System::insert_state_and_update(int i, int j, time_t start, time_t end, Job job) {
     statistics->add_job(start, job);
 
-    State * start_state = i - 1 >= 0 ? new State(states[i - 1], start, Start, job.get_name()) : new State(this->total_cores_nr, end, Start, job.get_name());
+    State * start_state = i - 1 >= 0 ? new State(states[i - 1], start, Start, job.get_name()) : new State(this->total_cores_nr, start, Start, job.get_name());
     start_state->insert_job(job);
     State * end_state = !job.is_huge() && j - 1 >= 0 ? new State(states[j - 1], end, End, job.get_name()) : new State(this->total_cores_nr, end, End, job.get_name());
     for (int k = i; k < j; k++) {
@@ -82,10 +82,7 @@ void System::insert_state_and_update(int i, int j, time_t start, time_t end, Job
 
 void System::insert_week_state(time_t start, int i, Job job) {
     time_t end = start + job.get_duration();
-    if (i == 0) {
-        i++;
-    }
-    while (i - 1 < states.size() && !states[i - 1].can_insert_job(job)) {
+    while (i - 1 >= 0 && i - 1 < states.size() && !states[i - 1].can_insert_job(job)) {
         i++;
         start = states[i - 1].get_time();
         end = start + job.get_duration();
@@ -98,7 +95,7 @@ void System::insert_week_state(time_t start, int i, Job job) {
         }
     }
     int j = i;
-    while (j < states.size() && states[j].get_time() <= end) {
+    while (i - 1 >= 0 && j < states.size() && states[j].get_time() <= end) {
         if (!states[j].can_insert_job(job)) {
             i = j + 1;
             start = states[i - 1].get_time();
@@ -144,28 +141,19 @@ void System::insert_weekend_state(time_t s, int index, Job job) {
 }
 
 void System::insert_state(int &index, Job job) {
-    time_t start = job.get_time(), end;
-    if (index == -1) {
-        index = 0;
-        if (job.is_huge()) {
-            start = advance_to_friday(start);
-        }
-        end = start + job.get_duration();
-        insert_state_at_the_end(start, end, job);
+    time_t start = job.get_time();
+    while (index < states.size() && states[index].get_time() <= start) {
+        index++;
+    }
+    if (!job.is_huge()) {
+        insert_week_state(start, index, job);
     } else {
-        while (index < states.size() && states[index].get_time() <= start) {
-            index++;
-        }
-        if (!job.is_huge()) {
-            insert_week_state(start, index, job);
-        } else {
-            insert_weekend_state(start, index, job);
-        }
+        insert_weekend_state(start, index, job);
     }
 } 
 
 void System::schedule() {
-    int index = -1;
+    int index = 0;
     for (int i = 0; i < jobs.size(); i++) {
         insert_state(index, jobs[i]);
     }

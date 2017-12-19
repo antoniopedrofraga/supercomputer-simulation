@@ -59,24 +59,32 @@ void Statistics::add_job(time_t start, Job job) {
 }
 
 string Statistics::get_short_ta() {
+	if (this->short_queue_ta.size() == 0) { return "0.00"; }
+
 	double average = accumulate(this->short_queue_ta.begin(), this->short_queue_ta.end(), 0.0) / this->short_queue_ta.size();
 	stringstream stream;
 	stream << fixed << setprecision(2) << average;
 	return stream.str();
 }
 string Statistics::get_medium_ta() {
+	if (this->medium_queue_ta.size() == 0) { return "0.00"; }
+
 	double average = accumulate(this->medium_queue_ta.begin(), this->medium_queue_ta.end(), 0.0) / this->medium_queue_ta.size();
 	stringstream stream;
 	stream << fixed << setprecision(2) << average;
 	return stream.str();
 }
 string Statistics::get_large_ta() {
+	if (this->large_queue_ta.size() == 0) { return "0.00"; }
+
 	double average = accumulate(this->large_queue_ta.begin(), this->large_queue_ta.end(), 0.0) / this->large_queue_ta.size();
 	stringstream stream;
 	stream << fixed << setprecision(2) << average;
 	return stream.str();
 }
 string Statistics::get_huge_ta() {
+	if (this->huge_queue_ta.size() == 0) { return "0.00"; }
+
 	double average = accumulate(this->huge_queue_ta.begin(), this->huge_queue_ta.end(), 0.0) / this->huge_queue_ta.size();
 	stringstream stream;
 	stream << fixed << setprecision(2) << average;
@@ -85,24 +93,32 @@ string Statistics::get_huge_ta() {
 
 
 string Statistics::get_short_wt() {
+	if (this->short_queue_ta.size() == 0) { return "0.00"; }
+
 	double average = accumulate(this->short_queue_wt.begin(), this->short_queue_wt.end(), 0.0) / this->short_queue_wt.size();
 	stringstream stream;
 	stream << fixed << setprecision(2) << average;
 	return stream.str();
 }
 string Statistics::get_medium_wt() {
+	if (this->medium_queue_ta.size() == 0) { return "0.00"; }
+
 	double average = accumulate(this->medium_queue_wt.begin(), this->medium_queue_wt.end(), 0.0) / this->medium_queue_wt.size();
 	stringstream stream;
 	stream << fixed << setprecision(2) << average;
 	return stream.str();
 }
 string Statistics::get_large_wt() {
+	if (this->large_queue_ta.size() == 0) { return "0.00"; }
+
 	double average = accumulate(this->large_queue_wt.begin(), this->large_queue_wt.end(), 0.0) / this->large_queue_wt.size();
 	stringstream stream;
 	stream << fixed << setprecision(2) << average;
 	return stream.str();
 }
 string Statistics::get_huge_wt() {
+	if (this->huge_queue_ta.size() == 0) { return "0.00"; }
+
 	double average = accumulate(this->huge_queue_wt.begin(), this->huge_queue_wt.end(), 0.0) / this->huge_queue_wt.size();
 	stringstream stream;
 	stream << fixed << setprecision(2) << average;
