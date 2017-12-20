@@ -99,6 +99,6 @@ public:
 	void set_users_nr_min(unsigned int min);
 	void set_users_nr_max(unsigned int max);
 
-	void set_request_span(unsigned long long int span);
+	void set_requests_span(unsigned long long int span);
 };
 #endif

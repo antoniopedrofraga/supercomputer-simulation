@@ -3,12 +3,12 @@ all: ./supercomputer/src/*.cpp
 run:
 	make all
 	./bin/supercomputer
-test-sort:
-	g++ -std=c++14 ./test/test_sort_lib.cpp ./sort.cpp -o ./test/test-sort
-	./test/test-sort
-test-coverage:
-	g++ -std=c++14./test/test_sort_lib.cpp ./sort.cpp --coverage -o ./test/test-sort
-	./test/test-sort
+testing: ./supercomputer/src/*/*.cpp ./testing/test_supercomputer.cpp
+	g++ -std=c++14 ./testing/test_supercomputer.cpp ./supercomputer/src/*/*.cpp -o ./testing/test_supercomputer
+	./testing/test_supercomputer
+testing-coverage:
+	g++ -std=c++14 ./testing/test_supercomputer.cpp ./supercomputer/src/*/*.cpp -o ./testing/test_supercomputer
+	./testing/test_supercomputer
 	lcov -t "Supercomputer Simulation test coverage" -o ./data/coverage.info -c -d .
 	genhtml -o data ./data/coverage.info
 	rm -f -r *.gcda *.gcno

@@ -1,41 +1,108 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
-#include "../supercomputer/src/system.h"
+#include "../supercomputer/src/system/system.h"
 
-using namespace sortlib;
+using namespace std;
 
-std::vector<int> correct_input1 = {25, 3, -1, 20, 30, -50};
-std::vector<int> correct_output1 = {-50, -1, 3, 20, 25, 30};
-std::vector<Int> correct_output1_index = {CreateInt(-50, 5), CreateInt(-1, 2), CreateInt(3, 1), CreateInt(20, 3), CreateInt(25, 0), CreateInt(30, 4)};
+TEST_CASE( "Test initial configurations", "[Config]" ) {
+    Configuration * config = new Configuration();
 
-std::vector<int> correct_input2 = {1000, 20, -3, 5000, 21, 1, -300, -5000};
-std::vector<int> correct_output2 = {-5000, -300, -3, 1, 20, 21, 1000, 5000};
-std::vector<Int> correct_output2_index = {CreateInt(-5000, 7), CreateInt(-300, 6), CreateInt(-3, 2), CreateInt(1, 5), CreateInt(20, 1), CreateInt(21, 4), CreateInt(1000, 0), CreateInt(5000, 3)};
+    REQUIRE(config->get_users_nr() == USERS_NR);
+    REQUIRE(config->get_users_nr_min() == USERS_NR_MIN);
+    REQUIRE(config->get_users_nr_max() == USERS_NR_MAX);
+    REQUIRE(!config->is_users_nr_random());
 
-std::vector<int> wrong_input = {-1, 3, 2};
-std::vector<int> wrong_output = {-1, 3, 2};
-std::vector<Int> wrong_output_index = {CreateInt(-1, 0), CreateInt(2, 1), CreateInt(3, 2)};
+    REQUIRE(config->get_jobs_nr() == JOBS_NR);
+    REQUIRE(config->get_jobs_nr_min() == JOBS_NR_MIN);
+    REQUIRE(config->get_jobs_nr_max() == JOBS_NR_MAX);
+    REQUIRE(!config->is_jobs_nr_random());
 
-TEST_CASE( "Testing heap sort", "[heap_sort]" ) {
-    REQUIRE( heap_sort(correct_input1) == correct_output1);
-    REQUIRE( heap_sort(correct_input2) == correct_output2);
-    REQUIRE( heap_sort(wrong_input) != wrong_output);
+    REQUIRE(config->get_nodes_nr() == NODES_NR);
+    REQUIRE(config->get_cores_nr() == CORES_NR);
+
+    REQUIRE(config->get_usage_price() == USAGE_PRICE);
+    REQUIRE(config->get_operational_cost() == OPERATIONAL_COST);
+
+    REQUIRE(config->get_researcher_budget() == RESEARCHER_BUDGET);
+    REQUIRE(config->get_researcher_budget_min() == RESEARCHER_BUDGET_MIN);
+    REQUIRE(config->get_researcher_budget_max() == RESEARCHER_BUDGET_MAX);
+    REQUIRE(!config->is_researcher_budget_random());
+
+    REQUIRE(config->get_student_budget() == STUDENT_BUDGET);
+    REQUIRE(config->get_student_budget_min() == STUDENT_BUDGET_MIN);
+    REQUIRE(config->get_student_budget_max() == STUDENT_BUDGET_MAX);
+    REQUIRE(!config->is_student_budget_random());
+
+    REQUIRE(config->get_requests_span() == REQUESTS_SPAN);
+    REQUIRE(config->get_time() == time(0));
 }
 
-TEST_CASE( "Testing insertion sort", "[insertion_sort]" ) {
-    REQUIRE( insertion_sort(correct_input1) == correct_output1);
-    REQUIRE( insertion_sort(correct_input2) == correct_output2);
-    REQUIRE( insertion_sort(wrong_input) != wrong_output);
-}
+TEST_CASE( "Test configuration changes", "[Config]" ) {
+    Configuration * config = new Configuration();
 
-TEST_CASE( "Testing heap sort index", "[heap_sort_index]" ) {
-    REQUIRE( sortlib::heap_sort_index(correct_input1) == correct_output1_index);
-    REQUIRE( sortlib::heap_sort_index(correct_input2) == correct_output2_index);
-    REQUIRE( sortlib::heap_sort_index(wrong_input) != wrong_output_index);
-}
+    config->set_users_nr(10);
+    REQUIRE(config->get_users_nr() == 10);
+    config->set_users_random(true);
+    REQUIRE(config->is_users_nr_random());
+    config->set_users_nr_max(300);
+    config->set_users_nr_min(301);
+    REQUIRE(config->get_users_nr_min() < config->get_users_nr_max());
+    REQUIRE(config->get_users_nr_min() <= config->get_users_nr());
+    REQUIRE(config->get_users_nr() <= config->get_users_nr_max());
 
-TEST_CASE( "Testing insertion sort index", "[insertion_sort_index]" ) {
-    REQUIRE( sortlib::insertion_sort_index(correct_input1) == correct_output1_index);
-    REQUIRE( sortlib::insertion_sort_index(correct_input2) == correct_output2_index);
-    REQUIRE( sortlib::insertion_sort_index(wrong_input) != wrong_output_index);
+    config->set_jobs_nr(50);
+    REQUIRE(config->get_jobs_nr() == 50);
+    config->set_jobs_random(true);
+    REQUIRE(config->is_jobs_nr_random());
+    config->set_jobs_nr_max(100);
+    config->set_jobs_nr_min(101);
+    REQUIRE(config->get_jobs_nr_min() < config->get_jobs_nr_max());
+    REQUIRE(config->get_jobs_nr_min() <= config->get_jobs_nr());
+    REQUIRE(config->get_jobs_nr() <= config->get_jobs_nr_max());
+
+    config->set_nodes_nr(256);
+    config->set_cores_nr(64);
+    REQUIRE(config->get_nodes_nr() == 256);
+    REQUIRE(config->get_cores_nr() == 64);
+    config->set_nodes_nr(NODES_NR_MIN - 1);
+    REQUIRE(config->get_nodes_nr() == NODES_NR_MIN);
+    config->set_nodes_nr(NODES_NR_MAX + 1);
+    REQUIRE(config->get_cores_nr() == CORES_NR_MAX);
+    config->set_cores_nr(CORES_NR_MIN - 1);
+    REQUIRE(config->get_cores_nr() == CORES_NR_MIN);
+    config->set_cores_nr(CORES_NR_MAX + 1);
+    REQUIRE(config->get_cores_nr() == CORES_NR_MAX);
+
+    config->set_usage_price(1.0);
+    REQUIRE(config->get_usage_price() == 1.0);
+    config->set_operational_cost(0.5);
+    REQUIRE(config->get_operational_cost() == 0.5);
+
+    config->set_researcher_budget(300.0);
+    REQUIRE(config->get_researcher_budget() == 300.0);
+    config->set_researcher_random(true);
+    REQUIRE(config->is_researcher_budget_random());
+    config->set_researcher_budget_max(400.0);
+    config->set_researcher_budget_min(400.01);
+    REQUIRE(config->get_researcher_budget_min() < config->get_researcher_budget_max());
+    REQUIRE(config->get_researcher_budget_min() <= config->get_researcher_budget());
+    REQUIRE(config->get_researcher_budget() <= config->get_researcher_budget_max());
+
+    config->set_student_budget(200.0);
+    REQUIRE(config->get_student_budget() == 200.0);
+    config->set_student_random(true);
+    REQUIRE(config->is_student_budget_random());
+    config->set_student_budget_max(250.0);
+    config->set_student_budget_min(270.0);
+    REQUIRE(config->get_student_budget_min() < config->get_student_budget_max());
+    REQUIRE(config->get_student_budget_min() <= config->get_student_budget());
+    REQUIRE(config->get_student_budget() <= config->get_student_budget_max());
+
+    config->set_requests_span(20);
+    REQUIRE(config->get_requests_span() == 20);
+
+    time_t twenty_seconds_ago = time(0) - 20;
+    config->set_now(false);
+    config->set_time(twenty_seconds_ago);
+    REQUIRE(config->get_time() == twenty_seconds_ago);
 }

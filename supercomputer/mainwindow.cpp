@@ -234,7 +234,7 @@ void MainWindow::on_constantResearcher_valueChanged(double arg1)
 
 void MainWindow::on_requestsSpinBox_valueChanged(int arg1)
 {
-    config->set_request_span(arg1);
+    config->set_requests_span(arg1);
 }
 
 

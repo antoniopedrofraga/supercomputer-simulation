@@ -140,10 +140,22 @@ void Configuration::set_operational_cost(double operational_cost) {
 	this->operational_cost = operational_cost;
 }
 void Configuration::set_nodes_nr(unsigned int nodes_nr) {
-	this->nodes_nr = nodes_nr;
+	if (nodes_nr < NODES_NR_MIN) {
+		this->nodes_nr = NODES_NR_MIN;
+	} else if (nodes_nr > NODES_NR_MAX) {
+		this->nodes_nr = NODES_NR_MAX;
+	} else {
+		this->nodes_nr = nodes_nr;
+	}
 }
 void Configuration::set_cores_nr(unsigned int cores_nr) {
-	this->cores_nr = cores_nr;
+	if (cores_nr < CORES_NR_MIN) {
+		this->cores_nr = CORES_NR_MIN;
+	} else if (cores_nr > CORES_NR_MAX) {
+		this->cores_nr = CORES_NR_MAX;
+	} else {
+		this->cores_nr = cores_nr;
+	}
 }
 
 void Configuration::set_student_budget(double budget) {
@@ -218,7 +230,7 @@ void Configuration::set_users_nr_max(unsigned int max) {
 	}
 }
 
-void Configuration::set_request_span(unsigned long long int span) {
+void Configuration::set_requests_span(unsigned long long int span) {
 	this->requests_span = span;
 }
 
