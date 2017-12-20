@@ -47,6 +47,11 @@ TEST_CASE( "Test configuration changes", "[Config]" ) {
     config->set_users_nr_max(300);
     config->set_users_nr_min(301);
     REQUIRE(config->get_users_nr_min() < config->get_users_nr_max());
+    config->set_users_nr_min(200);
+    REQUIRE(config->get_users_nr_min() == 200);
+    config->set_users_nr_max(150);
+    REQUIRE(config->get_users_nr_min() < config->get_users_nr_max());
+
     REQUIRE(config->get_users_nr_min() <= config->get_users_nr());
     REQUIRE(config->get_users_nr() <= config->get_users_nr_max());
 
@@ -57,6 +62,11 @@ TEST_CASE( "Test configuration changes", "[Config]" ) {
     config->set_jobs_nr_max(100);
     config->set_jobs_nr_min(101);
     REQUIRE(config->get_jobs_nr_min() < config->get_jobs_nr_max());
+    config->set_jobs_nr_min(50);
+    REQUIRE(config->get_jobs_nr_min() == 50);
+    config->set_jobs_nr_max(49);
+    REQUIRE(config->get_jobs_nr_min() < config->get_jobs_nr_max());
+
     REQUIRE(config->get_jobs_nr_min() <= config->get_jobs_nr());
     REQUIRE(config->get_jobs_nr() <= config->get_jobs_nr_max());
 
@@ -85,6 +95,10 @@ TEST_CASE( "Test configuration changes", "[Config]" ) {
     config->set_researcher_budget_max(400.0);
     config->set_researcher_budget_min(400.01);
     REQUIRE(config->get_researcher_budget_min() < config->get_researcher_budget_max());
+    config->set_researcher_budget_min(100.0);
+    config->set_researcher_budget_max(99.0);
+    REQUIRE(config->get_researcher_budget_min() < config->get_researcher_budget_max());
+
     REQUIRE(config->get_researcher_budget_min() <= config->get_researcher_budget());
     REQUIRE(config->get_researcher_budget() <= config->get_researcher_budget_max());
 
@@ -95,6 +109,10 @@ TEST_CASE( "Test configuration changes", "[Config]" ) {
     config->set_student_budget_max(250.0);
     config->set_student_budget_min(270.0);
     REQUIRE(config->get_student_budget_min() < config->get_student_budget_max());
+    config->set_student_budget_min(100.0);
+    config->set_student_budget_max(99.0);
+    REQUIRE(config->get_student_budget_min() < config->get_student_budget_max());
+
     REQUIRE(config->get_student_budget_min() <= config->get_student_budget());
     REQUIRE(config->get_student_budget() <= config->get_student_budget_max());
 

@@ -6,7 +6,6 @@
 #include <iomanip>
 #include <sstream>
 #include <ctime>
-#include <tuple>
 #include "../jobs/job.h"
 #include "../utils/utils.h"
 #include "../configuration/configuration.h"
