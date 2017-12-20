@@ -24,7 +24,6 @@ public:
 	unsigned long long int get_duration();
 	int get_cores();
 	double get_price();
-	string get_name();
 	void set_user(User * user);
 
 	bool is_short();

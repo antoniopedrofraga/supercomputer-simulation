@@ -12,9 +12,6 @@ System::System(Configuration * config) {
 
 System::System(Configuration * config, vector<User*> users, vector<Job> jobs) {
     this->config = config;
-    if (config->get_jobs_nr() != jobs.size()) {
-        throw std::invalid_argument("Jobs number does not match vector size.\n");
-    }
     this->statistics = new Statistics(config);
     this->total_cores_nr = config->get_cores_nr() * config->get_nodes_nr();
     this->users = users;
@@ -61,7 +58,14 @@ void System::create_jobs() {
     mt19937 rnd_gen(rd());
 
     for (int i = 0; i < nr_jobs; i++) {
-        unsigned long long int rand_seconds = config->get_requests_span() * rng(rnd_gen), duration = THIRTY_EIGHT_HOURS * rng(rnd_gen);
+        double duration_value = rng(rnd_gen), requests_value = rng(rnd_gen);
+        while (duration_value >= 1 || (unsigned long long int)(THIRTY_EIGHT_HOURS * duration_value) == 0) {
+            duration_value = rng(rnd_gen);
+        }
+        while (requests_value >= 1) {
+            requests_value = rng(rnd_gen);
+        }
+        unsigned long long int rand_seconds = config->get_requests_span() * requests_value, duration = THIRTY_EIGHT_HOURS * duration_value;
         time_t time = (time_t)(now + rand_seconds);
         int user_id = 0;
         Job * job = new Job(config, time, duration);
@@ -77,22 +81,12 @@ void System::create_jobs() {
     sort(jobs.begin(), jobs.end());
 }
 
-void System::insert_state_at_the_end(time_t start, time_t end, Job job) {
-    statistics->add_job(start, job);
-
-    State * start_state = new State(this->total_cores_nr, start, Start, job.get_name());
-    start_state->insert_job(job);
-    State * end_state = new State(this->total_cores_nr, end, End, job.get_name());
-    states.push_back(*start_state);
-    states.push_back(*end_state);
-}
-
 void System::insert_state_and_update(int i, int j, time_t start, time_t end, Job job) {
     statistics->add_job(start, job);
 
-    State * start_state = i - 1 >= 0 ? new State(states[i - 1], start, Start, job.get_name()) : new State(this->total_cores_nr, start, Start, job.get_name());
+    State * start_state = i - 1 >= 0 ? new State(states[i - 1], start, Start) : new State(this->total_cores_nr, start, Start);
     start_state->insert_job(job);
-    State * end_state = !job.is_huge() && j - 1 >= 0 ? new State(states[j - 1], end, End, job.get_name()) : new State(this->total_cores_nr, end, End, job.get_name());
+    State * end_state = !job.is_huge() && j - 1 >= 0 ? new State(states[j - 1], end, End) : new State(this->total_cores_nr, end, End);
     for (int k = i; k < j; k++) {
         states[k].insert_job(job);
     }
@@ -154,11 +148,7 @@ void System::insert_weekend_state(time_t s, int index, Job job) {
         }
     }
     end = start + job.get_duration();
-    if (i < states.size()) {
-        insert_state_and_update(i, i, start, end, job);
-    } else {
-        insert_state_at_the_end(start, end, job);
-    }
+    insert_state_and_update(i, i, start, end, job);
 }
 
 void System::insert_state(int &index, Job job) {

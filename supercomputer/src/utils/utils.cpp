@@ -41,19 +41,6 @@ bool is_weekend(time_t start, time_t end) {
 	return false;
 }
 
-bool is_weekend(time_t start) {
-	struct tm *tm_start = localtime(&start);
-	unsigned int start_day = tm_start->tm_wday, start_hour = tm_start->tm_hour;
-	if (start_day == SATURDAY) {
-		return true;
-	} else if (start_day == FRIDAY && start_hour >= 17) {
-		return true;
-	} else if (start_day == SUNDAY && start_hour < 9) {
-		return true;
-	}
-	return false;
-}
-
 time_t advance_weekend(time_t start) {
 	struct tm *tm_start = localtime(&start);
 	if (tm_start->tm_wday == SUNDAY && tm_start->tm_hour >= 9) {

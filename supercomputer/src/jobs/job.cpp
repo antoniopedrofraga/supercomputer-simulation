@@ -40,22 +40,6 @@ double Job::get_price() {
 void Job::set_user(User * user) {
 	this->user = user;
 }
-
-string Job::get_name() {
-	string name = "";
-	if (this->type == Short) {
-		name += "Short";
-	} else if (this->type == Medium) {
-		name += "Medium";
-	} else if (this->type == Large) {
-		name += "Large";
-	} else if (this->type == Huge) {
-		name += "Huge";
-	}
-	name += " " + to_string(this->cores) + "\nSubmited: " + ctime(&time);
-	return name;
-}
-
 unsigned long long int Job::get_duration() {
 	return this->duration;
 }

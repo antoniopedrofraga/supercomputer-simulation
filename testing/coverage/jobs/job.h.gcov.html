@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">2</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-12-20 15:14:52</td>
+            <td class="headerValue">2017-12-20 23:36:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">1</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -86,20 +86,19 @@
 <span class="lineNum">      24 </span>            :         unsigned long long int get_duration();
 <span class="lineNum">      25 </span>            :         int get_cores();
 <span class="lineNum">      26 </span>            :         double get_price();
-<span class="lineNum">      27 </span>            :         string get_name();
-<span class="lineNum">      28 </span>            :         void set_user(User * user);
-<span class="lineNum">      29 </span>            : 
-<span class="lineNum">      30 </span>            :         bool is_short();
-<span class="lineNum">      31 </span>            :         bool is_medium();
-<span class="lineNum">      32 </span>            :         bool is_large();
-<a name="33"><span class="lineNum">      33 </span>            :         bool is_huge();</a>
-<span class="lineNum">      34 </span>            :         
-<span class="lineNum">      35 </span><span class="lineNoCov">          0 :         const bool inline operator&lt;(const Job &amp; job) const {</span>
-<span class="lineNum">      36 </span><span class="lineNoCov">          0 :                 return this-&gt;time &lt; job.time;</span>
-<span class="lineNum">      37 </span>            :         }
-<span class="lineNum">      38 </span>            : };
-<span class="lineNum">      39 </span>            : 
-<span class="lineNum">      40 </span>            : #endif
+<span class="lineNum">      27 </span>            :         void set_user(User * user);
+<span class="lineNum">      28 </span>            : 
+<span class="lineNum">      29 </span>            :         bool is_short();
+<span class="lineNum">      30 </span>            :         bool is_medium();
+<span class="lineNum">      31 </span>            :         bool is_large();
+<a name="32"><span class="lineNum">      32 </span>            :         bool is_huge();</a>
+<span class="lineNum">      33 </span>            :         
+<span class="lineNum">      34 </span><span class="lineCov">       8639 :         const bool inline operator&lt;(const Job &amp; job) const {</span>
+<span class="lineNum">      35 </span><span class="lineCov">       8639 :                 return this-&gt;time &lt; job.time;</span>
+<span class="lineNum">      36 </span>            :         }
+<span class="lineNum">      37 </span>            : };
+<span class="lineNum">      38 </span>            : 
+<span class="lineNum">      39 </span>            : #endif
 </pre>
       </td>
     </tr>

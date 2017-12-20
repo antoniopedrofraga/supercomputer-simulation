@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-12-20 15:14:52</td>
+            <td class="headerValue">2017-12-20 23:36:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">48</td>
@@ -62,37 +62,37 @@
 <pre class="source">
 <a name="1"><span class="lineNum">       1 </span>            : #include &quot;configuration.h&quot;</a>
 <span class="lineNum">       2 </span>            : 
-<span class="lineNum">       3 </span><span class="lineCov">          2 : Configuration::Configuration() {</span>
-<span class="lineNum">       4 </span><span class="lineCov">          2 :         this-&gt;users_nr = USERS_NR;</span>
-<span class="lineNum">       5 </span><span class="lineCov">          2 :         this-&gt;users_nr_min = USERS_NR_MIN;</span>
-<span class="lineNum">       6 </span><span class="lineCov">          2 :         this-&gt;users_nr_max = USERS_NR_MAX;</span>
-<span class="lineNum">       7 </span><span class="lineCov">          2 :         this-&gt;users_random = false;</span>
+<span class="lineNum">       3 </span><span class="lineCov">          4 : Configuration::Configuration() {</span>
+<span class="lineNum">       4 </span><span class="lineCov">          4 :         this-&gt;users_nr = USERS_NR;</span>
+<span class="lineNum">       5 </span><span class="lineCov">          4 :         this-&gt;users_nr_min = USERS_NR_MIN;</span>
+<span class="lineNum">       6 </span><span class="lineCov">          4 :         this-&gt;users_nr_max = USERS_NR_MAX;</span>
+<span class="lineNum">       7 </span><span class="lineCov">          4 :         this-&gt;users_random = false;</span>
 <span class="lineNum">       8 </span>            : 
-<span class="lineNum">       9 </span><span class="lineCov">          2 :         this-&gt;jobs_nr = JOBS_NR;</span>
-<span class="lineNum">      10 </span><span class="lineCov">          2 :         this-&gt;jobs_nr_min = JOBS_NR_MIN;</span>
-<span class="lineNum">      11 </span><span class="lineCov">          2 :         this-&gt;jobs_nr_max = JOBS_NR_MAX;</span>
-<span class="lineNum">      12 </span><span class="lineCov">          2 :         this-&gt;jobs_random = false;</span>
+<span class="lineNum">       9 </span><span class="lineCov">          4 :         this-&gt;jobs_nr = JOBS_NR;</span>
+<span class="lineNum">      10 </span><span class="lineCov">          4 :         this-&gt;jobs_nr_min = JOBS_NR_MIN;</span>
+<span class="lineNum">      11 </span><span class="lineCov">          4 :         this-&gt;jobs_nr_max = JOBS_NR_MAX;</span>
+<span class="lineNum">      12 </span><span class="lineCov">          4 :         this-&gt;jobs_random = false;</span>
 <span class="lineNum">      13 </span>            : 
-<span class="lineNum">      14 </span><span class="lineCov">          2 :         this-&gt;nodes_nr = NODES_NR;</span>
-<span class="lineNum">      15 </span><span class="lineCov">          2 :         this-&gt;cores_nr = CORES_NR;</span>
+<span class="lineNum">      14 </span><span class="lineCov">          4 :         this-&gt;nodes_nr = NODES_NR;</span>
+<span class="lineNum">      15 </span><span class="lineCov">          4 :         this-&gt;cores_nr = CORES_NR;</span>
 <span class="lineNum">      16 </span>            : 
-<span class="lineNum">      17 </span><span class="lineCov">          2 :         this-&gt;usage_price = USAGE_PRICE;</span>
-<span class="lineNum">      18 </span><span class="lineCov">          2 :         this-&gt;operational_cost = OPERATIONAL_COST;</span>
+<span class="lineNum">      17 </span><span class="lineCov">          4 :         this-&gt;usage_price = USAGE_PRICE;</span>
+<span class="lineNum">      18 </span><span class="lineCov">          4 :         this-&gt;operational_cost = OPERATIONAL_COST;</span>
 <span class="lineNum">      19 </span>            : 
-<span class="lineNum">      20 </span><span class="lineCov">          2 :         this-&gt;student_budget = STUDENT_BUDGET;</span>
-<span class="lineNum">      21 </span><span class="lineCov">          2 :         this-&gt;student_budget_min = STUDENT_BUDGET_MIN;</span>
-<span class="lineNum">      22 </span><span class="lineCov">          2 :         this-&gt;student_budget_max = STUDENT_BUDGET_MAX;</span>
-<span class="lineNum">      23 </span><span class="lineCov">          2 :         this-&gt;student_random = false;</span>
+<span class="lineNum">      20 </span><span class="lineCov">          4 :         this-&gt;student_budget = STUDENT_BUDGET;</span>
+<span class="lineNum">      21 </span><span class="lineCov">          4 :         this-&gt;student_budget_min = STUDENT_BUDGET_MIN;</span>
+<span class="lineNum">      22 </span><span class="lineCov">          4 :         this-&gt;student_budget_max = STUDENT_BUDGET_MAX;</span>
+<span class="lineNum">      23 </span><span class="lineCov">          4 :         this-&gt;student_random = false;</span>
 <span class="lineNum">      24 </span>            : 
-<span class="lineNum">      25 </span><span class="lineCov">          2 :         this-&gt;researcher_budget = RESEARCHER_BUDGET;</span>
-<span class="lineNum">      26 </span><span class="lineCov">          2 :         this-&gt;researcher_budget_min = RESEARCHER_BUDGET_MIN;</span>
-<span class="lineNum">      27 </span><span class="lineCov">          2 :         this-&gt;researcher_budget_max = RESEARCHER_BUDGET_MAX;</span>
-<span class="lineNum">      28 </span><span class="lineCov">          2 :         this-&gt;researcher_random = false;</span>
+<span class="lineNum">      25 </span><span class="lineCov">          4 :         this-&gt;researcher_budget = RESEARCHER_BUDGET;</span>
+<span class="lineNum">      26 </span><span class="lineCov">          4 :         this-&gt;researcher_budget_min = RESEARCHER_BUDGET_MIN;</span>
+<span class="lineNum">      27 </span><span class="lineCov">          4 :         this-&gt;researcher_budget_max = RESEARCHER_BUDGET_MAX;</span>
+<span class="lineNum">      28 </span><span class="lineCov">          4 :         this-&gt;researcher_random = false;</span>
 <span class="lineNum">      29 </span>            : 
-<span class="lineNum">      30 </span><span class="lineCov">          2 :         this-&gt;requests_span = REQUESTS_SPAN;</span>
+<span class="lineNum">      30 </span><span class="lineCov">          4 :         this-&gt;requests_span = REQUESTS_SPAN;</span>
 <span class="lineNum">      31 </span>            : 
-<span class="lineNum">      32 </span><span class="lineCov">          2 :         this-&gt;start = time(0);</span>
-<a name="33"><span class="lineNum">      33 </span><span class="lineCov">          2 : }</span></a>
+<span class="lineNum">      32 </span><span class="lineCov">          4 :         this-&gt;start = time(0);</span>
+<a name="33"><span class="lineNum">      33 </span><span class="lineCov">          4 : }</span></a>
 <span class="lineNum">      34 </span>            : 
 <span class="lineNum">      35 </span><span class="lineCov">          4 : unsigned int Configuration::get_users_nr() {</span>
 <span class="lineNum">      36 </span><span class="lineCov">          4 :         if (!this-&gt;users_random) {</span>
@@ -111,9 +111,9 @@
 <span class="lineNum">      49 </span><span class="lineCov">          2 :         return this-&gt;users_random;</span>
 <a name="50"><span class="lineNum">      50 </span>            : }</a>
 <span class="lineNum">      51 </span>            : 
-<span class="lineNum">      52 </span><span class="lineCov">          4 : unsigned int Configuration::get_jobs_nr() {</span>
-<span class="lineNum">      53 </span><span class="lineCov">          4 :         if (!this-&gt;jobs_random) {</span>
-<span class="lineNum">      54 </span><span class="lineCov">          2 :                 return this-&gt;jobs_nr;</span>
+<span class="lineNum">      52 </span><span class="lineCov">          6 : unsigned int Configuration::get_jobs_nr() {</span>
+<span class="lineNum">      53 </span><span class="lineCov">          6 :         if (!this-&gt;jobs_random) {</span>
+<span class="lineNum">      54 </span><span class="lineCov">          4 :                 return this-&gt;jobs_nr;</span>
 <span class="lineNum">      55 </span>            :         } else {
 <span class="lineNum">      56 </span><span class="lineCov">          2 :                 return generate_random(this-&gt;jobs_nr_min, this-&gt;jobs_nr_max);</span>
 <a name="57"><span class="lineNum">      57 </span>            :         }</a>
@@ -128,17 +128,17 @@
 <span class="lineNum">      66 </span><span class="lineCov">          2 :         return this-&gt;jobs_random;</span>
 <a name="67"><span class="lineNum">      67 </span>            : }</a>
 <span class="lineNum">      68 </span>            : 
-<span class="lineNum">      69 </span><span class="lineCov">          5 : unsigned int Configuration::get_cores_nr() {</span>
-<span class="lineNum">      70 </span><span class="lineCov">          5 :         return this-&gt;cores_nr;</span>
+<span class="lineNum">      69 </span><span class="lineCov">       1012 : unsigned int Configuration::get_cores_nr() {</span>
+<span class="lineNum">      70 </span><span class="lineCov">       1012 :         return this-&gt;cores_nr;</span>
 <a name="71"><span class="lineNum">      71 </span>            : }</a>
 <span class="lineNum">      72 </span>            : 
-<span class="lineNum">      73 </span><span class="lineCov">          3 : unsigned int Configuration::get_nodes_nr() {</span>
-<span class="lineNum">      74 </span><span class="lineCov">          3 :         return this-&gt;nodes_nr;</span>
+<span class="lineNum">      73 </span><span class="lineCov">       1010 : unsigned int Configuration::get_nodes_nr() {</span>
+<span class="lineNum">      74 </span><span class="lineCov">       1010 :         return this-&gt;nodes_nr;</span>
 <a name="75"><span class="lineNum">      75 </span>            : }</a>
 <span class="lineNum">      76 </span>            : 
-<span class="lineNum">      77 </span><span class="lineCov">          4 : double Configuration::get_student_budget() {</span>
-<span class="lineNum">      78 </span><span class="lineCov">          4 :         if (!this-&gt;student_random) {</span>
-<span class="lineNum">      79 </span><span class="lineCov">          2 :                 return this-&gt;student_budget;</span>
+<span class="lineNum">      77 </span><span class="lineCov">        329 : double Configuration::get_student_budget() {</span>
+<span class="lineNum">      78 </span><span class="lineCov">        329 :         if (!this-&gt;student_random) {</span>
+<span class="lineNum">      79 </span><span class="lineCov">        327 :                 return this-&gt;student_budget;</span>
 <span class="lineNum">      80 </span>            :         } else {
 <span class="lineNum">      81 </span><span class="lineCov">          2 :                 return generate_random(this-&gt;student_budget_min, this-&gt;student_budget_max);</span>
 <a name="82"><span class="lineNum">      82 </span>            :         }</a>
@@ -153,9 +153,9 @@
 <span class="lineNum">      91 </span><span class="lineCov">          2 :         return this-&gt;student_random;</span>
 <a name="92"><span class="lineNum">      92 </span>            : }</a>
 <span class="lineNum">      93 </span>            : 
-<span class="lineNum">      94 </span><span class="lineCov">          4 : double Configuration::get_researcher_budget() {</span>
-<span class="lineNum">      95 </span><span class="lineCov">          4 :         if (!this-&gt;researcher_random) {</span>
-<span class="lineNum">      96 </span><span class="lineCov">          2 :                 return this-&gt;researcher_budget;</span>
+<span class="lineNum">      94 </span><span class="lineCov">        333 : double Configuration::get_researcher_budget() {</span>
+<span class="lineNum">      95 </span><span class="lineCov">        333 :         if (!this-&gt;researcher_random) {</span>
+<span class="lineNum">      96 </span><span class="lineCov">        331 :                 return this-&gt;researcher_budget;</span>
 <span class="lineNum">      97 </span>            :         } else {
 <span class="lineNum">      98 </span><span class="lineCov">          2 :                 return generate_random(this-&gt;researcher_budget_min, this-&gt;researcher_budget_max);</span>
 <a name="99"><span class="lineNum">      99 </span>            :         }</a>
@@ -170,16 +170,16 @@
 <span class="lineNum">     108 </span><span class="lineCov">          2 :         return this-&gt;researcher_random;</span>
 <a name="109"><span class="lineNum">     109 </span>            : }</a>
 <span class="lineNum">     110 </span>            : 
-<span class="lineNum">     111 </span><span class="lineCov">          2 : double Configuration::get_usage_price() {</span>
-<span class="lineNum">     112 </span><span class="lineCov">          2 :         return this-&gt;usage_price;</span>
+<span class="lineNum">     111 </span><span class="lineCov">       2017 : double Configuration::get_usage_price() {</span>
+<span class="lineNum">     112 </span><span class="lineCov">       2017 :         return this-&gt;usage_price;</span>
 <a name="113"><span class="lineNum">     113 </span>            : }</a>
 <span class="lineNum">     114 </span>            : 
-<span class="lineNum">     115 </span><span class="lineCov">          2 : double Configuration::get_operational_cost() {</span>
-<span class="lineNum">     116 </span><span class="lineCov">          2 :         return this-&gt;operational_cost;</span>
+<span class="lineNum">     115 </span><span class="lineCov">          4 : double Configuration::get_operational_cost() {</span>
+<span class="lineNum">     116 </span><span class="lineCov">          4 :         return this-&gt;operational_cost;</span>
 <a name="117"><span class="lineNum">     117 </span>            : }</a>
 <span class="lineNum">     118 </span>            : 
-<span class="lineNum">     119 </span><span class="lineCov">          2 : unsigned long long int Configuration::get_requests_span() {</span>
-<span class="lineNum">     120 </span><span class="lineCov">          2 :         return this-&gt;requests_span;</span>
+<span class="lineNum">     119 </span><span class="lineCov">       1002 : unsigned long long int Configuration::get_requests_span() {</span>
+<span class="lineNum">     120 </span><span class="lineCov">       1002 :         return this-&gt;requests_span;</span>
 <a name="121"><span class="lineNum">     121 </span>            : }</a>
 <span class="lineNum">     122 </span>            : 
 <span class="lineNum">     123 </span><span class="lineCov">          1 : void Configuration::set_student_random(bool random) {</span>
@@ -256,9 +256,9 @@
 <span class="lineNum">     194 </span>            :         }
 <a name="195"><span class="lineNum">     195 </span><span class="lineCov">          2 : }</span></a>
 <span class="lineNum">     196 </span>            : 
-<span class="lineNum">     197 </span><span class="lineCov">          1 : void Configuration::set_jobs_nr(unsigned int nr) {</span>
-<a name="198"><span class="lineNum">     198 </span><span class="lineCov">          1 :         this-&gt;jobs_nr = nr;</span></a>
-<span class="lineNum">     199 </span><span class="lineCov">          1 : }</span>
+<span class="lineNum">     197 </span><span class="lineCov">          3 : void Configuration::set_jobs_nr(unsigned int nr) {</span>
+<a name="198"><span class="lineNum">     198 </span><span class="lineCov">          3 :         this-&gt;jobs_nr = nr;</span></a>
+<span class="lineNum">     199 </span><span class="lineCov">          3 : }</span>
 <span class="lineNum">     200 </span><span class="lineCov">          2 : void Configuration::set_jobs_nr_min(unsigned int min) {</span>
 <span class="lineNum">     201 </span><span class="lineCov">          2 :         if (min &gt;= this-&gt;jobs_nr_max) {</span>
 <span class="lineNum">     202 </span><span class="lineCov">          1 :                 this-&gt;jobs_nr_min = this-&gt;jobs_nr_max - 1;</span>
@@ -299,15 +299,15 @@
 <span class="lineNum">     237 </span><span class="lineCov">          1 : void Configuration::set_now(bool now) {</span>
 <a name="238"><span class="lineNum">     238 </span><span class="lineCov">          1 :         this-&gt;now = now;</span></a>
 <span class="lineNum">     239 </span><span class="lineCov">          1 : }</span>
-<span class="lineNum">     240 </span><span class="lineCov">          1 : void Configuration::set_time(time_t time) {</span>
-<span class="lineNum">     241 </span><span class="lineCov">          1 :         this-&gt;start = time;</span>
-<a name="242"><span class="lineNum">     242 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">     240 </span><span class="lineCov">          3 : void Configuration::set_time(time_t time) {</span>
+<span class="lineNum">     241 </span><span class="lineCov">          3 :         this-&gt;start = time;</span>
+<a name="242"><span class="lineNum">     242 </span><span class="lineCov">          3 : }</span></a>
 <span class="lineNum">     243 </span>            : 
-<span class="lineNum">     244 </span><span class="lineCov">          2 : time_t Configuration::get_time() {</span>
-<span class="lineNum">     245 </span><span class="lineCov">          2 :         if (now) {</span>
+<span class="lineNum">     244 </span><span class="lineCov">          3 : time_t Configuration::get_time() {</span>
+<span class="lineNum">     245 </span><span class="lineCov">          3 :         if (now) {</span>
 <span class="lineNum">     246 </span><span class="lineCov">          1 :                 return time(0);</span>
 <span class="lineNum">     247 </span>            :         } else {
-<a name="248"><span class="lineNum">     248 </span><span class="lineCov">          1 :                 return this-&gt;start;</span></a>
+<a name="248"><span class="lineNum">     248 </span><span class="lineCov">          2 :                 return this-&gt;start;</span></a>
 <span class="lineNum">     249 </span>            :         }
 <span class="lineNum">     250 </span><span class="lineCov">          3 : }</span>
 </pre>

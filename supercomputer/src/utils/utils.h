@@ -85,7 +85,6 @@ int generate_random(int low, int high);
 unsigned int generate_random(unsigned int low, unsigned int high);
 double generate_random(double low, double high);
 bool is_weekend(time_t start, time_t end);
-bool is_weekend(time_t start);
 time_t advance_weekend(time_t start);
 time_t advance_to_friday(time_t start);
 time_t get_back_to_sunday(time_t start);

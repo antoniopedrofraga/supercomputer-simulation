@@ -20,11 +20,10 @@ private:
 
 	StateType state_type;
 
-	string name;
 	time_t time;
 public:
-	State(long long int total_cores, time_t time, StateType state_type, string name);
-	State(State state, time_t time, StateType state_type, string name);
+	State(long long int total_cores, time_t time, StateType state_type);
+	State(State state, time_t time, StateType state_type);
 	void set_period(time_t start, time_t end);
 	void insert_job(Job job);
 	bool can_insert_job(Job job);
@@ -37,8 +36,6 @@ public:
 	long long int get_large_cores();
 	long long int get_total_cores();
 	long long int get_used_cores();
-
-	friend ostream& operator<<(ostream& os, const State& state);
 
 	const bool inline operator<(const State & state) const {
 		return this->time < state.time;

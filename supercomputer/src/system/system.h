@@ -37,7 +37,6 @@ private:
 	void calculate_op_cost();
 	void schedule();
 
-	void insert_state_at_the_end(time_t start, time_t end, Job job);
 	void insert_state_and_update(int i, int j, time_t start, time_t end, Job job);
 public:
 	System(Configuration * config);

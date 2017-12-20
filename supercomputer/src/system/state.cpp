@@ -1,6 +1,6 @@
 #include "state.h"
 
-State::State(long long int total_cores, time_t time, StateType state_type, string name) {
+State::State(long long int total_cores, time_t time, StateType state_type) {
 	this->total_cores = total_cores;
 	this->short_cores = total_cores * 0.1;
 	this->medium_cores = total_cores * 0.2;
@@ -9,10 +9,9 @@ State::State(long long int total_cores, time_t time, StateType state_type, strin
 
 	this->time = time;
 	this->state_type = state_type;
-	this->name = name;
 }
 
-State::State(State state, time_t time, StateType state_type, string name) {
+State::State(State state, time_t time, StateType state_type) {
 	this->total_cores = state.get_total_cores();
 	this->short_cores = state.get_short_cores();
 	this->medium_cores = state.get_medium_cores();
@@ -21,7 +20,6 @@ State::State(State state, time_t time, StateType state_type, string name) {
 
 	this->time = time;
 	this->state_type = state_type;
-	this->name = name;
 }
 
 void State::insert_job(Job job) {
@@ -55,10 +53,6 @@ time_t State::get_time() {
 	return this->time;
 }
 
-string State::get_name() {
-	return this->name;
-}
-
 StateType State::get_type() {
 	return this->state_type;
 }
@@ -68,13 +62,3 @@ long long int State::get_medium_cores() { return this->medium_cores; }
 long long int State::get_large_cores() { return this->large_cores; }
 long long int State::get_total_cores() { return this->total_cores; }
 long long int State::get_used_cores() { return this->used_cores; }
-
-ostream& operator<<(ostream& os, const State& state) {  
-	time_t time = state.time;
-	os << (state.state_type == Start ? "Started " : "Ended ") << state.name << "Occurence: " << ctime(&time);
-	os << "Short: " << state.short_cores << endl;
-	os << "Medium: " << state.medium_cores << endl;
-	os << "Large: " << state.large_cores << endl;
-	os << endl;
-	return os;  
-} 
