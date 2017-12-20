@@ -85,7 +85,7 @@ void MainWindow::on_randomUsers_toggled(bool checked)
         ui->constantUsers->show();
         show_random_users(false);
     }
-     config->set_users_random(checked);
+    config->set_users_random(checked);
 }
 
 void MainWindow::on_randomJobs_toggled(bool checked)
@@ -121,7 +121,7 @@ void MainWindow::on_randomResearcher_toggled(bool checked)
         ui->constantResearcher->show();
         show_random_researcher_budget(false);
     }
-     config->set_researcher_random(checked);
+    config->set_researcher_random(checked);
 }
 
 void MainWindow::on_nowDate_toggled(bool checked)
@@ -265,88 +265,64 @@ void MainWindow::on_startDateTimeEdit_dateTimeChanged(const QDateTime &dateTime)
 
 void MainWindow::on_fromUsers_valueChanged(int arg1)
 {
-    int to_users = ui->toUsers->value();
-    if (arg1 < to_users) {
-        config->set_users_nr_min(arg1);
-    } else {
-        ui->fromUsers->setValue(to_users - 1);
-        config->set_users_nr_min(to_users - 1);
-    }
+    config->set_users_nr_min(arg1);
+    unsigned int from = config->get_users_nr_min(), to = config->get_users_nr_max();
+    ui->fromUsers->setValue(from);
+    ui->toUsers->setValue(to);
 }
 
 void MainWindow::on_toUsers_valueChanged(int arg1)
 {
-    int from_users = ui->fromUsers->value();
-    if (arg1 > from_users) {
-        config->set_users_nr_max(arg1);
-    } else {
-        ui->toUsers->setValue(from_users + 1);
-        config->set_users_nr_max(from_users + 1);
-    }
+    config->set_users_nr_max(arg1);
+    unsigned int from = config->get_users_nr_min(), to = config->get_users_nr_max();
+    ui->fromUsers->setValue(from);
+    ui->toUsers->setValue(to);
 }
 
 void MainWindow::on_fromJobs_valueChanged(int arg1)
 {
-    int to_jobs = ui->toJobs->value();
-    if (arg1 < to_jobs) {
-        config->set_jobs_nr_min(arg1);
-    } else {
-        ui->fromJobs->setValue(to_jobs - 1);
-        config->set_jobs_nr_min(to_jobs - 1);
-    }
+    config->set_jobs_nr_min(arg1);
+    unsigned int from = config->get_jobs_nr_min(), to = config->get_jobs_nr_max();
+    ui->fromJobs->setValue(from);
+    ui->toJobs->setValue(to);
 }
 
 void MainWindow::on_toJobs_valueChanged(int arg1)
 {
-    int from_jobs = ui->fromJobs->value();
-    if (arg1 > from_jobs) {
-        config->set_jobs_nr_max(arg1);
-    } else {
-        ui->toJobs->setValue(from_jobs + 1);
-        config->set_jobs_nr_max(from_jobs + 1);
-    }
+    config->set_jobs_nr_max(arg1);
+    unsigned int from = config->get_jobs_nr_min(), to = config->get_jobs_nr_max();
+    ui->fromJobs->setValue(from);
+    ui->toJobs->setValue(to);
 }
 
 void MainWindow::on_fromStudent_valueChanged(double arg1)
 {
-    double to_student = ui->toStudent->value();
-    if (arg1 < to_student) {
-        config->set_student_budget_min(arg1);
-    } else {
-        ui->fromStudent->setValue(to_student - 0.01);
-        config->set_student_budget_min(to_student - 0.01);
-    }
+    config->set_student_budget_min(arg1);
+    unsigned int from = config->get_student_budget_min(), to = config->get_student_budget_max();
+    ui->fromStudent->setValue(from);
+    ui->toStudent->setValue(to);
 }
 
 void MainWindow::on_toStudent_valueChanged(double arg1)
 {
-    double from_student = ui->fromStudent->value();
-    if (arg1 > from_student) {
-        config->set_student_budget_max(arg1);
-    } else {
-        ui->toStudent->setValue(from_student + 0.01);
-        config->set_student_budget_max(from_student + 0.01);
-    }
+    config->set_student_budget_max(arg1);
+    unsigned int from = config->get_student_budget_min(), to = config->get_student_budget_max();
+    ui->fromStudent->setValue(from);
+    ui->toStudent->setValue(to);
 }
 
 void MainWindow::on_fromResearcher_valueChanged(double arg1)
 {
-    double to_researcher = ui->toResearcher->value();
-    if (arg1 < to_researcher) {
-        config->set_researcher_budget_min(arg1);
-    } else {
-        ui->fromResearcher->setValue(to_researcher - 0.01);
-        config->set_researcher_budget_min(to_researcher - 0.01);
-    }
+    config->set_researcher_budget_min(arg1);
+    unsigned int from = config->get_researcher_budget_min(), to = config->get_researcher_budget_max();
+    ui->fromResearcher->setValue(from);
+    ui->toResearcher->setValue(to);
 }
 
 void MainWindow::on_toResearcher_valueChanged(double arg1)
 {
-    double from_researcher = ui->fromResearcher->value();
-    if (arg1 > from_researcher) {
-        config->set_researcher_budget_max(arg1);
-    } else {
-        ui->toResearcher->setValue(from_researcher + 0.01);
-        config->set_researcher_budget_max(from_researcher + 0.01);
-    }
+    config->set_researcher_budget_max(arg1);
+    unsigned int from = config->get_researcher_budget_min(), to = config->get_researcher_budget_max();
+    ui->fromResearcher->setValue(from);
+    ui->toResearcher->setValue(to);
 }

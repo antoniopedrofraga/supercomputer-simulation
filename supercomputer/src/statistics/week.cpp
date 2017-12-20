@@ -17,6 +17,10 @@ time_t Week::get_end() {
 	return this->end;
 }
 
+void Week::set_start(time_t start) {
+	this->start = start;
+}
+
 void Week::add_job(Job job) { 
 	if (job.is_short()) {
 		this->short_nr++;

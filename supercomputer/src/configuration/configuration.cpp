@@ -39,6 +39,15 @@ unsigned int Configuration::get_users_nr() {
 		return generate_random(this->users_nr_min, this->users_nr_max);
 	}
 }
+unsigned int Configuration::get_users_nr_min() {
+	return this->users_nr_min;
+}
+unsigned int Configuration::get_users_nr_max() {
+	return this->users_nr_max;
+}
+bool Configuration::is_users_nr_random() {
+	return this->users_random;
+}
 
 unsigned int Configuration::get_jobs_nr() {
 	if (!this->jobs_random) {
@@ -46,6 +55,15 @@ unsigned int Configuration::get_jobs_nr() {
 	} else {
 		return generate_random(this->jobs_nr_min, this->jobs_nr_max);
 	}
+}
+unsigned int Configuration::get_jobs_nr_min() {
+	return this->jobs_nr_min;
+}
+unsigned int Configuration::get_jobs_nr_max() {
+	return this->jobs_nr_max;
+}
+bool Configuration::is_jobs_nr_random() {
+	return this->jobs_random;
 }
 
 unsigned int Configuration::get_cores_nr() {
@@ -63,6 +81,15 @@ double Configuration::get_student_budget() {
 		return generate_random(this->student_budget_min, this->student_budget_max);
 	}
 }
+double Configuration::get_student_budget_min() {
+	return this->student_budget_min;
+}
+double Configuration::get_student_budget_max() {
+	return this->student_budget_max;
+}
+bool Configuration::is_student_budget_random() {
+	return this->student_random;
+}
 
 double Configuration::get_researcher_budget() {
 	if (!this->researcher_random) {
@@ -70,6 +97,15 @@ double Configuration::get_researcher_budget() {
 	} else {
 		return generate_random(this->researcher_budget_min, this->researcher_budget_max);
 	}
+}
+double Configuration::get_researcher_budget_min() {
+	return this->researcher_budget_min;
+}
+double Configuration::get_researcher_budget_max() {
+	return this->researcher_budget_max;
+}
+bool Configuration::is_researcher_budget_random() {
+	return this->researcher_random;
 }
 
 double Configuration::get_usage_price() {

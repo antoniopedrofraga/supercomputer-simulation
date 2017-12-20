@@ -41,6 +41,8 @@ private:
 	void insert_state_and_update(int i, int j, time_t start, time_t end, Job job);
 public:
 	System(Configuration * config);
+	System(Configuration * config, vector<User*> users, vector<Job> jobs);
+
 	string get_results();
 };
 

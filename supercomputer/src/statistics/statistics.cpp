@@ -41,6 +41,10 @@ void Statistics::add_job(time_t start, Job job) {
 		if (this->weeks[i].get_start() <= start && this->weeks[i].get_end() > start + job.get_duration()) {
 			this->weeks[i].add_job(job);
 			added = true;
+		} else if (this->weeks[i].get_start() == advance_to_friday(start)) {
+			this->weeks[i].add_job(job);
+			added = true;
+			this->weeks[i].set_start(start);
 		}
 	}
 	if (!added) {
@@ -143,7 +147,7 @@ string Statistics::get_machine_time() {
     long long int minutes = (this->machine_time / 60) % 60;
     long long int seconds = this->machine_time % 60;
 	stringstream stream;
-    stream << to_string(machine_time) << endl << (days > 0 ? to_string(days) + " days, " : "")
+    stream << (days > 0 ? to_string(days) + " days, " : "")
 	<< (hours > 0 ? to_string(hours) + " hours, " : "")
 	<< (minutes > 0 ? to_string(minutes) + " minutes, " : "")
 	<< (seconds > 0 ? to_string(seconds) + " seconds. " : "");

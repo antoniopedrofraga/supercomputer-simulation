@@ -20,6 +20,7 @@ public:
 	time_t get_start();
 	time_t get_end();
 
+	void set_start(time_t start);
 	void add_job(Job job);
 
 	friend ostream& operator<<(ostream& os, const Week& week);

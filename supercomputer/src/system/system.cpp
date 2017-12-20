@@ -10,6 +10,27 @@ System::System(Configuration * config) {
     calculate_op_cost();
 }
 
+System::System(Configuration * config, vector<User*> users, vector<Job> jobs) {
+    this->config = config;
+    if (config->get_jobs_nr() != jobs.size()) {
+        throw std::invalid_argument("Jobs number does not match vector size.\n");
+    }
+    this->statistics = new Statistics(config);
+    this->total_cores_nr = config->get_cores_nr() * config->get_nodes_nr();
+    this->users = users;
+    this->jobs = jobs;
+    for (int i = 0; i < jobs.size(); i++) {
+        int user_id = 0;
+        while (!users[user_id]->can_afford(&jobs[i])) {
+            user_id++;
+        }
+        statistics->add_usage_price(jobs[i].get_price());
+        users[user_id]->pay(&jobs[i]);
+        jobs[i].set_user(users[user_id]);
+    }
+    schedule();
+    calculate_op_cost();
+}
 
 bool System::exist_negatives() {
     for (int i = 0; i < states.size(); i++) {

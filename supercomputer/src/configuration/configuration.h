@@ -40,7 +40,14 @@ public:
 	Configuration();
 
 	unsigned int get_users_nr();
+	unsigned int get_users_nr_min();
+	unsigned int get_users_nr_max();
+	bool is_users_nr_random();
+
 	unsigned int get_jobs_nr();
+	unsigned int get_jobs_nr_min();
+	unsigned int get_jobs_nr_max();
+	bool is_jobs_nr_random();
 
 	unsigned int get_cores_nr();
 	unsigned int get_nodes_nr();
@@ -49,7 +56,14 @@ public:
 	double get_operational_cost();
 
 	double get_student_budget();
+	double get_student_budget_min();
+	double get_student_budget_max();
+	bool is_student_budget_random();
+
 	double get_researcher_budget();
+	double get_researcher_budget_min();
+	double get_researcher_budget_max();
+	bool is_researcher_budget_random();
 
 	time_t get_time();
 
