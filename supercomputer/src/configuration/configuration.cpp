@@ -29,6 +29,7 @@ Configuration::Configuration() {
 
 	this->requests_span = REQUESTS_SPAN;
 
+	this->now = true;
 	this->start = time(0);
 }
 

@@ -6,11 +6,12 @@ using namespace std;
 
 TEST_CASE( "Test Supercomputer With Custom Jobs", "[Supercomputer]" ) {
     Configuration * config = new Configuration();
-    time_t time = 1513805262;
-    config->set_jobs_nr(5);
+    time_t time = 1513962000;
+    config->set_jobs_nr(6);
     config->set_time(time);
+    config->set_now(false);
     vector<User*> users = {new User(config, 0, false), new User(config, 1, true)};
-    vector<Job> jobs = { *(new Job(config, time, THIRTY_EIGHT_HOURS)), *(new Job(config, time, THIRTY_EIGHT_HOURS)), *(new Job(config, time + 1, ONE_HOUR)), *(new Job(config, time + 2, EIGHT_HOURS)), *(new Job(config, time + 3, SIXTEEN_HOURS))};
+    vector<Job> jobs = { *(new Job(config, time, THIRTY_EIGHT_HOURS - ONE_HOUR)), *(new Job(config, time, THIRTY_EIGHT_HOURS)), *(new Job(config, time, THIRTY_EIGHT_HOURS)), *(new Job(config, time + 1, ONE_HOUR)), *(new Job(config, time + 2, EIGHT_HOURS)), *(new Job(config, time + 3, SIXTEEN_HOURS))};
     System * system = new System(config, users, jobs);
 
     string text = string("Is sorted: true\n\nExist negatives: false\n\n")
@@ -28,8 +29,6 @@ TEST_CASE( "Test Supercomputer With Custom Jobs", "[Supercomputer]" ) {
 
 TEST_CASE( "Test Supercomputer With Default Configurations", "[Supercomputer]" ) {
     Configuration * config = new Configuration();
-    time_t time = 1513805262;
-    config->set_time(time);
     config->set_jobs_nr(1000);
     System * system = new System(config);
 
