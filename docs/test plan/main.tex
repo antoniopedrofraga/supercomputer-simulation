@@ -1,0 +1,190 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Project Titlepage Modified (v 0.1) by rcx
+%
+% Original Source: http://www.howtotex.com
+% Date: February 2014
+% 
+% This is a title page template which be used for articles & reports.
+% 
+% This is the modified version of the original Latex template from
+% aforementioned website.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper]{geometry}
+\usepackage[myheadings]{fullpage}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+\usepackage[T1]{fontenc}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage{fourier}
+\usepackage{amsmath}
+\usepackage[protrusion=true, expansion=true]{microtype}
+\usepackage[english]{babel}
+\usepackage{sectsty}
+\usepackage{url, lipsum}
+\usepackage{titlesec}
+\usepackage{diagbox}
+\usepackage{pdfpages}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breakatwhitespace=true,
+  breaklines=true,
+  tabsize=2
+}
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\onehalfspacing
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+\inputencoding{utf8}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%-------------------------------------------------------------------------------
+% HEADER & FOOTER
+%-------------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\setlength\headheight{15pt}
+\fancyhead[L]{António Pedro Araújo Fraga}
+\fancyhead[R]{Cranfield University}
+\fancyfoot[R]{Page \thepage\ of \pageref{LastPage}}
+%-------------------------------------------------------------------------------
+% TITLE PAGE
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+\title{ \fontsize{40}{90} \textsc{Test Plan}
+		\\ [2.0cm]
+		\HRule{0.5pt} \\
+		\LARGE \textbf{Simulated computing system}
+		\HRule{2pt} \\ [0.5cm]
+		\normalsize \today \vspace*{5\baselineskip}}
+
+\date{}
+
+\author{
+		\textbf{António Pedro Araújo Fraga} \\
+		\textbf{Student ID: 279654} \\ 
+		\textbf{Cranfield University} \\
+		\textbf{M.Sc. in Software Engineering for Technical Computing
+		} }
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+%-------------------------------------------------------------------------------
+% Section title formatting
+\sectionfont{\scshape}
+\titleformat{\section}
+{\normalfont\huge\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titlespacing*{\section}
+{0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
+\titlespacing*{\subsection}
+{0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% BODY
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% Introduction
+%-------------------------------------------------------------------------------
+
+\section*{Test Plan Identifier}
+\addcontentsline{toc}{section}{Test Plan Identifier}
+
+Simulated Computing System, Fraga
+
+\section*{References}
+\addcontentsline{toc}{section}{References}
+
+This test plan is based on the \textbf{IEEE 829 format}, regarding to a test plan outline. 
+
+
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+\par This system will be developed under two modules, \textbf{Software Testing and Quality Assurance} and  \textbf{Requirements Analysis and System Design} at \textbf{Cranfield University}. 
+\par It is supposed to simulate a computer system which runs jobs of several sizes. The jobs last between \textbf{one second} and \textbf{thirty eight hours}, assigning them with a category of \textbf{Short}, \textbf{Medium}, \textbf{Large} or \textbf{Huge}. The system shall be capable of scheduling a job running time on a basis of a \textbf{First Come, First Served} methodology, analysing what is the correct time to run a job every time a submission is made. The simulation must generate a set of informations regarding the pretended outputs. These outputs are dependent of inputs values that will be established in the beginning of the simulation.
+
+
+\par The application is going to be used by the IT department, modelling the behaviour of a real computing platform and exploring alternative accounting strategies.
+
+\par The system shall attend functional and non-functional requirements. Most of functional requirements shall be tested at the \textbf{Unit \& Integration level}, whereas non-functional requirements shall be tested at a higher level.
+
+\section*{Features and Functions to test}
+\addcontentsline{toc}{section}{Features and Functions to test}
+
+\begin{itemize}  
+\item Coding standards
+\item Compatibility 
+\item Functional 
+\item Reliability
+\end{itemize}
+
+\section*{Approach/Strategy}
+\addcontentsline{toc}{section}{Approach/Strategy}
+
+\subsection*{Coding standards}
+\addcontentsline{toc}{subsection}{Coding standards}
+
+\par The developed code shall follow the coding standards written in the \textbf{Software Requirements Specification} document. In order to achieve this, it is going to be used a checker as an IDE plug in, called \textbf{cppchecker}.
+
+\subsection*{Compatibility}
+\addcontentsline{toc}{subsection}{Compatibility}
+
+\par The system must be capable of running in different environments, therefore, the system functional requirements shall be tested in different machines, running different \textbf{Operating Systems}.
+
+
+\subsection*{Functional}
+\addcontentsline{toc}{subsection}{Functional}
+
+\par Functional requirements must be tested with Unit Tests, making use of a proper tool (\textbf{Catch}). These requirements must also be tested on the \textbf{version control} system, making use of \textbf{Travis}. This implementation will allow \textbf{integration testing}.
+
+\subsection*{Reliability}
+\addcontentsline{toc}{subsection}{Reliability}
+
+\par The system shall not crash when put under \textbf{Stress Tests}. Extreme situations must be tested, expecting correct functioning and results.
+
+\section*{Item Pass/Fail Criteria}
+\addcontentsline{toc}{section}{Item Pass/Fail Criteria}
+
+\par Every feature must be tested and approved.
+
+\end{document}
+
