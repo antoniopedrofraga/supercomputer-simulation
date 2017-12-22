@@ -49,13 +49,13 @@
         \vspace{1.9cm}
         for\\
         \vspace{1.9cm}
-        $<$Project$>$\\
+        Simulated Computing System\\
         \vspace{1.9cm}
-        \LARGE{Version \myversion approved}\\
+        \LARGE{Version \myversion}\\
         \vspace{1.9cm}
-        Prepared by $<$author$>$\\
+        Prepared by António Pedro Fraga\\
         \vspace{1.9cm}
-        $<$Organization$>$\\
+        Cranfield University\\
         \vspace{1.9cm}
         \today\\
     \end{bfseries}
@@ -81,17 +81,8 @@
 \chapter{Introduction}
 
 \section{Purpose}
-$<$Identify the product whose software requirements are specified in this 
-document, including the revision or release number. Describe the scope of the 
-product that is covered by this SRS, particularly if this SRS describes only 
-part of the system or a single subsystem.$>$
+This document is a Software Requirements Specification of a project developed under under two modules, \textbf{Software Testing and Quality Assurance} and  \textbf{Requirements Analysis and System Design} at \textbf{Cranfield University}. It describes the implementation of a computing control system. This document is primarily intended to be proposed to the IT department for their approval and serve as a reference for the development of the system.
 
-\section{Document Conventions}
-$<$Describe any standards or typographical conventions that were followed when 
-writing this SRS, such as fonts or highlighting that have special significance.  
-For example, state whether priorities  for higher-level requirements are assumed 
-to be inherited by detailed requirements, or whether every requirement statement 
-is to have its own priority.$>$
 
 \section{Intended Audience and Reading Suggestions}
 $<$Describe the different types of reader that the document is intended for, 
@@ -102,10 +93,10 @@ overview sections and proceeding through the sections that are most pertinent to
 each reader type.$>$
 
 \section{Project Scope}
-$<$Provide a short description of the software being specified and its purpose, 
-including relevant benefits, objectives, and goals. Relate the software to 
-corporate goals or business strategies. If a separate vision and scope document 
-is available, refer to it rather than duplicating its contents here.$>$
+
+\par The software is a \textbf{simulator of a job control system}. It will be used by the IT department of Cranfield University so that it can explore different strategies to their current implementation. 
+\par The developed software will include an \textbf{User Friendly Interface}, so that it can be used more easily. The simulation shall be capable of regulate its \textbf{inputs} so that it can compute a set of outputs.
+\par The resulting application shall be a \textbf{reliable} and \textbf{efficient}, \textbf{cross-platform} program.
 
 \section{References}
 $<$List any other documents or Web addresses to which this SRS refers. These may 
@@ -118,31 +109,43 @@ including title, author, version number, date, and source or location.$>$
 \chapter{Overall Description}
 
 \section{Product Perspective}
-$<$Describe the context and origin of the product being specified in this SRS.  
-For example, state whether this product is a follow-on member of a product 
-family, a replacement for certain existing systems, or a new, self-contained 
-product. If the SRS defines a component of a larger system, relate the 
-requirements of the larger system to the functionality of this software and 
-identify interfaces between the two. A simple diagram that shows the major 
-components of the overall system, subsystem interconnections, and external 
-interfaces can be helpful.$>$
+\par The product is a stand-alone system. This system shall contain \textbf{at least} 128 nodes with \textbf{at least} 16 cores per node. It will be used by a set of simulated users that can be classified as:
+
+\begin{itemize}
+\item IT support
+\item Researchers
+\item Students
+\end{itemize}
+
+\par The IT support simulated users have an \textbf{infinite} budget, therefore is permitted to them to run as many jobs as they like. In other hand, the Students shall have a constant budget, which is a smaller amount compared to the Researchers budget. This budget confines the amount of jobs that a user is permitted to run. The system usage has a price per core, that shall be decreased from the simulated budget every second.
+\par The users can use the system by submitting jobs. This jobs have a two main characteristics, the amount of time that will use the system (running time), and the amount of system cores it will use. Thus, there are four types of jobs:
+
+\begin{itemize}
+\item Short - can take up to 2 nodes for no more than 1 hour. 10\% of the machine is reserved for these kind of jobs.
+\item Medium - can take up for 10\% of the total number of cores for no more than 8 hours. 30\% of the system is reserved for this queue.
+\item Large - can take up for 50\% of the total number of cores for no more than 16 hours. 70\% of the system is reserved for this queue.
+\item Huge - can only run from 1700 of Friday to 0900 of Monday, reserving the whole machine. During this time, no other job can be executed.
+\end{itemize}
+
+\par Every time a simulated user submits a job, a scheduler shall define whenever that job is going to run. This scheduler manages the amount of computational resources at every second.
+
 
 \section{Product Functions}
-$<$Summarize the major functions the product must perform or must let the user 
-perform. Details will be provided in Section 3, so only a high level summary 
-(such as a bullet list) is needed here. Organize the functions to make them 
-understandable to any reader of the SRS. A picture of the major groups of 
-related requirements and how they relate, such as a top level data flow diagram 
-or object class diagram, is often effective.$>$
+An user of the simulation shall be able to regulate a set of the inputs:
 
-\section{User Classes and Characteristics}
-$<$Identify the various user classes that you anticipate will use this product.  
-User classes may be differentiated based on frequency of use, subset of product 
-functions used, technical expertise, security or privilege levels, educational 
-level, or experience. Describe the pertinent characteristics of each user class.  
-Certain requirements may pertain only to certain user classes. Distinguish the 
-most important user classes for this product from those who are less important 
-to satisfy.$>$
+\begin{itemize}
+\item Number of jobs \footnotemark
+\item Number of users \footnotemark[\value{footnote}]
+\item Student Budget \footnotemark[\value{footnote}]
+\item Researcher Budget \footnotemark[\value{footnote}]
+\item Simulation date - the date when the first job submission is done.
+\item Requests span - the time span that a job can be submitted in.
+\item Number of nodes
+\item Number of cores
+\end{itemize}
+
+\footnotetext{The user shall decide whether this number is randomly defined following a linear distribution or is a constant value.}
+
 
 \section{Operating Environment}
 $<$Describe the environment in which the software will operate, including the 
