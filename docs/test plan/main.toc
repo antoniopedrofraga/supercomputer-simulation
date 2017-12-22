@@ -1,11 +1,17 @@
 \select@language {english}
 \contentsline {section}{Test Plan Identifier}{3}
-\contentsline {section}{References}{3}
-\contentsline {section}{Introduction}{3}
-\contentsline {section}{Features and Functions to test}{3}
-\contentsline {section}{Approach/Strategy}{4}
-\contentsline {subsection}{Coding standards}{4}
-\contentsline {subsection}{Compatibility}{4}
-\contentsline {subsection}{Functional}{4}
-\contentsline {subsection}{Reliability}{4}
-\contentsline {section}{Item Pass/Fail Criteria}{5}
+\contentsline {section}{Product Overview}{3}
+\contentsline {section}{Testing Synopsis}{3}
+\contentsline {subsection}{Items to be tested}{3}
+\contentsline {subsection}{Features and Functions to test}{4}
+\contentsline {subsection}{References \& Standards}{4}
+\contentsline {section}{Types of Testing}{4}
+\contentsline {subsection}{Acceptance Testing}{4}
+\contentsline {subsection}{Functional \& System Level Tests}{4}
+\contentsline {subsection}{Boundary Tests}{5}
+\contentsline {subsection}{Integration \& Regression Tests}{5}
+\contentsline {subsection}{Compatibility Tests}{5}
+\contentsline {section}{Code Coverage}{6}
+\contentsline {section}{Test Schedule}{6}
+\contentsline {section}{Item Pass/Fail Criteria}{6}
+\contentsline {section}{Test Plan Review}{6}
