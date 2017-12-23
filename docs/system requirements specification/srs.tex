@@ -250,6 +250,7 @@ The simulation shall produce a set of outputs regarding:
 \end{itemize}
 \par Every time an input is defined randomly, it follows a linear distribution.
 \par It is assumed that only huge jobs can run during weekends, no other queue can be active during this period.
+\par The default values of the \textbf{Operational Cost} and \textbf{Usage Price} shall be assumed as \textbf{£0.000475} and \textbf{£0.000014} respectively. The operational cost, is considered to have a constant value \textbf{per second}. The usage price is considered to have a constant value \textbf{per core, per second}. Further information about the calculations of these values can be found in the \textbf{appendixes} section.
 
 
 \chapter{System Features}
@@ -291,31 +292,41 @@ REQ-1:	REQ-2:
 \section{System Feature 2 (and so on)}
 
 
-\chapter{Other Nonfunctional Requirements}
+\chapter{Other Requirements}
 
-\section{Performance Requirements}
+\section{Performance}
 
-$<$If there are performance requirements for the product under various 
-circumstances, state them here and explain their rationale, to help the 
-developers understand the intent and make suitable design choices. Specify the 
-timing relationships for real time systems. Make such requirements as specific 
-as possible. You may need to state performance requirements for individual 
-functional requirements or features.$>$
+Performance shall be an important quality metric int this system. A system with \textbf{n} jobs shall schedule their running times with a \textbf{time complexity} of \textbf{O(n log(n)) + nk}, k being the average distance between the job submission and a free slot to run the job. Regarding \textbf{memory}, the system shall have a \textbf{linear complexity}. Further explanations about this subject can be found in the appendix section.
 
-\section{Software Quality Attributes}
-$<$Specify any additional quality characteristics for the product that will be 
-important to either the customers or the developers. Some to consider are: 
-adaptability, availability, correctness, flexibility, interoperability, 
-maintainability, portability, reliability, reusability, robustness, testability, 
-and usability. Write these to be specific, quantitative, and verifiable when 
-possible. At the least, clarify the relative preferences for various attributes, 
-such as ease of use over ease of learning.$>$
+\section{Scalability}
+The system shall be scalable. The chosen design shall permit future implementations. Code must be refactored every time a better design approach is found.
 
+\section{Reliability}
 
+The system must be 100\% reliable, which means that it must be able to function according to its specification under normal circumstances. The probability of failure should be null.
+
+\section{Portability}
+
+The resulting program shall be \textbf{cross-platform}, being able to execute on most of the operating systems and/or machines.
 
 \chapter{Appendixes}
 
-\section{Appendix B: Analysis Models}
+\section{Appendix A: Project Plan}
+$<$Optionally, include any pertinent analysis models, such as data flow 
+diagrams, class diagrams, state-transition diagrams, or entity-relationship 
+diagrams.$>$
+
+\section{Appendix B: Operational Cost \& Usage Price}
+$<$Optionally, include any pertinent analysis models, such as data flow 
+diagrams, class diagrams, state-transition diagrams, or entity-relationship 
+diagrams.$>$
+
+\section{Appendix C: Complexity Analysis}
+$<$Optionally, include any pertinent analysis models, such as data flow 
+diagrams, class diagrams, state-transition diagrams, or entity-relationship 
+diagrams.$>$
+
+\section{Appendix D: Analysis Models}
 $<$Optionally, include any pertinent analysis models, such as data flow 
 diagrams, class diagrams, state-transition diagrams, or entity-relationship 
 diagrams.$>$
