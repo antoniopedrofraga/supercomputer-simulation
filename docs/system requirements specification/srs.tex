@@ -21,6 +21,9 @@
 \usepackage[bookmarks=true]{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+\usepackage{caption}
+\captionsetup[figure]{labelformat=empty}
 \hypersetup{
     bookmarks=false,    % show bookmarks bar?
     pdftitle={Software Requirement Specification},    % title
@@ -296,7 +299,7 @@ REQ-1:	REQ-2:
 
 \section{Performance}
 
-Performance shall be an important quality metric int this system. A system with \textbf{n} jobs shall schedule their running times with a \textbf{time complexity} of \textbf{O(n log(n)) + nk}, k being the average distance between the job submission and a free slot to run the job. Regarding \textbf{memory}, the system shall have a \textbf{linear complexity}. Further explanations about this subject can be found in the appendix section.
+Performance shall be an important quality metric int this system. A system with \textbf{n} jobs shall schedule their running times with a \textbf{time complexity} of \textbf{O(n log(n) + nk)}, k being the average distance between the job submission and a free slot to run the job. Regarding \textbf{memory}, the system shall have a \textbf{linear complexity}. Further explanations about this subject can be found in the appendixes section.
 
 \section{Scalability}
 The system shall be scalable. The chosen design shall permit future implementations. Code must be refactored every time a better design approach is found.
@@ -312,19 +315,76 @@ The resulting program shall be \textbf{cross-platform}, being able to execute on
 \chapter{Appendixes}
 
 \section{Appendix A: Project Plan}
-$<$Optionally, include any pertinent analysis models, such as data flow 
-diagrams, class diagrams, state-transition diagrams, or entity-relationship 
-diagrams.$>$
+
+The project plan could be represented with a \textbf{Gantt Chart}. This chart is capable of representing dependencies between tasks, and each task duration.
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=\linewidth]{ProjectPlan.png}
+\end{figure}
 
 \section{Appendix B: Operational Cost \& Usage Price}
-$<$Optionally, include any pertinent analysis models, such as data flow 
-diagrams, class diagrams, state-transition diagrams, or entity-relationship 
-diagrams.$>$
 
-\section{Appendix C: Complexity Analysis}
-$<$Optionally, include any pertinent analysis models, such as data flow 
-diagrams, class diagrams, state-transition diagrams, or entity-relationship 
-diagrams.$>$
+\par The default \textbf{usage price} is assumed to have the same value as \textbf{Archer}, the UK national supercomputing system. This system has a value of \textbf{5p} per core hour. Thus, for each second:
+
+\begin{center}
+	$
+		UP per core = 0.05 / 60
+	$
+\end{center}
+
+\par The default \textbf{operational cost} is calculated with an average of costs that the centre has. 
+\par Firstly it's assumed that the simulated system is a \textbf{green} supercomputer, therefore it has a power supply of \textbf{60KW}. In the United Kingdom, a KW costs \textbf{£0.0285 per hour}. Thereby, it's obtained a value of \textbf{£0.0285 per minute}, and $0.0285 / 60$ per second:
+\begin{center}
+	$
+		Energy Cost = 0.0285 / 60
+	$
+\end{center}
+The system is assumed to have a team of \textbf{10} elements making \textbf{£60.000} per year:
+\begin{center}
+	$
+		Personel Cost = 60000 * 10 / 365 / 24 / 60 / 60
+	$
+\end{center}
+The building maintenance costs an average of \textbf{£10.000} per year:
+\begin{center}
+	$
+		Building Maintenance = 10000 / 365 / 24 / 60 / 60
+	$
+\end{center}
+Every second, the default \textbf{operational cost} of the system is:
+\begin{center}
+	$
+		Operational Cost = Energy Cost + Personel Cost + Building Maintenance
+	$
+\end{center}
+
+Despite of having this default value, \textbf{the operational cost} can be changed as an input variable.
+
+\section{Appendix C: Implementation}
+
+\par Jobs will be generated randomly, having attributes characterized by the set of rules defined in this document. It is created an \textbf{array} of \textbf{Jobs}, sorted by \textbf{date of submission}. Every date will be stored as an \textbf{UNIX timestamp}, which is represented by the total number of seconds counted from \textbf{January 1st, 1970 at UTC}. This date is named as \textbf{UNIX Epoch}.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=\linewidth]{jobs.png}
+\end{figure}
+
+\par Jobs will be allocated to a random user. The \textbf{scheduler} will set a start time for each job on a basis of a \textbf{First Come, First Served} methodology. Since it will be important to keep track of the system state (queues computational resources available), it will be created a \textbf{vector} of \textbf{States}. 
+\par This vector contains the available computational resources at each \textbf{start} and \textbf{end} time of a job. Therefore, every time a job is analysed, the scheduler algorithm will add \textbf{two states} to this vector. A state representing the available computational resources once the job starts, along with the occurrence time of the event \textbf{(start)}, and a different state representing the available resources once the job running life comes to an end, containing the timestamp of the occurrence as well.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=\linewidth]{iterations.png}
+\end{figure}
+
+\par This vector shall be kept sorted every time two states are added to it. This way it will be easier to keep track of available \textbf{"running slots"}, which represent the nearest time the system is available to run a certain job.
+\par Therefore, for purposes of performance, it can be saved the index to start looking for a free spot.
+\par One knows that, as the \textbf{Job 2} is being scheduled, it is impossible to start it before the start date of \textbf{Job 1}. Since the array of Jobs is sorted by submission date, one can keep the \textbf{index} corresponding to future dates, or dates that will still be analysed by the algorithm. 
+\par Thus, this procedure, achieves a time complexity of \textbf{O(n log(n) + nk)}. The initial \textbf{O(n log(n))}, is the weight of sorting the array of jobs, whereas the extra \textbf{nk} corresponds to the iterating process through the vector of jobs, and the vector of states. Note that when iterating through the states vector, only future states are analysed. This is a good improvement comparing to the quadratic algorithm of iterating through every state every time the next "free slot" to run a job is needed.
+\par The memory complexity of this algorithm is \textbf{linear}, because only a vector of states and a vector of jobs are kept in memory, a long with some constant values like the \textbf{index} of future dates.
+
+
+
 
 \section{Appendix D: Analysis Models}
 $<$Optionally, include any pertinent analysis models, such as data flow 
