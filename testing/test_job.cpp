@@ -7,7 +7,7 @@ TEST_CASE( "Test Jobs", "[Job]" ) {
 	Job * short_job = new Job(config, now, ONE_HOUR);
 	Job * medium_job = new Job(config, now, EIGHT_HOURS);
 	Job * large_job = new Job(config, now, SIXTEEN_HOURS);
-	Job * huge_job = new Job(config, now, THIRTY_EIGHT_HOURS);
+	Job * huge_job = new Job(config, now, SIXTY_FOUR_HOURS);
 
 	REQUIRE(short_job->is_short());
 	REQUIRE(medium_job->is_medium());

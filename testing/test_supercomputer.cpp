@@ -11,7 +11,7 @@ TEST_CASE( "Test Supercomputer With Custom Jobs", "[Supercomputer]" ) {
     config->set_time(time);
     config->set_now(false);
     vector<User*> users = {new User(config, 0, false), new User(config, 1, true)};
-    vector<Job> jobs = { *(new Job(config, time, THIRTY_EIGHT_HOURS - ONE_HOUR)), *(new Job(config, time, THIRTY_EIGHT_HOURS)), *(new Job(config, time, THIRTY_EIGHT_HOURS)), *(new Job(config, time + 1, ONE_HOUR)), *(new Job(config, time + 2, EIGHT_HOURS)), *(new Job(config, time + 3, SIXTEEN_HOURS))};
+    vector<Job> jobs = { *(new Job(config, time, SIXTY_FOUR_HOURS - ONE_HOUR)), *(new Job(config, time, SIXTY_FOUR_HOURS)), *(new Job(config, time, SIXTY_FOUR_HOURS)), *(new Job(config, time + 1, ONE_HOUR)), *(new Job(config, time + 2, EIGHT_HOURS)), *(new Job(config, time + 3, SIXTEEN_HOURS))};
     System * system = new System(config, users, jobs);
 
     string text = string("Is sorted: true\n\nExist negatives: false\n\n")

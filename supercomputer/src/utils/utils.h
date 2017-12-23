@@ -69,12 +69,13 @@ const int HIGH_JOBS = 500;
 const unsigned int FRIDAY = 5;
 const unsigned int SATURDAY = 6;
 const unsigned int SUNDAY = 0;
+const unsigned int MONDAY = 1;
 
 const unsigned long long ONE_WEEK = 60 * 60 * 24 * 8;
 const unsigned long long ONE_HOUR = 60 * 60;
 const unsigned long long EIGHT_HOURS = 60 * 60 * 8;
 const unsigned long long SIXTEEN_HOURS = 60 * 60 * 16;
-const unsigned long long THIRTY_EIGHT_HOURS = 60 * 60 * 38;
+const unsigned long long SIXTY_FOUR_HOURS = 60 * 60 * 64;
 const unsigned long long ONE_DAY = 60 * 60 * 24;
 
 const unsigned long long REQUESTS_SPAN = 10;
@@ -87,6 +88,6 @@ double generate_random(double low, double high);
 bool is_weekend(time_t start, time_t end);
 time_t advance_weekend(time_t start);
 time_t advance_to_friday(time_t start);
-time_t get_back_to_sunday(time_t start);
+time_t get_back_to_monday(time_t start);
 
 #endif

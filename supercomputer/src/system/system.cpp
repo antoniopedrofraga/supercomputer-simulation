@@ -59,13 +59,13 @@ void System::create_jobs() {
 
     for (int i = 0; i < nr_jobs; i++) {
         double duration_value = rng(rnd_gen), requests_value = rng(rnd_gen);
-        while (duration_value >= 1 || (unsigned long long int)(THIRTY_EIGHT_HOURS * duration_value) == 0) {
+        while (duration_value >= 1 || (unsigned long long int)(SIXTY_FOUR_HOURS * duration_value) == 0) {
             duration_value = rng(rnd_gen);
         }
         while (requests_value >= 1) {
             requests_value = rng(rnd_gen);
         }
-        unsigned long long int rand_seconds = config->get_requests_span() * requests_value, duration = THIRTY_EIGHT_HOURS * duration_value;
+        unsigned long long int rand_seconds = config->get_requests_span() * requests_value, duration = SIXTY_FOUR_HOURS * duration_value;
         time_t time = (time_t)(now + rand_seconds);
         int user_id = 0;
         Job * job = new Job(config, time, duration);

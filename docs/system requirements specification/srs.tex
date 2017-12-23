@@ -63,34 +63,11 @@
 
 \tableofcontents
 
-
-\chapter*{Revision History}
-
-\begin{center}
-    \begin{tabular}{|c|c|c|c|}
-        \hline
-	    Name & Date & Reason For Changes & Version\\
-        \hline
-	    21 & 22 & 23 & 24\\
-        \hline
-	    31 & 32 & 33 & 34\\
-        \hline
-    \end{tabular}
-\end{center}
-
 \chapter{Introduction}
 
 \section{Purpose}
 This document is a Software Requirements Specification of a project developed under under two modules, \textbf{Software Testing and Quality Assurance} and  \textbf{Requirements Analysis and System Design} at \textbf{Cranfield University}. It describes the implementation of a computing control system. This document is primarily intended to be proposed to the IT department for their approval and serve as a reference for the development of the system.
 
-
-\section{Intended Audience and Reading Suggestions}
-$<$Describe the different types of reader that the document is intended for, 
-such as developers, project managers, marketing staff, users, testers, and 
-documentation writers. Describe what the rest of this SRS contains and how it is 
-organized. Suggest a sequence for reading the document, beginning with the 
-overview sections and proceeding through the sections that are most pertinent to 
-each reader type.$>$
 
 \section{Project Scope}
 
@@ -98,13 +75,111 @@ each reader type.$>$
 \par The developed software will include an \textbf{User Friendly Interface}, so that it can be used more easily. The simulation shall be capable of regulate its \textbf{inputs} so that it can compute a set of outputs.
 \par The resulting application shall be a \textbf{reliable} and \textbf{efficient}, \textbf{cross-platform} program.
 
-\section{References}
-$<$List any other documents or Web addresses to which this SRS refers. These may 
-include user interface style guides, contracts, standards, system requirements 
-specifications, use case documents, or a vision and scope document. Provide 
-enough information so that the reader could access a copy of each reference, 
-including title, author, version number, date, and source or location.$>$
+\section{Standards}
 
+\subsection{Documentation}
+
+\par This document follows the \textbf{Requirements Specifications template (IEEE Std 830-1998)}, selecting the most relevant topics for its scope. The \textbf{Test Plan} document shall follow the \textbf{IEEE 829 format}.
+
+\subsubsection{Technical Documentation}
+
+\par Good technical documentation is a key to the project scalability, helping future developers to have a better understanding of the whole project structure.
+\par The project shall contain, at least, a \textbf{README} file created in its \textbf{GitHub} page. This file must include some topics:
+
+\begin{itemize}
+\item Tests status
+\item Line coverage information
+\item Project name
+\item Description
+\item Technologies
+\item Informations about the development environment set up
+\item Structure information (ex: location of important files)
+\end{itemize}
+
+\par The software shall also include documentation about the developed methods and its structure. All methods shall contain at least:
+
+\begin{itemize}
+\item Method name
+\item Description
+\item Arguments (type \& small description)
+\item Return (type \& small description)
+\end{itemize}
+
+\subsection{Version Control}
+
+This project shall have a \textbf{version control} system based on \textbf{GitHub}. The repository shall contain \textbf{two} main branches:
+
+\begin{itemize}
+\item Deployment - Containing a product release history
+\item Development - Containing a merge of the newly developed features
+\end{itemize}
+
+\par A branch shall be created every time a new feature starts its development.
+\par The \textbf{feature} branch shall be merged with the \textbf{Development} branch every time its development has came to an end.
+\par The \textbf{Development} branch shall be merged with the \textbf{Deployment} branch every time a new version of the product is released.
+
+\subsection{Naming}
+A naming convention is a set of rules for selecting the character sequence to the identifiers of variables, classes, modules or implemented methods. There are different patterns that can be adopted when defining a convention:
+
+\begin{itemize}
+\item \textbf{PascalCase (UpperCamelCase)} - the first letter of each word composing the identifier is capitalized.
+\item \textbf{Snake_case} - the elements of the compound words are separated with one underscore character and no spaces. The initial character of each element is lowercased, except for the first character, that can be both upper or lower case (‘snake_case’ or ‘Snake_
+case’).
+\end{itemize}
+
+\subsubsection{Files}
+
+\par C++ code shall be stored in \textbf{.cpp} files, whereas functions and variables definitions should be carried by \textbf{header} or \textbf{.h} files. File names shall follow the \textbf{snake_case} convention with the first character being uncapitalised.
+
+\subsubsection{White spacing}
+
+\par Blank lines improve readability by creating sections of code logically related. 
+\par Every statement shall be correctly indented. The indentation increases by a \textbf{tab} if the previous line is:
+\begin{itemize}
+\item \textbf{\{} a left brace
+\item \textbf{[} a left bracket
+\item \textbf{(} a left parenthesis
+\end{itemize}
+The matching closing token must be the first in a line, restoring the previous indentation.
+Blank spaces shall be used in some circumstances:
+
+\begin{center}
+    \begin{tabular}{|p{8cm}|p{6cm}|}
+        \hline
+	    Description & Example\\
+        \hline
+	    A keyword followed by the \textbf{left parenthesis} should be separated by a whitespace. \newline For example, there should be a space after an if or a while keyword. &  – while (true) \{ ... \newline – return (1 + 1); \newline – if (job.is_short()) \{ ... \\
+	    \hline
+	    The method \textbf{return type} shall be followed by a white space. & \textbf{double} get_usage_price() \\
+	    \hline
+	  	Every \textbf{comma} shall be followed by a line break or a white space. & insert_state(i\textbf{, }j\textbf{, }job); \\
+	  	\hline
+	  	Every \textbf{semicolon} at the end of a statement shall be followed with a line break. & i++\textbf{;}\newline j++\textbf{;}\\
+	    \hline
+	    Every \textbf{semicolon} in the control of a loop shall be followed by a white space. & for (int i = 0\textbf{; } i $<$ v.size()\textbf{; }i++) \{ ...\\
+	    \hline
+    \end{tabular}
+\end{center}
+
+\subsubsection{Classes}
+
+\par Classes should be defined as names written in the \textbf{PascalCase} convention. Acronyms and abbreviations should be avoided, unless the abbreviation is widely used.
+
+\subsubsection{Methods}
+
+\par The name of each method shall start with a verb in the infinite form, being a \textbf{verb-name} pair. This name shall be written in \textbf{snake_case}. It should be self-explanatory and concise.
+
+\par \textbf{Examples:} is_short(), is_medium, get_name(), get_price()
+
+\subsubsection{Variables}
+
+\par Variables shall be written in \textbf{snake_case}. The use of descriptive names is required, avoiding single characters names, except for loops. Abbreviations shall be avoided as well. All variables must be declared in the top of the method body, whit a blank line between this declaration and the rest of the method, forming an \textbf{instantiation block}. The names (\textbf{i}, \textbf{j}, \textbf{k}) are reserved for iteration purposes. 
+\par Constant declarations must follow a \textbf{SNAKE_CASE} convention. The developer shall write them entirely with capital characters.
+
+
+\subsubsection{Branches}
+
+\par Branches shall be written in \textbf{snake_case}. Every branch shall have a name related with the developed feature. 
 
 \chapter{Overall Description}
 
@@ -144,78 +219,37 @@ An user of the simulation shall be able to regulate a set of the inputs:
 \item Number of cores
 \end{itemize}
 
+The simulation shall produce a set of outputs regarding:
+
+\begin{itemize}
+\item The number of jobs processed in each queue (throughput) per week
+\item The actual number of machine-hours consumed by user jobs
+\item The resulting price paid by the users
+\item The average wait time in each queue
+\item The average turnaround time ratio, i.e. the time from placing the job request to completion of the job divided by the actual runtime of the job
+\item The economic balance of the centre, calculated by subtracting from the actual price the operating costs
+\end{itemize}
+
 \footnotetext{The user shall decide whether this number is randomly defined following a linear distribution or is a constant value.}
 
 
-\section{Operating Environment}
-$<$Describe the environment in which the software will operate, including the 
-hardware platform, operating system and versions, and any other software 
-components or applications with which it must peacefully coexist.$>$
-
-\section{Design and Implementation Constraints}
-$<$Describe any items or issues that will limit the options available to the 
-developers. These might include: corporate or regulatory policies; hardware 
-limitations (timing requirements, memory requirements); interfaces to other 
-applications; specific technologies, tools, and databases to be used; parallel 
-operations; language requirements; communications protocols; security 
-considerations; design conventions or programming standards (for example, if the 
-customer’s organization will be responsible for maintaining the delivered 
-software).$>$
-
 \section{User Documentation}
-$<$List the user documentation components (such as user manuals, on-line help, 
-and tutorials) that will be delivered along with the software. Identify any 
-known user documentation delivery formats or standards.$>$
+
+\par The software shall have an \textbf{User Manual}, indicating which features can be explored. The manual should include a \textbf{screen-shot} of the \textbf{User Interface} along with an explanation of every possible action. The screen shot shall clearly indicate which \textbf{spin box} value is related to each input. The manual shall also include an explanation of the simulation output. Every output value shall be clarified, enlightening the user about its meaning.
+
 \section{Assumptions and Dependencies}
 
-$<$List any assumed factors (as opposed to known facts) that could affect the 
-requirements stated in the SRS. These could include third-party or commercial 
-components that you plan to use, issues around the development or operating 
-environment, or constraints. The project could be affected if these assumptions 
-are incorrect, are not shared, or change. Also identify any dependencies the 
-project has on external factors, such as software components that you intend to 
-reuse from another project, unless they are already documented elsewhere (for 
-example, in the vision and scope document or the project plan).$>$
-
-
-\chapter{External Interface Requirements}
-
-\section{User Interfaces}
-$<$Describe the logical characteristics of each interface between the software 
-product and the users. This may include sample screen images, any GUI standards 
-or product family style guides that are to be followed, screen layout 
-constraints, standard buttons and functions (e.g., help) that will appear on 
-every screen, keyboard shortcuts, error message display standards, and so on.  
-Define the software components for which a user interface is needed. Details of 
-the user interface design should be documented in a separate user interface 
-specification.$>$
-
-\section{Hardware Interfaces}
-$<$Describe the logical and physical characteristics of each interface between 
-the software product and the hardware components of the system. This may include 
-the supported device types, the nature of the data and control interactions 
-between the software and the hardware, and communication protocols to be 
-used.$>$
-
-\section{Software Interfaces}
-$<$Describe the connections between this product and other specific software 
-components (name and version), including databases, operating systems, tools, 
-libraries, and integrated commercial components. Identify the data items or 
-messages coming into the system and going out and describe the purpose of each.  
-Describe the services needed and the nature of communications. Refer to 
-documents that describe detailed application programming interface protocols.  
-Identify data that will be shared across software components. If the data 
-sharing mechanism must be implemented in a specific way (for example, use of a 
-global data area in a multitasking operating system), specify this as an 
-implementation constraint.$>$
-
-\section{Communications Interfaces}
-$<$Describe the requirements associated with any communications functions 
-required by this product, including e-mail, web browser, network server 
-communications protocols, electronic forms, and so on. Define any pertinent 
-message formatting. Identify any communication standards that will be used, such 
-as FTP or HTTP. Specify any communication security or encryption issues, data 
-transfer rates, and synchronization mechanisms.$>$
+\par For simplification purposes, it is assumed that the scheduler works on a basis of a \textbf{First Come, First Served} methodology. 
+\par The running time of each job and the interval between job submissions follow \textbf{exponential distributions}.
+\par The number of cores each job uses is generated following a linear distribution. The limits are defined according to each job type:
+\begin{itemize}
+\item Short: 1 core to 2 nodes of total cores
+\item Medium: 2 nodes to 10\% of total cores
+\item Large: 10\% nodes to 50\% of total cores
+\item Huge: total number of cores
+\end{itemize}
+\par Every time an input is defined randomly, it follows a linear distribution.
+\par It is assumed that only huge jobs can run during weekends, no other queue can be active during this period.
 
 
 \chapter{System Features}
@@ -260,27 +294,13 @@ REQ-1:	REQ-2:
 \chapter{Other Nonfunctional Requirements}
 
 \section{Performance Requirements}
+
 $<$If there are performance requirements for the product under various 
 circumstances, state them here and explain their rationale, to help the 
 developers understand the intent and make suitable design choices. Specify the 
 timing relationships for real time systems. Make such requirements as specific 
 as possible. You may need to state performance requirements for individual 
 functional requirements or features.$>$
-
-\section{Safety Requirements}
-$<$Specify those requirements that are concerned with possible loss, damage, or 
-harm that could result from the use of the product. Define any safeguards or 
-actions that must be taken, as well as actions that must be prevented. Refer to 
-any external policies or regulations that state safety issues that affect the 
-product’s design or use. Define any safety certifications that must be 
-satisfied.$>$
-
-\section{Security Requirements}
-$<$Specify any requirements regarding security or privacy issues surrounding use 
-of the product or protection of the data used or created by the product. Define 
-any user identity authentication requirements. Refer to any external policies or 
-regulations containing security issues that affect the product. Define any 
-security or privacy certifications that must be satisfied.$>$
 
 \section{Software Quality Attributes}
 $<$Specify any additional quality characteristics for the product that will be 
@@ -291,33 +311,15 @@ and usability. Write these to be specific, quantitative, and verifiable when
 possible. At the least, clarify the relative preferences for various attributes, 
 such as ease of use over ease of learning.$>$
 
-\section{Business Rules}
-$<$List any operating principles about the product, such as which individuals or 
-roles can perform which functions under specific circumstances. These are not 
-functional requirements in themselves, but they may imply certain functional 
-requirements to enforce the rules.$>$
 
 
-\chapter{Other Requirements}
-$<$Define any other requirements not covered elsewhere in the SRS. This might 
-include database requirements, internationalization requirements, legal 
-requirements, reuse objectives for the project, and so on. Add any new sections 
-that are pertinent to the project.$>$
-
-\section{Appendix A: Glossary}
-%see https://en.wikibooks.org/wiki/LaTeX/Glossary
-$<$Define all the terms necessary to properly interpret the SRS, including 
-acronyms and abbreviations. You may wish to build a separate glossary that spans 
-multiple projects or the entire organization, and just include terms specific to 
-a single project in each SRS.$>$
+\chapter{Appendixes}
 
 \section{Appendix B: Analysis Models}
 $<$Optionally, include any pertinent analysis models, such as data flow 
 diagrams, class diagrams, state-transition diagrams, or entity-relationship 
 diagrams.$>$
 
-\section{Appendix C: To Be Determined List}
-$<$Collect a numbered list of the TBD (to be determined) references that remain 
-in the SRS so they can be tracked to closure.$>$
+
 
 \end{document}

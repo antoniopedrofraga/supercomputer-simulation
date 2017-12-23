@@ -53,7 +53,7 @@ void Statistics::add_job(time_t start, Job job) {
 		if (this->weeks.size() == 0) {
 			s = start;
 		} else {
-			s = get_back_to_sunday(start);
+			s = get_back_to_monday(start);
 		}
 		e = advance_weekend(s);
 		this->weeks.push_back(*(new Week(s, e)));
