@@ -23,6 +23,8 @@
 \usepackage[english]{babel}
 \usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
 \usepackage{caption}
+\usepackage{array}
+\usepackage{longtable}
 \captionsetup[figure]{labelformat=empty}
 \hypersetup{
     bookmarks=false,    % show bookmarks bar?
@@ -43,6 +45,8 @@
 
 %}
 \usepackage{hyperref}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 \begin{document}
 
 \begin{flushright}
@@ -120,6 +124,21 @@ This project shall have a \textbf{version control} system based on \textbf{GitHu
 \par A branch shall be created every time a new feature starts its development.
 \par The \textbf{feature} branch shall be merged with the \textbf{Development} branch every time its development has came to an end.
 \par The \textbf{Development} branch shall be merged with the \textbf{Deployment} branch every time a new version of the product is released.
+
+\subsection{Requirements}
+
+A requirement should be written using a specific format, containing a tuple of of three expressions:
+
+\begin{itemize}
+\item Actor
+\item Action
+\item Reason
+\end{itemize}
+
+\par Thus, the template should be: As an \textbf{$<$actor$>$}, I want to \textbf{$<$action$>$}, so that \textbf{$<$reason$>$}.
+\par Every requirement should be split in sub requirements every time the development effort is high.
+
+
 
 \subsection{Naming}
 A naming convention is a set of rules for selecting the character sequence to the identifiers of variables, classes, modules or implemented methods. There are different patterns that can be adopted when defining a convention:
@@ -253,46 +272,40 @@ The simulation shall produce a set of outputs regarding:
 \end{itemize}
 \par Every time an input is defined randomly, it follows a linear distribution.
 \par It is assumed that only huge jobs can run during weekends, no other queue can be active during this period.
-\par The default values of the \textbf{Operational Cost} and \textbf{Usage Price} shall be assumed as \textbf{£0.000475} and \textbf{£0.000014} respectively. The operational cost, is considered to have a constant value \textbf{per second}. The usage price is considered to have a constant value \textbf{per core, per second}. Further information about the calculations of these values can be found in the \textbf{appendixes} section.
+\par The default values of the \textbf{Operational Cost} and \textbf{Usage Price} shall be assumed as \textbf{£0.000475} and \textbf{£0.000014} respectively. The operational cost, is considered to have a constant value \textbf{per second}. The usage price is considered to have a constant value \textbf{per core second}. Further information about the calculations of these values can be found in the \textbf{appendixes} section.
 
 
 \chapter{System Features}
-$<$This template illustrates organizing the functional requirements for the 
-product by system features, the major services provided by the product. You may 
-prefer to organize this section by use case, mode of operation, user class, 
-object class, functional hierarchy, or combinations of these, whatever makes the 
-most logical sense for your product.$>$
+This section defines the functional requirements of this system.
 
-\section{System Feature 1}
-$<$Don’t really say “System Feature 1.” State the feature name in just a few 
-words.$>$
+\section{Functional Requirements}
+\begin{center}
+    \begin{longtable}{|M{1.5cm}|M{4cm}|M{8cm}|}
+        \hline
+	    Identifier & Name & Description\\
+        \hline
+        SF01 & Number of Users & As a simulation user, I want to be able to regulate the number of simulated users, so that I can change the default configurations.  \\
+        \hline
+        SF02 & Number of Jobs & As a simulation user, I want to be able to regulate the number of simulated jobs, so that I can change the default configurations.  \\
+        \hline
+        SF03 & Student Budget & As a simulation user, I want to be able to regulate the Student Budget, so that I can change the default configurations.  \\
+        \hline
+        SF04 & Researcher Budget & As a simulation user, I want to be able to regulate the Researcher Budget, so that I can observe what kind of effects it will have on the simulation outputs.  \\
+        \hline
+        SF05 & Date & As a simulation user, I want to be able to define what is the start date of the simulation, so that I can explore every possible start date.  \\
+        \hline
+        SF06 & Requests Time Span & As a simulation user, I want to be able to define the value of the requests value span, so that I'm able to observe any output values fluctuations.  \\
+        \hline
+        SF07 & Number of nodes & As a simulation user, I want to be able to define the number of system nodes, so that I can observe what kind of effects it will have on the simulation outputs.   \\
+        \hline
+        SF08 & Cores per node & As a simulation user, I want to be able to define the number of system cores per nodes, so that I can observe what kind of effects it will have on the simulation outputs.   \\
+        \hline
+        SF09 & Run & As a simulation user, I want to be able to run the simulation, so that I can observe the simulation outputs.   \\
+        \hline
+    \end{longtable}
+\end{center}
 
-\subsection{Description and Priority}
-$<$Provide a short description of the feature and indicate whether it is of 
-High, Medium, or Low priority. You could also include specific priority 
-component ratings, such as benefit, penalty, cost, and risk (each rated on a 
-relative scale from a low of 1 to a high of 9).$>$
-
-\subsection{Stimulus/Response Sequences}
-$<$List the sequences of user actions and system responses that stimulate the 
-behavior defined for this feature. These will correspond to the dialog elements 
-associated with use cases.$>$
-
-\subsection{Functional Requirements}
-$<$Itemize the detailed functional requirements associated with this feature.  
-These are the software capabilities that must be present in order for the user 
-to carry out the services provided by the feature, or to execute the use case.  
-Include how the product should respond to anticipated error conditions or 
-invalid inputs. Requirements should be concise, complete, unambiguous, 
-verifiable, and necessary. Use “TBD” as a placeholder to indicate when necessary 
-information is not yet available.$>$
-
-$<$Each requirement should be uniquely identified with a sequence number or a 
-meaningful tag of some kind.$>$
-
-REQ-1:	REQ-2:
-
-\section{System Feature 2 (and so on)}
+\section{Diagrams}
 
 
 \chapter{Other Requirements}
@@ -382,15 +395,6 @@ Despite of having this default value, \textbf{the operational cost} can be chang
 \par One knows that, as the \textbf{Job 2} is being scheduled, it is impossible to start it before the start date of \textbf{Job 1}. Since the array of Jobs is sorted by submission date, one can keep the \textbf{index} corresponding to future dates, or dates that will still be analysed by the algorithm. 
 \par Thus, this procedure, achieves a time complexity of \textbf{O(n log(n) + nk)}. The initial \textbf{O(n log(n))}, is the weight of sorting the array of jobs, whereas the extra \textbf{nk} corresponds to the iterating process through the vector of jobs, and the vector of states. Note that when iterating through the states vector, only future states are analysed. This is a good improvement comparing to the quadratic algorithm of iterating through every state every time the next "free slot" to run a job is needed.
 \par The memory complexity of this algorithm is \textbf{linear}, because only a vector of states and a vector of jobs are kept in memory, a long with some constant values like the \textbf{index} of future dates.
-
-
-
-
-\section{Appendix D: Analysis Models}
-$<$Optionally, include any pertinent analysis models, such as data flow 
-diagrams, class diagrams, state-transition diagrams, or entity-relationship 
-diagrams.$>$
-
 
 
 \end{document}
