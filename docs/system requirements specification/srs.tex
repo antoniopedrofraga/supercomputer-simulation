@@ -305,8 +305,6 @@ This section defines the functional requirements of this system.
     \end{longtable}
 \end{center}
 
-\section{Diagrams}
-
 
 \chapter{Other Requirements}
 
@@ -337,7 +335,7 @@ The project plan could be represented with a \textbf{Gantt Chart}. This chart is
 
 \section{Appendix B: Operational Cost \& Usage Price}
 
-\par The default \textbf{usage price} is assumed to have the same value as \textbf{Archer}, the UK national supercomputing system. This system has a value of \textbf{5p} per core hour. Thus, for each second:
+\par The default \textbf{usage price} is assumed to have the same value as \textbf{Archer}, the UK national supercomputing system. This system has a cost of \textbf{5p} per core hour. Thus, for each second:
 
 \begin{center}
 	$
@@ -396,5 +394,20 @@ Despite of having this default value, \textbf{the operational cost} can be chang
 \par Thus, this procedure, achieves a time complexity of \textbf{O(n log(n) + nk)}. The initial \textbf{O(n log(n))}, is the weight of sorting the array of jobs, whereas the extra \textbf{nk} corresponds to the iterating process through the vector of jobs, and the vector of states. Note that when iterating through the states vector, only future states are analysed. This is a good improvement comparing to the quadratic algorithm of iterating through every state every time the next "free slot" to run a job is needed.
 \par The memory complexity of this algorithm is \textbf{linear}, because only a vector of states and a vector of jobs are kept in memory, a long with some constant values like the \textbf{index} of future dates.
 
+\section{Appendix D: Analysis Models}
+
+\subsection{Use Cases Diagram}
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=12cm]{usecases.png}
+\end{figure}
+
+\subsection{Data Flow Diagram}
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=12cm]{dataflow.png}
+\end{figure}
 
 \end{document}
