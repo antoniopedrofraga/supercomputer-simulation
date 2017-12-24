@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.3)  24 DEC 2017 01:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.3)  24 DEC 2017 15:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -836,65 +836,65 @@ LaTeX Font Warning: Font shape `OT1/cmr/bx/ui' in size <10.95> not available
 [9]
 chapter 3.
 
-Overfull \hbox (0.543pt too wide) in paragraph at lines 285--285
+Overfull \hbox (0.543pt too wide) in paragraph at lines 283--283
  []|\OT1/cmr/m/n/10.95 Identifier| 
  []
 
 
-Overfull \hbox (3.4566pt too wide) in alignment at lines 283--305
+Overfull \hbox (3.4566pt too wide) in alignment at lines 281--303
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 305
+Underfull \vbox (badness 10000) detected at line 303
  []
 
 [10
 
-] [11]
+]
 chapter 4.
-[12
+[11
 
 ]
 chapter 5.
-<ProjectPlan.png, id=197, 940.51375pt x 141.52875pt>
+<ProjectPlan.png, id=208, 940.51375pt x 141.52875pt>
 File: ProjectPlan.png Graphic file (type png)
  <use ProjectPlan.png>
-Package pdftex.def Info: ProjectPlan.png used on input line 333.
+Package pdftex.def Info: ProjectPlan.png used on input line 331.
 (pdftex.def)             Requested size: 418.25555pt x 62.93797pt.
 
-[13
+[12
 
- <./ProjectPlan.png>] <jobs.png, id=206, 803.0pt x 200.75pt>
+ <./ProjectPlan.png>] <jobs.png, id=216, 803.0pt x 200.75pt>
 File: jobs.png Graphic file (type png)
  <use jobs.png>
-Package pdftex.def Info: jobs.png used on input line 380.
+Package pdftex.def Info: jobs.png used on input line 378.
 (pdftex.def)             Requested size: 418.25555pt x 104.56519pt.
 
-<iterations.png, id=207, 953.5625pt x 501.875pt>
+<iterations.png, id=217, 953.5625pt x 501.875pt>
 File: iterations.png Graphic file (type png)
  <use iterations.png>
-Package pdftex.def Info: iterations.png used on input line 388.
+Package pdftex.def Info: iterations.png used on input line 386.
 (pdftex.def)             Requested size: 418.25555pt x 220.13646pt.
- [14 <./jobs.png> <./iterations.png>] <usecases.png, id=216, 472.76625pt x 201.
+ [13 <./jobs.png> <./iterations.png>] <usecases.png, id=227, 472.76625pt x 201.
 75375pt>
 File: usecases.png Graphic file (type png)
 
 <use usecases.png>
-Package pdftex.def Info: usecases.png used on input line 403.
+Package pdftex.def Info: usecases.png used on input line 401.
 (pdftex.def)             Requested size: 341.43306pt x 145.70897pt.
- <dataflow.png, id=217, 532.99126pt x 71.26625pt>
+ <dataflow.png, id=228, 532.99126pt x 71.26625pt>
 File: dataflow.png Graphic file (type png)
 
 <use dataflow.png>
-Package pdftex.def Info: dataflow.png used on input line 410.
+Package pdftex.def Info: dataflow.png used on input line 408.
 (pdftex.def)             Requested size: 341.43306pt x 45.65372pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 413.
- [15 <./usecases.png> <./dataflow.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 413.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 411.
+ [14 <./usecases.png> <./dataflow.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 411.
  (./srs.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 413.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 413.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 411.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 411.
 
 
 Package rerunfilecheck Warning: File `srs.out' has changed.
@@ -902,20 +902,23 @@ Package rerunfilecheck Warning: File `srs.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `srs.out':
-(rerunfilecheck)             Before: A373267A419DA78D5D7A1A1A9CC170D8;1485
-(rerunfilecheck)             After:  4EE227416A75E62855A030872E99A92A;1701.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 413.
+(rerunfilecheck)             Before: 4EE227416A75E62855A030872E99A92A;1701
+(rerunfilecheck)             After:  B66F8B8B9A5253D0D79D070723A055EB;1631.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 411.
  ) 
 Here is how much of TeX's memory you used:
- 10334 strings out of 494910
- 159342 string characters out of 6179836
- 323766 words of memory out of 5000000
- 13453 multiletter control sequences out of 15000+600000
+ 10336 strings out of 494910
+ 159384 string characters out of 6179836
+ 323769 words of memory out of 5000000
+ 13456 multiletter control sequences out of 15000+600000
  10244 words of font info for 36 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 48i,9n,66p,553b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,9n,66p,553b,400s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.3.1} has been referenced but does not exist
+, replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share
@@ -928,10 +931,10 @@ lic/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 u10.pfb>
-Output written on srs.pdf (15 pages, 219504 bytes).
+Output written on srs.pdf (14 pages, 219467 bytes).
 PDF statistics:
- 281 PDF objects out of 1000 (max. 8388607)
- 240 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
- 218 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 289 PDF objects out of 1000 (max. 8388607)
+ 249 compressed objects within 3 object streams
+ 57 named destinations out of 1000 (max. 500000)
+ 242 words of extra memory for PDF output out of 10000 (max. 10000000)
 
