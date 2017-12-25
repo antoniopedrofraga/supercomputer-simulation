@@ -1,5 +1,8 @@
 #include "system.h"
 
+/*!
+  Default contructor of System object. Populates vector of users and jobs. Runs the scheduler algorithm and calculates the operating cost of the system.
+*/
 System::System(Configuration * config) {
     this->config = config;
     this->statistics = new Statistics(config);
@@ -10,6 +13,9 @@ System::System(Configuration * config) {
     calculate_op_cost();
 }
 
+/*!
+  Alternative contructor of System object, indicated for testing purposes. Runs the scheduler algorithm and calculates the operating cost of the system.
+*/
 System::System(Configuration * config, vector<User*> users, vector<Job> jobs) {
     this->config = config;
     this->statistics = new Statistics(config);
@@ -40,6 +46,9 @@ bool System::exist_negatives() {
 return false;
 }
 
+/*!
+  Populates the vector of users, assuring that there's at least a researcher.
+*/
 void System::create_users() {
     int user_nr = config->get_jobs_nr();
     for (int i = 0; i < user_nr; i++) {
@@ -48,20 +57,27 @@ void System::create_users() {
     users.push_back(new User(config, user_nr, true));
 }
 
+/*!
+  Populates the vector of jobs.
+*/
 void System::create_jobs() {
     int nr_users = users.size();
     int nr_jobs = config->get_jobs_nr();
     unsigned long long int now = config->get_time();
 
     random_device rd;
-    exponential_distribution<double> rng(6);
+    exponential_distribution<double> rng(8);
     mt19937 rnd_gen(rd());
 
     for (int i = 0; i < nr_jobs; i++) {
         double duration_value = rng(rnd_gen), requests_value = rng(rnd_gen);
+
+        //Duration of job must not be 0 and must be less than sixty four hours.
         while (duration_value >= 1 || (unsigned long long int)(SIXTY_FOUR_HOURS * duration_value) == 0) {
             duration_value = rng(rnd_gen);
         }
+
+        //Requests time span shall be less than the established upper bound.
         while (requests_value >= 1) {
             requests_value = rng(rnd_gen);
         }
@@ -81,6 +97,9 @@ void System::create_jobs() {
     sort(jobs.begin(), jobs.end());
 }
 
+/*!
+  Inserts state in vector of states, updating the computational resources in every state from index i to j.
+*/
 void System::insert_state_and_update(int i, int j, time_t start, time_t end, Job job) {
     statistics->add_job(start, job);
 
@@ -95,6 +114,10 @@ void System::insert_state_and_update(int i, int j, time_t start, time_t end, Job
 }
 
 
+/*!
+  Inserts a short, medium or large job according to its characteristics (submission date, duration, computational resources).
+  These jobs can't run on weekends.
+*/
 void System::insert_week_state(time_t start, int i, Job job) {
     time_t end = start + job.get_duration();
     while (i - 1 >= 0 && i - 1 < states.size() && !states[i - 1].can_insert_job(job)) {
@@ -135,6 +158,9 @@ void System::insert_week_state(time_t start, int i, Job job) {
     insert_state_and_update(i, j, start, end, job);
 }
 
+/*!
+  Inserts a huge job according to its characteristics (submission date, duration, computational resources).
+*/
 void System::insert_weekend_state(time_t s, int index, Job job) {
     time_t start = advance_to_friday(s), end;
     int i = index;
@@ -151,6 +177,9 @@ void System::insert_weekend_state(time_t s, int index, Job job) {
     insert_state_and_update(i, i, start, end, job);
 }
 
+/*!
+  Inserts states from job in the states vector.
+*/
 void System::insert_state(int &index, Job job) {
     time_t start = job.get_time();
     while (index < states.size() && states[index].get_time() <= start) {
@@ -163,6 +192,9 @@ void System::insert_state(int &index, Job job) {
     }
 } 
 
+/*!
+  Runs the scheduler algorithm.
+*/
 void System::schedule() {
     int index = 0;
     for (int i = 0; i < jobs.size(); i++) {
@@ -170,6 +202,9 @@ void System::schedule() {
     }
 }
 
+/*!
+  Calculates the operational costs of the simulation.
+*/
 void System::calculate_op_cost() {
     int level = 0;
     time_t start = 0;
@@ -191,6 +226,9 @@ void System::calculate_op_cost() {
     }
 }
 
+/*!
+  Returns string with informations about the outputs of the simulation.
+*/
 string System::get_results() {
     stringstream results;
     results << "Is sorted: " << (std::is_sorted(states.begin(),states.end()) ? "true" : "false") << endl << endl;

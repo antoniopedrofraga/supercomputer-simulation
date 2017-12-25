@@ -5,6 +5,10 @@
 #include <ctime>
 #include <string>
 
+//! Week class
+/*!
+  This object keeps information about number of jobs processed in a week by each queue.
+ */
 class Week {
 private:
 	time_t start; /*! Private time_t. Timestamp representing the starting date of week. */

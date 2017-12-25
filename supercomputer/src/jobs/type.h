@@ -1,4 +1,4 @@
-#ifndef TYPE_H
+#ifndef TYPE_H //Define header if it's not defined
 #define TYPE_H
 
 //! Job type enum.
