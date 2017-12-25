@@ -22,8 +22,6 @@ double generate_random(double low, double high) {
 	return distribution(rng);
 }
 
-//bool compare_state_ptr(State* a, State* b) { return (*a < *b); }
-
 /*
 	Sunday = 0, Monday = 1, Tuesday = 2, Wednesday = 3 (...)
 */
@@ -33,8 +31,18 @@ bool is_weekend(time_t start, time_t end) {
 	start_hour = tm_start->tm_hour, end_hour = tm_end->tm_hour;
 	bool weekend = (start_day == SATURDAY || end_day == SATURDAY) ||
 				(start_day == SUNDAY || end_day == SUNDAY) ||
-				(start_day == FRIDAY && start_hour >= 17 || end_day == FRIDAY && end_hour >= 17) ||
-				(start_day == MONDAY && start_hour < 9 || end_day == MONDAY && end_hour < 9);
+				((start_day == FRIDAY && start_hour >= 17) || (end_day == FRIDAY && end_hour >= 17)) ||
+				((start_day == MONDAY && start_hour < 9) || (end_day == MONDAY && end_hour < 9));
+	return weekend;
+}
+
+bool is_weekend(time_t start) {
+	struct tm *tm_start = localtime(&start);
+	unsigned int start_day = tm_start->tm_wday, start_hour = tm_start->tm_hour;
+	bool weekend = (start_day == SATURDAY) ||
+				(start_day == SUNDAY) ||
+				(start_day == FRIDAY && start_hour >= 17) ||
+				(start_day == MONDAY && start_hour < 9);
 	return weekend;
 }
 

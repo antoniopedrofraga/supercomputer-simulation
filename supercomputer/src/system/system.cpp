@@ -66,7 +66,7 @@ void System::create_jobs() {
     unsigned long long int now = config->get_time();
 
     random_device rd;
-    exponential_distribution<double> rng(8);
+    exponential_distribution<double> rng(10);
     mt19937 rnd_gen(rd());
 
     for (int i = 0; i < nr_jobs; i++) {
@@ -182,6 +182,9 @@ void System::insert_weekend_state(time_t s, int index, Job job) {
 */
 void System::insert_state(int &index, Job job) {
     time_t start = job.get_time();
+    if (is_weekend(start) && !job.is_huge()) {
+        start = advance_weekend(start);
+    }
     while (index < states.size() && states[index].get_time() <= start) {
         index++;
     }
