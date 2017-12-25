@@ -1,5 +1,8 @@
 #include "statistics.h"
 
+/*!
+  Contructor of Statistics object.
+*/
 Statistics::Statistics(Configuration * config) {
 	this->config = config;
 	this->usage_price = 0;
@@ -7,18 +10,31 @@ Statistics::Statistics(Configuration * config) {
 	this->machine_time = 0;
 }
 
+/*!
+  Adds usage price to system total usage price.
+*/
 void Statistics::add_usage_price(double price) {
 	this->usage_price += price;
 }
 
+/*!
+  Adds operational cost to system total operational cost.
+*/
 void Statistics::add_operational_cost(double cost) {
 	this->operational_cost += cost;
 }
 
+/*!
+  Adds time to system total machine time.
+*/
 void Statistics::add_machine_time(unsigned long long int time) {
 	this->machine_time += time;
 }
 
+/*!
+  Adds job to waiting time and turn around ratio vectors according to its type.
+  Increments the number of Short, Medium, Large or Huge jobs processed in the week of job start time.
+*/
 void Statistics::add_job(time_t start, Job job) {
 	unsigned long long int wt = start - job.get_time();
 	double ta = (double)wt / (double)job.get_duration();
@@ -36,6 +52,9 @@ void Statistics::add_job(time_t start, Job job) {
 		this->huge_queue_ta.push_back(ta);
 	}
 
+	/*
+		Increments value if week exists.
+	*/
 	bool added = false;
 	for (int i = 0; i < this->weeks.size(); i++) {
 		if (this->weeks[i].get_start() <= start && this->weeks[i].get_end() > start + job.get_duration()) {
@@ -47,6 +66,10 @@ void Statistics::add_job(time_t start, Job job) {
 			this->weeks[i].set_start(start);
 		}
 	}
+
+	/*
+		Adds week and increments value if week doesn't exist.
+	*/
 	if (!added) {
 		time_t s, e;
 		unsigned int i = 0;
@@ -62,6 +85,9 @@ void Statistics::add_job(time_t start, Job job) {
 	}
 }
 
+/*!
+  Returns average of turn around times of short jobs as a string with a precision of 2 decimal places.
+*/
 string Statistics::get_short_ta() {
 	if (this->short_queue_ta.size() == 0) { return "0.00"; }
 
@@ -70,6 +96,10 @@ string Statistics::get_short_ta() {
 	stream << fixed << setprecision(2) << average;
 	return stream.str();
 }
+
+/*!
+  Returns average of turn around times of medium jobs as a string with a precision of 2 decimal places.
+*/
 string Statistics::get_medium_ta() {
 	if (this->medium_queue_ta.size() == 0) { return "0.00"; }
 
@@ -78,6 +108,10 @@ string Statistics::get_medium_ta() {
 	stream << fixed << setprecision(2) << average;
 	return stream.str();
 }
+
+/*!
+  Returns average of turn around times of large jobs as a string with a precision of 2 decimal places.
+*/
 string Statistics::get_large_ta() {
 	if (this->large_queue_ta.size() == 0) { return "0.00"; }
 
@@ -86,6 +120,10 @@ string Statistics::get_large_ta() {
 	stream << fixed << setprecision(2) << average;
 	return stream.str();
 }
+
+/*!
+  Returns average of turn around times of huge jobs as a string with a precision of 2 decimal places.
+*/
 string Statistics::get_huge_ta() {
 	if (this->huge_queue_ta.size() == 0) { return "0.00"; }
 
@@ -95,7 +133,9 @@ string Statistics::get_huge_ta() {
 	return stream.str();
 }
 
-
+/*!
+  Returns average of waiting times of short jobs as a string with a precision of 2 decimal places.
+*/
 string Statistics::get_short_wt() {
 	if (this->short_queue_wt.size() == 0) { return "0.00"; }
 
@@ -104,6 +144,10 @@ string Statistics::get_short_wt() {
 	stream << fixed << setprecision(2) << average;
 	return stream.str();
 }
+
+/*!
+  Returns average of waiting times of medium jobs as a string with a precision of 2 decimal places.
+*/
 string Statistics::get_medium_wt() {
 	if (this->medium_queue_wt.size() == 0) { return "0.00"; }
 
@@ -112,6 +156,10 @@ string Statistics::get_medium_wt() {
 	stream << fixed << setprecision(2) << average;
 	return stream.str();
 }
+
+/*!
+  Returns average of waiting times of large jobs as a string with a precision of 2 decimal places.
+*/
 string Statistics::get_large_wt() {
 	if (this->large_queue_wt.size() == 0) { return "0.00"; }
 
@@ -120,6 +168,10 @@ string Statistics::get_large_wt() {
 	stream << fixed << setprecision(2) << average;
 	return stream.str();
 }
+
+/*!
+  Returns average of waiting times of huge jobs as a string with a precision of 2 decimal places.
+*/
 string Statistics::get_huge_wt() {
 	if (this->huge_queue_wt.size() == 0) { return "0.00"; }
 
@@ -129,18 +181,27 @@ string Statistics::get_huge_wt() {
 	return stream.str();
 }
 
+/*!
+  Returns system total operational cost as a string with a precision of 2 decimal places.
+*/
 string Statistics::get_operational_cost() {
 	stringstream stream;
 	stream << fixed << setprecision(2) << this->operational_cost;
 	return stream.str();
 }
 
+/*!
+  Returns system economic balance as a string with a precision of 2 decimal places.
+*/
 string Statistics::get_economic_balance() {
 	stringstream stream;
 	stream << fixed << setprecision(2) << (this->usage_price - this->operational_cost);
 	return stream.str();
 }
 
+/*!
+  Returns the machine time as a string with the number of days, hours, minutes and seconds.
+*/
 string Statistics::get_machine_time() {
 	long long int days = this->machine_time / 60 / 60 / 24;
 	long long int hours = (this->machine_time / 60 / 60) % 24;
@@ -153,12 +214,19 @@ string Statistics::get_machine_time() {
 	<< to_string(seconds) + " seconds. ";
 	return stream.str();
 }
+
+/*!
+  Returns system total usage price as a string with a precision of 2 decimal places.
+*/
 string Statistics::get_usage_price() {
 	stringstream stream;
 	stream << fixed << setprecision(2) << this->usage_price;
 	return stream.str();
 }
 
+/*!
+  Returns system weekly usage as a string.
+*/
 string Statistics::get_weekly_usage() {
 	stringstream stream;
 	for (int i = 0; i < weeks.size(); i++) {

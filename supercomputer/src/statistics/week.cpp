@@ -1,5 +1,8 @@
 #include "week.h"
 
+/*!
+  Contructor of Week object.
+*/
 Week::Week(time_t start, time_t end) {
 	this->start = start;
 	this->end = end;
@@ -10,17 +13,30 @@ Week::Week(time_t start, time_t end) {
 	this->huge_nr = 0;
 }
 
+/*!
+  Ŕeturns the starting time of a week.
+*/
 time_t Week::get_start() {
 	return this->start;
 }
+
+/*!
+  Ŕeturns the ending time of a week.
+*/
 time_t Week::get_end() {
 	return this->end;
 }
 
+/*!
+  Defines a start time of a week.
+*/
 void Week::set_start(time_t start) {
 	this->start = start;
 }
 
+/*!
+  Increments the number of jobs processed this week according to its type.
+*/
 void Week::add_job(Job job) { 
 	if (job.is_short()) {
 		this->short_nr++;
@@ -33,6 +49,9 @@ void Week::add_job(Job job) {
 	}
 }
 
+/*!
+  Converts the week object to a specific ostream output format.
+*/
 ostream& operator<<(ostream& os, const Week& week) {  
 	time_t start = week.start, end = week.end;
 

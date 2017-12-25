@@ -41,7 +41,7 @@ private:
 	time_t start; /*! Private time_t. Start time of the simulation. */
 	bool now; /*! Private time_t. Start time of the simulation. */
 public:
-	//! Configuration Object efault contructor.
+	//! Configuration Object default contructor.
     /*!
       Initializes a Configuration object.
     */
