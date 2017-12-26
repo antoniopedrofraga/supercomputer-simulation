@@ -4,6 +4,9 @@
 
 using namespace std;
 
+/*!
+  Creates a simulation with the default values. 
+*/
 int main() {
 	string text = string("Is sorted: true\n\nExist negatives: false\n\n")
 	+ string("Machine time consumed by jobs: ?[0-9]*\\.?[0-9]+ days, ?[0-9]*\\.?[0-9]+ hours, ?[0-9]*\\.?[0-9]+ minutes, ?[0-9]*\\.?[0-9]+ seconds. +?\n\n")
