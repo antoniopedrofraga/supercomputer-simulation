@@ -61,7 +61,6 @@ void System::create_users() {
   Populates the vector of jobs.
 */
 void System::create_jobs() {
-    unsigned int nr_users = users.size();
     unsigned int nr_jobs = config->get_jobs_nr();
     unsigned long long int now = config->get_time();
 

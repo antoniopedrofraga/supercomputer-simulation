@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-12-21 22:15:23</td>
+            <td class="headerValue">2017-12-30 18:15:25</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -60,7 +60,7 @@
       <td>
 <pre class="sourceHeading">          Line data    Source code</pre>
 <pre class="source">
-<a name="1"><span class="lineNum">       1 </span>            : #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file</a>
+<a name="1"><span class="lineNum">       1 </span>            : #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main()</a>
 <span class="lineNum">       2 </span>            : #include &quot;test.h&quot;
 <span class="lineNum">       3 </span>            : #include &lt;regex&gt;
 <span class="lineNum">       4 </span>            : 
@@ -73,7 +73,7 @@
 <span class="lineNum">      11 </span><span class="lineCov">          1 :     config-&gt;set_time(time);</span>
 <span class="lineNum">      12 </span><span class="lineCov">          1 :     config-&gt;set_now(false);</span>
 <span class="lineNum">      13 </span><span class="lineCov">          2 :     vector&lt;User*&gt; users = {new User(config, 0, false), new User(config, 1, true)};</span>
-<span class="lineNum">      14 </span><span class="lineCov">          2 :     vector&lt;Job&gt; jobs = { *(new Job(config, time, THIRTY_EIGHT_HOURS - ONE_HOUR)), *(new Job(config, time, THIRTY_EIGHT_HOURS)), *(new Job(config, time, THIRTY_EIGHT_HOURS)), *(new Job(config, time + 1, ONE_HOUR)), *(new Job(config, time + 2, EIGHT_HOURS)), *(new Job(config, time + 3, SIXTEEN_HOURS))};</span>
+<span class="lineNum">      14 </span><span class="lineCov">          2 :     vector&lt;Job&gt; jobs = { *(new Job(config, time, SIXTY_FOUR_HOURS - ONE_HOUR)), *(new Job(config, time, SIXTY_FOUR_HOURS)), *(new Job(config, time, SIXTY_FOUR_HOURS)), *(new Job(config, time + 1, ONE_HOUR)), *(new Job(config, time + 2, EIGHT_HOURS)), *(new Job(config, time + 3, SIXTEEN_HOURS))};</span>
 <span class="lineNum">      15 </span><span class="lineCov">          1 :     System * system = new System(config, users, jobs);</span>
 <span class="lineNum">      16 </span>            : 
 <span class="lineNum">      17 </span>            :     string text = string(&quot;Is sorted: true\n\nExist negatives: false\n\n&quot;)

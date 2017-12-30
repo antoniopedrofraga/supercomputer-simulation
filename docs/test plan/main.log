@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.3)  22 DEC 2017 17:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.3)  30 DEC 2017 20:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1663,17 +1663,17 @@ Package microtype Info: Loading generic settings for font family
 AED: lastpage setting LastPage
 [6] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 11689 strings out of 494910
- 168723 string characters out of 6179836
+ 11693 strings out of 494910
+ 168760 string characters out of 6179836
  412825 words of memory out of 5000000
  14610 multiletter control sequences out of 15000+600000
- 96632 words of font info for 135 fonts, out of 8000000 for 9000
+ 96902 words of font info for 138 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 42i,11n,58p,689b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,11n,58p,687b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</
 usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb>
-Output written on main.pdf (6 pages, 48966 bytes).
+Output written on main.pdf (6 pages, 49055 bytes).
 PDF statistics:
  32 PDF objects out of 1000 (max. 8388607)
  21 compressed objects within 1 object stream

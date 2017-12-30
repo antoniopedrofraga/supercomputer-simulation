@@ -31,17 +31,17 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">49</td>
-            <td class="headerCovTableEntry">49</td>
+            <td class="headerCovTableEntry">52</td>
+            <td class="headerCovTableEntry">52</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-12-21 22:15:23</td>
+            <td class="headerValue">2017-12-30 18:15:25</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">13</td>
-            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntry">14</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
@@ -62,68 +62,112 @@
 <pre class="source">
 <a name="1"><span class="lineNum">       1 </span>            : #include &quot;state.h&quot;</a>
 <span class="lineNum">       2 </span>            : 
-<span class="lineNum">       3 </span><span class="lineCov">         91 : State::State(long long int total_cores, time_t time, StateType state_type) {</span>
-<span class="lineNum">       4 </span><span class="lineCov">         91 :         this-&gt;total_cores = total_cores;</span>
-<span class="lineNum">       5 </span><span class="lineCov">         91 :         this-&gt;short_cores = total_cores * 0.1;</span>
-<span class="lineNum">       6 </span><span class="lineCov">         91 :         this-&gt;medium_cores = total_cores * 0.2;</span>
-<span class="lineNum">       7 </span><span class="lineCov">         91 :         this-&gt;large_cores = total_cores * 0.7;</span>
-<span class="lineNum">       8 </span><span class="lineCov">         91 :         this-&gt;used_cores = 0;</span>
-<span class="lineNum">       9 </span>            : 
-<span class="lineNum">      10 </span><span class="lineCov">         91 :         this-&gt;time = time;</span>
-<span class="lineNum">      11 </span><span class="lineCov">         91 :         this-&gt;state_type = state_type;</span>
-<a name="12"><span class="lineNum">      12 </span><span class="lineCov">         91 : }</span></a>
-<span class="lineNum">      13 </span>            : 
-<span class="lineNum">      14 </span><span class="lineCov">       1921 : State::State(State state, time_t time, StateType state_type) {</span>
-<span class="lineNum">      15 </span><span class="lineCov">       1921 :         this-&gt;total_cores = state.get_total_cores();</span>
-<span class="lineNum">      16 </span><span class="lineCov">       1921 :         this-&gt;short_cores = state.get_short_cores();</span>
-<span class="lineNum">      17 </span><span class="lineCov">       1921 :         this-&gt;medium_cores = state.get_medium_cores();</span>
-<span class="lineNum">      18 </span><span class="lineCov">       1921 :         this-&gt;large_cores = state.get_large_cores();</span>
-<span class="lineNum">      19 </span><span class="lineCov">       1921 :         this-&gt;used_cores = state.get_used_cores();</span>
-<span class="lineNum">      20 </span>            : 
-<span class="lineNum">      21 </span><span class="lineCov">       1921 :         this-&gt;time = time;</span>
-<span class="lineNum">      22 </span><span class="lineCov">       1921 :         this-&gt;state_type = state_type;</span>
-<a name="23"><span class="lineNum">      23 </span><span class="lineCov">       1921 : }</span></a>
-<span class="lineNum">      24 </span>            : 
-<span class="lineNum">      25 </span><span class="lineCov">       4427 : void State::insert_job(Job job) {</span>
-<span class="lineNum">      26 </span><span class="lineCov">       4427 :         if (job.is_short()) {</span>
-<span class="lineNum">      27 </span><span class="lineCov">       1485 :                 this-&gt;short_cores -= job.get_cores();</span>
-<span class="lineNum">      28 </span><span class="lineCov">       2942 :         } else if (job.is_medium()) {</span>
-<span class="lineNum">      29 </span><span class="lineCov">       2320 :                 this-&gt;medium_cores -= job.get_cores();</span>
-<span class="lineNum">      30 </span><span class="lineCov">        622 :         } else if (job.is_large()) {</span>
-<span class="lineNum">      31 </span><span class="lineCov">        536 :                 this-&gt;large_cores -= job.get_cores();</span>
-<span class="lineNum">      32 </span><span class="lineCov">         86 :         } else if (job.is_huge()) {</span>
-<span class="lineNum">      33 </span><span class="lineCov">         86 :                 this-&gt;short_cores = 0;</span>
-<span class="lineNum">      34 </span><span class="lineCov">         86 :                 this-&gt;medium_cores = 0;</span>
-<span class="lineNum">      35 </span><span class="lineCov">         86 :                 this-&gt;large_cores = 0;</span>
-<span class="lineNum">      36 </span>            :         }
-<span class="lineNum">      37 </span><span class="lineCov">       4427 :         this-&gt;used_cores += job.get_cores();</span>
-<a name="38"><span class="lineNum">      38 </span><span class="lineCov">       4427 : }</span></a>
-<span class="lineNum">      39 </span>            : 
-<span class="lineNum">      40 </span><span class="lineCov">     694410 : bool State::can_insert_job(Job job) {</span>
-<span class="lineNum">      41 </span><span class="lineCov">     694410 :         int subtraction = -1;</span>
-<span class="lineNum">      42 </span><span class="lineCov">     694410 :         if (job.is_short()) {</span>
-<span class="lineNum">      43 </span><span class="lineCov">      23163 :                 subtraction = this-&gt;short_cores - job.get_cores();</span>
-<span class="lineNum">      44 </span><span class="lineCov">     671247 :         } else if (job.is_medium()) {</span>
-<span class="lineNum">      45 </span><span class="lineCov">     502669 :                 subtraction = this-&gt;medium_cores - job.get_cores();</span>
-<span class="lineNum">      46 </span><span class="lineCov">     168578 :         } else if (job.is_large()) {</span>
-<span class="lineNum">      47 </span><span class="lineCov">     168578 :                 subtraction = this-&gt;large_cores - job.get_cores();</span>
-<span class="lineNum">      48 </span>            :         }
-<span class="lineNum">      49 </span><span class="lineCov">     694410 :         return subtraction &gt;= 0;</span>
-<a name="50"><span class="lineNum">      50 </span>            : }</a>
-<span class="lineNum">      51 </span>            : 
-<span class="lineNum">      52 </span><span class="lineCov">     835267 : time_t State::get_time() {</span>
-<span class="lineNum">      53 </span><span class="lineCov">     835267 :         return this-&gt;time;</span>
-<a name="54"><span class="lineNum">      54 </span>            : }</a>
-<span class="lineNum">      55 </span>            : 
-<span class="lineNum">      56 </span><span class="lineCov">       2012 : StateType State::get_type() {</span>
-<span class="lineNum">      57 </span><span class="lineCov">       2012 :         return this-&gt;state_type;</span>
-<a name="58"><span class="lineNum">      58 </span>            : }</a>
-<a name="59"><span class="lineNum">      59 </span>            : </a>
-<a name="60"><span class="lineNum">      60 </span><span class="lineCov">       3933 : long long int State::get_short_cores() { return this-&gt;short_cores; }</span></a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">       3933 : long long int State::get_medium_cores() { return this-&gt;medium_cores; }</span></a>
-<a name="62"><span class="lineNum">      62 </span><span class="lineCov">       3933 : long long int State::get_large_cores() { return this-&gt;large_cores; }</span></a>
-<span class="lineNum">      63 </span><span class="lineCov">       1921 : long long int State::get_total_cores() { return this-&gt;total_cores; }</span>
-<span class="lineNum">      64 </span><span class="lineCov">       1924 : long long int State::get_used_cores() { return this-&gt;used_cores; }</span>
+<span class="lineNum">       3 </span>            : /*!
+<a name="4"><span class="lineNum">       4 </span>            :   Default contructor of State. </a>
+<span class="lineNum">       5 </span>            : */
+<span class="lineNum">       6 </span><span class="lineCov">         85 : State::State(long long int total_cores, time_t time, StateType state_type) {</span>
+<span class="lineNum">       7 </span><span class="lineCov">         85 :         this-&gt;total_cores = total_cores;</span>
+<span class="lineNum">       8 </span><span class="lineCov">         85 :         this-&gt;short_cores = total_cores * 0.1;</span>
+<span class="lineNum">       9 </span><span class="lineCov">         85 :         this-&gt;medium_cores = total_cores * 0.2;</span>
+<span class="lineNum">      10 </span><span class="lineCov">         85 :         this-&gt;large_cores = total_cores * 0.7;</span>
+<span class="lineNum">      11 </span><span class="lineCov">         85 :         this-&gt;used_cores = 0;</span>
+<span class="lineNum">      12 </span>            : 
+<span class="lineNum">      13 </span><span class="lineCov">         85 :         this-&gt;time = time;</span>
+<span class="lineNum">      14 </span><span class="lineCov">         85 :         this-&gt;state_type = state_type;</span>
+<span class="lineNum">      15 </span><span class="lineCov">         85 : }</span>
+<span class="lineNum">      16 </span>            : 
+<span class="lineNum">      17 </span>            : /*!
+<a name="18"><span class="lineNum">      18 </span>            :   Alternative contructor of State. </a>
+<span class="lineNum">      19 </span>            : */
+<span class="lineNum">      20 </span><span class="lineCov">       1927 : State::State(State state, time_t time, StateType state_type) {</span>
+<span class="lineNum">      21 </span><span class="lineCov">       1927 :         this-&gt;total_cores = state.get_total_cores();</span>
+<span class="lineNum">      22 </span><span class="lineCov">       1927 :         this-&gt;short_cores = state.get_short_cores();</span>
+<span class="lineNum">      23 </span><span class="lineCov">       1927 :         this-&gt;medium_cores = state.get_medium_cores();</span>
+<span class="lineNum">      24 </span><span class="lineCov">       1927 :         this-&gt;large_cores = state.get_large_cores();</span>
+<span class="lineNum">      25 </span><span class="lineCov">       1927 :         this-&gt;used_cores = state.get_used_cores();</span>
+<span class="lineNum">      26 </span>            : 
+<span class="lineNum">      27 </span><span class="lineCov">       1927 :         this-&gt;time = time;</span>
+<span class="lineNum">      28 </span><span class="lineCov">       1927 :         this-&gt;state_type = state_type;</span>
+<span class="lineNum">      29 </span><span class="lineCov">       1927 : }</span>
+<span class="lineNum">      30 </span>            : 
+<span class="lineNum">      31 </span>            : /*!
+<a name="32"><span class="lineNum">      32 </span>            :   Decreases the available number of a computational resources available in the system according to type of job. </a>
+<span class="lineNum">      33 </span>            : */
+<span class="lineNum">      34 </span><span class="lineCov">       4190 : void State::insert_job(Job job) {</span>
+<span class="lineNum">      35 </span><span class="lineCov">       4190 :         if (job.is_short()) {</span>
+<span class="lineNum">      36 </span><span class="lineCov">       1246 :                 this-&gt;short_cores -= job.get_cores();</span>
+<span class="lineNum">      37 </span><span class="lineCov">       2944 :         } else if (job.is_medium()) {</span>
+<span class="lineNum">      38 </span><span class="lineCov">       2179 :                 this-&gt;medium_cores -= job.get_cores();</span>
+<span class="lineNum">      39 </span><span class="lineCov">        765 :         } else if (job.is_large()) {</span>
+<span class="lineNum">      40 </span><span class="lineCov">        685 :                 this-&gt;large_cores -= job.get_cores();</span>
+<span class="lineNum">      41 </span><span class="lineCov">         80 :         } else if (job.is_huge()) {</span>
+<span class="lineNum">      42 </span><span class="lineCov">         80 :                 this-&gt;short_cores = 0;</span>
+<span class="lineNum">      43 </span><span class="lineCov">         80 :                 this-&gt;medium_cores = 0;</span>
+<span class="lineNum">      44 </span><span class="lineCov">         80 :                 this-&gt;large_cores = 0;</span>
+<span class="lineNum">      45 </span>            :         }
+<span class="lineNum">      46 </span><span class="lineCov">       4190 :         this-&gt;used_cores += job.get_cores();</span>
+<span class="lineNum">      47 </span><span class="lineCov">       4190 : }</span>
+<span class="lineNum">      48 </span>            : 
+<span class="lineNum">      49 </span>            : /*!
+<a name="50"><span class="lineNum">      50 </span>            :   Indicates whether a job can run with the available computational resources at this system state. </a>
+<span class="lineNum">      51 </span>            : */
+<span class="lineNum">      52 </span><span class="lineCov">     705153 : bool State::can_insert_job(Job job) {</span>
+<span class="lineNum">      53 </span><span class="lineCov">     705153 :         int subtraction = -1;</span>
+<span class="lineNum">      54 </span><span class="lineCov">     705153 :         if (job.is_short()) {</span>
+<span class="lineNum">      55 </span><span class="lineCov">      24654 :                 subtraction = this-&gt;short_cores - job.get_cores();</span>
+<span class="lineNum">      56 </span><span class="lineCov">     680499 :         } else if (job.is_medium()) {</span>
+<span class="lineNum">      57 </span><span class="lineCov">     513215 :                 subtraction = this-&gt;medium_cores - job.get_cores();</span>
+<span class="lineNum">      58 </span><span class="lineCov">     167284 :         } else if (job.is_large()) {</span>
+<span class="lineNum">      59 </span><span class="lineCov">     167284 :                 subtraction = this-&gt;large_cores - job.get_cores();</span>
+<span class="lineNum">      60 </span>            :         }
+<span class="lineNum">      61 </span><span class="lineCov">     705153 :         return subtraction &gt;= 0;</span>
+<span class="lineNum">      62 </span>            : }
+<span class="lineNum">      63 </span>            : /*!
+<a name="64"><span class="lineNum">      64 </span>            :   Returns time of ocurrence. </a>
+<span class="lineNum">      65 </span>            : */
+<span class="lineNum">      66 </span><span class="lineCov">     830172 : time_t State::get_time() {</span>
+<span class="lineNum">      67 </span><span class="lineCov">     830172 :         return this-&gt;time;</span>
+<span class="lineNum">      68 </span>            : }
+<span class="lineNum">      69 </span>            : 
+<span class="lineNum">      70 </span>            : /*!
+<a name="71"><span class="lineNum">      71 </span>            :   Returns state type. </a>
+<span class="lineNum">      72 </span>            : */
+<span class="lineNum">      73 </span><span class="lineCov">       2012 : StateType State::get_type() {</span>
+<span class="lineNum">      74 </span><span class="lineCov">       2012 :         return this-&gt;state_type;</span>
+<span class="lineNum">      75 </span>            : }
+<span class="lineNum">      76 </span>            : 
+<span class="lineNum">      77 </span>            : /*!
+<a name="78"><span class="lineNum">      78 </span>            :   Returns the amount of available computational resources for short jobs. </a>
+<span class="lineNum">      79 </span>            : */
+<span class="lineNum">      80 </span><span class="lineCov">       3939 : long long int State::get_short_cores() { return this-&gt;short_cores; }</span>
+<span class="lineNum">      81 </span>            : 
+<span class="lineNum">      82 </span>            : /*!
+<a name="83"><span class="lineNum">      83 </span>            :   Returns the amount of available computational resources for medium jobs. </a>
+<span class="lineNum">      84 </span>            : */
+<span class="lineNum">      85 </span><span class="lineCov">       3939 : long long int State::get_medium_cores() { return this-&gt;medium_cores; }</span>
+<span class="lineNum">      86 </span>            : 
+<span class="lineNum">      87 </span>            : /*!
+<a name="88"><span class="lineNum">      88 </span>            :   Returns the amount of available computational resources for large jobs. </a>
+<span class="lineNum">      89 </span>            : */
+<span class="lineNum">      90 </span><span class="lineCov">       3939 : long long int State::get_large_cores() { return this-&gt;large_cores; }</span>
+<span class="lineNum">      91 </span>            : 
+<span class="lineNum">      92 </span>            : /*!
+<a name="93"><span class="lineNum">      93 </span>            :   Returns the total number of cores. </a>
+<span class="lineNum">      94 </span>            : */
+<span class="lineNum">      95 </span><span class="lineCov">       1927 : long long int State::get_total_cores() { return this-&gt;total_cores; }</span>
+<span class="lineNum">      96 </span>            : 
+<span class="lineNum">      97 </span>            : /*!
+<a name="98"><span class="lineNum">      98 </span>            :   Returns the number of used cores. </a>
+<span class="lineNum">      99 </span>            : */
+<span class="lineNum">     100 </span><span class="lineCov">       1927 : long long int State::get_used_cores() { return this-&gt;used_cores; }</span>
+<span class="lineNum">     101 </span>            : 
+<span class="lineNum">     102 </span>            : 
+<span class="lineNum">     103 </span>            : /*!
+<a name="104"><span class="lineNum">     104 </span>            :   &lt; Operator overload. </a>
+<span class="lineNum">     105 </span>            : */
+<a name="106"><span class="lineNum">     106 </span><span class="lineCov">       2010 : bool operator&lt;(State const&amp; a, State const&amp; b) {</span></a>
+<span class="lineNum">     107 </span><span class="lineCov">       2010 :     return a.time &lt; b.time;</span>
+<span class="lineNum">     108 </span><span class="lineCov">          3 : }</span>
 </pre>
       </td>
     </tr>

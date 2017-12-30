@@ -31,17 +31,17 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">33</td>
-            <td class="headerCovTableEntry">33</td>
+            <td class="headerCovTableEntry">35</td>
+            <td class="headerCovTableEntry">35</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-12-21 22:15:23</td>
+            <td class="headerValue">2017-12-30 18:15:25</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">12</td>
-            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">13</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
@@ -62,49 +62,90 @@
 <pre class="source">
 <a name="1"><span class="lineNum">       1 </span>            : #include &quot;job.h&quot;</a>
 <span class="lineNum">       2 </span>            : 
-<span class="lineNum">       3 </span><span class="lineCov">       1011 : Job::Job(Configuration * config, time_t time, unsigned long long int duration) {</span>
-<span class="lineNum">       4 </span><span class="lineCov">       1011 :         this-&gt;config = config;</span>
-<span class="lineNum">       5 </span><span class="lineCov">       1011 :         this-&gt;time = time;</span>
-<span class="lineNum">       6 </span><span class="lineCov">       1011 :         unsigned long long int total_nodes = config-&gt;get_cores_nr() * config-&gt;get_nodes_nr();</span>
-<span class="lineNum">       7 </span><span class="lineCov">       1011 :         if (duration &lt;= ONE_HOUR) {</span>
-<span class="lineNum">       8 </span><span class="lineCov">        150 :                 this-&gt;type = Short;</span>
-<span class="lineNum">       9 </span><span class="lineCov">        150 :                 this-&gt;cores = generate_random(1, 2 * CORES_NR);</span>
-<span class="lineNum">      10 </span><span class="lineCov">        861 :         } else if (duration &gt; ONE_HOUR &amp;&amp; duration &lt;= EIGHT_HOURS) {</span>
-<span class="lineNum">      11 </span><span class="lineCov">        569 :                 this-&gt;type = Medium;</span>
-<span class="lineNum">      12 </span><span class="lineCov">        569 :                 this-&gt;cores = generate_random(2 * CORES_NR + 1, (int)(total_nodes * 0.1));</span>
-<span class="lineNum">      13 </span><span class="lineCov">        292 :         } else if (duration &gt; EIGHT_HOURS &amp;&amp; duration &lt;= SIXTEEN_HOURS) {</span>
-<span class="lineNum">      14 </span><span class="lineCov">        204 :                 this-&gt;type = Large;</span>
-<span class="lineNum">      15 </span><span class="lineCov">        204 :                 this-&gt;cores = generate_random((int)(total_nodes * 0.1 + 1), (int)(total_nodes * 0.5));</span>
-<span class="lineNum">      16 </span>            :         } else {
-<span class="lineNum">      17 </span><span class="lineCov">         88 :                 this-&gt;type = Huge;</span>
-<span class="lineNum">      18 </span><span class="lineCov">         88 :                 this-&gt;cores = total_nodes;</span>
-<span class="lineNum">      19 </span>            :         }
-<span class="lineNum">      20 </span><span class="lineCov">       1011 :         this-&gt;duration = duration;</span>
-<a name="21"><span class="lineNum">      21 </span><span class="lineCov">       1011 : }</span></a>
-<a name="22"><span class="lineNum">      22 </span>            : </a>
-<a name="23"><span class="lineNum">      23 </span><span class="lineCov">     700850 : bool Job::is_short() { return this-&gt;type == Short; }</span></a>
-<a name="24"><span class="lineNum">      24 </span><span class="lineCov">     675904 : bool Job::is_medium() { return this-&gt;type == Medium; }</span></a>
-<span class="lineNum">      25 </span><span class="lineCov">     169779 : bool Job::is_large() { return this-&gt;type == Large; }</span>
-<a name="26"><span class="lineNum">      26 </span><span class="lineCov">       2099 : bool Job::is_huge() { return this-&gt;type == Huge; }</span></a>
-<span class="lineNum">      27 </span>            : 
-<span class="lineNum">      28 </span><span class="lineCov">       2016 : time_t Job::get_time() {</span>
-<span class="lineNum">      29 </span><span class="lineCov">       2016 :         return this-&gt;time;</span>
-<a name="30"><span class="lineNum">      30 </span>            : }</a>
-<span class="lineNum">      31 </span>            : 
-<span class="lineNum">      32 </span><span class="lineCov">     703182 : int Job::get_cores() {</span>
-<span class="lineNum">      33 </span><span class="lineCov">     703182 :         return this-&gt;cores;</span>
-<a name="34"><span class="lineNum">      34 </span>            : }</a>
+<span class="lineNum">       3 </span>            : /*!
+<a name="4"><span class="lineNum">       4 </span>            :   Contructor of Job object. Defines what is the type of a job according to its duration, generating its number of cores randomly, following a linear distribution.</a>
+<span class="lineNum">       5 </span>            : */
+<span class="lineNum">       6 </span><span class="lineCov">       1011 : Job::Job(Configuration * config, time_t time, unsigned long long int duration) {</span>
+<span class="lineNum">       7 </span><span class="lineCov">       1011 :         this-&gt;config = config;</span>
+<span class="lineNum">       8 </span><span class="lineCov">       1011 :         this-&gt;time = time;</span>
+<span class="lineNum">       9 </span><span class="lineCov">       1011 :         unsigned long long int total_nodes = config-&gt;get_cores_nr() * config-&gt;get_nodes_nr();</span>
+<span class="lineNum">      10 </span><span class="lineCov">       1011 :         if (duration &lt;= ONE_HOUR) {</span>
+<span class="lineNum">      11 </span><span class="lineCov">        155 :                 this-&gt;type = Short;</span>
+<span class="lineNum">      12 </span><span class="lineCov">        155 :                 this-&gt;cores = generate_random(1, 2 * CORES_NR);</span>
+<span class="lineNum">      13 </span><span class="lineCov">        856 :         } else if (duration &gt; ONE_HOUR &amp;&amp; duration &lt;= EIGHT_HOURS) {</span>
+<span class="lineNum">      14 </span><span class="lineCov">        575 :                 this-&gt;type = Medium;</span>
+<span class="lineNum">      15 </span><span class="lineCov">        575 :                 this-&gt;cores = generate_random(2 * CORES_NR + 1, (int)(total_nodes * 0.1));</span>
+<span class="lineNum">      16 </span><span class="lineCov">        281 :         } else if (duration &gt; EIGHT_HOURS &amp;&amp; duration &lt;= SIXTEEN_HOURS) {</span>
+<span class="lineNum">      17 </span><span class="lineCov">        199 :                 this-&gt;type = Large;</span>
+<span class="lineNum">      18 </span><span class="lineCov">        199 :                 this-&gt;cores = generate_random((int)(total_nodes * 0.1 + 1), (int)(total_nodes * 0.5));</span>
+<span class="lineNum">      19 </span>            :         } else {
+<span class="lineNum">      20 </span><span class="lineCov">         82 :                 this-&gt;type = Huge;</span>
+<span class="lineNum">      21 </span><span class="lineCov">         82 :                 this-&gt;cores = total_nodes;</span>
+<span class="lineNum">      22 </span>            :         }
+<span class="lineNum">      23 </span><span class="lineCov">       1011 :         this-&gt;duration = duration;</span>
+<span class="lineNum">      24 </span><span class="lineCov">       1011 : }</span>
+<span class="lineNum">      25 </span>            : 
+<span class="lineNum">      26 </span>            : /*!
+<a name="27"><span class="lineNum">      27 </span>            :   Ŕeturns whether the job is short or not.</a>
+<span class="lineNum">      28 </span>            : */
+<span class="lineNum">      29 </span><span class="lineCov">     711356 : bool Job::is_short() { return this-&gt;type == Short; }</span>
+<span class="lineNum">      30 </span>            : 
+<span class="lineNum">      31 </span>            : /*!
+<a name="32"><span class="lineNum">      32 </span>            :   Ŕeturns whether the job is medium or not.</a>
+<span class="lineNum">      33 </span>            : */
+<span class="lineNum">      34 </span><span class="lineCov">     685148 : bool Job::is_medium() { return this-&gt;type == Medium; }</span>
 <span class="lineNum">      35 </span>            : 
-<span class="lineNum">      36 </span><span class="lineCov">       4004 : double Job::get_price() {</span>
-<span class="lineNum">      37 </span><span class="lineCov">       4004 :         return (double)duration * cores * config-&gt;get_usage_price();</span>
-<a name="38"><span class="lineNum">      38 </span>            : }</a>
-<span class="lineNum">      39 </span>            : 
-<span class="lineNum">      40 </span><span class="lineCov">       1006 : void Job::set_user(User * user) {</span>
-<a name="41"><span class="lineNum">      41 </span><span class="lineCov">       1006 :         this-&gt;user = user;</span></a>
-<span class="lineNum">      42 </span><span class="lineCov">       1006 : }</span>
-<a name="43"><span class="lineNum">      43 </span><span class="lineCov">     571974 : unsigned long long int Job::get_duration() {</span></a>
-<span class="lineNum">      44 </span><span class="lineCov">     571974 :         return this-&gt;duration;</span>
-<span class="lineNum">      45 </span><span class="lineCov">          3 : }</span>
+<span class="lineNum">      36 </span>            : /*!
+<a name="37"><span class="lineNum">      37 </span>            :   Ŕeturns whether the job is large or not.</a>
+<span class="lineNum">      38 </span>            : */
+<span class="lineNum">      39 </span><span class="lineCov">     168606 : bool Job::is_large() { return this-&gt;type == Large; }</span>
+<span class="lineNum">      40 </span>            : 
+<span class="lineNum">      41 </span>            : /*!
+<a name="42"><span class="lineNum">      42 </span>            :   Ŕeturns whether the job is huge or not.</a>
+<span class="lineNum">      43 </span>            : */
+<span class="lineNum">      44 </span><span class="lineCov">       3099 : bool Job::is_huge() { return this-&gt;type == Huge; }</span>
+<span class="lineNum">      45 </span>            : 
+<span class="lineNum">      46 </span>            : /*!
+<a name="47"><span class="lineNum">      47 </span>            :   Ŕeturns the submission time of a job.</a>
+<span class="lineNum">      48 </span>            : */
+<span class="lineNum">      49 </span><span class="lineCov">       2016 : time_t Job::get_time() {</span>
+<span class="lineNum">      50 </span><span class="lineCov">       2016 :         return this-&gt;time;</span>
+<span class="lineNum">      51 </span>            : }
+<span class="lineNum">      52 </span>            : 
+<span class="lineNum">      53 </span>            : /*!
+<a name="54"><span class="lineNum">      54 </span>            :   Ŕeturns the number of cores taken by a job.</a>
+<span class="lineNum">      55 </span>            : */
+<span class="lineNum">      56 </span><span class="lineCov">     713457 : int Job::get_cores() {</span>
+<span class="lineNum">      57 </span><span class="lineCov">     713457 :         return this-&gt;cores;</span>
+<span class="lineNum">      58 </span>            : }
+<span class="lineNum">      59 </span>            : 
+<span class="lineNum">      60 </span>            : /*!
+<a name="61"><span class="lineNum">      61 </span>            :   Ŕeturns the price to pay to run a job.</a>
+<span class="lineNum">      62 </span>            : */
+<span class="lineNum">      63 </span><span class="lineCov">       2023 : double Job::get_price() {</span>
+<span class="lineNum">      64 </span><span class="lineCov">       2023 :         return (double)duration * cores * config-&gt;get_usage_price();</span>
+<span class="lineNum">      65 </span>            : }
+<span class="lineNum">      66 </span>            : 
+<span class="lineNum">      67 </span>            : /*!
+<a name="68"><span class="lineNum">      68 </span>            :   Defines the user who submited the job.</a>
+<span class="lineNum">      69 </span>            : */
+<span class="lineNum">      70 </span><span class="lineCov">       1006 : void Job::set_user(User * user) {</span>
+<span class="lineNum">      71 </span><span class="lineCov">       1006 :         this-&gt;user = user;</span>
+<span class="lineNum">      72 </span><span class="lineCov">       1006 : }</span>
+<span class="lineNum">      73 </span>            : 
+<span class="lineNum">      74 </span>            : /*!
+<a name="75"><span class="lineNum">      75 </span>            :   Returns the job duration in seconds.</a>
+<span class="lineNum">      76 </span>            : */
+<span class="lineNum">      77 </span><span class="lineCov">     603325 : unsigned long long int Job::get_duration() {</span>
+<span class="lineNum">      78 </span><span class="lineCov">     603325 :         return this-&gt;duration;</span>
+<span class="lineNum">      79 </span>            : }
+<span class="lineNum">      80 </span>            : 
+<span class="lineNum">      81 </span>            : /*!
+<a name="82"><span class="lineNum">      82 </span>            :   &lt; Operator overload. </a>
+<span class="lineNum">      83 </span>            : */
+<a name="84"><span class="lineNum">      84 </span><span class="lineCov">       8295 : bool operator&lt;(Job const&amp; a, Job const&amp; b) {</span></a>
+<span class="lineNum">      85 </span><span class="lineCov">       8295 :     return a.time &lt; b.time;</span>
+<span class="lineNum">      86 </span><span class="lineCov">          3 : }</span>
 </pre>
       </td>
     </tr>

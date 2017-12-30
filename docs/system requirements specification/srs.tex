@@ -275,7 +275,7 @@ The simulation shall produce a set of outputs regarding:
 \par The default values of the \textbf{Operational Cost} and \textbf{Usage Price} shall be assumed as \textbf{£0.000475} and \textbf{£0.000014} respectively. The operational cost, is considered to have a constant value \textbf{per second}. The usage price is considered to have a constant value \textbf{per core second}. Further information about the calculations of these values can be found in the \textbf{appendixes} section.
 
 
-\chapter{System Features}
+\chapter{Functional Requirements}
 This section defines the functional requirements of this system.
 \begin{center}
     \begin{longtable}{|M{1.5cm}|M{4cm}|M{8cm}|}
@@ -370,6 +370,58 @@ Every second, the default \textbf{operational cost} of the system is:
 Despite of having this default value, \textbf{the operational cost} can be changed as an input variable.
 
 \section{Appendix C: Implementation}
+
+\subsection{Jobs duration random generation}
+
+The \textbf{project} will be written in \textbf{C++}. By including the \textbf{random} header file,  one can use a function to generate a random distribution. The \textbf{$\lambda$ (lambda)} value must be specified in order to use it.  This value, is theoretically defined as the mean number of events in an interval of length 1. The \textbf{$\lambda$ (lambda)} value variance was studied, comparing its results. It could be observed that, by generating \textbf{100000000} jobs, a smaller value of \textbf{$\lambda$ (lambda)} led to a more even distribution, whereas a higher value led to an increasing number of smaller jobs.
+
+\begin{figure}[!htb]
+\centering
+\begin{minipage}{.33\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{durationslambda1.png}
+  \captionof{figure}{$\lambda$ = 1.}
+\end{minipage}%
+\begin{minipage}{.33\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{durationslambda10.png}
+  \captionof{figure}{$\lambda$ = 10.}
+\end{minipage}
+\begin{minipage}{.33\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{durationslambda20.png}
+  \captionof{figure}{$\lambda$ = 20.}
+\end{minipage}
+\end{figure}
+
+Therefore, with \textbf{$\lambda$ (lambda)} equal to \textbf{10} or \textbf{20}, the number of generated short jobs would strongly likely to be less than the amount of \textbf{medium} jobs. This would happen because of the amount of time that a \textbf{short} job lasts \textbf{(from 0 seconds to 1 hour)}, compared to the duration of a \textbf{medium} job, that can go from \textbf{1 hour} to \textbf{8 hours}. 
+
+
+\begin{figure}[!htb]
+\centering
+\begin{minipage}{.33\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{typeslambda1.png}
+  \captionof{figure}{$\lambda$ = 1.}
+\end{minipage}%
+\begin{minipage}{.33\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{typeslambda10.png}
+  \captionof{figure}{$\lambda$ = 10.}
+\end{minipage}
+\begin{minipage}{.33\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{typeslambda20.png}
+  \captionof{figure}{$\lambda$ = 20.}
+\end{minipage}
+\end{figure}
+
+
+Thus, the chosen value for \textbf{$\lambda$ (lambda)} is \textbf{10}, and the exponential distribution shall take this value.
+
+\newpage
+
+\subsection{Scheduler}
 
 \par Jobs will be generated randomly, having attributes characterized by the set of rules defined in this document. It is created an \textbf{array} of \textbf{Jobs}, sorted by \textbf{date of submission}. Every date will be stored as an \textbf{UNIX timestamp}, which is represented by the total number of seconds counted from \textbf{January 1st, 1970 at UTC}. This date is named as \textbf{UNIX Epoch}.
 
