@@ -56,8 +56,9 @@ void Statistics::add_job(time_t start, Job job) {
 		Increments value if week exists.
 	*/
 	bool added = false;
-	for (int i = 0; i < this->weeks.size(); i++) {
-		if (this->weeks[i].get_start() <= start && this->weeks[i].get_end() > start + job.get_duration()) {
+	for (size_t i = 0; i < this->weeks.size(); i++) {
+		time_t end = start + job.get_duration();
+		if (this->weeks[i].get_start() <= start && this->weeks[i].get_end() > end) {
 			this->weeks[i].add_job(job);
 			added = true;
 		} else if (this->weeks[i].get_start() == advance_to_friday(start)) {
@@ -229,7 +230,7 @@ string Statistics::get_usage_price() {
 */
 string Statistics::get_weekly_usage() {
 	stringstream stream;
-	for (int i = 0; i < weeks.size(); i++) {
+	for (size_t i = 0; i < weeks.size(); i++) {
 		stream << "Week " << (i + 1) << " " << weeks[i] << endl;
 	}
 	return stream.str();

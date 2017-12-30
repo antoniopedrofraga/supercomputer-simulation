@@ -22,7 +22,7 @@ System::System(Configuration * config, vector<User*> users, vector<Job> jobs) {
     this->total_cores_nr = config->get_cores_nr() * config->get_nodes_nr();
     this->users = users;
     this->jobs = jobs;
-    for (int i = 0; i < jobs.size(); i++) {
+    for (size_t i = 0; i < jobs.size(); i++) {
         int user_id = 0;
         while (!users[user_id]->can_afford(&jobs[i])) {
             user_id++;
@@ -36,7 +36,7 @@ System::System(Configuration * config, vector<User*> users, vector<Job> jobs) {
 }
 
 bool System::exist_negatives() {
-    for (int i = 0; i < states.size(); i++) {
+    for (size_t i = 0; i < states.size(); i++) {
         if (states[i].get_short_cores() < 0 ||
             states[i].get_medium_cores() < 0 ||
             states[i].get_large_cores() < 0) {
@@ -50,8 +50,8 @@ return false;
   Populates the vector of users, assuring that there's at least a researcher.
 */
 void System::create_users() {
-    int user_nr = config->get_jobs_nr();
-    for (int i = 0; i < user_nr; i++) {
+    unsigned int user_nr = config->get_jobs_nr();
+    for (size_t i = 0; i < user_nr; i++) {
         users.push_back(new User(config, i, false));
     }
     users.push_back(new User(config, user_nr, true));
@@ -61,15 +61,15 @@ void System::create_users() {
   Populates the vector of jobs.
 */
 void System::create_jobs() {
-    int nr_users = users.size();
-    int nr_jobs = config->get_jobs_nr();
+    unsigned int nr_users = users.size();
+    unsigned int nr_jobs = config->get_jobs_nr();
     unsigned long long int now = config->get_time();
 
     random_device rd;
     exponential_distribution<double> rng(10);
     mt19937 rnd_gen(rd());
 
-    for (int i = 0; i < nr_jobs; i++) {
+    for (size_t i = 0; i < nr_jobs; i++) {
         double duration_value = rng(rnd_gen), requests_value = rng(rnd_gen);
 
         //Duration of job must not be 0 and must be less than sixty four hours.
@@ -100,13 +100,13 @@ void System::create_jobs() {
 /*!
   Inserts state in vector of states, updating the computational resources in every state from index i to j.
 */
-void System::insert_state_and_update(int i, int j, time_t start, time_t end, Job job) {
+void System::insert_state_and_update(size_t i, size_t j, time_t start, time_t end, Job job) {
     statistics->add_job(start, job);
 
-    State * start_state = i - 1 >= 0 ? new State(states[i - 1], start, Start) : new State(this->total_cores_nr, start, Start);
+    State * start_state = i != 0 ? new State(states[i - 1], start, Start) : new State(this->total_cores_nr, start, Start);
     start_state->insert_job(job);
-    State * end_state = !job.is_huge() && j - 1 >= 0 ? new State(states[j - 1], end, End) : new State(this->total_cores_nr, end, End);
-    for (int k = i; k < j; k++) {
+    State * end_state = !job.is_huge() && j != 0 ? new State(states[j - 1], end, End) : new State(this->total_cores_nr, end, End);
+    for (size_t k = i; k < j; k++) {
         states[k].insert_job(job);
     }
     states.insert(states.begin() + j, *end_state);
@@ -118,9 +118,9 @@ void System::insert_state_and_update(int i, int j, time_t start, time_t end, Job
   Inserts a short, medium or large job according to its characteristics (submission date, duration, computational resources).
   These jobs can't run on weekends.
 */
-void System::insert_week_state(time_t start, int i, Job job) {
+void System::insert_week_state(time_t start, size_t i, Job job) {
     time_t end = start + job.get_duration();
-    while (i - 1 >= 0 && i - 1 < states.size() && !states[i - 1].can_insert_job(job)) {
+    while (i != 0 && i - 1 < states.size() && !states[i - 1].can_insert_job(job)) {
         i++;
         start = states[i - 1].get_time();
         end = start + job.get_duration();
@@ -132,8 +132,8 @@ void System::insert_week_state(time_t start, int i, Job job) {
             }
         }
     }
-    int j = i;
-    while (i - 1 >= 0 && j < states.size() && states[j].get_time() <= end) {
+    size_t j = i;
+    while (i != 0 && j < states.size() && states[j].get_time() <= end) {
         if (!states[j].can_insert_job(job)) {
             i = j + 1;
             start = states[i - 1].get_time();
@@ -161,9 +161,9 @@ void System::insert_week_state(time_t start, int i, Job job) {
 /*!
   Inserts a huge job according to its characteristics (submission date, duration, computational resources).
 */
-void System::insert_weekend_state(time_t s, int index, Job job) {
+void System::insert_weekend_state(time_t s, size_t index, Job job) {
     time_t start = advance_to_friday(s), end;
-    int i = index;
+    size_t i = index;
     while (i < states.size() && states[i].get_time() < start) {
         i++;
     }
@@ -180,7 +180,7 @@ void System::insert_weekend_state(time_t s, int index, Job job) {
 /*!
   Inserts states from job in the states vector.
 */
-void System::insert_state(int &index, Job job) {
+void System::insert_state(size_t &index, Job job) {
     time_t start = job.get_time();
     if (is_weekend(start) && !job.is_huge()) {
         start = advance_weekend(start);
@@ -199,8 +199,8 @@ void System::insert_state(int &index, Job job) {
   Runs the scheduler algorithm.
 */
 void System::schedule() {
-    int index = 0;
-    for (int i = 0; i < jobs.size(); i++) {
+    size_t index = 0;
+    for (size_t i = 0; i < jobs.size(); i++) {
         insert_state(index, jobs[i]);
     }
 }
@@ -211,7 +211,7 @@ void System::schedule() {
 void System::calculate_op_cost() {
     int level = 0;
     time_t start = 0;
-    for (int i = 0; i < states.size(); i++) {
+    for (size_t i = 0; i < states.size(); i++) {
         if (states[i].get_type() == Start) {
             if (level == 0) {
                 start = states[i].get_time();

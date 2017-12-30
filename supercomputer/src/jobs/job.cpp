@@ -77,3 +77,10 @@ void Job::set_user(User * user) {
 unsigned long long int Job::get_duration() {
 	return this->duration;
 }
+
+/*!
+  < Operator overload. 
+*/
+bool operator<(Job const& a, Job const& b) {
+    return a.time < b.time;
+}

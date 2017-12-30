@@ -113,13 +113,7 @@ public:
 	long long int get_used_cores();
 
 	//! Operator overload. Overloads the < operator according to time of ocurence.
-    /*!
-      \param State & state. Object to be compared to.
-      \return bool. Less condition result according to time of submission.
-    */
-	const bool inline operator<(const State & state) const {
-		return this->time < state.time;
-	}
+	friend bool operator<(State const& a, State const& b);
 };
 
 #endif

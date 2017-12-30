@@ -1,5 +1,5 @@
 all: ./supercomputer/src/*.cpp
-	g++ -std=c++14 -g ./supercomputer/src/*.cpp ./supercomputer/src/*/*.cpp -o ./bin/supercomputer
+	g++ -std=c++14 -g -W ./supercomputer/src/*.cpp ./supercomputer/src/*/*.cpp -o ./bin/supercomputer
 run:
 	make all
 	./bin/supercomputer

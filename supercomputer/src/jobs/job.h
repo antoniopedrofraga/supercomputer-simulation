@@ -86,13 +86,7 @@ public:
 	bool is_huge();
 	
 	//! Operator overload. Overloads the < operator according to time of submission.
-    /*!
-      \param Job & job. Object to be compared to.
-      \return bool. Less condition result according to time of submission.
-    */
-	const bool inline operator<(const Job & job) const {
-		return this->time < job.time;
-	}
+	friend bool operator<(Job const& a, Job const& b);
 };
 
 #endif

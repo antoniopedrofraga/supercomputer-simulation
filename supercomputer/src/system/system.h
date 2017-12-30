@@ -33,26 +33,26 @@ private:
 
 	//! Private method. Inserts a state in the states vector.
   /*!
-    \param int &index. Index of the new state.
+    \param size_t &index. Index of the new state.
     \param Job job. Job related to state.
   */
-	void insert_state(int &index, Job job);
+	void insert_state(size_t &index, Job job);
 
 	//! Private method. Inserts a short, medium or large job according to its characteristics (submission date, duration, computational resources).
   /*!
     \param time_t start. Submission date.
-    \param int i. Index to start iterate in the states vector.
+    \param size_t i. Index to start iterate in the states vector.
     \param Job job. Job to be inserted.
   */
-	void insert_week_state(time_t start, int i, Job job);
+	void insert_week_state(time_t start, size_t i, Job job);
 
 	//! Private method. Inserts a huge job according to its characteristics (submission date, duration, computational resources).
   /*!
     \param time_t start. Submission date.
-    \param int i. Index to start iterate in the states vector.
+    \param size_t i. Index to start iterate in the states vector.
     \param Job job. Job to be inserted.
   */
-	void insert_weekend_state(time_t start, int i, Job job);
+	void insert_weekend_state(time_t start, size_t i, Job job);
 
 	//! Private method. Returns true if simulation has states with negative computational resources.
   /*!
@@ -74,13 +74,13 @@ private:
 
 	//! Private method. Inserts state in vector of states, updating the computational resources in every state from index i to j.
 	/*!
-    \param int i. Lower bound of states to be updated.
-    \param int j. Upper bound of states to be updated.
+    \param size_t i. Lower bound of states to be updated.
+    \param size_t j. Upper bound of states to be updated.
     \param time_t start. Starting time of job.
     \param time_t end. Ending time of job.
     \param Job job. Job to be inserted.
   */
-	void insert_state_and_update(int i, int j, time_t start, time_t end, Job job);
+	void insert_state_and_update(size_t i, size_t j, time_t start, time_t end, Job job);
 public:
 	//! System object default contructor.
   /*!
