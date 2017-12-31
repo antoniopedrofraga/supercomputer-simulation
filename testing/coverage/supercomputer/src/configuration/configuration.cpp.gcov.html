@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-12-30 18:15:25</td>
+            <td class="headerValue">2017-12-31 01:52:15</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">48</td>
@@ -179,9 +179,9 @@
 <span class="lineNum">     117 </span>            : /*!
 <a name="118"><span class="lineNum">     118 </span>            :   Ŕeturns a constant value if the variable &quot;student_random&quot; is false, and a random value between two established limits if not.</a>
 <span class="lineNum">     119 </span>            : */
-<span class="lineNum">     120 </span><span class="lineCov">        377 : double Configuration::get_student_budget() {</span>
-<span class="lineNum">     121 </span><span class="lineCov">        377 :         if (!this-&gt;student_random) {</span>
-<span class="lineNum">     122 </span><span class="lineCov">        375 :                 return this-&gt;student_budget;</span>
+<span class="lineNum">     120 </span><span class="lineCov">        339 : double Configuration::get_student_budget() {</span>
+<span class="lineNum">     121 </span><span class="lineCov">        339 :         if (!this-&gt;student_random) {</span>
+<span class="lineNum">     122 </span><span class="lineCov">        337 :                 return this-&gt;student_budget;</span>
 <span class="lineNum">     123 </span>            :         } else {
 <span class="lineNum">     124 </span><span class="lineCov">          2 :                 return generate_random(this-&gt;student_budget_min, this-&gt;student_budget_max);</span>
 <span class="lineNum">     125 </span>            :         }
@@ -212,9 +212,9 @@
 <span class="lineNum">     150 </span>            : /*!
 <a name="151"><span class="lineNum">     151 </span>            :   Ŕeturns a constant value if the variable &quot;student_random&quot; is false, and a random value between two established limits if not.</a>
 <span class="lineNum">     152 </span>            : */
-<span class="lineNum">     153 </span><span class="lineCov">        338 : double Configuration::get_researcher_budget() {</span>
-<span class="lineNum">     154 </span><span class="lineCov">        338 :         if (!this-&gt;researcher_random) {</span>
-<span class="lineNum">     155 </span><span class="lineCov">        336 :                 return this-&gt;researcher_budget;</span>
+<span class="lineNum">     153 </span><span class="lineCov">        337 : double Configuration::get_researcher_budget() {</span>
+<span class="lineNum">     154 </span><span class="lineCov">        337 :         if (!this-&gt;researcher_random) {</span>
+<span class="lineNum">     155 </span><span class="lineCov">        335 :                 return this-&gt;researcher_budget;</span>
 <span class="lineNum">     156 </span>            :         } else {
 <span class="lineNum">     157 </span><span class="lineCov">          2 :                 return generate_random(this-&gt;researcher_budget_min, this-&gt;researcher_budget_max);</span>
 <span class="lineNum">     158 </span>            :         }

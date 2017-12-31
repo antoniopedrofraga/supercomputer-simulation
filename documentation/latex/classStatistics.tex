@@ -1,0 +1,334 @@
+\hypertarget{classStatistics}{}\section{Statistics Class Reference}
+\label{classStatistics}\index{Statistics@{Statistics}}
+
+
+\hyperlink{classStatistics}{Statistics} class.  
+
+
+
+
+{\ttfamily \#include $<$statistics.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStatistics_abf8cd294ac6cda2aeee639defc276702}{Statistics} (\hyperlink{classConfiguration}{Configuration} $\ast$config)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classStatistics}{Statistics} object default contructor. \end{DoxyCompactList}\item 
+string \hyperlink{classStatistics_af4c128bde8bed27787f5ecdb08bf9929}{get\+\_\+usage\+\_\+price} ()
+\begin{DoxyCompactList}\small\item\em Public method. Returns the total usage price as a string. \end{DoxyCompactList}\item 
+string \hyperlink{classStatistics_afb354cc8fcd9ab43ec9c3d9e2880e660}{get\+\_\+machine\+\_\+time} ()
+\begin{DoxyCompactList}\small\item\em Public method. Returns the total machine time as a string. \end{DoxyCompactList}\item 
+string \hyperlink{classStatistics_a091d26462ea4db2b2a6032b94ff49a31}{get\+\_\+operational\+\_\+cost} ()
+\begin{DoxyCompactList}\small\item\em Public method. Returns the total operational cost as a string. \end{DoxyCompactList}\item 
+string \hyperlink{classStatistics_a20e75d62f6802875eec1ebd8424d84b1}{get\+\_\+economic\+\_\+balance} ()
+\begin{DoxyCompactList}\small\item\em Public method. Returns the economic balance as a string. \end{DoxyCompactList}\item 
+string \hyperlink{classStatistics_a6f5e39adedce4de0c0983619fb8498c8}{get\+\_\+weekly\+\_\+usage} ()
+\begin{DoxyCompactList}\small\item\em Public method. Returns the weekly usage as a string. \end{DoxyCompactList}\item 
+string \hyperlink{classStatistics_a7858a6d068d7c56d29a5f54c20a8521c}{get\+\_\+short\+\_\+ta} ()
+\begin{DoxyCompactList}\small\item\em Public method. Returns the average turn around ratio of short jobs. \end{DoxyCompactList}\item 
+string \hyperlink{classStatistics_a114925dbd18467fed3db887104d27807}{get\+\_\+medium\+\_\+ta} ()
+\begin{DoxyCompactList}\small\item\em Public method. Returns the average turn around ratio of medium jobs. \end{DoxyCompactList}\item 
+string \hyperlink{classStatistics_a6f0aacba4f01c18cc9da75b1cb2f3e51}{get\+\_\+large\+\_\+ta} ()
+\begin{DoxyCompactList}\small\item\em Public method. Returns the average turn around ratio of large jobs. \end{DoxyCompactList}\item 
+string \hyperlink{classStatistics_a6afcfec266fe44d1c876be80f09f6de3}{get\+\_\+huge\+\_\+ta} ()
+\begin{DoxyCompactList}\small\item\em Public method. Returns the average turn around ratio of huge jobs. \end{DoxyCompactList}\item 
+string \hyperlink{classStatistics_abef59b8f494093e62ff1a27bd989e42a}{get\+\_\+short\+\_\+wt} ()
+\begin{DoxyCompactList}\small\item\em Public method. Returns the average waiting time of short jobs. \end{DoxyCompactList}\item 
+string \hyperlink{classStatistics_aa20489eecdafe0ebcac554f34b60caef}{get\+\_\+medium\+\_\+wt} ()
+\begin{DoxyCompactList}\small\item\em Public method. Returns the average waiting time of medium jobs. \end{DoxyCompactList}\item 
+string \hyperlink{classStatistics_a06c13d01f1a8ea83391628b9bf617a4f}{get\+\_\+large\+\_\+wt} ()
+\begin{DoxyCompactList}\small\item\em Public method. Returns the average waiting time of large jobs. \end{DoxyCompactList}\item 
+string \hyperlink{classStatistics_a17dc31579326d8463eba7dd661673f47}{get\+\_\+huge\+\_\+wt} ()
+\begin{DoxyCompactList}\small\item\em Public method. Returns the average waiting time of huge jobs. \end{DoxyCompactList}\item 
+void \hyperlink{classStatistics_af99eab950e1fa1a657332fface5dc13e}{add\+\_\+usage\+\_\+price} (double price)
+\begin{DoxyCompactList}\small\item\em Public method. Adds price to total usage price. \end{DoxyCompactList}\item 
+void \hyperlink{classStatistics_a17bca1fa9938f98e93cebd56d428f9a4}{add\+\_\+operational\+\_\+cost} (double cost)
+\begin{DoxyCompactList}\small\item\em Public method. Adds cost to total operational cost. \end{DoxyCompactList}\item 
+void \hyperlink{classStatistics_a726b0734f8a0c86024543190ab3092ea}{add\+\_\+machine\+\_\+time} (unsigned long long int time)
+\begin{DoxyCompactList}\small\item\em Public method. Adds time to total machine time. \end{DoxyCompactList}\item 
+void \hyperlink{classStatistics_a78e4c255a4999ebd6c8872eef6360427}{add\+\_\+job} (time\+\_\+t start, \hyperlink{classJob}{Job} job)
+\begin{DoxyCompactList}\small\item\em Public method. Adds job to waiting time and turn around vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classStatistics}{Statistics} class. 
+
+This object keeps statistics information structured and organized. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Statistics@{Statistics}!Statistics@{Statistics}}
+\index{Statistics@{Statistics}!Statistics@{Statistics}}
+\subsubsection[{\texorpdfstring{Statistics(\+Configuration $\ast$config)}{Statistics(Configuration *config)}}]{\setlength{\rightskip}{0pt plus 5cm}Statistics\+::\+Statistics (
+\begin{DoxyParamCaption}
+\item[{{\bf Configuration} $\ast$}]{config}
+\end{DoxyParamCaption}
+)}\hypertarget{classStatistics_abf8cd294ac6cda2aeee639defc276702}{}\label{classStatistics_abf8cd294ac6cda2aeee639defc276702}
+
+
+\hyperlink{classStatistics}{Statistics} object default contructor. 
+
+Private unsigned long long int. Total machine time of the simulation.
+
+Initializes a \hyperlink{classStatistics}{Statistics} object. 
+\begin{DoxyParams}{Parameters}
+{\em Configuration$\ast$} & config. Defines which configuration this statistics object should follow.\\
+\hline
+\end{DoxyParams}
+Contructor of \hyperlink{classStatistics}{Statistics} object. 
+
+\subsection{Member Function Documentation}
+\index{Statistics@{Statistics}!add\+\_\+job@{add\+\_\+job}}
+\index{add\+\_\+job@{add\+\_\+job}!Statistics@{Statistics}}
+\subsubsection[{\texorpdfstring{add\+\_\+job(time\+\_\+t start, Job job)}{add_job(time_t start, Job job)}}]{\setlength{\rightskip}{0pt plus 5cm}void Statistics\+::add\+\_\+job (
+\begin{DoxyParamCaption}
+\item[{time\+\_\+t}]{start, }
+\item[{{\bf Job}}]{job}
+\end{DoxyParamCaption}
+)}\hypertarget{classStatistics_a78e4c255a4999ebd6c8872eef6360427}{}\label{classStatistics_a78e4c255a4999ebd6c8872eef6360427}
+
+
+Public method. Adds job to waiting time and turn around vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+\_\+t} & start. Time of start. \\
+\hline
+{\em \hyperlink{classJob}{Job}} & job. \hyperlink{classJob}{Job} to be added.\\
+\hline
+\end{DoxyParams}
+Adds job to waiting time and turn around ratio vectors according to its type. Increments the number of Short, Medium, Large or Huge jobs processed in the week of job start time. \index{Statistics@{Statistics}!add\+\_\+machine\+\_\+time@{add\+\_\+machine\+\_\+time}}
+\index{add\+\_\+machine\+\_\+time@{add\+\_\+machine\+\_\+time}!Statistics@{Statistics}}
+\subsubsection[{\texorpdfstring{add\+\_\+machine\+\_\+time(unsigned long long int time)}{add_machine_time(unsigned long long int time)}}]{\setlength{\rightskip}{0pt plus 5cm}void Statistics\+::add\+\_\+machine\+\_\+time (
+\begin{DoxyParamCaption}
+\item[{unsigned long long int}]{time}
+\end{DoxyParamCaption}
+)}\hypertarget{classStatistics_a726b0734f8a0c86024543190ab3092ea}{}\label{classStatistics_a726b0734f8a0c86024543190ab3092ea}
+
+
+Public method. Adds time to total machine time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unsigned} & long long int time. Time in seconds to be added.\\
+\hline
+\end{DoxyParams}
+Adds time to system total machine time. \index{Statistics@{Statistics}!add\+\_\+operational\+\_\+cost@{add\+\_\+operational\+\_\+cost}}
+\index{add\+\_\+operational\+\_\+cost@{add\+\_\+operational\+\_\+cost}!Statistics@{Statistics}}
+\subsubsection[{\texorpdfstring{add\+\_\+operational\+\_\+cost(double cost)}{add_operational_cost(double cost)}}]{\setlength{\rightskip}{0pt plus 5cm}void Statistics\+::add\+\_\+operational\+\_\+cost (
+\begin{DoxyParamCaption}
+\item[{double}]{cost}
+\end{DoxyParamCaption}
+)}\hypertarget{classStatistics_a17bca1fa9938f98e93cebd56d428f9a4}{}\label{classStatistics_a17bca1fa9938f98e93cebd56d428f9a4}
+
+
+Public method. Adds cost to total operational cost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em double} & cost. Cost to be added.\\
+\hline
+\end{DoxyParams}
+Adds operational cost to system total operational cost. \index{Statistics@{Statistics}!add\+\_\+usage\+\_\+price@{add\+\_\+usage\+\_\+price}}
+\index{add\+\_\+usage\+\_\+price@{add\+\_\+usage\+\_\+price}!Statistics@{Statistics}}
+\subsubsection[{\texorpdfstring{add\+\_\+usage\+\_\+price(double price)}{add_usage_price(double price)}}]{\setlength{\rightskip}{0pt plus 5cm}void Statistics\+::add\+\_\+usage\+\_\+price (
+\begin{DoxyParamCaption}
+\item[{double}]{price}
+\end{DoxyParamCaption}
+)}\hypertarget{classStatistics_af99eab950e1fa1a657332fface5dc13e}{}\label{classStatistics_af99eab950e1fa1a657332fface5dc13e}
+
+
+Public method. Adds price to total usage price. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em double} & price. Price to be added.\\
+\hline
+\end{DoxyParams}
+Adds usage price to system total usage price. \index{Statistics@{Statistics}!get\+\_\+economic\+\_\+balance@{get\+\_\+economic\+\_\+balance}}
+\index{get\+\_\+economic\+\_\+balance@{get\+\_\+economic\+\_\+balance}!Statistics@{Statistics}}
+\subsubsection[{\texorpdfstring{get\+\_\+economic\+\_\+balance()}{get_economic_balance()}}]{\setlength{\rightskip}{0pt plus 5cm}string Statistics\+::get\+\_\+economic\+\_\+balance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classStatistics_a20e75d62f6802875eec1ebd8424d84b1}{}\label{classStatistics_a20e75d62f6802875eec1ebd8424d84b1}
+
+
+Public method. Returns the economic balance as a string. 
+
+\begin{DoxyReturn}{Returns}
+string. Economic balance string.
+\end{DoxyReturn}
+Returns system economic balance as a string with a precision of 2 decimal places. \index{Statistics@{Statistics}!get\+\_\+huge\+\_\+ta@{get\+\_\+huge\+\_\+ta}}
+\index{get\+\_\+huge\+\_\+ta@{get\+\_\+huge\+\_\+ta}!Statistics@{Statistics}}
+\subsubsection[{\texorpdfstring{get\+\_\+huge\+\_\+ta()}{get_huge_ta()}}]{\setlength{\rightskip}{0pt plus 5cm}string Statistics\+::get\+\_\+huge\+\_\+ta (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classStatistics_a6afcfec266fe44d1c876be80f09f6de3}{}\label{classStatistics_a6afcfec266fe44d1c876be80f09f6de3}
+
+
+Public method. Returns the average turn around ratio of huge jobs. 
+
+\begin{DoxyReturn}{Returns}
+string. Turn around ratio of huge jobs string.
+\end{DoxyReturn}
+Returns average of turn around times of huge jobs as a string with a precision of 2 decimal places. \index{Statistics@{Statistics}!get\+\_\+huge\+\_\+wt@{get\+\_\+huge\+\_\+wt}}
+\index{get\+\_\+huge\+\_\+wt@{get\+\_\+huge\+\_\+wt}!Statistics@{Statistics}}
+\subsubsection[{\texorpdfstring{get\+\_\+huge\+\_\+wt()}{get_huge_wt()}}]{\setlength{\rightskip}{0pt plus 5cm}string Statistics\+::get\+\_\+huge\+\_\+wt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classStatistics_a17dc31579326d8463eba7dd661673f47}{}\label{classStatistics_a17dc31579326d8463eba7dd661673f47}
+
+
+Public method. Returns the average waiting time of huge jobs. 
+
+\begin{DoxyReturn}{Returns}
+string. Average waiting time of huge jobs string.
+\end{DoxyReturn}
+Returns average of waiting times of huge jobs as a string with a precision of 2 decimal places. \index{Statistics@{Statistics}!get\+\_\+large\+\_\+ta@{get\+\_\+large\+\_\+ta}}
+\index{get\+\_\+large\+\_\+ta@{get\+\_\+large\+\_\+ta}!Statistics@{Statistics}}
+\subsubsection[{\texorpdfstring{get\+\_\+large\+\_\+ta()}{get_large_ta()}}]{\setlength{\rightskip}{0pt plus 5cm}string Statistics\+::get\+\_\+large\+\_\+ta (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classStatistics_a6f0aacba4f01c18cc9da75b1cb2f3e51}{}\label{classStatistics_a6f0aacba4f01c18cc9da75b1cb2f3e51}
+
+
+Public method. Returns the average turn around ratio of large jobs. 
+
+\begin{DoxyReturn}{Returns}
+string. Turn around ratio of large jobs string.
+\end{DoxyReturn}
+Returns average of turn around times of large jobs as a string with a precision of 2 decimal places. \index{Statistics@{Statistics}!get\+\_\+large\+\_\+wt@{get\+\_\+large\+\_\+wt}}
+\index{get\+\_\+large\+\_\+wt@{get\+\_\+large\+\_\+wt}!Statistics@{Statistics}}
+\subsubsection[{\texorpdfstring{get\+\_\+large\+\_\+wt()}{get_large_wt()}}]{\setlength{\rightskip}{0pt plus 5cm}string Statistics\+::get\+\_\+large\+\_\+wt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classStatistics_a06c13d01f1a8ea83391628b9bf617a4f}{}\label{classStatistics_a06c13d01f1a8ea83391628b9bf617a4f}
+
+
+Public method. Returns the average waiting time of large jobs. 
+
+\begin{DoxyReturn}{Returns}
+string. Average waiting time of large jobs string.
+\end{DoxyReturn}
+Returns average of waiting times of large jobs as a string with a precision of 2 decimal places. \index{Statistics@{Statistics}!get\+\_\+machine\+\_\+time@{get\+\_\+machine\+\_\+time}}
+\index{get\+\_\+machine\+\_\+time@{get\+\_\+machine\+\_\+time}!Statistics@{Statistics}}
+\subsubsection[{\texorpdfstring{get\+\_\+machine\+\_\+time()}{get_machine_time()}}]{\setlength{\rightskip}{0pt plus 5cm}string Statistics\+::get\+\_\+machine\+\_\+time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classStatistics_afb354cc8fcd9ab43ec9c3d9e2880e660}{}\label{classStatistics_afb354cc8fcd9ab43ec9c3d9e2880e660}
+
+
+Public method. Returns the total machine time as a string. 
+
+\begin{DoxyReturn}{Returns}
+string. Machine time string.
+\end{DoxyReturn}
+Returns the machine time as a string with the number of days, hours, minutes and seconds. \index{Statistics@{Statistics}!get\+\_\+medium\+\_\+ta@{get\+\_\+medium\+\_\+ta}}
+\index{get\+\_\+medium\+\_\+ta@{get\+\_\+medium\+\_\+ta}!Statistics@{Statistics}}
+\subsubsection[{\texorpdfstring{get\+\_\+medium\+\_\+ta()}{get_medium_ta()}}]{\setlength{\rightskip}{0pt plus 5cm}string Statistics\+::get\+\_\+medium\+\_\+ta (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classStatistics_a114925dbd18467fed3db887104d27807}{}\label{classStatistics_a114925dbd18467fed3db887104d27807}
+
+
+Public method. Returns the average turn around ratio of medium jobs. 
+
+\begin{DoxyReturn}{Returns}
+string. Turn around ratio of medium jobs string.
+\end{DoxyReturn}
+Returns average of turn around times of medium jobs as a string with a precision of 2 decimal places. \index{Statistics@{Statistics}!get\+\_\+medium\+\_\+wt@{get\+\_\+medium\+\_\+wt}}
+\index{get\+\_\+medium\+\_\+wt@{get\+\_\+medium\+\_\+wt}!Statistics@{Statistics}}
+\subsubsection[{\texorpdfstring{get\+\_\+medium\+\_\+wt()}{get_medium_wt()}}]{\setlength{\rightskip}{0pt plus 5cm}string Statistics\+::get\+\_\+medium\+\_\+wt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classStatistics_aa20489eecdafe0ebcac554f34b60caef}{}\label{classStatistics_aa20489eecdafe0ebcac554f34b60caef}
+
+
+Public method. Returns the average waiting time of medium jobs. 
+
+\begin{DoxyReturn}{Returns}
+string. Average waiting time of medium jobs string.
+\end{DoxyReturn}
+Returns average of waiting times of medium jobs as a string with a precision of 2 decimal places. \index{Statistics@{Statistics}!get\+\_\+operational\+\_\+cost@{get\+\_\+operational\+\_\+cost}}
+\index{get\+\_\+operational\+\_\+cost@{get\+\_\+operational\+\_\+cost}!Statistics@{Statistics}}
+\subsubsection[{\texorpdfstring{get\+\_\+operational\+\_\+cost()}{get_operational_cost()}}]{\setlength{\rightskip}{0pt plus 5cm}string Statistics\+::get\+\_\+operational\+\_\+cost (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classStatistics_a091d26462ea4db2b2a6032b94ff49a31}{}\label{classStatistics_a091d26462ea4db2b2a6032b94ff49a31}
+
+
+Public method. Returns the total operational cost as a string. 
+
+\begin{DoxyReturn}{Returns}
+string. Operational cost string.
+\end{DoxyReturn}
+Returns system total operational cost as a string with a precision of 2 decimal places. \index{Statistics@{Statistics}!get\+\_\+short\+\_\+ta@{get\+\_\+short\+\_\+ta}}
+\index{get\+\_\+short\+\_\+ta@{get\+\_\+short\+\_\+ta}!Statistics@{Statistics}}
+\subsubsection[{\texorpdfstring{get\+\_\+short\+\_\+ta()}{get_short_ta()}}]{\setlength{\rightskip}{0pt plus 5cm}string Statistics\+::get\+\_\+short\+\_\+ta (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classStatistics_a7858a6d068d7c56d29a5f54c20a8521c}{}\label{classStatistics_a7858a6d068d7c56d29a5f54c20a8521c}
+
+
+Public method. Returns the average turn around ratio of short jobs. 
+
+\begin{DoxyReturn}{Returns}
+string. Turn around ratio of short jobs string.
+\end{DoxyReturn}
+Returns average of turn around times of short jobs as a string with a precision of 2 decimal places. \index{Statistics@{Statistics}!get\+\_\+short\+\_\+wt@{get\+\_\+short\+\_\+wt}}
+\index{get\+\_\+short\+\_\+wt@{get\+\_\+short\+\_\+wt}!Statistics@{Statistics}}
+\subsubsection[{\texorpdfstring{get\+\_\+short\+\_\+wt()}{get_short_wt()}}]{\setlength{\rightskip}{0pt plus 5cm}string Statistics\+::get\+\_\+short\+\_\+wt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classStatistics_abef59b8f494093e62ff1a27bd989e42a}{}\label{classStatistics_abef59b8f494093e62ff1a27bd989e42a}
+
+
+Public method. Returns the average waiting time of short jobs. 
+
+\begin{DoxyReturn}{Returns}
+string. Average waiting time of short jobs string.
+\end{DoxyReturn}
+Returns average of waiting times of short jobs as a string with a precision of 2 decimal places. \index{Statistics@{Statistics}!get\+\_\+usage\+\_\+price@{get\+\_\+usage\+\_\+price}}
+\index{get\+\_\+usage\+\_\+price@{get\+\_\+usage\+\_\+price}!Statistics@{Statistics}}
+\subsubsection[{\texorpdfstring{get\+\_\+usage\+\_\+price()}{get_usage_price()}}]{\setlength{\rightskip}{0pt plus 5cm}string Statistics\+::get\+\_\+usage\+\_\+price (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classStatistics_af4c128bde8bed27787f5ecdb08bf9929}{}\label{classStatistics_af4c128bde8bed27787f5ecdb08bf9929}
+
+
+Public method. Returns the total usage price as a string. 
+
+\begin{DoxyReturn}{Returns}
+string. Usage price string.
+\end{DoxyReturn}
+Returns system total usage price as a string with a precision of 2 decimal places. \index{Statistics@{Statistics}!get\+\_\+weekly\+\_\+usage@{get\+\_\+weekly\+\_\+usage}}
+\index{get\+\_\+weekly\+\_\+usage@{get\+\_\+weekly\+\_\+usage}!Statistics@{Statistics}}
+\subsubsection[{\texorpdfstring{get\+\_\+weekly\+\_\+usage()}{get_weekly_usage()}}]{\setlength{\rightskip}{0pt plus 5cm}string Statistics\+::get\+\_\+weekly\+\_\+usage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classStatistics_a6f5e39adedce4de0c0983619fb8498c8}{}\label{classStatistics_a6f5e39adedce4de0c0983619fb8498c8}
+
+
+Public method. Returns the weekly usage as a string. 
+
+\begin{DoxyReturn}{Returns}
+string. \hyperlink{classSystem}{System} weekly usage.
+\end{DoxyReturn}
+Returns system weekly usage as a string. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+supercomputer/src/statistics/statistics.\+h\item 
+supercomputer/src/statistics/statistics.\+cpp\end{DoxyCompactItemize}

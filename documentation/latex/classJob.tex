@@ -1,0 +1,223 @@
+\hypertarget{classJob}{}\section{Job Class Reference}
+\label{classJob}\index{Job@{Job}}
+
+
+\hyperlink{classJob}{Job} class.  
+
+
+
+
+{\ttfamily \#include $<$job.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classJob_aa876f2c96653d4b4749359444c653546}{Job} (\hyperlink{classConfiguration}{Configuration} $\ast$config, time\+\_\+t time, unsigned long long int duration)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classJob}{Job} object default contructor. \end{DoxyCompactList}\item 
+time\+\_\+t \hyperlink{classJob_a3a9d5b907691c1a5f3e3b7dae9434232}{get\+\_\+time} ()
+\begin{DoxyCompactList}\small\item\em Public method. Returns the submission time of a job. \end{DoxyCompactList}\item 
+unsigned long long int \hyperlink{classJob_ada2d6b6ad399dd2a5d9677770bc31dd2}{get\+\_\+duration} ()
+\begin{DoxyCompactList}\small\item\em Public method. Returns the duration of a job. \end{DoxyCompactList}\item 
+int \hyperlink{classJob_a1983414eca65855ad4b60016d8f4732d}{get\+\_\+cores} ()
+\begin{DoxyCompactList}\small\item\em Public method. Returns the number of cores taken to run this job. \end{DoxyCompactList}\item 
+double \hyperlink{classJob_ae1623b448348b01c5b2216e59789a3bf}{get\+\_\+price} ()
+\begin{DoxyCompactList}\small\item\em Public method. Returns the price to be paid to run this job. \end{DoxyCompactList}\item 
+void \hyperlink{classJob_ace0d1b35fda43268e8a80cf846a59b02}{set\+\_\+user} (\hyperlink{classUser}{User} $\ast$user)
+\begin{DoxyCompactList}\small\item\em Public method. Defines the user who submits the job. \end{DoxyCompactList}\item 
+bool \hyperlink{classJob_af82ed715e92ab934401cd31af3582fbd}{is\+\_\+short} ()
+\begin{DoxyCompactList}\small\item\em Public method. Return whether a job is Short or not. \end{DoxyCompactList}\item 
+bool \hyperlink{classJob_a544bd796241d22eb4a2b96d2086f705a}{is\+\_\+medium} ()
+\begin{DoxyCompactList}\small\item\em Public method. Return whether a job is Medium or not. \end{DoxyCompactList}\item 
+bool \hyperlink{classJob_a7ce2c1d04f42a48f379d43080361fbc8}{is\+\_\+large} ()
+\begin{DoxyCompactList}\small\item\em Public method. Return whether a job is Large or not. \end{DoxyCompactList}\item 
+bool \hyperlink{classJob_ac34a235386a111274a5f55e2534c323b}{is\+\_\+huge} ()
+\begin{DoxyCompactList}\small\item\em Public method. Return whether a job is Huge or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classJob_a7cd0c5ec425cbac29dc2d35c316736a8}{operator$<$} (\hyperlink{classJob}{Job} const \&a, \hyperlink{classJob}{Job} const \&b)
+\begin{DoxyCompactList}\small\item\em Operator overload. Overloads the $<$ operator according to time of submission. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classJob}{Job} class. 
+
+This object represents a job submited by an user. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Job@{Job}!Job@{Job}}
+\index{Job@{Job}!Job@{Job}}
+\subsubsection[{\texorpdfstring{Job(\+Configuration $\ast$config, time\+\_\+t time, unsigned long long int duration)}{Job(Configuration *config, time_t time, unsigned long long int duration)}}]{\setlength{\rightskip}{0pt plus 5cm}Job\+::\+Job (
+\begin{DoxyParamCaption}
+\item[{{\bf Configuration} $\ast$}]{config, }
+\item[{time\+\_\+t}]{time, }
+\item[{unsigned long long int}]{duration}
+\end{DoxyParamCaption}
+)}\hypertarget{classJob_aa876f2c96653d4b4749359444c653546}{}\label{classJob_aa876f2c96653d4b4749359444c653546}
+
+
+\hyperlink{classJob}{Job} object default contructor. 
+
+Private int. Computational resources taken by this job in cores.
+
+Initializes a \hyperlink{classJob}{Job} object. 
+\begin{DoxyParams}{Parameters}
+{\em Configuration$\ast$} & config. Defines which configuration this job should follow. \\
+\hline
+{\em time\+\_\+t} & time. Submission date of job. \\
+\hline
+{\em unsigned} & long long int duration. \hyperlink{classJob}{Job} duration in seconds.\\
+\hline
+\end{DoxyParams}
+Contructor of \hyperlink{classJob}{Job} object. Defines what is the type of a job according to its duration, generating its number of cores randomly, following a linear distribution. 
+
+\subsection{Member Function Documentation}
+\index{Job@{Job}!get\+\_\+cores@{get\+\_\+cores}}
+\index{get\+\_\+cores@{get\+\_\+cores}!Job@{Job}}
+\subsubsection[{\texorpdfstring{get\+\_\+cores()}{get_cores()}}]{\setlength{\rightskip}{0pt plus 5cm}int Job\+::get\+\_\+cores (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJob_a1983414eca65855ad4b60016d8f4732d}{}\label{classJob_a1983414eca65855ad4b60016d8f4732d}
+
+
+Public method. Returns the number of cores taken to run this job. 
+
+\begin{DoxyReturn}{Returns}
+int. Number of cores.
+\end{DoxyReturn}
+Ŕeturns the number of cores taken by a job. \index{Job@{Job}!get\+\_\+duration@{get\+\_\+duration}}
+\index{get\+\_\+duration@{get\+\_\+duration}!Job@{Job}}
+\subsubsection[{\texorpdfstring{get\+\_\+duration()}{get_duration()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long int Job\+::get\+\_\+duration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJob_ada2d6b6ad399dd2a5d9677770bc31dd2}{}\label{classJob_ada2d6b6ad399dd2a5d9677770bc31dd2}
+
+
+Public method. Returns the duration of a job. 
+
+\begin{DoxyReturn}{Returns}
+unsigned long long int. Duration of job.
+\end{DoxyReturn}
+Returns the job duration in seconds. \index{Job@{Job}!get\+\_\+price@{get\+\_\+price}}
+\index{get\+\_\+price@{get\+\_\+price}!Job@{Job}}
+\subsubsection[{\texorpdfstring{get\+\_\+price()}{get_price()}}]{\setlength{\rightskip}{0pt plus 5cm}double Job\+::get\+\_\+price (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJob_ae1623b448348b01c5b2216e59789a3bf}{}\label{classJob_ae1623b448348b01c5b2216e59789a3bf}
+
+
+Public method. Returns the price to be paid to run this job. 
+
+\begin{DoxyReturn}{Returns}
+double. Price to be paid by a simulated user.
+\end{DoxyReturn}
+Ŕeturns the price to pay to run a job. \index{Job@{Job}!get\+\_\+time@{get\+\_\+time}}
+\index{get\+\_\+time@{get\+\_\+time}!Job@{Job}}
+\subsubsection[{\texorpdfstring{get\+\_\+time()}{get_time()}}]{\setlength{\rightskip}{0pt plus 5cm}time\+\_\+t Job\+::get\+\_\+time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJob_a3a9d5b907691c1a5f3e3b7dae9434232}{}\label{classJob_a3a9d5b907691c1a5f3e3b7dae9434232}
+
+
+Public method. Returns the submission time of a job. 
+
+\begin{DoxyReturn}{Returns}
+time\+\_\+t. Date represented in U\+N\+IX timestamp.
+\end{DoxyReturn}
+Ŕeturns the submission time of a job. \index{Job@{Job}!is\+\_\+huge@{is\+\_\+huge}}
+\index{is\+\_\+huge@{is\+\_\+huge}!Job@{Job}}
+\subsubsection[{\texorpdfstring{is\+\_\+huge()}{is_huge()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Job\+::is\+\_\+huge (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJob_ac34a235386a111274a5f55e2534c323b}{}\label{classJob_ac34a235386a111274a5f55e2534c323b}
+
+
+Public method. Return whether a job is Huge or not. 
+
+\begin{DoxyReturn}{Returns}
+bool. True if yes, false if it\textquotesingle{}s not.
+\end{DoxyReturn}
+Ŕeturns whether the job is huge or not. \index{Job@{Job}!is\+\_\+large@{is\+\_\+large}}
+\index{is\+\_\+large@{is\+\_\+large}!Job@{Job}}
+\subsubsection[{\texorpdfstring{is\+\_\+large()}{is_large()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Job\+::is\+\_\+large (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJob_a7ce2c1d04f42a48f379d43080361fbc8}{}\label{classJob_a7ce2c1d04f42a48f379d43080361fbc8}
+
+
+Public method. Return whether a job is Large or not. 
+
+\begin{DoxyReturn}{Returns}
+bool. True if yes, false if it\textquotesingle{}s not.
+\end{DoxyReturn}
+Ŕeturns whether the job is large or not. \index{Job@{Job}!is\+\_\+medium@{is\+\_\+medium}}
+\index{is\+\_\+medium@{is\+\_\+medium}!Job@{Job}}
+\subsubsection[{\texorpdfstring{is\+\_\+medium()}{is_medium()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Job\+::is\+\_\+medium (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJob_a544bd796241d22eb4a2b96d2086f705a}{}\label{classJob_a544bd796241d22eb4a2b96d2086f705a}
+
+
+Public method. Return whether a job is Medium or not. 
+
+\begin{DoxyReturn}{Returns}
+bool. True if yes, false if it\textquotesingle{}s not.
+\end{DoxyReturn}
+Ŕeturns whether the job is medium or not. \index{Job@{Job}!is\+\_\+short@{is\+\_\+short}}
+\index{is\+\_\+short@{is\+\_\+short}!Job@{Job}}
+\subsubsection[{\texorpdfstring{is\+\_\+short()}{is_short()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Job\+::is\+\_\+short (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJob_af82ed715e92ab934401cd31af3582fbd}{}\label{classJob_af82ed715e92ab934401cd31af3582fbd}
+
+
+Public method. Return whether a job is Short or not. 
+
+\begin{DoxyReturn}{Returns}
+bool. True if yes, false if it\textquotesingle{}s not.
+\end{DoxyReturn}
+Ŕeturns whether the job is short or not. \index{Job@{Job}!set\+\_\+user@{set\+\_\+user}}
+\index{set\+\_\+user@{set\+\_\+user}!Job@{Job}}
+\subsubsection[{\texorpdfstring{set\+\_\+user(\+User $\ast$user)}{set_user(User *user)}}]{\setlength{\rightskip}{0pt plus 5cm}void Job\+::set\+\_\+user (
+\begin{DoxyParamCaption}
+\item[{{\bf User} $\ast$}]{user}
+\end{DoxyParamCaption}
+)}\hypertarget{classJob_ace0d1b35fda43268e8a80cf846a59b02}{}\label{classJob_ace0d1b35fda43268e8a80cf846a59b02}
+
+
+Public method. Defines the user who submits the job. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em User$\ast$} & user. \hyperlink{classUser}{User} who submits the job.\\
+\hline
+\end{DoxyParams}
+Defines the user who submited the job. 
+
+\subsection{Friends And Related Function Documentation}
+\index{Job@{Job}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Job@{Job}}
+\subsubsection[{\texorpdfstring{operator$<$}{operator<}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Job} const \&}]{a, }
+\item[{{\bf Job} const \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classJob_a7cd0c5ec425cbac29dc2d35c316736a8}{}\label{classJob_a7cd0c5ec425cbac29dc2d35c316736a8}
+
+
+Operator overload. Overloads the $<$ operator according to time of submission. 
+
+$<$ Operator overload. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+supercomputer/src/jobs/job.\+h\item 
+supercomputer/src/jobs/job.\+cpp\end{DoxyCompactItemize}

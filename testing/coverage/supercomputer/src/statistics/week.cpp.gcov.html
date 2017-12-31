@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-12-30 18:15:25</td>
+            <td class="headerValue">2017-12-31 01:52:15</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">8</td>
@@ -65,28 +65,28 @@
 <span class="lineNum">       3 </span>            : /*!
 <a name="4"><span class="lineNum">       4 </span>            :   Contructor of Week object.</a>
 <span class="lineNum">       5 </span>            : */
-<span class="lineNum">       6 </span><span class="lineCov">         80 : Week::Week(time_t start, time_t end) {</span>
-<span class="lineNum">       7 </span><span class="lineCov">         80 :         this-&gt;start = start;</span>
-<span class="lineNum">       8 </span><span class="lineCov">         80 :         this-&gt;end = end;</span>
+<span class="lineNum">       6 </span><span class="lineCov">         83 : Week::Week(time_t start, time_t end) {</span>
+<span class="lineNum">       7 </span><span class="lineCov">         83 :         this-&gt;start = start;</span>
+<span class="lineNum">       8 </span><span class="lineCov">         83 :         this-&gt;end = end;</span>
 <span class="lineNum">       9 </span>            : 
-<span class="lineNum">      10 </span><span class="lineCov">         80 :         this-&gt;short_nr = 0;</span>
-<span class="lineNum">      11 </span><span class="lineCov">         80 :         this-&gt;medium_nr = 0;</span>
-<span class="lineNum">      12 </span><span class="lineCov">         80 :         this-&gt;large_nr = 0;</span>
-<span class="lineNum">      13 </span><span class="lineCov">         80 :         this-&gt;huge_nr = 0;</span>
-<span class="lineNum">      14 </span><span class="lineCov">         80 : }</span>
+<span class="lineNum">      10 </span><span class="lineCov">         83 :         this-&gt;short_nr = 0;</span>
+<span class="lineNum">      11 </span><span class="lineCov">         83 :         this-&gt;medium_nr = 0;</span>
+<span class="lineNum">      12 </span><span class="lineCov">         83 :         this-&gt;large_nr = 0;</span>
+<span class="lineNum">      13 </span><span class="lineCov">         83 :         this-&gt;huge_nr = 0;</span>
+<span class="lineNum">      14 </span><span class="lineCov">         83 : }</span>
 <span class="lineNum">      15 </span>            : 
 <span class="lineNum">      16 </span>            : /*!
 <a name="17"><span class="lineNum">      17 </span>            :   Ŕeturns the starting time of a week.</a>
 <span class="lineNum">      18 </span>            : */
-<span class="lineNum">      19 </span><span class="lineCov">      76867 : time_t Week::get_start() {</span>
-<span class="lineNum">      20 </span><span class="lineCov">      76867 :         return this-&gt;start;</span>
+<span class="lineNum">      19 </span><span class="lineCov">      77946 : time_t Week::get_start() {</span>
+<span class="lineNum">      20 </span><span class="lineCov">      77946 :         return this-&gt;start;</span>
 <span class="lineNum">      21 </span>            : }
 <span class="lineNum">      22 </span>            : 
 <span class="lineNum">      23 </span>            : /*!
 <a name="24"><span class="lineNum">      24 </span>            :   Ŕeturns the ending time of a week.</a>
 <span class="lineNum">      25 </span>            : */
-<span class="lineNum">      26 </span><span class="lineCov">       6278 : time_t Week::get_end() {</span>
-<span class="lineNum">      27 </span><span class="lineCov">       6278 :         return this-&gt;end;</span>
+<span class="lineNum">      26 </span><span class="lineCov">       6431 : time_t Week::get_end() {</span>
+<span class="lineNum">      27 </span><span class="lineCov">       6431 :         return this-&gt;end;</span>
 <span class="lineNum">      28 </span>            : }
 <span class="lineNum">      29 </span>            : 
 <span class="lineNum">      30 </span>            : /*!
@@ -101,36 +101,36 @@
 <span class="lineNum">      39 </span>            : */
 <span class="lineNum">      40 </span><span class="lineCov">       1006 : void Week::add_job(Job job) { </span>
 <span class="lineNum">      41 </span><span class="lineCov">       1006 :         if (job.is_short()) {</span>
-<span class="lineNum">      42 </span><span class="lineCov">        154 :                 this-&gt;short_nr++;</span>
-<span class="lineNum">      43 </span><span class="lineCov">        852 :         } else if (job.is_medium()) {</span>
-<span class="lineNum">      44 </span><span class="lineCov">        574 :                 this-&gt;medium_nr++;</span>
-<span class="lineNum">      45 </span><span class="lineCov">        278 :         } else if (job.is_large()) {</span>
-<span class="lineNum">      46 </span><span class="lineCov">        198 :                 this-&gt;large_nr++;</span>
+<span class="lineNum">      42 </span><span class="lineCov">        153 :                 this-&gt;short_nr++;</span>
+<span class="lineNum">      43 </span><span class="lineCov">        853 :         } else if (job.is_medium()) {</span>
+<span class="lineNum">      44 </span><span class="lineCov">        559 :                 this-&gt;medium_nr++;</span>
+<span class="lineNum">      45 </span><span class="lineCov">        294 :         } else if (job.is_large()) {</span>
+<span class="lineNum">      46 </span><span class="lineCov">        211 :                 this-&gt;large_nr++;</span>
 <span class="lineNum">      47 </span>            :         } else {
-<span class="lineNum">      48 </span><span class="lineCov">         80 :                 this-&gt;huge_nr++;</span>
+<span class="lineNum">      48 </span><span class="lineCov">         83 :                 this-&gt;huge_nr++;</span>
 <span class="lineNum">      49 </span>            :         }
 <span class="lineNum">      50 </span><span class="lineCov">       1006 : }</span>
 <span class="lineNum">      51 </span>            : 
 <span class="lineNum">      52 </span>            : /*!
 <a name="53"><span class="lineNum">      53 </span>            :   Converts the week object to a specific ostream output format.</a>
 <span class="lineNum">      54 </span>            : */
-<span class="lineNum">      55 </span><span class="lineCov">         80 : ostream&amp; operator&lt;&lt;(ostream&amp; os, const Week&amp; week) {  </span>
-<span class="lineNum">      56 </span><span class="lineCov">         80 :         time_t start = week.start, end = week.end;</span>
+<span class="lineNum">      55 </span><span class="lineCov">         83 : ostream&amp; operator&lt;&lt;(ostream&amp; os, const Week&amp; week) {  </span>
+<span class="lineNum">      56 </span><span class="lineCov">         83 :         time_t start = week.start, end = week.end;</span>
 <span class="lineNum">      57 </span>            : 
-<span class="lineNum">      58 </span><span class="lineCov">         80 :         std::tm * start_tm = std::localtime(&amp;start);</span>
+<span class="lineNum">      58 </span><span class="lineCov">         83 :         std::tm * start_tm = std::localtime(&amp;start);</span>
 <span class="lineNum">      59 </span>            :         char start_buffer[32];
-<span class="lineNum">      60 </span><span class="lineCov">         80 :         std::strftime(start_buffer, 32, &quot;%a, %d.%m.%Y %H:%M:%S&quot;, start_tm);</span>
+<span class="lineNum">      60 </span><span class="lineCov">         83 :         std::strftime(start_buffer, 32, &quot;%a, %d.%m.%Y %H:%M:%S&quot;, start_tm);</span>
 <span class="lineNum">      61 </span>            : 
-<span class="lineNum">      62 </span><span class="lineCov">         80 :         std::tm * end_tm = std::localtime(&amp;end);</span>
+<span class="lineNum">      62 </span><span class="lineCov">         83 :         std::tm * end_tm = std::localtime(&amp;end);</span>
 <span class="lineNum">      63 </span>            :         char end_buffer[32];
-<span class="lineNum">      64 </span><span class="lineCov">         80 :         std::strftime(end_buffer, 32, &quot;%a, %d.%m.%Y %H:%M:%S&quot;, end_tm);</span>
+<span class="lineNum">      64 </span><span class="lineCov">         83 :         std::strftime(end_buffer, 32, &quot;%a, %d.%m.%Y %H:%M:%S&quot;, end_tm);</span>
 <span class="lineNum">      65 </span>            : 
-<span class="lineNum">      66 </span><span class="lineCov">         80 :         os &lt;&lt; &quot;(&quot; &lt;&lt; string(start_buffer) &lt;&lt; &quot; to &quot; &lt;&lt; string(end_buffer) &lt;&lt; &quot;) &quot;;</span>
-<span class="lineNum">      67 </span><span class="lineCov">         80 :         os &lt;&lt; &quot;Short(&quot; &lt;&lt; to_string(week.short_nr) &lt;&lt; &quot;) &quot;;</span>
-<span class="lineNum">      68 </span><span class="lineCov">         80 :         os &lt;&lt; &quot;Medium(&quot; &lt;&lt; to_string(week.medium_nr) &lt;&lt; &quot;) &quot;;</span>
-<span class="lineNum">      69 </span><span class="lineCov">         80 :         os &lt;&lt; &quot;Large(&quot; &lt;&lt; to_string(week.large_nr) &lt;&lt; &quot;) &quot;;</span>
-<a name="70"><span class="lineNum">      70 </span><span class="lineCov">         80 :         os &lt;&lt; &quot;Huge(&quot; &lt;&lt; to_string(week.huge_nr) &lt;&lt; &quot;) &quot;;</span></a>
-<span class="lineNum">      71 </span><span class="lineCov">         80 :         return os;  </span>
+<span class="lineNum">      66 </span><span class="lineCov">         83 :         os &lt;&lt; &quot;(&quot; &lt;&lt; string(start_buffer) &lt;&lt; &quot; to &quot; &lt;&lt; string(end_buffer) &lt;&lt; &quot;) &quot;;</span>
+<span class="lineNum">      67 </span><span class="lineCov">         83 :         os &lt;&lt; &quot;Short(&quot; &lt;&lt; to_string(week.short_nr) &lt;&lt; &quot;) &quot;;</span>
+<span class="lineNum">      68 </span><span class="lineCov">         83 :         os &lt;&lt; &quot;Medium(&quot; &lt;&lt; to_string(week.medium_nr) &lt;&lt; &quot;) &quot;;</span>
+<span class="lineNum">      69 </span><span class="lineCov">         83 :         os &lt;&lt; &quot;Large(&quot; &lt;&lt; to_string(week.large_nr) &lt;&lt; &quot;) &quot;;</span>
+<a name="70"><span class="lineNum">      70 </span><span class="lineCov">         83 :         os &lt;&lt; &quot;Huge(&quot; &lt;&lt; to_string(week.huge_nr) &lt;&lt; &quot;) &quot;;</span></a>
+<span class="lineNum">      71 </span><span class="lineCov">         83 :         return os;  </span>
 <span class="lineNum">      72 </span><span class="lineCov">          3 : } </span>
 </pre>
       </td>

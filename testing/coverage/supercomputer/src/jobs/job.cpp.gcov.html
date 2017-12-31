@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-12-30 18:15:25</td>
+            <td class="headerValue">2017-12-31 01:52:15</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">13</td>
@@ -70,17 +70,17 @@
 <span class="lineNum">       8 </span><span class="lineCov">       1011 :         this-&gt;time = time;</span>
 <span class="lineNum">       9 </span><span class="lineCov">       1011 :         unsigned long long int total_nodes = config-&gt;get_cores_nr() * config-&gt;get_nodes_nr();</span>
 <span class="lineNum">      10 </span><span class="lineCov">       1011 :         if (duration &lt;= ONE_HOUR) {</span>
-<span class="lineNum">      11 </span><span class="lineCov">        155 :                 this-&gt;type = Short;</span>
-<span class="lineNum">      12 </span><span class="lineCov">        155 :                 this-&gt;cores = generate_random(1, 2 * CORES_NR);</span>
-<span class="lineNum">      13 </span><span class="lineCov">        856 :         } else if (duration &gt; ONE_HOUR &amp;&amp; duration &lt;= EIGHT_HOURS) {</span>
-<span class="lineNum">      14 </span><span class="lineCov">        575 :                 this-&gt;type = Medium;</span>
-<span class="lineNum">      15 </span><span class="lineCov">        575 :                 this-&gt;cores = generate_random(2 * CORES_NR + 1, (int)(total_nodes * 0.1));</span>
-<span class="lineNum">      16 </span><span class="lineCov">        281 :         } else if (duration &gt; EIGHT_HOURS &amp;&amp; duration &lt;= SIXTEEN_HOURS) {</span>
-<span class="lineNum">      17 </span><span class="lineCov">        199 :                 this-&gt;type = Large;</span>
-<span class="lineNum">      18 </span><span class="lineCov">        199 :                 this-&gt;cores = generate_random((int)(total_nodes * 0.1 + 1), (int)(total_nodes * 0.5));</span>
+<span class="lineNum">      11 </span><span class="lineCov">        154 :                 this-&gt;type = Short;</span>
+<span class="lineNum">      12 </span><span class="lineCov">        154 :                 this-&gt;cores = generate_random(1, 2 * CORES_NR);</span>
+<span class="lineNum">      13 </span><span class="lineCov">        857 :         } else if (duration &gt; ONE_HOUR &amp;&amp; duration &lt;= EIGHT_HOURS) {</span>
+<span class="lineNum">      14 </span><span class="lineCov">        560 :                 this-&gt;type = Medium;</span>
+<span class="lineNum">      15 </span><span class="lineCov">        560 :                 this-&gt;cores = generate_random(2 * CORES_NR + 1, (int)(total_nodes * 0.1));</span>
+<span class="lineNum">      16 </span><span class="lineCov">        297 :         } else if (duration &gt; EIGHT_HOURS &amp;&amp; duration &lt;= SIXTEEN_HOURS) {</span>
+<span class="lineNum">      17 </span><span class="lineCov">        212 :                 this-&gt;type = Large;</span>
+<span class="lineNum">      18 </span><span class="lineCov">        212 :                 this-&gt;cores = generate_random((int)(total_nodes * 0.1 + 1), (int)(total_nodes * 0.5));</span>
 <span class="lineNum">      19 </span>            :         } else {
-<span class="lineNum">      20 </span><span class="lineCov">         82 :                 this-&gt;type = Huge;</span>
-<span class="lineNum">      21 </span><span class="lineCov">         82 :                 this-&gt;cores = total_nodes;</span>
+<span class="lineNum">      20 </span><span class="lineCov">         85 :                 this-&gt;type = Huge;</span>
+<span class="lineNum">      21 </span><span class="lineCov">         85 :                 this-&gt;cores = total_nodes;</span>
 <span class="lineNum">      22 </span>            :         }
 <span class="lineNum">      23 </span><span class="lineCov">       1011 :         this-&gt;duration = duration;</span>
 <span class="lineNum">      24 </span><span class="lineCov">       1011 : }</span>
@@ -88,22 +88,22 @@
 <span class="lineNum">      26 </span>            : /*!
 <a name="27"><span class="lineNum">      27 </span>            :   Ŕeturns whether the job is short or not.</a>
 <span class="lineNum">      28 </span>            : */
-<span class="lineNum">      29 </span><span class="lineCov">     711356 : bool Job::is_short() { return this-&gt;type == Short; }</span>
+<span class="lineNum">      29 </span><span class="lineCov">     678904 : bool Job::is_short() { return this-&gt;type == Short; }</span>
 <span class="lineNum">      30 </span>            : 
 <span class="lineNum">      31 </span>            : /*!
 <a name="32"><span class="lineNum">      32 </span>            :   Ŕeturns whether the job is medium or not.</a>
 <span class="lineNum">      33 </span>            : */
-<span class="lineNum">      34 </span><span class="lineCov">     685148 : bool Job::is_medium() { return this-&gt;type == Medium; }</span>
+<span class="lineNum">      34 </span><span class="lineCov">     654764 : bool Job::is_medium() { return this-&gt;type == Medium; }</span>
 <span class="lineNum">      35 </span>            : 
 <span class="lineNum">      36 </span>            : /*!
 <a name="37"><span class="lineNum">      37 </span>            :   Ŕeturns whether the job is large or not.</a>
 <span class="lineNum">      38 </span>            : */
-<span class="lineNum">      39 </span><span class="lineCov">     168606 : bool Job::is_large() { return this-&gt;type == Large; }</span>
+<span class="lineNum">      39 </span><span class="lineCov">     164269 : bool Job::is_large() { return this-&gt;type == Large; }</span>
 <span class="lineNum">      40 </span>            : 
 <span class="lineNum">      41 </span>            : /*!
 <a name="42"><span class="lineNum">      42 </span>            :   Ŕeturns whether the job is huge or not.</a>
 <span class="lineNum">      43 </span>            : */
-<span class="lineNum">      44 </span><span class="lineCov">       3099 : bool Job::is_huge() { return this-&gt;type == Huge; }</span>
+<span class="lineNum">      44 </span><span class="lineCov">       3102 : bool Job::is_huge() { return this-&gt;type == Huge; }</span>
 <span class="lineNum">      45 </span>            : 
 <span class="lineNum">      46 </span>            : /*!
 <a name="47"><span class="lineNum">      47 </span>            :   Ŕeturns the submission time of a job.</a>
@@ -115,8 +115,8 @@
 <span class="lineNum">      53 </span>            : /*!
 <a name="54"><span class="lineNum">      54 </span>            :   Ŕeturns the number of cores taken by a job.</a>
 <span class="lineNum">      55 </span>            : */
-<span class="lineNum">      56 </span><span class="lineCov">     713457 : int Job::get_cores() {</span>
-<span class="lineNum">      57 </span><span class="lineCov">     713457 :         return this-&gt;cores;</span>
+<span class="lineNum">      56 </span><span class="lineCov">     680869 : int Job::get_cores() {</span>
+<span class="lineNum">      57 </span><span class="lineCov">     680869 :         return this-&gt;cores;</span>
 <span class="lineNum">      58 </span>            : }
 <span class="lineNum">      59 </span>            : 
 <span class="lineNum">      60 </span>            : /*!
@@ -136,15 +136,15 @@
 <span class="lineNum">      74 </span>            : /*!
 <a name="75"><span class="lineNum">      75 </span>            :   Returns the job duration in seconds.</a>
 <span class="lineNum">      76 </span>            : */
-<span class="lineNum">      77 </span><span class="lineCov">     603325 : unsigned long long int Job::get_duration() {</span>
-<span class="lineNum">      78 </span><span class="lineCov">     603325 :         return this-&gt;duration;</span>
+<span class="lineNum">      77 </span><span class="lineCov">     577238 : unsigned long long int Job::get_duration() {</span>
+<span class="lineNum">      78 </span><span class="lineCov">     577238 :         return this-&gt;duration;</span>
 <span class="lineNum">      79 </span>            : }
 <span class="lineNum">      80 </span>            : 
 <span class="lineNum">      81 </span>            : /*!
 <a name="82"><span class="lineNum">      82 </span>            :   &lt; Operator overload. </a>
 <span class="lineNum">      83 </span>            : */
-<a name="84"><span class="lineNum">      84 </span><span class="lineCov">       8295 : bool operator&lt;(Job const&amp; a, Job const&amp; b) {</span></a>
-<span class="lineNum">      85 </span><span class="lineCov">       8295 :     return a.time &lt; b.time;</span>
+<a name="84"><span class="lineNum">      84 </span><span class="lineCov">       8254 : bool operator&lt;(Job const&amp; a, Job const&amp; b) {</span></a>
+<span class="lineNum">      85 </span><span class="lineCov">       8254 :     return a.time &lt; b.time;</span>
 <span class="lineNum">      86 </span><span class="lineCov">          3 : }</span>
 </pre>
       </td>

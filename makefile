@@ -15,3 +15,5 @@ testing-coverage:
 	rm -f -r *.gcda *.gcno
 clean:
 	rm -f -r ./testing/coverage/*
+doxygen:
+	doxygen ./documentation/doxygen.config
