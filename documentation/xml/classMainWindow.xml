@@ -1,0 +1,834 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classMainWindow" kind="class" language="C++" prot="public">
+    <compoundname>MainWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QMainWindow</basecompoundref>
+    <includes refid="mainwindow_8h" local="no">mainwindow.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classMainWindow_1a35466a70ed47252a0191168126a352a5" prot="private" static="no" mutable="no">
+        <type>Ui::MainWindow *</type>
+        <definition>Ui::MainWindow* MainWindow::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="209" column="1" bodyfile="supercomputer/mainwindow.h" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMainWindow_1ae9162d467e7b0a652d6ffcd1aa21cc56" prot="private" static="no" mutable="no">
+        <type><ref refid="classConfiguration" kindref="compound">Configuration</ref> *</type>
+        <definition>Configuration* MainWindow::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private Ui::MainWindow *ui. The GUI. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="210" column="1" bodyfile="supercomputer/mainwindow.h" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classMainWindow_1a8b244be8b7b7db1b08de2a2acb9409db" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainWindow::MainWindow</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>MainWindow</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para><ref refid="classMainWindow" kindref="compound">MainWindow</ref> object default contructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes a <ref refid="classMainWindow" kindref="compound">MainWindow</ref> object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="30" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classMainWindow_1ae98d00a93bc118200eeef9f9bba1dba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainWindow::~MainWindow</definition>
+        <argsstring>()</argsstring>
+        <name>~MainWindow</name>
+        <briefdescription>
+<para><ref refid="classMainWindow" kindref="compound">MainWindow</ref> object default destructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Destructs a <ref refid="classMainWindow" kindref="compound">MainWindow</ref> object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="36" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="classMainWindow_1a637d4aa13a6d4538761bde9d2e0b631a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::set_initial_values</definition>
+        <argsstring>()</argsstring>
+        <name>set_initial_values</name>
+        <briefdescription>
+<para>Public method. Method to set default values to GUI inputs. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="41" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1acf437338e7f575caafef28dd27dad1ec" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::show_random_users</definition>
+        <argsstring>(bool show)</argsstring>
+        <name>show_random_users</name>
+        <param>
+          <type>bool</type>
+          <declname>show</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Method to hide constant number of users value, showing bounds of randomly generated number of users. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>show. True if show, false if hide. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="47" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1aea3cb6aec3ee28a1958a6c7ff8bea524" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::show_random_jobs</definition>
+        <argsstring>(bool show)</argsstring>
+        <name>show_random_jobs</name>
+        <param>
+          <type>bool</type>
+          <declname>show</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Method to hide constant number of jobs value, showing bounds of randomly generated number of jobs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>show. True if show, false if hide. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="53" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a815cd6b76c0be27d77c2ca63a41a9672" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::show_random_student_budget</definition>
+        <argsstring>(bool show)</argsstring>
+        <name>show_random_student_budget</name>
+        <param>
+          <type>bool</type>
+          <declname>show</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Method to hide constant student budget, showing bounds of randomly generated student budget. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>show. True if show, false if hide. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="59" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1aafc46ca0fbadf2b6243fd442d66cfe81" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::show_random_researcher_budget</definition>
+        <argsstring>(bool show)</argsstring>
+        <name>show_random_researcher_budget</name>
+        <param>
+          <type>bool</type>
+          <declname>show</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Method to hide constant researcher budget, showing bounds of randomly generated researcher budget. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>show. True if show, false if hide. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="65" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1ad8f0074f099c11845889ea341de8d472" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_randomUsers_toggled</definition>
+        <argsstring>(bool checked)</argsstring>
+        <name>on_randomUsers_toggled</name>
+        <param>
+          <type>bool</type>
+          <declname>checked</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Method to alternate between randomly generated and constant number of users. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>checked. True if random, false if constant. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="71" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a9535c10efad0a9179666bde50b65a366" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_randomJobs_toggled</definition>
+        <argsstring>(bool checked)</argsstring>
+        <name>on_randomJobs_toggled</name>
+        <param>
+          <type>bool</type>
+          <declname>checked</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Method to alternate between randomly generated and constant number of jobs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>checked. True if random, false if constant. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="77" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1acc847e7f630748462f058b384e4119ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_randomStudent_toggled</definition>
+        <argsstring>(bool checked)</argsstring>
+        <name>on_randomStudent_toggled</name>
+        <param>
+          <type>bool</type>
+          <declname>checked</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Method to alternate between randomly generated and constant student budget. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>checked. True if random, false if constant. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="83" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a6b542abb966fa312a634128f30685136" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_randomResearcher_toggled</definition>
+        <argsstring>(bool checked)</argsstring>
+        <name>on_randomResearcher_toggled</name>
+        <param>
+          <type>bool</type>
+          <declname>checked</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Method to alternate between randomly generated and constant researcher budget. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>checked. True if random, false if constant. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="89" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1aca295e3b35ebaaa7175d65c63c17fd19" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_nowDate_toggled</definition>
+        <argsstring>(bool checked)</argsstring>
+        <name>on_nowDate_toggled</name>
+        <param>
+          <type>bool</type>
+          <declname>checked</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Method to alternate between simulation running in a defined date or present. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>checked. True if present, false if defined date. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="95" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a2f1748a7c7bd0079af47fa7240b40661" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_simulateButton_released</definition>
+        <argsstring>()</argsstring>
+        <name>on_simulateButton_released</name>
+        <briefdescription>
+<para>Public method. Method to run a simulation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="98" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a0402771282166a842a91d8d4d3bc68a8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_constantUsers_valueChanged</definition>
+        <argsstring>(int arg1)</argsstring>
+        <name>on_constantUsers_valueChanged</name>
+        <param>
+          <type>int</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>Public method. This method is triggered when the constant number of users spin box value is changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arg1. New value of constant number of users. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="104" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1aceb9dae16ab28cced9e4c53552ee8e0b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_constantJobs_valueChanged</definition>
+        <argsstring>(int arg1)</argsstring>
+        <name>on_constantJobs_valueChanged</name>
+        <param>
+          <type>int</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>Public method. This method is triggered when the constant number of jobs spin box value is changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arg1. New value of constant number of jobs. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="110" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1ab7d65c52b600a1228c8a9e4ea801d46f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_constantStudentBudget_valueChanged</definition>
+        <argsstring>(double arg1)</argsstring>
+        <name>on_constantStudentBudget_valueChanged</name>
+        <param>
+          <type>double</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>Public method. This method is triggered when the constant student budget spin box value is changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>double</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arg1. New value of constant student budget. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="116" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1ae437cbf0ac358e3b862438e5f397bb29" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_constantResearcher_valueChanged</definition>
+        <argsstring>(double arg1)</argsstring>
+        <name>on_constantResearcher_valueChanged</name>
+        <param>
+          <type>double</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>Public method. This method is triggered when the constant researcher budget spin box value is changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>double</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arg1. New value of constant researcher budget. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="122" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a4db921f0e012da5e054303ca027cd895" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_requestsSpinBox_valueChanged</definition>
+        <argsstring>(int arg1)</argsstring>
+        <name>on_requestsSpinBox_valueChanged</name>
+        <param>
+          <type>int</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>Public method. This method is triggered when the requests time span spin box value is changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arg1. New value of requests time span. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="128" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a067faaf5a7a1fb51679f08342bcb2bf5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_usagePriceSpinBox_valueChanged</definition>
+        <argsstring>(double arg1)</argsstring>
+        <name>on_usagePriceSpinBox_valueChanged</name>
+        <param>
+          <type>double</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>Public method. This method is triggered when the usage price spin box value is changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>double</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arg1. New value of usage price. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="134" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a89bcfb9e03592134ae96386066d2595f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_operationalCostSpinBox_valueChanged</definition>
+        <argsstring>(double arg1)</argsstring>
+        <name>on_operationalCostSpinBox_valueChanged</name>
+        <param>
+          <type>double</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>Public method. This method is triggered when the operational cost spin box value is changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>double</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arg1. New value of operational cost. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="140" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a5bfebddcfbf3e36085d401d71405aef4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_nodesSpinBox_valueChanged</definition>
+        <argsstring>(int arg1)</argsstring>
+        <name>on_nodesSpinBox_valueChanged</name>
+        <param>
+          <type>int</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>Public method. This method is triggered when the number of nodes spin box value is changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arg1. New value of number of nodes. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="146" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a93d36f90731a24214d4e72df38b160e3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_coresSpinBox_valueChanged</definition>
+        <argsstring>(int arg1)</argsstring>
+        <name>on_coresSpinBox_valueChanged</name>
+        <param>
+          <type>int</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>Public method. This method is triggered when the number of cores spin box value is changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arg1. New value of number of cores. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="152" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1ae66cb3ce030773a2347d1789ed7f1d03" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_startDateTimeEdit_dateTimeChanged</definition>
+        <argsstring>(const QDateTime &amp;dateTime)</argsstring>
+        <name>on_startDateTimeEdit_dateTimeChanged</name>
+        <param>
+          <type>const QDateTime &amp;</type>
+          <declname>dateTime</declname>
+        </param>
+        <briefdescription>
+<para>Public method. This method is triggered when the simulation starting date value is changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>QDateTime &amp;dateTime. New simulation starting date. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="158" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1aef8a86216802d0ee1b6e91551ba7a005" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_fromUsers_valueChanged</definition>
+        <argsstring>(int arg1)</argsstring>
+        <name>on_fromUsers_valueChanged</name>
+        <param>
+          <type>int</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>Public method. This method is triggered when the lower bound of randomly generated numbers of users value is changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arg1. New lower bound of randomly generated numbers of users. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="164" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a253bb92b1e7b3567df8cf519d61ebbfa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_toUsers_valueChanged</definition>
+        <argsstring>(int arg1)</argsstring>
+        <name>on_toUsers_valueChanged</name>
+        <param>
+          <type>int</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>Public method. This method is triggered when the upper bound of randomly generated numbers of users value is changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arg1. New upper bound of randomly generated numbers of users. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="170" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1afc2011c6eaff7fe4c204d2e7a6aebef2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_fromJobs_valueChanged</definition>
+        <argsstring>(int arg1)</argsstring>
+        <name>on_fromJobs_valueChanged</name>
+        <param>
+          <type>int</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>Public method. This method is triggered when the lower bound of randomly generated numbers of jobs value is changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arg1. New lower bound of randomly generated numbers of jobs. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="176" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1ae27be9955a3834ed8c287172afd3e199" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_toJobs_valueChanged</definition>
+        <argsstring>(int arg1)</argsstring>
+        <name>on_toJobs_valueChanged</name>
+        <param>
+          <type>int</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>Public method. This method is triggered when the upper bound of randomly generated numbers of jobs value is changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arg1. New upper bound of randomly generated numbers of jobs. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="182" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a5c265fe54056149c8faa484d983b1061" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_fromStudent_valueChanged</definition>
+        <argsstring>(double arg1)</argsstring>
+        <name>on_fromStudent_valueChanged</name>
+        <param>
+          <type>double</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>Public method. This method is triggered when the lower bound of randomly generated student budget value is changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>double</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arg1. New lower bound of randomly generated student budget. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="188" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1afd3ea565ae35abe956a69deb5d90a889" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_toStudent_valueChanged</definition>
+        <argsstring>(double arg1)</argsstring>
+        <name>on_toStudent_valueChanged</name>
+        <param>
+          <type>double</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>Public method. This method is triggered when the upper bound of randomly generated student budget value is changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>double</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arg1. New upper bound of randomly generated student budget. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="194" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a46ee6103aa93c92d5af94c8728ba0b8a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_fromResearcher_valueChanged</definition>
+        <argsstring>(double arg1)</argsstring>
+        <name>on_fromResearcher_valueChanged</name>
+        <param>
+          <type>double</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>Public method. This method is triggered when the lower bound of randomly generated researcher budget value is changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>double</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arg1. New lower bound of randomly generated researcher budget. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="200" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a52cb882e71f5fbfb23262d8077ee121a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_toResearcher_valueChanged</definition>
+        <argsstring>(double arg1)</argsstring>
+        <name>on_toResearcher_valueChanged</name>
+        <param>
+          <type>double</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>Public method. This method is triggered when the upper bound of randomly generated researcher budget value is changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>double</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arg1. New upper bound of randomly generated researcher budget. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/mainwindow.h" line="206" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classMainWindow" kindref="compound">MainWindow</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>This object is the GUI. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="23">
+        <label>QMainWindow</label>
+      </node>
+      <node id="22">
+        <label>MainWindow</label>
+        <link refid="classMainWindow"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="25">
+        <label>QMainWindow</label>
+      </node>
+      <node id="24">
+        <label>MainWindow</label>
+        <link refid="classMainWindow"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="supercomputer/mainwindow.h" line="22" column="1" bodyfile="supercomputer/mainwindow.h" bodystart="21" bodyend="211"/>
+    <listofallmembers>
+      <member refid="classMainWindow_1ae9162d467e7b0a652d6ffcd1aa21cc56" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>config</name></member>
+      <member refid="classMainWindow_1a8b244be8b7b7db1b08de2a2acb9409db" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>MainWindow</name></member>
+      <member refid="classMainWindow_1aceb9dae16ab28cced9e4c53552ee8e0b" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_constantJobs_valueChanged</name></member>
+      <member refid="classMainWindow_1ae437cbf0ac358e3b862438e5f397bb29" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_constantResearcher_valueChanged</name></member>
+      <member refid="classMainWindow_1ab7d65c52b600a1228c8a9e4ea801d46f" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_constantStudentBudget_valueChanged</name></member>
+      <member refid="classMainWindow_1a0402771282166a842a91d8d4d3bc68a8" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_constantUsers_valueChanged</name></member>
+      <member refid="classMainWindow_1a93d36f90731a24214d4e72df38b160e3" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_coresSpinBox_valueChanged</name></member>
+      <member refid="classMainWindow_1afc2011c6eaff7fe4c204d2e7a6aebef2" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_fromJobs_valueChanged</name></member>
+      <member refid="classMainWindow_1a46ee6103aa93c92d5af94c8728ba0b8a" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_fromResearcher_valueChanged</name></member>
+      <member refid="classMainWindow_1a5c265fe54056149c8faa484d983b1061" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_fromStudent_valueChanged</name></member>
+      <member refid="classMainWindow_1aef8a86216802d0ee1b6e91551ba7a005" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_fromUsers_valueChanged</name></member>
+      <member refid="classMainWindow_1a5bfebddcfbf3e36085d401d71405aef4" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_nodesSpinBox_valueChanged</name></member>
+      <member refid="classMainWindow_1aca295e3b35ebaaa7175d65c63c17fd19" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_nowDate_toggled</name></member>
+      <member refid="classMainWindow_1a89bcfb9e03592134ae96386066d2595f" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_operationalCostSpinBox_valueChanged</name></member>
+      <member refid="classMainWindow_1a9535c10efad0a9179666bde50b65a366" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_randomJobs_toggled</name></member>
+      <member refid="classMainWindow_1a6b542abb966fa312a634128f30685136" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_randomResearcher_toggled</name></member>
+      <member refid="classMainWindow_1acc847e7f630748462f058b384e4119ca" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_randomStudent_toggled</name></member>
+      <member refid="classMainWindow_1ad8f0074f099c11845889ea341de8d472" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_randomUsers_toggled</name></member>
+      <member refid="classMainWindow_1a4db921f0e012da5e054303ca027cd895" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_requestsSpinBox_valueChanged</name></member>
+      <member refid="classMainWindow_1a2f1748a7c7bd0079af47fa7240b40661" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_simulateButton_released</name></member>
+      <member refid="classMainWindow_1ae66cb3ce030773a2347d1789ed7f1d03" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_startDateTimeEdit_dateTimeChanged</name></member>
+      <member refid="classMainWindow_1ae27be9955a3834ed8c287172afd3e199" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_toJobs_valueChanged</name></member>
+      <member refid="classMainWindow_1a52cb882e71f5fbfb23262d8077ee121a" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_toResearcher_valueChanged</name></member>
+      <member refid="classMainWindow_1afd3ea565ae35abe956a69deb5d90a889" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_toStudent_valueChanged</name></member>
+      <member refid="classMainWindow_1a253bb92b1e7b3567df8cf519d61ebbfa" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_toUsers_valueChanged</name></member>
+      <member refid="classMainWindow_1a067faaf5a7a1fb51679f08342bcb2bf5" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_usagePriceSpinBox_valueChanged</name></member>
+      <member refid="classMainWindow_1a637d4aa13a6d4538761bde9d2e0b631a" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>set_initial_values</name></member>
+      <member refid="classMainWindow_1aea3cb6aec3ee28a1958a6c7ff8bea524" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>show_random_jobs</name></member>
+      <member refid="classMainWindow_1aafc46ca0fbadf2b6243fd442d66cfe81" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>show_random_researcher_budget</name></member>
+      <member refid="classMainWindow_1a815cd6b76c0be27d77c2ca63a41a9672" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>show_random_student_budget</name></member>
+      <member refid="classMainWindow_1acf437338e7f575caafef28dd27dad1ec" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>show_random_users</name></member>
+      <member refid="classMainWindow_1a35466a70ed47252a0191168126a352a5" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>ui</name></member>
+      <member refid="classMainWindow_1ae98d00a93bc118200eeef9f9bba1dba7" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>~MainWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

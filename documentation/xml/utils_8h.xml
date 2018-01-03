@@ -1,0 +1,1053 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="utils_8h" kind="file" language="C++">
+    <compoundname>utils.h</compoundname>
+    <includes local="no">random</includes>
+    <includes local="no">float.h</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">iostream</includes>
+    <includedby refid="configuration_8h" local="yes">supercomputer/src/configuration/configuration.h</includedby>
+    <includedby refid="user_8h" local="yes">supercomputer/src/users/user.h</includedby>
+    <includedby refid="job_8h" local="yes">supercomputer/src/jobs/job.h</includedby>
+    <includedby refid="system_8h" local="yes">supercomputer/src/system/system.h</includedby>
+    <includedby refid="statistics_8h" local="yes">supercomputer/src/statistics/statistics.h</includedby>
+    <includedby refid="mainwindow_8h" local="yes">supercomputer/mainwindow.h</includedby>
+    <includedby refid="utils_8cpp" local="yes">supercomputer/src/utils/utils.cpp</includedby>
+    <incdepgraph>
+      <node id="271">
+        <label>float.h</label>
+      </node>
+      <node id="270">
+        <label>random</label>
+      </node>
+      <node id="272">
+        <label>vector</label>
+      </node>
+      <node id="269">
+        <label>supercomputer/src/utils/utils.h</label>
+        <link refid="utils.h"/>
+        <childnode refid="270" relation="include">
+        </childnode>
+        <childnode refid="271" relation="include">
+        </childnode>
+        <childnode refid="272" relation="include">
+        </childnode>
+        <childnode refid="273" relation="include">
+        </childnode>
+      </node>
+      <node id="273">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="278">
+        <label>supercomputer/src/users/user.h</label>
+        <link refid="user_8h_source"/>
+        <childnode refid="279" relation="include">
+        </childnode>
+      </node>
+      <node id="279">
+        <label>supercomputer/src/system/system.h</label>
+        <link refid="system_8h_source"/>
+        <childnode refid="276" relation="include">
+        </childnode>
+      </node>
+      <node id="276">
+        <label>supercomputer/mainwindow.h</label>
+        <link refid="mainwindow_8h_source"/>
+      </node>
+      <node id="277">
+        <label>supercomputer/src/jobs/job.h</label>
+        <link refid="job_8h_source"/>
+        <childnode refid="278" relation="include">
+        </childnode>
+        <childnode refid="279" relation="include">
+        </childnode>
+        <childnode refid="280" relation="include">
+        </childnode>
+        <childnode refid="281" relation="include">
+        </childnode>
+        <childnode refid="282" relation="include">
+        </childnode>
+      </node>
+      <node id="274">
+        <label>supercomputer/src/utils/utils.h</label>
+        <link refid="utils.h"/>
+        <childnode refid="275" relation="include">
+        </childnode>
+        <childnode refid="278" relation="include">
+        </childnode>
+        <childnode refid="277" relation="include">
+        </childnode>
+        <childnode refid="279" relation="include">
+        </childnode>
+        <childnode refid="280" relation="include">
+        </childnode>
+        <childnode refid="276" relation="include">
+        </childnode>
+      </node>
+      <node id="282">
+        <label>supercomputer/src/system/state.h</label>
+        <link refid="state_8h_source"/>
+        <childnode refid="279" relation="include">
+        </childnode>
+      </node>
+      <node id="275">
+        <label>supercomputer/src/configuration/configuration.h</label>
+        <link refid="configuration_8h_source"/>
+        <childnode refid="276" relation="include">
+        </childnode>
+        <childnode refid="277" relation="include">
+        </childnode>
+        <childnode refid="280" relation="include">
+        </childnode>
+        <childnode refid="279" relation="include">
+        </childnode>
+      </node>
+      <node id="281">
+        <label>supercomputer/src/statistics/week.h</label>
+        <link refid="week_8h_source"/>
+        <childnode refid="280" relation="include">
+        </childnode>
+      </node>
+      <node id="280">
+        <label>supercomputer/src/statistics/statistics.h</label>
+        <link refid="statistics_8h_source"/>
+        <childnode refid="279" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="utils_8h_1a5be551157d80f10e6249f2c4e411579b" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int NODES_NR</definition>
+        <argsstring></argsstring>
+        <name>NODES_NR</name>
+        <initializer>= 128</initializer>
+        <briefdescription>
+<para>Utils file. </para>        </briefdescription>
+        <detaileddescription>
+<para>This file contains constant values that are used globaly. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="14" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a985e975209d334c9b919f6f1ff446e87" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int NODES_NR_MIN</definition>
+        <argsstring></argsstring>
+        <name>NODES_NR_MIN</name>
+        <initializer>= 128</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const int. Default number of nodes. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="15" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a5afe60ab8b55e079c3e3f740afc009c6" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int NODES_NR_MAX</definition>
+        <argsstring></argsstring>
+        <name>NODES_NR_MAX</name>
+        <initializer>= 512</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const int. Default lower bound of number of nodes. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="16" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a488665ea624ec9798ac65cb9f7dd40d9" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int CORES_NR</definition>
+        <argsstring></argsstring>
+        <name>CORES_NR</name>
+        <initializer>= 16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const int. Default upper bound of number of nodes. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="18" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a80dae28351be5c82cd2f50a59e3ac2b2" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int CORES_NR_MIN</definition>
+        <argsstring></argsstring>
+        <name>CORES_NR_MIN</name>
+        <initializer>= 16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const int. Default number of cores. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="19" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a5f36587acd1ac20e94f9a3d60d1cac9c" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int CORES_NR_MAX</definition>
+        <argsstring></argsstring>
+        <name>CORES_NR_MAX</name>
+        <initializer>= 64</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const int. Default lower bound of number of cores. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="20" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a15101bbb03d15ed7174a58f53c3720d0" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int USERS_NR</definition>
+        <argsstring></argsstring>
+        <name>USERS_NR</name>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const int. Default upper bound of number of cores. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="22" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a38fa635029c8a18931d9d6d8d7561772" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int USERS_NR_MIN</definition>
+        <argsstring></argsstring>
+        <name>USERS_NR_MIN</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const int. Default number of simulated users. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="23" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a6140ee492b45d474f6bf062ea6ca8b3e" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int USERS_NR_MAX</definition>
+        <argsstring></argsstring>
+        <name>USERS_NR_MAX</name>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const int. Default lower bound of number of simulated users. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="24" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a5490842574185a6e676c980387763d66" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int JOBS_NR</definition>
+        <argsstring></argsstring>
+        <name>JOBS_NR</name>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const int. Default upper bound of number of simulated users. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="26" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1ac8b19604f186a090a28b76b6d6798ba1" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int JOBS_NR_MIN</definition>
+        <argsstring></argsstring>
+        <name>JOBS_NR_MIN</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const int. Default number of simulated jobs. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="27" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a5da3ad29b4444d882ce31ef0eac6c819" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int JOBS_NR_MAX</definition>
+        <argsstring></argsstring>
+        <name>JOBS_NR_MAX</name>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const int. Default lower bound of number of simulated jobs. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="28" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1afdd57d9166657093c1a70e6f06e80d58" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double USAGE_PRICE</definition>
+        <argsstring></argsstring>
+        <name>USAGE_PRICE</name>
+        <initializer>= 0.05 / 60 / 60</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const int. Default upper bound of number of simulated jobs. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="31" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a291b912d471c4f2bb2e1da646d5ca5a6" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double USAGE_PRICE_MIN</definition>
+        <argsstring></argsstring>
+        <name>USAGE_PRICE_MIN</name>
+        <initializer>= 0.000001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const double. Default usage price. The configuration value is initialized with this value. Cost per core second. Same price as ARCHER. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="32" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a5400b89bf788dc458802bd0ca36bd5d2" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double USAGE_PRICE_MAX</definition>
+        <argsstring></argsstring>
+        <name>USAGE_PRICE_MAX</name>
+        <initializer>= 5.000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const double. Default lower bound of usage price. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="33" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1ac0e35cb6526794fe569b87b69a63d4ae" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double ENERGY_COST</definition>
+        <argsstring></argsstring>
+        <name>ENERGY_COST</name>
+        <initializer>= 0.0285 / 60</initializer>
+        <briefdescription>
+<para>Public const double. The value of energy cost per second. </para>        </briefdescription>
+        <detaileddescription>
+<para>Public const double. Default upper bound of usage price. The configuration value is initialized with this value.</para><para>[ENERGY] Our computer is a green computer, with a power supply of 60 KW. In the UK, the a KW per hour costs £0.0285. We get a value of 0.0285 per minute, and 0.0285/60 per second. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="42" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a11d9624d924e405f9b218da75a573865" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double PERSONEL_COST</definition>
+        <argsstring></argsstring>
+        <name>PERSONEL_COST</name>
+        <initializer>= 60000 * 10 / 365 / 24 / 60 / 60</initializer>
+        <briefdescription>
+<para>Public const double. The value of personel cost per second. </para>        </briefdescription>
+        <detaileddescription>
+<para>[PERSONEL] This system has a 10 elements team making £60.000 per year. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="49" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a1d1105dc85d4f241f1ddcd63e287553a" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double BUILDING_MAINTENANCE</definition>
+        <argsstring></argsstring>
+        <name>BUILDING_MAINTENANCE</name>
+        <initializer>= 10000 / 365 / 24 / 60 / 60</initializer>
+        <briefdescription>
+<para>Public const double. The value of maintenance per second. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="56" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a5fb6811773e50f6b3af37475477d15b7" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double OPERATIONAL_COST</definition>
+        <argsstring></argsstring>
+        <name>OPERATIONAL_COST</name>
+        <initializer>= ENERGY_COST + PERSONEL_COST + BUILDING_MAINTENANCE</initializer>
+        <briefdescription>
+<para>Public const double. The value of operational cost of the system per second. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="62" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a6655afcaf31a32c572cb160175e75653" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double OPERATIONAL_COST_MIN</definition>
+        <argsstring></argsstring>
+        <name>OPERATIONAL_COST_MIN</name>
+        <initializer>= 0.000001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="63" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a65c52bfa4f87f3b2be81b7e3f9b1ad50" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double OPERATIONAL_COST_MAX</definition>
+        <argsstring></argsstring>
+        <name>OPERATIONAL_COST_MAX</name>
+        <initializer>= 5.000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const double. Default lower bound of operational cost. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="64" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a3b5dae34240da9b31a99eae7daa7c6b3" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double STUDENT_BUDGET</definition>
+        <argsstring></argsstring>
+        <name>STUDENT_BUDGET</name>
+        <initializer>= 100.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const double. Default upper bound of operational cost. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="67" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a5f33e393c7bb97039e90b0e2228cbd37" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double STUDENT_BUDGET_MIN</definition>
+        <argsstring></argsstring>
+        <name>STUDENT_BUDGET_MIN</name>
+        <initializer>= 1.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const double. Default student budget. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="68" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a1b6c5cbe793af58b654473cc06900d6a" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double STUDENT_BUDGET_MAX</definition>
+        <argsstring></argsstring>
+        <name>STUDENT_BUDGET_MAX</name>
+        <initializer>= 1000.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const double. Default lower bound of student budget. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="69" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1afb2d551d10cbc4145582c1fe93db7ee1" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double RESEARCHER_BUDGET</definition>
+        <argsstring></argsstring>
+        <name>RESEARCHER_BUDGET</name>
+        <initializer>= 200.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const double. Default upper bound of student budget. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="71" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a2b415d685871736d186c0b4984cb6344" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double RESEARCHER_BUDGET_MIN</definition>
+        <argsstring></argsstring>
+        <name>RESEARCHER_BUDGET_MIN</name>
+        <initializer>= 1.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const double. Default researcher budget. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="72" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1ad7d2f3d531c04ae5fa458d812557fc2e" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double RESEARCHER_BUDGET_MAX</definition>
+        <argsstring></argsstring>
+        <name>RESEARCHER_BUDGET_MAX</name>
+        <initializer>= 1000.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const double. Default lower bound of researcher budget. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="73" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a978f96342e69a4ecd749ee045a68cae7" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double IT_BUDGET</definition>
+        <argsstring></argsstring>
+        <name>IT_BUDGET</name>
+        <initializer>= DBL_MAX</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const double. Default upper bound of researcher budget. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="75" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a2b1c948a38686d360a40396b9ebf42dd" prot="public" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int FRIDAY</definition>
+        <argsstring></argsstring>
+        <name>FRIDAY</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const double. The IT staff budget (infinite). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="77" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1ad7f4f74fd30bc7644eb90258477a3a52" prot="public" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int SATURDAY</definition>
+        <argsstring></argsstring>
+        <name>SATURDAY</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const unsigned int. In the Time structure in C++, Friday is represented by 5. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="78" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a146e7678fef7f4c8f357ca990cb4c6e7" prot="public" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int SUNDAY</definition>
+        <argsstring></argsstring>
+        <name>SUNDAY</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const unsigned int. In the Time structure in C++, Saturday is represented by 6. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="79" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a21187fe48dd43067faa4ce3a08601f84" prot="public" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int MONDAY</definition>
+        <argsstring></argsstring>
+        <name>MONDAY</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const unsigned int. In the Time structure in C++, Sunday is represented by 0. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="80" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a004055f4faadf88f967d8d11451316bb" prot="public" static="no" mutable="no">
+        <type>const unsigned long long</type>
+        <definition>const unsigned long long ONE_WEEK</definition>
+        <argsstring></argsstring>
+        <name>ONE_WEEK</name>
+        <initializer>= 60 * 60 * 24 * 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const unsigned int. In the Time structure in C++, Monday is represented by 1. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="82" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a813cab5091fdbda38384e483172e3c2c" prot="public" static="no" mutable="no">
+        <type>const unsigned long long</type>
+        <definition>const unsigned long long ONE_HOUR</definition>
+        <argsstring></argsstring>
+        <name>ONE_HOUR</name>
+        <initializer>= 60 * 60</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const unsigned long long. One week in seconds. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="83" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a247b6bc37a0e06431ae95afb6bc3b61d" prot="public" static="no" mutable="no">
+        <type>const unsigned long long</type>
+        <definition>const unsigned long long EIGHT_HOURS</definition>
+        <argsstring></argsstring>
+        <name>EIGHT_HOURS</name>
+        <initializer>= 60 * 60 * 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const unsigned long long. One hour in seconds. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="84" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1aa2abca07ccb3987b980ce206493729da" prot="public" static="no" mutable="no">
+        <type>const unsigned long long</type>
+        <definition>const unsigned long long SIXTEEN_HOURS</definition>
+        <argsstring></argsstring>
+        <name>SIXTEEN_HOURS</name>
+        <initializer>= 60 * 60 * 16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const unsigned long long. Eight hours in seconds. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="85" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a94ce56f8ab86567375238da641870f7f" prot="public" static="no" mutable="no">
+        <type>const unsigned long long</type>
+        <definition>const unsigned long long SIXTY_FOUR_HOURS</definition>
+        <argsstring></argsstring>
+        <name>SIXTY_FOUR_HOURS</name>
+        <initializer>= 60 * 60 * 64</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const unsigned long long. Sixteen hours in seconds. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="86" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a1ee37c83bd4f92d55d2d3374fdf3f9f9" prot="public" static="no" mutable="no">
+        <type>const unsigned long long</type>
+        <definition>const unsigned long long ONE_DAY</definition>
+        <argsstring></argsstring>
+        <name>ONE_DAY</name>
+        <initializer>= 60 * 60 * 24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const unsigned long long. Sixty four hours in seconds. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="87" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a5a0860638f950f934ec161da0a0f153f" prot="public" static="no" mutable="no">
+        <type>const unsigned long long</type>
+        <definition>const unsigned long long REQUESTS_SPAN</definition>
+        <argsstring></argsstring>
+        <name>REQUESTS_SPAN</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const unsigned long long. Onde day in seconds. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="89" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1a9e57d40821a59b3e128aacaea1f0a1a5" prot="public" static="no" mutable="no">
+        <type>const unsigned long long</type>
+        <definition>const unsigned long long REQUESTS_SPAN_MIN</definition>
+        <argsstring></argsstring>
+        <name>REQUESTS_SPAN_MIN</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const unsigned long long. Default requests time span. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="90" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="utils_8h_1aec86709be66c81189a47eb5143c68bc6" prot="public" static="no" mutable="no">
+        <type>const unsigned long long</type>
+        <definition>const unsigned long long REQUESTS_SPAN_MAX</definition>
+        <argsstring></argsstring>
+        <name>REQUESTS_SPAN_MAX</name>
+        <initializer>= ONE_WEEK</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Public const unsigned long long. Default requests time span lower bound. The configuration value is initialized with this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="91" column="1" bodyfile="supercomputer/src/utils/utils.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="utils_8h_1a922ea9938b27158961175da47eacbdcb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int generate_random</definition>
+        <argsstring>(int low, int high)</argsstring>
+        <name>generate_random</name>
+        <param>
+          <type>int</type>
+          <declname>low</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>high</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Method to generate a random integer value following a linear distribution. This value lies between a lower and upper bound. </para>        </briefdescription>
+        <detaileddescription>
+<para>Public const unsigned long long. Default requests time span upper bound. The configuration value is initialized with this value.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>low. Lower bound. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>high. Upper bound. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int. Randomly generated integer value. </para></simplesect>
+<simplesect kind="see"><para>unsigned int generate_random(unsigned int low, unsigned int high) </para></simplesect>
+<simplesect kind="see"><para>double generate_random(double low, double high) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="101" column="1" bodyfile="supercomputer/src/utils/utils.cpp" bodystart="8" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8h_1a005b8a9907ecda6a5d1cc679f359c4eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int generate_random</definition>
+        <argsstring>(unsigned int low, unsigned int high)</argsstring>
+        <name>generate_random</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>low</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>high</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Method to generate a random unsigned integer value following a linear distribution. This value lies between a lower and upper bound. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>unsigned</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>int low. Lower bound. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>unsigned</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>int high. Upper bound. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>unsigned int. Randomly generated unsigned integer value. </para></simplesect>
+<simplesect kind="see"><para>int generate_random(int low, int high) </para></simplesect>
+<simplesect kind="see"><para>double generate_random(double low, double high) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="111" column="1" bodyfile="supercomputer/src/utils/utils.cpp" bodystart="18" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8h_1abf4b1e0b40143d203b5f8383e0a22236" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double generate_random</definition>
+        <argsstring>(double low, double high)</argsstring>
+        <name>generate_random</name>
+        <param>
+          <type>double</type>
+          <declname>low</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>high</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Method to generate a random double value following a linear distribution. This value lies between a lower and upper bound. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>double</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>low. Lower bound. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>double</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>high. Upper bound. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>double. Randomly generated double value. </para></simplesect>
+<simplesect kind="see"><para>int generate_random(int low, int high) </para></simplesect>
+<simplesect kind="see"><para>unsigned int generate_random(unsigned int low, unsigned int high) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="121" column="1" bodyfile="supercomputer/src/utils/utils.cpp" bodystart="28" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8h_1a154e11312aa498d684ee7ed9d425439a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool is_weekend</definition>
+        <argsstring>(time_t start, time_t end)</argsstring>
+        <name>is_weekend</name>
+        <param>
+          <type>time_t</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Method to check if a job runs through the weekend. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start. Starting time of a job. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>end. Ending time of a job. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool. True if it does, false if doesn&apos;t. </para></simplesect>
+<simplesect kind="see"><para>bool is_weekend(time_t start) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="130" column="1" bodyfile="supercomputer/src/utils/utils.cpp" bodystart="37" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8h_1ac3420a318a42603ec9c9d32d4748b98b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool is_weekend</definition>
+        <argsstring>(time_t start)</argsstring>
+        <name>is_weekend</name>
+        <param>
+          <type>time_t</type>
+          <declname>start</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Method to check if a job starts in a weekend. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start. Starting time of a job. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool. True if it does, false if doesn&apos;t. </para></simplesect>
+<simplesect kind="see"><para>bool is_weekend(time_t start, time_t end) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="138" column="1" bodyfile="supercomputer/src/utils/utils.cpp" bodystart="51" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8h_1a2a95cd9f87463141a0996904e313a46a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>time_t</type>
+        <definition>time_t advance_weekend</definition>
+        <argsstring>(time_t start)</argsstring>
+        <name>advance_weekend</name>
+        <param>
+          <type>time_t</type>
+          <declname>start</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Advances a given time until Monday at 9:00. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start. Starting time of a job. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>time_t. Next Monday at 9:00 in UNIX timestamp. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="145" column="1" bodyfile="supercomputer/src/utils/utils.cpp" bodystart="64" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8h_1acb74aab2b1555fecd2bd0956b352dcd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>time_t</type>
+        <definition>time_t advance_to_friday</definition>
+        <argsstring>(time_t start)</argsstring>
+        <name>advance_to_friday</name>
+        <param>
+          <type>time_t</type>
+          <declname>start</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Advances a given time until Friday at 17:00. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start. Starting time of a job. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>time_t. Next Friday at 17:00 in UNIX timestamp. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="152" column="1" bodyfile="supercomputer/src/utils/utils.cpp" bodystart="84" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="utils_8h_1a7aab7e0568d3e2b2fdee79807d1010c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>time_t</type>
+        <definition>time_t get_back_to_monday</definition>
+        <argsstring>(time_t start)</argsstring>
+        <name>get_back_to_monday</name>
+        <param>
+          <type>time_t</type>
+          <declname>start</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Returns a given time to Monday at 9:00. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start. Starting time of a job. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>time_t. Previous Monday at 9:00 in UNIX timestamp. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/utils/utils.h" line="159" column="1" bodyfile="supercomputer/src/utils/utils.cpp" bodystart="103" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>UTILS_H<sp/>//Define<sp/>header<sp/>if<sp/>it&apos;s<sp/>not<sp/>defined</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;random&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;float.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"></codeline>
+<codeline lineno="14"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NODES_NR<sp/>=<sp/>128;<sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NODES_NR_MIN<sp/>=<sp/>128;<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NODES_NR_MAX<sp/>=<sp/>512;<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>CORES_NR<sp/>=<sp/>16;<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>CORES_NR_MIN<sp/>=<sp/>16;<sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>CORES_NR_MAX<sp/>=<sp/>64;<sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>USERS_NR<sp/>=<sp/>100;<sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>USERS_NR_MIN<sp/>=<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>USERS_NR_MAX<sp/>=<sp/>1000;<sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>JOBS_NR<sp/>=<sp/>100;<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>JOBS_NR_MIN<sp/>=<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>JOBS_NR_MAX<sp/>=<sp/>1000;<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>USAGE_PRICE<sp/>=<sp/>0.05<sp/>/<sp/>60<sp/>/<sp/>60;<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>USAGE_PRICE_MIN<sp/>=<sp/>0.000001;<sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>USAGE_PRICE_MAX<sp/>=<sp/>5.000000;<sp/></highlight></codeline>
+<codeline lineno="35"></codeline>
+<codeline lineno="42"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ENERGY_COST<sp/>=<sp/>0.0285<sp/>/<sp/>60;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"></codeline>
+<codeline lineno="49"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>PERSONEL_COST<sp/>=<sp/>60000<sp/>*<sp/>10<sp/>/<sp/>365<sp/>/<sp/>24<sp/>/<sp/>60<sp/>/<sp/>60;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/><sp/><sp/>[MAINTENANCE]</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/><sp/>A<sp/>building<sp/>maintenace<sp/>with<sp/>an<sp/>average<sp/>of<sp/>£10.000<sp/>per<sp/>year.</highlight></codeline>
+<codeline lineno="55"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>BUILDING_MAINTENANCE<sp/>=<sp/>10000<sp/>/<sp/>365<sp/>/<sp/>24<sp/>/<sp/>60<sp/>/<sp/>60;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/><sp/>Operational<sp/>cost<sp/>=<sp/>Personel<sp/>cost<sp/>+<sp/>Enery<sp/>cost<sp/>+<sp/>Maintenance<sp/>cost.</highlight></codeline>
+<codeline lineno="61"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>OPERATIONAL_COST<sp/>=<sp/>ENERGY_COST<sp/>+<sp/>PERSONEL_COST<sp/>+<sp/>BUILDING_MAINTENANCE;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>OPERATIONAL_COST_MIN<sp/>=<sp/>0.000001;<sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>OPERATIONAL_COST_MAX<sp/>=<sp/>5.000000;<sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>STUDENT_BUDGET<sp/>=<sp/>100.0;<sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>STUDENT_BUDGET_MIN<sp/>=<sp/>1.0;<sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>STUDENT_BUDGET_MAX<sp/>=<sp/>1000.0;<sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>RESEARCHER_BUDGET<sp/>=<sp/>200.0;<sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>RESEARCHER_BUDGET_MIN<sp/>=<sp/>1.0;<sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>RESEARCHER_BUDGET_MAX<sp/>=<sp/>1000.0;<sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>IT_BUDGET<sp/>=<sp/>DBL_MAX;<sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>FRIDAY<sp/>=<sp/>5;<sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SATURDAY<sp/>=<sp/>6;<sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SUNDAY<sp/>=<sp/>0;<sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>MONDAY<sp/>=<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="82"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>ONE_WEEK<sp/>=<sp/>60<sp/>*<sp/>60<sp/>*<sp/>24<sp/>*<sp/>8;<sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>ONE_HOUR<sp/>=<sp/>60<sp/>*<sp/>60;<sp/></highlight></codeline>
+<codeline lineno="84"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>EIGHT_HOURS<sp/>=<sp/>60<sp/>*<sp/>60<sp/>*<sp/>8;<sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>SIXTEEN_HOURS<sp/>=<sp/>60<sp/>*<sp/>60<sp/>*<sp/>16;<sp/></highlight></codeline>
+<codeline lineno="86"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>SIXTY_FOUR_HOURS<sp/>=<sp/>60<sp/>*<sp/>60<sp/>*<sp/>64;<sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>ONE_DAY<sp/>=<sp/>60<sp/>*<sp/>60<sp/>*<sp/>24;<sp/></highlight></codeline>
+<codeline lineno="89"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>REQUESTS_SPAN<sp/>=<sp/>10;<sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>REQUESTS_SPAN_MIN<sp/>=<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>REQUESTS_SPAN_MAX<sp/>=<sp/>ONE_WEEK;<sp/></highlight></codeline>
+<codeline lineno="93"></codeline>
+<codeline lineno="101"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>generate_random(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>low,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>high);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"></codeline>
+<codeline lineno="111"><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>generate_random(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>low,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>high);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"></codeline>
+<codeline lineno="121"><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>generate_random(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>low,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>high);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"></codeline>
+<codeline lineno="130"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_weekend(time_t<sp/>start,<sp/>time_t<sp/>end);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"></codeline>
+<codeline lineno="138"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_weekend(time_t<sp/>start);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"></codeline>
+<codeline lineno="145"><highlight class="normal">time_t<sp/>advance_weekend(time_t<sp/>start);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"></codeline>
+<codeline lineno="152"><highlight class="normal">time_t<sp/>advance_to_friday(time_t<sp/>start);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"></codeline>
+<codeline lineno="159"><highlight class="normal">time_t<sp/>get_back_to_monday(time_t<sp/>start);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="supercomputer/src/utils/utils.h"/>
+  </compounddef>
+</doxygen>

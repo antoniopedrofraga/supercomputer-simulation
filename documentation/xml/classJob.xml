@@ -1,0 +1,320 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classJob" kind="class" language="C++" prot="public">
+    <compoundname>Job</compoundname>
+    <includes refid="job_8h" local="no">job.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classJob_1a2276e0fe22412585572e795604108417" prot="private" static="no" mutable="no">
+        <type><ref refid="classConfiguration" kindref="compound">Configuration</ref> *</type>
+        <definition>Configuration* Job::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/jobs/job.h" line="18" column="1" bodyfile="supercomputer/src/jobs/job.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJob_1a889030a6b659d7744b7eaa93d87397a6" prot="private" static="no" mutable="no">
+        <type>Type</type>
+        <definition>Type Job::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private Config. Object containing the configuration of a simulation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/jobs/job.h" line="19" column="1" bodyfile="supercomputer/src/jobs/job.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJob_1a20939cc59547ae5baae3c9b976a2751c" prot="private" static="no" mutable="no">
+        <type><ref refid="classUser" kindref="compound">User</ref> *</type>
+        <definition>User* Job::user</definition>
+        <argsstring></argsstring>
+        <name>user</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private Type. Type of job {Short, Medium, Large, Huge}. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/jobs/job.h" line="20" column="1" bodyfile="supercomputer/src/jobs/job.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJob_1a494d4e45d4ec958110a164181cc55a75" prot="private" static="no" mutable="no">
+        <type>time_t</type>
+        <definition>time_t Job::time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private User*. <ref refid="classUser" kindref="compound">User</ref> who submited the job. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/jobs/job.h" line="21" column="1" bodyfile="supercomputer/src/jobs/job.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJob_1ad0a5bc2dc79b226ef05e3cade1446733" prot="private" static="no" mutable="no">
+        <type>unsigned long long int</type>
+        <definition>unsigned long long int Job::duration</definition>
+        <argsstring></argsstring>
+        <name>duration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private time_t. Submission date. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/jobs/job.h" line="22" column="1" bodyfile="supercomputer/src/jobs/job.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classJob_1a1893cb777d7966dae2131fde57a2863a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Job::cores</definition>
+        <argsstring></argsstring>
+        <name>cores</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private unsigned long long int. <ref refid="classJob" kindref="compound">Job</ref> duration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/jobs/job.h" line="23" column="1" bodyfile="supercomputer/src/jobs/job.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classJob_1aa876f2c96653d4b4749359444c653546" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Job::Job</definition>
+        <argsstring>(Configuration *config, time_t time, unsigned long long int duration)</argsstring>
+        <name>Job</name>
+        <param>
+          <type><ref refid="classConfiguration" kindref="compound">Configuration</ref> *</type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>unsigned long long int</type>
+          <declname>duration</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classJob" kindref="compound">Job</ref> object default contructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Private int. Computational resources taken by this job in cores.</para><para>Initializes a <ref refid="classJob" kindref="compound">Job</ref> object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Configuration*</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>config. Defines which configuration this job should follow. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time. Submission date of job. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>unsigned</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>long long int duration. <ref refid="classJob" kindref="compound">Job</ref> duration in seconds.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Contructor of <ref refid="classJob" kindref="compound">Job</ref> object. Defines what is the type of a job according to its duration, generating its number of cores randomly, following a linear distribution. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/jobs/job.h" line="32" column="1" bodyfile="supercomputer/src/jobs/job.cpp" bodystart="6" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classJob_1a3a9d5b907691c1a5f3e3b7dae9434232" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>time_t</type>
+        <definition>time_t Job::get_time</definition>
+        <argsstring>()</argsstring>
+        <name>get_time</name>
+        <briefdescription>
+<para>Public method. Returns the submission time of a job. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>time_t. Date represented in UNIX timestamp.</para></simplesect>
+Ŕeturns the submission time of a job. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/jobs/job.h" line="38" column="1" bodyfile="supercomputer/src/jobs/job.cpp" bodystart="49" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classJob_1ada2d6b6ad399dd2a5d9677770bc31dd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned long long int</type>
+        <definition>unsigned long long int Job::get_duration</definition>
+        <argsstring>()</argsstring>
+        <name>get_duration</name>
+        <briefdescription>
+<para>Public method. Returns the duration of a job. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>unsigned long long int. Duration of job.</para></simplesect>
+Returns the job duration in seconds. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/jobs/job.h" line="44" column="1" bodyfile="supercomputer/src/jobs/job.cpp" bodystart="77" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classJob_1a1983414eca65855ad4b60016d8f4732d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Job::get_cores</definition>
+        <argsstring>()</argsstring>
+        <name>get_cores</name>
+        <briefdescription>
+<para>Public method. Returns the number of cores taken to run this job. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>int. Number of cores.</para></simplesect>
+Ŕeturns the number of cores taken by a job. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/jobs/job.h" line="50" column="1" bodyfile="supercomputer/src/jobs/job.cpp" bodystart="56" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classJob_1ae1623b448348b01c5b2216e59789a3bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Job::get_price</definition>
+        <argsstring>()</argsstring>
+        <name>get_price</name>
+        <briefdescription>
+<para>Public method. Returns the price to be paid to run this job. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>double. Price to be paid by a simulated user.</para></simplesect>
+Ŕeturns the price to pay to run a job. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/jobs/job.h" line="56" column="1" bodyfile="supercomputer/src/jobs/job.cpp" bodystart="63" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classJob_1ace0d1b35fda43268e8a80cf846a59b02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Job::set_user</definition>
+        <argsstring>(User *user)</argsstring>
+        <name>set_user</name>
+        <param>
+          <type><ref refid="classUser" kindref="compound">User</ref> *</type>
+          <declname>user</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Defines the user who submits the job. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>User*</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>user. <ref refid="classUser" kindref="compound">User</ref> who submits the job.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Defines the user who submited the job. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/jobs/job.h" line="62" column="1" bodyfile="supercomputer/src/jobs/job.cpp" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classJob_1af82ed715e92ab934401cd31af3582fbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Job::is_short</definition>
+        <argsstring>()</argsstring>
+        <name>is_short</name>
+        <briefdescription>
+<para>Public method. Return whether a job is Short or not. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>bool. True if yes, false if it&apos;s not.</para></simplesect>
+Ŕeturns whether the job is short or not. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/jobs/job.h" line="68" column="1" bodyfile="supercomputer/src/jobs/job.cpp" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classJob_1a544bd796241d22eb4a2b96d2086f705a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Job::is_medium</definition>
+        <argsstring>()</argsstring>
+        <name>is_medium</name>
+        <briefdescription>
+<para>Public method. Return whether a job is Medium or not. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>bool. True if yes, false if it&apos;s not.</para></simplesect>
+Ŕeturns whether the job is medium or not. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/jobs/job.h" line="74" column="1" bodyfile="supercomputer/src/jobs/job.cpp" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classJob_1a7ce2c1d04f42a48f379d43080361fbc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Job::is_large</definition>
+        <argsstring>()</argsstring>
+        <name>is_large</name>
+        <briefdescription>
+<para>Public method. Return whether a job is Large or not. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>bool. True if yes, false if it&apos;s not.</para></simplesect>
+Ŕeturns whether the job is large or not. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/jobs/job.h" line="80" column="1" bodyfile="supercomputer/src/jobs/job.cpp" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classJob_1ac34a235386a111274a5f55e2534c323b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Job::is_huge</definition>
+        <argsstring>()</argsstring>
+        <name>is_huge</name>
+        <briefdescription>
+<para>Public method. Return whether a job is Huge or not. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>bool. True if yes, false if it&apos;s not.</para></simplesect>
+Ŕeturns whether the job is huge or not. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/jobs/job.h" line="86" column="1" bodyfile="supercomputer/src/jobs/job.cpp" bodystart="44" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classJob_1a7cd0c5ec425cbac29dc2d35c316736a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend bool</type>
+        <definition>bool operator&lt;</definition>
+        <argsstring>(Job const &amp;a, Job const &amp;b)</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type><ref refid="classJob" kindref="compound">Job</ref> const &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="classJob" kindref="compound">Job</ref> const &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Operator overload. Overloads the &lt; operator according to time of submission. </para>        </briefdescription>
+        <detaileddescription>
+<para>&lt; Operator overload. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/jobs/job.h" line="89" column="1" bodyfile="supercomputer/src/jobs/job.cpp" bodystart="84" bodyend="86"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classJob" kindref="compound">Job</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>This object represents a job submited by an user. </para>    </detaileddescription>
+    <location file="supercomputer/src/jobs/job.h" line="16" column="1" bodyfile="supercomputer/src/jobs/job.h" bodystart="16" bodyend="90"/>
+    <listofallmembers>
+      <member refid="classJob_1a2276e0fe22412585572e795604108417" prot="private" virt="non-virtual"><scope>Job</scope><name>config</name></member>
+      <member refid="classJob_1a1893cb777d7966dae2131fde57a2863a" prot="private" virt="non-virtual"><scope>Job</scope><name>cores</name></member>
+      <member refid="classJob_1ad0a5bc2dc79b226ef05e3cade1446733" prot="private" virt="non-virtual"><scope>Job</scope><name>duration</name></member>
+      <member refid="classJob_1a1983414eca65855ad4b60016d8f4732d" prot="public" virt="non-virtual"><scope>Job</scope><name>get_cores</name></member>
+      <member refid="classJob_1ada2d6b6ad399dd2a5d9677770bc31dd2" prot="public" virt="non-virtual"><scope>Job</scope><name>get_duration</name></member>
+      <member refid="classJob_1ae1623b448348b01c5b2216e59789a3bf" prot="public" virt="non-virtual"><scope>Job</scope><name>get_price</name></member>
+      <member refid="classJob_1a3a9d5b907691c1a5f3e3b7dae9434232" prot="public" virt="non-virtual"><scope>Job</scope><name>get_time</name></member>
+      <member refid="classJob_1ac34a235386a111274a5f55e2534c323b" prot="public" virt="non-virtual"><scope>Job</scope><name>is_huge</name></member>
+      <member refid="classJob_1a7ce2c1d04f42a48f379d43080361fbc8" prot="public" virt="non-virtual"><scope>Job</scope><name>is_large</name></member>
+      <member refid="classJob_1a544bd796241d22eb4a2b96d2086f705a" prot="public" virt="non-virtual"><scope>Job</scope><name>is_medium</name></member>
+      <member refid="classJob_1af82ed715e92ab934401cd31af3582fbd" prot="public" virt="non-virtual"><scope>Job</scope><name>is_short</name></member>
+      <member refid="classJob_1aa876f2c96653d4b4749359444c653546" prot="public" virt="non-virtual"><scope>Job</scope><name>Job</name></member>
+      <member refid="classJob_1a7cd0c5ec425cbac29dc2d35c316736a8" prot="public" virt="non-virtual"><scope>Job</scope><name>operator&lt;</name></member>
+      <member refid="classJob_1ace0d1b35fda43268e8a80cf846a59b02" prot="public" virt="non-virtual"><scope>Job</scope><name>set_user</name></member>
+      <member refid="classJob_1a494d4e45d4ec958110a164181cc55a75" prot="private" virt="non-virtual"><scope>Job</scope><name>time</name></member>
+      <member refid="classJob_1a889030a6b659d7744b7eaa93d87397a6" prot="private" virt="non-virtual"><scope>Job</scope><name>type</name></member>
+      <member refid="classJob_1a20939cc59547ae5baae3c9b976a2751c" prot="private" virt="non-virtual"><scope>Job</scope><name>user</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

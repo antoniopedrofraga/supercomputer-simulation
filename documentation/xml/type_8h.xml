@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="type_8h" kind="file" language="C++">
+    <compoundname>type.h</compoundname>
+    <includedby refid="job_8h" local="yes">supercomputer/src/jobs/job.h</includedby>
+    <invincdepgraph>
+      <node id="81">
+        <label>supercomputer/src/users/user.h</label>
+        <link refid="user_8h_source"/>
+        <childnode refid="82" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>supercomputer/src/system/system.h</label>
+        <link refid="system_8h_source"/>
+        <childnode refid="83" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>supercomputer/src/jobs/type.h</label>
+        <link refid="type.h"/>
+        <childnode refid="80" relation="include">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>supercomputer/mainwindow.h</label>
+        <link refid="mainwindow_8h_source"/>
+      </node>
+      <node id="80">
+        <label>supercomputer/src/jobs/job.h</label>
+        <link refid="job_8h_source"/>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>supercomputer/src/system/state.h</label>
+        <link refid="state_8h_source"/>
+        <childnode refid="82" relation="include">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>supercomputer/src/statistics/week.h</label>
+        <link refid="week_8h_source"/>
+        <childnode refid="84" relation="include">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>supercomputer/src/statistics/statistics.h</label>
+        <link refid="statistics_8h_source"/>
+        <childnode refid="82" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="type_8h_1a1d1cfd8ffb84e947f82999c682b666a7" prot="public" static="no">
+        <name>Type</name>
+        <enumvalue id="type_8h_1a1d1cfd8ffb84e947f82999c682b666a7af5a4874501b800b316e5817874430c98" prot="public">
+          <name>Short</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="type_8h_1a1d1cfd8ffb84e947f82999c682b666a7a8cfb9311a439a51b14159ed0970f398b" prot="public">
+          <name>Medium</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="type_8h_1a1d1cfd8ffb84e947f82999c682b666a7a453e3722bbf55ee0aae801a69be04d38" prot="public">
+          <name>Large</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="type_8h_1a1d1cfd8ffb84e947f82999c682b666a7acae50f5f1d63ae6235c27b5cbac8c536" prot="public">
+          <name>Huge</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><ref refid="classJob" kindref="compound">Job</ref> type enum. </para>        </briefdescription>
+        <detaileddescription>
+<para>Enum. Defining whether a job is Short, Medium, Large or Huge. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/jobs/type.h" line="8" column="1" bodyfile="supercomputer/src/jobs/type.h" bodystart="8" bodyend="8"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>TYPE_H<sp/>//Define<sp/>header<sp/>if<sp/>it&apos;s<sp/>not<sp/>defined</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TYPE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"></codeline>
+<codeline lineno="8"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>Type<sp/>{<sp/>Short,<sp/>Medium,<sp/>Large,<sp/>Huge<sp/>};</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="supercomputer/src/jobs/type.h"/>
+  </compounddef>
+</doxygen>

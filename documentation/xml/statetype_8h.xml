@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="statetype_8h" kind="file" language="C++">
+    <compoundname>statetype.h</compoundname>
+    <includedby refid="state_8h" local="yes">supercomputer/src/system/state.h</includedby>
+    <invincdepgraph>
+      <node id="178">
+        <label>supercomputer/src/system/statetype.h</label>
+        <link refid="statetype.h"/>
+        <childnode refid="179" relation="include">
+        </childnode>
+      </node>
+      <node id="180">
+        <label>supercomputer/src/system/system.h</label>
+        <link refid="system_8h_source"/>
+        <childnode refid="181" relation="include">
+        </childnode>
+      </node>
+      <node id="181">
+        <label>supercomputer/mainwindow.h</label>
+        <link refid="mainwindow_8h_source"/>
+      </node>
+      <node id="179">
+        <label>supercomputer/src/system/state.h</label>
+        <link refid="state_8h_source"/>
+        <childnode refid="180" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="statetype_8h_1a1615968a92950438f6e67a28e9d56e5c" prot="public" static="no">
+        <name>StateType</name>
+        <enumvalue id="statetype_8h_1a1615968a92950438f6e67a28e9d56e5cabd5f9c956752ce4dc707b4624b3a36f7" prot="public">
+          <name>Start</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="statetype_8h_1a1615968a92950438f6e67a28e9d56e5ca667876a6f108081ad524d7d29d23d506" prot="public">
+          <name>End</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>StateType enum. </para>        </briefdescription>
+        <detaileddescription>
+<para>Enum. Defining whether a state represents a starting or ending of a job. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/statetype.h" line="8" column="1" bodyfile="supercomputer/src/system/statetype.h" bodystart="8" bodyend="8"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>STATETYPE_H<sp/>//Define<sp/>header<sp/>if<sp/>it&apos;s<sp/>not<sp/>defined</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STATETYPE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"></codeline>
+<codeline lineno="8"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>StateType<sp/>{<sp/>Start,<sp/>End<sp/>};</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="supercomputer/src/system/statetype.h"/>
+  </compounddef>
+</doxygen>

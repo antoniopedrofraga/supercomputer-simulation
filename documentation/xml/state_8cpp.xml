@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="state_8cpp" kind="file" language="C++">
+    <compoundname>state.cpp</compoundname>
+    <includes refid="state_8h" local="yes">state.h</includes>
+    <incdepgraph>
+      <node id="152">
+        <label>statetype.h</label>
+        <link refid="statetype_8h_source"/>
+      </node>
+      <node id="157">
+        <label>float.h</label>
+      </node>
+      <node id="160">
+        <label>type.h</label>
+        <link refid="type_8h_source"/>
+      </node>
+      <node id="148">
+        <label>supercomputer/src/system/state.cpp</label>
+        <link refid="state.cpp"/>
+        <childnode refid="149" relation="include">
+        </childnode>
+      </node>
+      <node id="150">
+        <label>string</label>
+      </node>
+      <node id="156">
+        <label>random</label>
+      </node>
+      <node id="154">
+        <label>ctime</label>
+      </node>
+      <node id="158">
+        <label>vector</label>
+      </node>
+      <node id="153">
+        <label>../jobs/job.h</label>
+        <link refid="job_8h_source"/>
+        <childnode refid="150" relation="include">
+        </childnode>
+        <childnode refid="154" relation="include">
+        </childnode>
+        <childnode refid="155" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="160" relation="include">
+        </childnode>
+      </node>
+      <node id="155">
+        <label>../utils/utils.h</label>
+        <link refid="utils_8h_source"/>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="151" relation="include">
+        </childnode>
+      </node>
+      <node id="151">
+        <label>iostream</label>
+      </node>
+      <node id="149">
+        <label>state.h</label>
+        <link refid="state_8h_source"/>
+        <childnode refid="150" relation="include">
+        </childnode>
+        <childnode refid="151" relation="include">
+        </childnode>
+        <childnode refid="152" relation="include">
+        </childnode>
+        <childnode refid="153" relation="include">
+        </childnode>
+      </node>
+      <node id="159">
+        <label>../configuration/configuration.h</label>
+        <link refid="configuration_8h_source"/>
+        <childnode refid="154" relation="include">
+        </childnode>
+        <childnode refid="155" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="state_8cpp_1a3d174276607841e38f2c6291a46c1c8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator&lt;</definition>
+        <argsstring>(State const &amp;a, State const &amp;b)</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type><ref refid="classState" kindref="compound">State</ref> const &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="classState" kindref="compound">State</ref> const &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>&lt; Operator overload. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.cpp" line="106" column="1" bodyfile="supercomputer/src/system/state.cpp" bodystart="106" bodyend="108"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;state.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><ref refid="classState_1a08aed9caf1cc4d3be0ba98ec6ce361b6" kindref="member">State::State</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>total_cores,<sp/>time_t<sp/>time,<sp/>StateType<sp/>state_type)<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;total_cores<sp/>=<sp/>total_cores;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;short_cores<sp/>=<sp/>total_cores<sp/>*<sp/>0.1;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;medium_cores<sp/>=<sp/>total_cores<sp/>*<sp/>0.2;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;large_cores<sp/>=<sp/>total_cores<sp/>*<sp/>0.7;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;used_cores<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;time<sp/>=<sp/>time;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;state_type<sp/>=<sp/>state_type;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><ref refid="classState_1a08aed9caf1cc4d3be0ba98ec6ce361b6" kindref="member">State::State</ref>(<ref refid="classState" kindref="compound">State</ref><sp/>state,<sp/>time_t<sp/>time,<sp/>StateType<sp/>state_type)<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;total_cores<sp/>=<sp/>state.<ref refid="classState_1a3b5789fd6d375e09066b3119f994a536" kindref="member">get_total_cores</ref>();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;short_cores<sp/>=<sp/>state.<ref refid="classState_1a29689f616cf6fca4c07b5a7952c324a4" kindref="member">get_short_cores</ref>();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;medium_cores<sp/>=<sp/>state.<ref refid="classState_1a6f260fbc2e8cf6ffeb9249808e07c525" kindref="member">get_medium_cores</ref>();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;large_cores<sp/>=<sp/>state.<ref refid="classState_1a97489ea52b70c2a2630ce80655c94d16" kindref="member">get_large_cores</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;used_cores<sp/>=<sp/>state.<ref refid="classState_1a3be179b26f26137117e2e303d7b1bbdc" kindref="member">get_used_cores</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;time<sp/>=<sp/>time;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;state_type<sp/>=<sp/>state_type;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classState_1a03e0b92997f17eed2272c67cfcdd889a" kindref="member">State::insert_job</ref>(<ref refid="classJob" kindref="compound">Job</ref><sp/>job)<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(job.<ref refid="classJob_1af82ed715e92ab934401cd31af3582fbd" kindref="member">is_short</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;short_cores<sp/>-=<sp/>job.<ref refid="classJob_1a1983414eca65855ad4b60016d8f4732d" kindref="member">get_cores</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(job.<ref refid="classJob_1a544bd796241d22eb4a2b96d2086f705a" kindref="member">is_medium</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;medium_cores<sp/>-=<sp/>job.<ref refid="classJob_1a1983414eca65855ad4b60016d8f4732d" kindref="member">get_cores</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(job.<ref refid="classJob_1a7ce2c1d04f42a48f379d43080361fbc8" kindref="member">is_large</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;large_cores<sp/>-=<sp/>job.<ref refid="classJob_1a1983414eca65855ad4b60016d8f4732d" kindref="member">get_cores</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(job.<ref refid="classJob_1ac34a235386a111274a5f55e2534c323b" kindref="member">is_huge</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;short_cores<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;medium_cores<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;large_cores<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;used_cores<sp/>+=<sp/>job.<ref refid="classJob_1a1983414eca65855ad4b60016d8f4732d" kindref="member">get_cores</ref>();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classState_1a5307764c6bd8793d84b791c47e847635" kindref="member">State::can_insert_job</ref>(<ref refid="classJob" kindref="compound">Job</ref><sp/>job)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>subtraction<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(job.<ref refid="classJob_1af82ed715e92ab934401cd31af3582fbd" kindref="member">is_short</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>subtraction<sp/>=<sp/>this-&gt;short_cores<sp/>-<sp/>job.<ref refid="classJob_1a1983414eca65855ad4b60016d8f4732d" kindref="member">get_cores</ref>();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(job.<ref refid="classJob_1a544bd796241d22eb4a2b96d2086f705a" kindref="member">is_medium</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>subtraction<sp/>=<sp/>this-&gt;medium_cores<sp/>-<sp/>job.<ref refid="classJob_1a1983414eca65855ad4b60016d8f4732d" kindref="member">get_cores</ref>();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(job.<ref refid="classJob_1a7ce2c1d04f42a48f379d43080361fbc8" kindref="member">is_large</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>subtraction<sp/>=<sp/>this-&gt;large_cores<sp/>-<sp/>job.<ref refid="classJob_1a1983414eca65855ad4b60016d8f4732d" kindref="member">get_cores</ref>();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>subtraction<sp/>&gt;=<sp/>0;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">time_t<sp/><ref refid="classState_1a5fa477c55eb40f020372974f84b7a5e6" kindref="member">State::get_time</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;time;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">StateType<sp/><ref refid="classState_1a59a20bf57d4ffb9748cbf3b1c051c071" kindref="member">State::get_type</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;state_type;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classState_1a29689f616cf6fca4c07b5a7952c324a4" kindref="member">State::get_short_cores</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;short_cores;<sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classState_1a6f260fbc2e8cf6ffeb9249808e07c525" kindref="member">State::get_medium_cores</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;medium_cores;<sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classState_1a97489ea52b70c2a2630ce80655c94d16" kindref="member">State::get_large_cores</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;large_cores;<sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classState_1a3b5789fd6d375e09066b3119f994a536" kindref="member">State::get_total_cores</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;total_cores;<sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classState_1a3be179b26f26137117e2e303d7b1bbdc" kindref="member">State::get_used_cores</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;used_cores;<sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classState_1a3d174276607841e38f2c6291a46c1c8f" kindref="member">operator&lt;</ref>(<ref refid="classState" kindref="compound">State</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>a,<sp/><ref refid="classState" kindref="compound">State</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>b)<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>a.time<sp/>&lt;<sp/>b.time;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="supercomputer/src/system/state.cpp"/>
+  </compounddef>
+</doxygen>

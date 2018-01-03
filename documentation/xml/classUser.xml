@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classUser" kind="class" language="C++" prot="public">
+    <compoundname>User</compoundname>
+    <includes refid="user_8h" local="no">user.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classUser_1ae4c08b0e08c26f67cc1cead0a02a36fd" prot="private" static="no" mutable="no">
+        <type><ref refid="classConfiguration" kindref="compound">Configuration</ref> *</type>
+        <definition>Configuration* User::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/users/user.h" line="14" column="1" bodyfile="supercomputer/src/users/user.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUser_1aa7e6e39b43020bbe9c3a196b3689b0f7" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int User::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private <ref refid="classConfiguration" kindref="compound">Configuration</ref>. Object containing the configuration of the simulation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/users/user.h" line="15" column="1" bodyfile="supercomputer/src/users/user.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUser_1a862e565b402603e23b0dec465e51c1b1" prot="private" static="no" mutable="no">
+        <type>Group</type>
+        <definition>Group User::group</definition>
+        <argsstring></argsstring>
+        <name>group</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private int. <ref refid="classUser" kindref="compound">User</ref> ID. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/users/user.h" line="16" column="1" bodyfile="supercomputer/src/users/user.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classUser_1a43dfb87a97cd57a69f2c6e56699c2148" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double User::budget</definition>
+        <argsstring></argsstring>
+        <name>budget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private Group. Simulated group. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/users/user.h" line="17" column="1" bodyfile="supercomputer/src/users/user.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classUser_1a1cc93227d35bb7d64357eba9f7442fef" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void User::generate_group</definition>
+        <argsstring>(bool support)</argsstring>
+        <name>generate_group</name>
+        <param>
+          <type>bool</type>
+          <declname>support</declname>
+        </param>
+        <briefdescription>
+<para>Private method. Generates the group of an user randomly following a linear distribution. </para>        </briefdescription>
+        <detaileddescription>
+<para>Private double. <ref refid="classUser" kindref="compound">User</ref> budget.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>support. The user is part of the IT Support if true.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Method to generate the group of the <ref refid="classUser" kindref="compound">User</ref>. The <ref refid="classUser" kindref="compound">User</ref> is part of IT support if the argument is true. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/users/user.h" line="23" column="1" bodyfile="supercomputer/src/users/user.cpp" bodystart="16" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classUser_1a9ee57fd1e1dca94a043ad0f5a99ac2be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>User::User</definition>
+        <argsstring>(Configuration *config, int id, bool support)</argsstring>
+        <name>User</name>
+        <param>
+          <type><ref refid="classConfiguration" kindref="compound">Configuration</ref> *</type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>support</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classUser" kindref="compound">User</ref> object default contructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes a <ref refid="classUser" kindref="compound">User</ref> object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classConfiguration" kindref="compound">Configuration</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>* config. <ref refid="classConfiguration" kindref="compound">Configuration</ref> to be followed by the simulation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id. <ref refid="classUser" kindref="compound">User</ref> id, this value is unique between users. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>support. The user is part of the IT Support if true.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Default contructor of <ref refid="classUser" kindref="compound">User</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/users/user.h" line="32" column="1" bodyfile="supercomputer/src/users/user.cpp" bodystart="7" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classUser_1a256c7f780ea27a728b2bf391e0925728" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool User::can_afford</definition>
+        <argsstring>(Job *job)</argsstring>
+        <name>can_afford</name>
+        <param>
+          <type><ref refid="classJob" kindref="compound">Job</ref> *</type>
+          <declname>job</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Method to check if an <ref refid="classUser" kindref="compound">User</ref> can afford to run a given job. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classJob" kindref="compound">Job</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>* job. <ref refid="classJob" kindref="compound">Job</ref> to be paid. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool. True if user can afford the job, false if not.</para></simplesect>
+Method to check if an user can afford for a given job. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/users/user.h" line="39" column="1" bodyfile="supercomputer/src/users/user.cpp" bodystart="33" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classUser_1ab960fea4dd1f6ea2439e410fb8cfd9bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void User::pay</definition>
+        <argsstring>(Job *job)</argsstring>
+        <name>pay</name>
+        <param>
+          <type><ref refid="classJob" kindref="compound">Job</ref> *</type>
+          <declname>job</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Decreases the user budget according to the price of a job. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classJob" kindref="compound">Job</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>* job. <ref refid="classJob" kindref="compound">Job</ref> to be paid.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Method to decrease the user budget, according to the price of a given job. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/users/user.h" line="45" column="1" bodyfile="supercomputer/src/users/user.cpp" bodystart="40" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classSystem" kindref="compound">System</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>This object represents a simulated user. </para>    </detaileddescription>
+    <location file="supercomputer/src/users/user.h" line="12" column="1" bodyfile="supercomputer/src/users/user.h" bodystart="12" bodyend="46"/>
+    <listofallmembers>
+      <member refid="classUser_1a43dfb87a97cd57a69f2c6e56699c2148" prot="private" virt="non-virtual"><scope>User</scope><name>budget</name></member>
+      <member refid="classUser_1a256c7f780ea27a728b2bf391e0925728" prot="public" virt="non-virtual"><scope>User</scope><name>can_afford</name></member>
+      <member refid="classUser_1ae4c08b0e08c26f67cc1cead0a02a36fd" prot="private" virt="non-virtual"><scope>User</scope><name>config</name></member>
+      <member refid="classUser_1a1cc93227d35bb7d64357eba9f7442fef" prot="private" virt="non-virtual"><scope>User</scope><name>generate_group</name></member>
+      <member refid="classUser_1a862e565b402603e23b0dec465e51c1b1" prot="private" virt="non-virtual"><scope>User</scope><name>group</name></member>
+      <member refid="classUser_1aa7e6e39b43020bbe9c3a196b3689b0f7" prot="private" virt="non-virtual"><scope>User</scope><name>id</name></member>
+      <member refid="classUser_1ab960fea4dd1f6ea2439e410fb8cfd9bc" prot="public" virt="non-virtual"><scope>User</scope><name>pay</name></member>
+      <member refid="classUser_1a9ee57fd1e1dca94a043ad0f5a99ac2be" prot="public" virt="non-virtual"><scope>User</scope><name>User</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,360 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
+  <compound refid="classConfiguration" kind="class"><name>Configuration</name>
+    <member refid="classConfiguration_1a23807d2f9ff9f9e3975c3dd2c5b3e0f8" kind="variable"><name>nodes_nr</name></member>
+    <member refid="classConfiguration_1a9b4789b8100be88668914a878f42ccf1" kind="variable"><name>cores_nr</name></member>
+    <member refid="classConfiguration_1aa1ae3229172fe92b88d54e551a9f1bcb" kind="variable"><name>usage_price</name></member>
+    <member refid="classConfiguration_1acacd515bb439d2b78785747ef9920dca" kind="variable"><name>operational_cost</name></member>
+    <member refid="classConfiguration_1affb89810843ee59f49c953c1af3d0480" kind="variable"><name>student_budget</name></member>
+    <member refid="classConfiguration_1a1fbe2f609a4eded605ce9bc6fd87d3b9" kind="variable"><name>student_budget_min</name></member>
+    <member refid="classConfiguration_1ad98f4807d5dae458a8ae7bf234d8195c" kind="variable"><name>student_budget_max</name></member>
+    <member refid="classConfiguration_1a41996af8227bbc0e771f3fa4f1778efe" kind="variable"><name>student_random</name></member>
+    <member refid="classConfiguration_1aa5cd8e510a3dae5a76c584b804f39ce1" kind="variable"><name>researcher_budget</name></member>
+    <member refid="classConfiguration_1a0f5b11c353707864b43a7635b7c93b77" kind="variable"><name>researcher_budget_min</name></member>
+    <member refid="classConfiguration_1a2cb428f3274caf0eb23f9a4b5190d12c" kind="variable"><name>researcher_budget_max</name></member>
+    <member refid="classConfiguration_1a660995442b69a1e68576626b707f27e6" kind="variable"><name>researcher_random</name></member>
+    <member refid="classConfiguration_1afd7a704e46126313ab435b363c01c392" kind="variable"><name>jobs_nr</name></member>
+    <member refid="classConfiguration_1a580e19e31bb6c3f171dd738966fc2ed2" kind="variable"><name>jobs_nr_min</name></member>
+    <member refid="classConfiguration_1aa2a1d0088b5f0d95249706c0a2332d46" kind="variable"><name>jobs_nr_max</name></member>
+    <member refid="classConfiguration_1a2efe5471962032f2c2bdcaf7b9dfeddf" kind="variable"><name>jobs_random</name></member>
+    <member refid="classConfiguration_1ab3abc6ac0b204fc7dada5e1186d5bfb5" kind="variable"><name>users_nr</name></member>
+    <member refid="classConfiguration_1a053deacfbe8cf147e0a1d7b9c6781886" kind="variable"><name>users_nr_min</name></member>
+    <member refid="classConfiguration_1a97ab173cf541fa9e9dd8c7a9ac25adb4" kind="variable"><name>users_nr_max</name></member>
+    <member refid="classConfiguration_1a17d14df6d8497ba28b89b8cc8cf16e56" kind="variable"><name>users_random</name></member>
+    <member refid="classConfiguration_1aba00b363eff8db977be48d7ebb66cd2a" kind="variable"><name>requests_span</name></member>
+    <member refid="classConfiguration_1a526aa2c3dceeeedffefd933c557574c1" kind="variable"><name>start</name></member>
+    <member refid="classConfiguration_1a3e35a60b45624f3d3fd07edfc6b87c33" kind="variable"><name>now</name></member>
+    <member refid="classConfiguration_1a779947337bf652f0e773cb29f37f14ba" kind="function"><name>Configuration</name></member>
+    <member refid="classConfiguration_1ace5f9aa5555419110b7df4e6eb664931" kind="function"><name>get_users_nr</name></member>
+    <member refid="classConfiguration_1a09999edf2be5ece81d64ea825c7fd339" kind="function"><name>get_users_nr_min</name></member>
+    <member refid="classConfiguration_1a2ce1f2af9f9733712a8cbbfb7f5b277c" kind="function"><name>get_users_nr_max</name></member>
+    <member refid="classConfiguration_1a3c6d60da873c53d2a785e64f67668c4f" kind="function"><name>is_users_nr_random</name></member>
+    <member refid="classConfiguration_1a09d80d794d6614c7bcbdf12b49835f02" kind="function"><name>get_jobs_nr</name></member>
+    <member refid="classConfiguration_1a3d224269091e27f9595485ec5d4b0467" kind="function"><name>get_jobs_nr_min</name></member>
+    <member refid="classConfiguration_1a19e2080f751736cf98017f6e40533629" kind="function"><name>get_jobs_nr_max</name></member>
+    <member refid="classConfiguration_1ae35b4429de406ed81c1be1ae54bfc3d7" kind="function"><name>is_jobs_nr_random</name></member>
+    <member refid="classConfiguration_1a3255f4b61deb08b21a39251b9dc4d2b4" kind="function"><name>get_cores_nr</name></member>
+    <member refid="classConfiguration_1aafbd7647fdc9447cf882083a0be02263" kind="function"><name>get_nodes_nr</name></member>
+    <member refid="classConfiguration_1a65edb47ed369c917d275812bba3e46c8" kind="function"><name>get_usage_price</name></member>
+    <member refid="classConfiguration_1a3a3d1dd3bb8ef78b09fbed9954ec1c8f" kind="function"><name>get_operational_cost</name></member>
+    <member refid="classConfiguration_1af7b5ce431f51f8848e32ba76af63c531" kind="function"><name>get_student_budget</name></member>
+    <member refid="classConfiguration_1a3a6291edf176db0bdcc4b88c529a6447" kind="function"><name>get_student_budget_min</name></member>
+    <member refid="classConfiguration_1a9b8da18d74cdedc6d779c560d714fbc1" kind="function"><name>get_student_budget_max</name></member>
+    <member refid="classConfiguration_1ac5422f301431649bfc63319bf4b0b2e9" kind="function"><name>is_student_budget_random</name></member>
+    <member refid="classConfiguration_1a9555ca72e72aacb78585365a328c3c9f" kind="function"><name>get_researcher_budget</name></member>
+    <member refid="classConfiguration_1aefb667cc98649f5a32fc16665c6b28c9" kind="function"><name>get_researcher_budget_min</name></member>
+    <member refid="classConfiguration_1ac4ae307e11f10c5cf1a0e32d14621948" kind="function"><name>get_researcher_budget_max</name></member>
+    <member refid="classConfiguration_1aaf2bcbe58e2a4844c2f6d74a94191ac5" kind="function"><name>is_researcher_budget_random</name></member>
+    <member refid="classConfiguration_1aeb49a69a8a52a9603d5e46180a73b770" kind="function"><name>get_time</name></member>
+    <member refid="classConfiguration_1a4f94d71b89f3fdea573050da6fe5e0e6" kind="function"><name>get_requests_span</name></member>
+    <member refid="classConfiguration_1a057a8d808d077731c582ec280a897bf9" kind="function"><name>set_student_random</name></member>
+    <member refid="classConfiguration_1a6230496122b25f645092fe3b9896f883" kind="function"><name>set_researcher_random</name></member>
+    <member refid="classConfiguration_1aedf812b154b8cc8b3db322f6d969ca59" kind="function"><name>set_users_random</name></member>
+    <member refid="classConfiguration_1acd24051b1759e61132d6653e0df9dfe4" kind="function"><name>set_jobs_random</name></member>
+    <member refid="classConfiguration_1a1d5547d2f203074882e1d6d3c5ddbb8a" kind="function"><name>set_now</name></member>
+    <member refid="classConfiguration_1a7d9e089372333b0c1ec93c7fdbd297f2" kind="function"><name>set_time</name></member>
+    <member refid="classConfiguration_1a0b9459ad48edbac60dcd8962910653a2" kind="function"><name>set_usage_price</name></member>
+    <member refid="classConfiguration_1a31284f3adcd959a1092a27efb5742452" kind="function"><name>set_operational_cost</name></member>
+    <member refid="classConfiguration_1ac74a221224fbf7db75c3afa47fba2d61" kind="function"><name>set_nodes_nr</name></member>
+    <member refid="classConfiguration_1a299244e0d054564921a3344b14e94973" kind="function"><name>set_cores_nr</name></member>
+    <member refid="classConfiguration_1a00fb5adcb5145810133ef68a662dca91" kind="function"><name>set_student_budget</name></member>
+    <member refid="classConfiguration_1ae6cc1bfec9271811e94df8a6bba264f0" kind="function"><name>set_student_budget_min</name></member>
+    <member refid="classConfiguration_1aba1e5f9fe84879c3628382096015cd94" kind="function"><name>set_student_budget_max</name></member>
+    <member refid="classConfiguration_1a92a48764d5717464989aed435de76bc6" kind="function"><name>set_researcher_budget</name></member>
+    <member refid="classConfiguration_1a8fb6a2c896ca9a98ffa605b84b6ddde7" kind="function"><name>set_researcher_budget_min</name></member>
+    <member refid="classConfiguration_1add79fec297e6e38097b3a0b9968c8d2c" kind="function"><name>set_researcher_budget_max</name></member>
+    <member refid="classConfiguration_1a915a2e408d2c2b95e0e7cfe4a5842c2d" kind="function"><name>set_jobs_nr</name></member>
+    <member refid="classConfiguration_1a5132f41c23a73bb4fded422f325cbbe6" kind="function"><name>set_jobs_nr_min</name></member>
+    <member refid="classConfiguration_1a288259d1e0c47f99ddd0feec5ade6d93" kind="function"><name>set_jobs_nr_max</name></member>
+    <member refid="classConfiguration_1a0e27b300afd52eb1a07f202ee8a05746" kind="function"><name>set_users_nr</name></member>
+    <member refid="classConfiguration_1aca5c8d3046cc871ce78b0c6ef0d3cda6" kind="function"><name>set_users_nr_min</name></member>
+    <member refid="classConfiguration_1af5b4e0360ab5bc2d5535e993850e2f23" kind="function"><name>set_users_nr_max</name></member>
+    <member refid="classConfiguration_1a485b378ed96796fd7a7ca17ace180060" kind="function"><name>set_requests_span</name></member>
+  </compound>
+  <compound refid="classJob" kind="class"><name>Job</name>
+    <member refid="classJob_1a2276e0fe22412585572e795604108417" kind="variable"><name>config</name></member>
+    <member refid="classJob_1a889030a6b659d7744b7eaa93d87397a6" kind="variable"><name>type</name></member>
+    <member refid="classJob_1a20939cc59547ae5baae3c9b976a2751c" kind="variable"><name>user</name></member>
+    <member refid="classJob_1a494d4e45d4ec958110a164181cc55a75" kind="variable"><name>time</name></member>
+    <member refid="classJob_1ad0a5bc2dc79b226ef05e3cade1446733" kind="variable"><name>duration</name></member>
+    <member refid="classJob_1a1893cb777d7966dae2131fde57a2863a" kind="variable"><name>cores</name></member>
+    <member refid="classJob_1aa876f2c96653d4b4749359444c653546" kind="function"><name>Job</name></member>
+    <member refid="classJob_1a3a9d5b907691c1a5f3e3b7dae9434232" kind="function"><name>get_time</name></member>
+    <member refid="classJob_1ada2d6b6ad399dd2a5d9677770bc31dd2" kind="function"><name>get_duration</name></member>
+    <member refid="classJob_1a1983414eca65855ad4b60016d8f4732d" kind="function"><name>get_cores</name></member>
+    <member refid="classJob_1ae1623b448348b01c5b2216e59789a3bf" kind="function"><name>get_price</name></member>
+    <member refid="classJob_1ace0d1b35fda43268e8a80cf846a59b02" kind="function"><name>set_user</name></member>
+    <member refid="classJob_1af82ed715e92ab934401cd31af3582fbd" kind="function"><name>is_short</name></member>
+    <member refid="classJob_1a544bd796241d22eb4a2b96d2086f705a" kind="function"><name>is_medium</name></member>
+    <member refid="classJob_1a7ce2c1d04f42a48f379d43080361fbc8" kind="function"><name>is_large</name></member>
+    <member refid="classJob_1ac34a235386a111274a5f55e2534c323b" kind="function"><name>is_huge</name></member>
+    <member refid="classJob_1a7cd0c5ec425cbac29dc2d35c316736a8" kind="friend"><name>operator&lt;</name></member>
+  </compound>
+  <compound refid="classMainWindow" kind="class"><name>MainWindow</name>
+    <member refid="classMainWindow_1a35466a70ed47252a0191168126a352a5" kind="variable"><name>ui</name></member>
+    <member refid="classMainWindow_1ae9162d467e7b0a652d6ffcd1aa21cc56" kind="variable"><name>config</name></member>
+    <member refid="classMainWindow_1a8b244be8b7b7db1b08de2a2acb9409db" kind="function"><name>MainWindow</name></member>
+    <member refid="classMainWindow_1ae98d00a93bc118200eeef9f9bba1dba7" kind="function"><name>~MainWindow</name></member>
+    <member refid="classMainWindow_1a637d4aa13a6d4538761bde9d2e0b631a" kind="slot"><name>set_initial_values</name></member>
+    <member refid="classMainWindow_1acf437338e7f575caafef28dd27dad1ec" kind="slot"><name>show_random_users</name></member>
+    <member refid="classMainWindow_1aea3cb6aec3ee28a1958a6c7ff8bea524" kind="slot"><name>show_random_jobs</name></member>
+    <member refid="classMainWindow_1a815cd6b76c0be27d77c2ca63a41a9672" kind="slot"><name>show_random_student_budget</name></member>
+    <member refid="classMainWindow_1aafc46ca0fbadf2b6243fd442d66cfe81" kind="slot"><name>show_random_researcher_budget</name></member>
+    <member refid="classMainWindow_1ad8f0074f099c11845889ea341de8d472" kind="slot"><name>on_randomUsers_toggled</name></member>
+    <member refid="classMainWindow_1a9535c10efad0a9179666bde50b65a366" kind="slot"><name>on_randomJobs_toggled</name></member>
+    <member refid="classMainWindow_1acc847e7f630748462f058b384e4119ca" kind="slot"><name>on_randomStudent_toggled</name></member>
+    <member refid="classMainWindow_1a6b542abb966fa312a634128f30685136" kind="slot"><name>on_randomResearcher_toggled</name></member>
+    <member refid="classMainWindow_1aca295e3b35ebaaa7175d65c63c17fd19" kind="slot"><name>on_nowDate_toggled</name></member>
+    <member refid="classMainWindow_1a2f1748a7c7bd0079af47fa7240b40661" kind="slot"><name>on_simulateButton_released</name></member>
+    <member refid="classMainWindow_1a0402771282166a842a91d8d4d3bc68a8" kind="slot"><name>on_constantUsers_valueChanged</name></member>
+    <member refid="classMainWindow_1aceb9dae16ab28cced9e4c53552ee8e0b" kind="slot"><name>on_constantJobs_valueChanged</name></member>
+    <member refid="classMainWindow_1ab7d65c52b600a1228c8a9e4ea801d46f" kind="slot"><name>on_constantStudentBudget_valueChanged</name></member>
+    <member refid="classMainWindow_1ae437cbf0ac358e3b862438e5f397bb29" kind="slot"><name>on_constantResearcher_valueChanged</name></member>
+    <member refid="classMainWindow_1a4db921f0e012da5e054303ca027cd895" kind="slot"><name>on_requestsSpinBox_valueChanged</name></member>
+    <member refid="classMainWindow_1a067faaf5a7a1fb51679f08342bcb2bf5" kind="slot"><name>on_usagePriceSpinBox_valueChanged</name></member>
+    <member refid="classMainWindow_1a89bcfb9e03592134ae96386066d2595f" kind="slot"><name>on_operationalCostSpinBox_valueChanged</name></member>
+    <member refid="classMainWindow_1a5bfebddcfbf3e36085d401d71405aef4" kind="slot"><name>on_nodesSpinBox_valueChanged</name></member>
+    <member refid="classMainWindow_1a93d36f90731a24214d4e72df38b160e3" kind="slot"><name>on_coresSpinBox_valueChanged</name></member>
+    <member refid="classMainWindow_1ae66cb3ce030773a2347d1789ed7f1d03" kind="slot"><name>on_startDateTimeEdit_dateTimeChanged</name></member>
+    <member refid="classMainWindow_1aef8a86216802d0ee1b6e91551ba7a005" kind="slot"><name>on_fromUsers_valueChanged</name></member>
+    <member refid="classMainWindow_1a253bb92b1e7b3567df8cf519d61ebbfa" kind="slot"><name>on_toUsers_valueChanged</name></member>
+    <member refid="classMainWindow_1afc2011c6eaff7fe4c204d2e7a6aebef2" kind="slot"><name>on_fromJobs_valueChanged</name></member>
+    <member refid="classMainWindow_1ae27be9955a3834ed8c287172afd3e199" kind="slot"><name>on_toJobs_valueChanged</name></member>
+    <member refid="classMainWindow_1a5c265fe54056149c8faa484d983b1061" kind="slot"><name>on_fromStudent_valueChanged</name></member>
+    <member refid="classMainWindow_1afd3ea565ae35abe956a69deb5d90a889" kind="slot"><name>on_toStudent_valueChanged</name></member>
+    <member refid="classMainWindow_1a46ee6103aa93c92d5af94c8728ba0b8a" kind="slot"><name>on_fromResearcher_valueChanged</name></member>
+    <member refid="classMainWindow_1a52cb882e71f5fbfb23262d8077ee121a" kind="slot"><name>on_toResearcher_valueChanged</name></member>
+  </compound>
+  <compound refid="classState" kind="class"><name>State</name>
+    <member refid="classState_1ae786e9d4ba2b480f63ee093608f9c2cf" kind="variable"><name>short_cores</name></member>
+    <member refid="classState_1aa3b1abc9f8e198957a39066e803b7f7c" kind="variable"><name>medium_cores</name></member>
+    <member refid="classState_1a3f1fddb729970b483628c7f9a36155da" kind="variable"><name>large_cores</name></member>
+    <member refid="classState_1af2ec4b552e56f35ef964ba8adf55834e" kind="variable"><name>total_cores</name></member>
+    <member refid="classState_1a1289d1e8fdeae6c9105dcbb47497a3ef" kind="variable"><name>used_cores</name></member>
+    <member refid="classState_1aa05bb456342bbc527d6ffa9ce3be3292" kind="variable"><name>state_type</name></member>
+    <member refid="classState_1a11ba16d1da2c8136f4814ae4b4dfa3a1" kind="variable"><name>time</name></member>
+    <member refid="classState_1a08aed9caf1cc4d3be0ba98ec6ce361b6" kind="function"><name>State</name></member>
+    <member refid="classState_1a5c1f8c662bc19d86e5b63104b7be9a1c" kind="function"><name>State</name></member>
+    <member refid="classState_1a576b0286b5b9bb517b45c29749f5563c" kind="function"><name>set_period</name></member>
+    <member refid="classState_1a03e0b92997f17eed2272c67cfcdd889a" kind="function"><name>insert_job</name></member>
+    <member refid="classState_1a5307764c6bd8793d84b791c47e847635" kind="function"><name>can_insert_job</name></member>
+    <member refid="classState_1a5fa477c55eb40f020372974f84b7a5e6" kind="function"><name>get_time</name></member>
+    <member refid="classState_1ae179223944551fda8ffadbde68972a4f" kind="function"><name>get_name</name></member>
+    <member refid="classState_1a59a20bf57d4ffb9748cbf3b1c051c071" kind="function"><name>get_type</name></member>
+    <member refid="classState_1a29689f616cf6fca4c07b5a7952c324a4" kind="function"><name>get_short_cores</name></member>
+    <member refid="classState_1a6f260fbc2e8cf6ffeb9249808e07c525" kind="function"><name>get_medium_cores</name></member>
+    <member refid="classState_1a97489ea52b70c2a2630ce80655c94d16" kind="function"><name>get_large_cores</name></member>
+    <member refid="classState_1a3b5789fd6d375e09066b3119f994a536" kind="function"><name>get_total_cores</name></member>
+    <member refid="classState_1a3be179b26f26137117e2e303d7b1bbdc" kind="function"><name>get_used_cores</name></member>
+    <member refid="classState_1a3d174276607841e38f2c6291a46c1c8f" kind="friend"><name>operator&lt;</name></member>
+  </compound>
+  <compound refid="classStatistics" kind="class"><name>Statistics</name>
+    <member refid="classStatistics_1a2a32cc5c4a7f7aa479658b61ea35fc4d" kind="variable"><name>config</name></member>
+    <member refid="classStatistics_1ae1436be78ca512005768b0cb71030dcb" kind="variable"><name>short_queue_wt</name></member>
+    <member refid="classStatistics_1abf108a8006ea5d1c5831dc0bffeeb454" kind="variable"><name>medium_queue_wt</name></member>
+    <member refid="classStatistics_1a3793d65ec1bbac95a36fe0390a080882" kind="variable"><name>large_queue_wt</name></member>
+    <member refid="classStatistics_1aedfa21080b46d090efd8f25b0bae9e95" kind="variable"><name>huge_queue_wt</name></member>
+    <member refid="classStatistics_1aff40ef465f5b732afa83e476a6d058dc" kind="variable"><name>short_queue_ta</name></member>
+    <member refid="classStatistics_1a28ac7ff34cd9126bcd81d03143063d1d" kind="variable"><name>medium_queue_ta</name></member>
+    <member refid="classStatistics_1a0f82ef376337ec5fc146f8f31613d85f" kind="variable"><name>large_queue_ta</name></member>
+    <member refid="classStatistics_1a070a45774139e1a98ee51e0a3113d837" kind="variable"><name>huge_queue_ta</name></member>
+    <member refid="classStatistics_1a61aeb69db27ba7ee567a07788abcbf42" kind="variable"><name>weeks</name></member>
+    <member refid="classStatistics_1af673a8156269191416f8ec213eb8291c" kind="variable"><name>usage_price</name></member>
+    <member refid="classStatistics_1abb05b3b9f1c1eaccaa73a29055b7255e" kind="variable"><name>operational_cost</name></member>
+    <member refid="classStatistics_1a591573a74c6fec3f909d12a401117499" kind="variable"><name>machine_time</name></member>
+    <member refid="classStatistics_1abf8cd294ac6cda2aeee639defc276702" kind="function"><name>Statistics</name></member>
+    <member refid="classStatistics_1af4c128bde8bed27787f5ecdb08bf9929" kind="function"><name>get_usage_price</name></member>
+    <member refid="classStatistics_1afb354cc8fcd9ab43ec9c3d9e2880e660" kind="function"><name>get_machine_time</name></member>
+    <member refid="classStatistics_1a091d26462ea4db2b2a6032b94ff49a31" kind="function"><name>get_operational_cost</name></member>
+    <member refid="classStatistics_1a20e75d62f6802875eec1ebd8424d84b1" kind="function"><name>get_economic_balance</name></member>
+    <member refid="classStatistics_1a6f5e39adedce4de0c0983619fb8498c8" kind="function"><name>get_weekly_usage</name></member>
+    <member refid="classStatistics_1a7858a6d068d7c56d29a5f54c20a8521c" kind="function"><name>get_short_ta</name></member>
+    <member refid="classStatistics_1a114925dbd18467fed3db887104d27807" kind="function"><name>get_medium_ta</name></member>
+    <member refid="classStatistics_1a6f0aacba4f01c18cc9da75b1cb2f3e51" kind="function"><name>get_large_ta</name></member>
+    <member refid="classStatistics_1a6afcfec266fe44d1c876be80f09f6de3" kind="function"><name>get_huge_ta</name></member>
+    <member refid="classStatistics_1abef59b8f494093e62ff1a27bd989e42a" kind="function"><name>get_short_wt</name></member>
+    <member refid="classStatistics_1aa20489eecdafe0ebcac554f34b60caef" kind="function"><name>get_medium_wt</name></member>
+    <member refid="classStatistics_1a06c13d01f1a8ea83391628b9bf617a4f" kind="function"><name>get_large_wt</name></member>
+    <member refid="classStatistics_1a17dc31579326d8463eba7dd661673f47" kind="function"><name>get_huge_wt</name></member>
+    <member refid="classStatistics_1af99eab950e1fa1a657332fface5dc13e" kind="function"><name>add_usage_price</name></member>
+    <member refid="classStatistics_1a17bca1fa9938f98e93cebd56d428f9a4" kind="function"><name>add_operational_cost</name></member>
+    <member refid="classStatistics_1a726b0734f8a0c86024543190ab3092ea" kind="function"><name>add_machine_time</name></member>
+    <member refid="classStatistics_1a78e4c255a4999ebd6c8872eef6360427" kind="function"><name>add_job</name></member>
+  </compound>
+  <compound refid="classSystem" kind="class"><name>System</name>
+    <member refid="classSystem_1af8c7478dc5ce6a5d0d67808398cf3d59" kind="variable"><name>users</name></member>
+    <member refid="classSystem_1a21b6c08ac66bec893308c2296c1641c2" kind="variable"><name>jobs</name></member>
+    <member refid="classSystem_1ac1aab5e5d10edd46a02c80bd09cbd962" kind="variable"><name>states</name></member>
+    <member refid="classSystem_1afe583672228301d8c014193581113ce5" kind="variable"><name>config</name></member>
+    <member refid="classSystem_1aa8a2a97f7c88d8e90a4c57c041dde328" kind="variable"><name>statistics</name></member>
+    <member refid="classSystem_1a2e2632d738814f6e0edd6b6bf9ed3ec1" kind="variable"><name>total_cores_nr</name></member>
+    <member refid="classSystem_1abf6998bc798ae4175912cf3890dd94cb" kind="function"><name>insert_state</name></member>
+    <member refid="classSystem_1a136738e68bfea8bc682da068ad5e891b" kind="function"><name>insert_week_state</name></member>
+    <member refid="classSystem_1a27d7d03e89bd4c1589969a289d4125f3" kind="function"><name>insert_weekend_state</name></member>
+    <member refid="classSystem_1a1be88dda3e490fb6b38c478f26dab588" kind="function"><name>exist_negatives</name></member>
+    <member refid="classSystem_1a69790f4f0e86d6dded0bc527877d1d7e" kind="function"><name>create_users</name></member>
+    <member refid="classSystem_1a4e358d5db37a23a1dd8a6ecff6607aad" kind="function"><name>create_jobs</name></member>
+    <member refid="classSystem_1aa8b59180946dea446bfad513eeb3e9fa" kind="function"><name>calculate_op_cost</name></member>
+    <member refid="classSystem_1a6fab1b2ea6af0e0b934c9a0c50056919" kind="function"><name>schedule</name></member>
+    <member refid="classSystem_1a11cee9111236f7abf556bf82eb4ce623" kind="function"><name>insert_state_and_update</name></member>
+    <member refid="classSystem_1a38c393cf990b65c13bf926c6e25c4f0a" kind="function"><name>System</name></member>
+    <member refid="classSystem_1a4d2006a8a392e1c198fb988a7d125ac8" kind="function"><name>System</name></member>
+    <member refid="classSystem_1adbb7e0745a7a25f8a598eaa6b04dd4ed" kind="function"><name>get_results</name></member>
+  </compound>
+  <compound refid="classUser" kind="class"><name>User</name>
+    <member refid="classUser_1ae4c08b0e08c26f67cc1cead0a02a36fd" kind="variable"><name>config</name></member>
+    <member refid="classUser_1aa7e6e39b43020bbe9c3a196b3689b0f7" kind="variable"><name>id</name></member>
+    <member refid="classUser_1a862e565b402603e23b0dec465e51c1b1" kind="variable"><name>group</name></member>
+    <member refid="classUser_1a43dfb87a97cd57a69f2c6e56699c2148" kind="variable"><name>budget</name></member>
+    <member refid="classUser_1a1cc93227d35bb7d64357eba9f7442fef" kind="function"><name>generate_group</name></member>
+    <member refid="classUser_1a9ee57fd1e1dca94a043ad0f5a99ac2be" kind="function"><name>User</name></member>
+    <member refid="classUser_1a256c7f780ea27a728b2bf391e0925728" kind="function"><name>can_afford</name></member>
+    <member refid="classUser_1ab960fea4dd1f6ea2439e410fb8cfd9bc" kind="function"><name>pay</name></member>
+  </compound>
+  <compound refid="classWeek" kind="class"><name>Week</name>
+    <member refid="classWeek_1a699cc7fbf87d7839ff4e08e32ffbb4ac" kind="variable"><name>start</name></member>
+    <member refid="classWeek_1a43a227171b667701e5305c0c3a9825cf" kind="variable"><name>end</name></member>
+    <member refid="classWeek_1a831898af463cb69f6f6e05a53a9d9a7a" kind="variable"><name>short_nr</name></member>
+    <member refid="classWeek_1abf1785935bb228cd63fa6c02ccb1dc6e" kind="variable"><name>medium_nr</name></member>
+    <member refid="classWeek_1acc9782d487879c8c28a51fed07fbcbf0" kind="variable"><name>large_nr</name></member>
+    <member refid="classWeek_1a86d8ec77e14145b57c8fb272e4d07c20" kind="variable"><name>huge_nr</name></member>
+    <member refid="classWeek_1acde62b92be9795ba306655c67cb73657" kind="function"><name>Week</name></member>
+    <member refid="classWeek_1a09c3311872e50cc72900c97f5b2bde46" kind="function"><name>get_start</name></member>
+    <member refid="classWeek_1a9bc75154f4fab7823f0ea9e04a69296d" kind="function"><name>get_end</name></member>
+    <member refid="classWeek_1a583625ac54cdbf5b38caf23c8b76ae37" kind="function"><name>set_start</name></member>
+    <member refid="classWeek_1ac5f28e3ca4f43b4c4d78f9a4e140c207" kind="function"><name>add_job</name></member>
+    <member refid="classWeek_1a5c17f115d399c08f1b848e8d8ce05e3f" kind="friend"><name>operator&lt;&lt;</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="namespaceUi" kind="namespace"><name>Ui</name>
+  </compound>
+  <compound refid="mainwindow_8h" kind="file"><name>mainwindow.h</name>
+  </compound>
+  <compound refid="configuration_8cpp" kind="file"><name>configuration.cpp</name>
+  </compound>
+  <compound refid="configuration_8h" kind="file"><name>configuration.h</name>
+  </compound>
+  <compound refid="job_8cpp" kind="file"><name>job.cpp</name>
+    <member refid="job_8cpp_1a7cd0c5ec425cbac29dc2d35c316736a8" kind="function"><name>operator&lt;</name></member>
+  </compound>
+  <compound refid="job_8h" kind="file"><name>job.h</name>
+  </compound>
+  <compound refid="type_8h" kind="file"><name>type.h</name>
+    <member refid="type_8h_1a1d1cfd8ffb84e947f82999c682b666a7" kind="enum"><name>Type</name></member>
+    <member refid="type_8h_1a1d1cfd8ffb84e947f82999c682b666a7af5a4874501b800b316e5817874430c98" kind="enumvalue"><name>Short</name></member>
+    <member refid="type_8h_1a1d1cfd8ffb84e947f82999c682b666a7a8cfb9311a439a51b14159ed0970f398b" kind="enumvalue"><name>Medium</name></member>
+    <member refid="type_8h_1a1d1cfd8ffb84e947f82999c682b666a7a453e3722bbf55ee0aae801a69be04d38" kind="enumvalue"><name>Large</name></member>
+    <member refid="type_8h_1a1d1cfd8ffb84e947f82999c682b666a7acae50f5f1d63ae6235c27b5cbac8c536" kind="enumvalue"><name>Huge</name></member>
+  </compound>
+  <compound refid="statistics_8cpp" kind="file"><name>statistics.cpp</name>
+  </compound>
+  <compound refid="statistics_8h" kind="file"><name>statistics.h</name>
+  </compound>
+  <compound refid="week_8cpp" kind="file"><name>week.cpp</name>
+    <member refid="week_8cpp_1a5c17f115d399c08f1b848e8d8ce05e3f" kind="function"><name>operator&lt;&lt;</name></member>
+  </compound>
+  <compound refid="week_8h" kind="file"><name>week.h</name>
+  </compound>
+  <compound refid="state_8cpp" kind="file"><name>state.cpp</name>
+    <member refid="state_8cpp_1a3d174276607841e38f2c6291a46c1c8f" kind="function"><name>operator&lt;</name></member>
+  </compound>
+  <compound refid="state_8h" kind="file"><name>state.h</name>
+  </compound>
+  <compound refid="statetype_8h" kind="file"><name>statetype.h</name>
+    <member refid="statetype_8h_1a1615968a92950438f6e67a28e9d56e5c" kind="enum"><name>StateType</name></member>
+    <member refid="statetype_8h_1a1615968a92950438f6e67a28e9d56e5cabd5f9c956752ce4dc707b4624b3a36f7" kind="enumvalue"><name>Start</name></member>
+    <member refid="statetype_8h_1a1615968a92950438f6e67a28e9d56e5ca667876a6f108081ad524d7d29d23d506" kind="enumvalue"><name>End</name></member>
+  </compound>
+  <compound refid="system_8cpp" kind="file"><name>system.cpp</name>
+  </compound>
+  <compound refid="system_8h" kind="file"><name>system.h</name>
+  </compound>
+  <compound refid="group_8h" kind="file"><name>group.h</name>
+    <member refid="group_8h_1ace1050b29fb6a0619ecf018e6cb26bce" kind="enum"><name>Group</name></member>
+    <member refid="group_8h_1ace1050b29fb6a0619ecf018e6cb26bcea579471a63617350f7c574a8052b47674" kind="enumvalue"><name>ITsupport</name></member>
+    <member refid="group_8h_1ace1050b29fb6a0619ecf018e6cb26bcea9d0ca090f2033c04f4d0292a5158956e" kind="enumvalue"><name>Researcher</name></member>
+    <member refid="group_8h_1ace1050b29fb6a0619ecf018e6cb26bcea8f93cb182dbf4c782e36176192066403" kind="enumvalue"><name>Student</name></member>
+  </compound>
+  <compound refid="user_8cpp" kind="file"><name>user.cpp</name>
+  </compound>
+  <compound refid="user_8h" kind="file"><name>user.h</name>
+  </compound>
+  <compound refid="utils_8cpp" kind="file"><name>utils.cpp</name>
+    <member refid="utils_8cpp_1a922ea9938b27158961175da47eacbdcb" kind="function"><name>generate_random</name></member>
+    <member refid="utils_8cpp_1a005b8a9907ecda6a5d1cc679f359c4eb" kind="function"><name>generate_random</name></member>
+    <member refid="utils_8cpp_1abf4b1e0b40143d203b5f8383e0a22236" kind="function"><name>generate_random</name></member>
+    <member refid="utils_8cpp_1a154e11312aa498d684ee7ed9d425439a" kind="function"><name>is_weekend</name></member>
+    <member refid="utils_8cpp_1ac3420a318a42603ec9c9d32d4748b98b" kind="function"><name>is_weekend</name></member>
+    <member refid="utils_8cpp_1a2a95cd9f87463141a0996904e313a46a" kind="function"><name>advance_weekend</name></member>
+    <member refid="utils_8cpp_1acb74aab2b1555fecd2bd0956b352dcd6" kind="function"><name>advance_to_friday</name></member>
+    <member refid="utils_8cpp_1a7aab7e0568d3e2b2fdee79807d1010c6" kind="function"><name>get_back_to_monday</name></member>
+  </compound>
+  <compound refid="utils_8h" kind="file"><name>utils.h</name>
+    <member refid="utils_8h_1a5be551157d80f10e6249f2c4e411579b" kind="variable"><name>NODES_NR</name></member>
+    <member refid="utils_8h_1a985e975209d334c9b919f6f1ff446e87" kind="variable"><name>NODES_NR_MIN</name></member>
+    <member refid="utils_8h_1a5afe60ab8b55e079c3e3f740afc009c6" kind="variable"><name>NODES_NR_MAX</name></member>
+    <member refid="utils_8h_1a488665ea624ec9798ac65cb9f7dd40d9" kind="variable"><name>CORES_NR</name></member>
+    <member refid="utils_8h_1a80dae28351be5c82cd2f50a59e3ac2b2" kind="variable"><name>CORES_NR_MIN</name></member>
+    <member refid="utils_8h_1a5f36587acd1ac20e94f9a3d60d1cac9c" kind="variable"><name>CORES_NR_MAX</name></member>
+    <member refid="utils_8h_1a15101bbb03d15ed7174a58f53c3720d0" kind="variable"><name>USERS_NR</name></member>
+    <member refid="utils_8h_1a38fa635029c8a18931d9d6d8d7561772" kind="variable"><name>USERS_NR_MIN</name></member>
+    <member refid="utils_8h_1a6140ee492b45d474f6bf062ea6ca8b3e" kind="variable"><name>USERS_NR_MAX</name></member>
+    <member refid="utils_8h_1a5490842574185a6e676c980387763d66" kind="variable"><name>JOBS_NR</name></member>
+    <member refid="utils_8h_1ac8b19604f186a090a28b76b6d6798ba1" kind="variable"><name>JOBS_NR_MIN</name></member>
+    <member refid="utils_8h_1a5da3ad29b4444d882ce31ef0eac6c819" kind="variable"><name>JOBS_NR_MAX</name></member>
+    <member refid="utils_8h_1afdd57d9166657093c1a70e6f06e80d58" kind="variable"><name>USAGE_PRICE</name></member>
+    <member refid="utils_8h_1a291b912d471c4f2bb2e1da646d5ca5a6" kind="variable"><name>USAGE_PRICE_MIN</name></member>
+    <member refid="utils_8h_1a5400b89bf788dc458802bd0ca36bd5d2" kind="variable"><name>USAGE_PRICE_MAX</name></member>
+    <member refid="utils_8h_1ac0e35cb6526794fe569b87b69a63d4ae" kind="variable"><name>ENERGY_COST</name></member>
+    <member refid="utils_8h_1a11d9624d924e405f9b218da75a573865" kind="variable"><name>PERSONEL_COST</name></member>
+    <member refid="utils_8h_1a1d1105dc85d4f241f1ddcd63e287553a" kind="variable"><name>BUILDING_MAINTENANCE</name></member>
+    <member refid="utils_8h_1a5fb6811773e50f6b3af37475477d15b7" kind="variable"><name>OPERATIONAL_COST</name></member>
+    <member refid="utils_8h_1a6655afcaf31a32c572cb160175e75653" kind="variable"><name>OPERATIONAL_COST_MIN</name></member>
+    <member refid="utils_8h_1a65c52bfa4f87f3b2be81b7e3f9b1ad50" kind="variable"><name>OPERATIONAL_COST_MAX</name></member>
+    <member refid="utils_8h_1a3b5dae34240da9b31a99eae7daa7c6b3" kind="variable"><name>STUDENT_BUDGET</name></member>
+    <member refid="utils_8h_1a5f33e393c7bb97039e90b0e2228cbd37" kind="variable"><name>STUDENT_BUDGET_MIN</name></member>
+    <member refid="utils_8h_1a1b6c5cbe793af58b654473cc06900d6a" kind="variable"><name>STUDENT_BUDGET_MAX</name></member>
+    <member refid="utils_8h_1afb2d551d10cbc4145582c1fe93db7ee1" kind="variable"><name>RESEARCHER_BUDGET</name></member>
+    <member refid="utils_8h_1a2b415d685871736d186c0b4984cb6344" kind="variable"><name>RESEARCHER_BUDGET_MIN</name></member>
+    <member refid="utils_8h_1ad7d2f3d531c04ae5fa458d812557fc2e" kind="variable"><name>RESEARCHER_BUDGET_MAX</name></member>
+    <member refid="utils_8h_1a978f96342e69a4ecd749ee045a68cae7" kind="variable"><name>IT_BUDGET</name></member>
+    <member refid="utils_8h_1a2b1c948a38686d360a40396b9ebf42dd" kind="variable"><name>FRIDAY</name></member>
+    <member refid="utils_8h_1ad7f4f74fd30bc7644eb90258477a3a52" kind="variable"><name>SATURDAY</name></member>
+    <member refid="utils_8h_1a146e7678fef7f4c8f357ca990cb4c6e7" kind="variable"><name>SUNDAY</name></member>
+    <member refid="utils_8h_1a21187fe48dd43067faa4ce3a08601f84" kind="variable"><name>MONDAY</name></member>
+    <member refid="utils_8h_1a004055f4faadf88f967d8d11451316bb" kind="variable"><name>ONE_WEEK</name></member>
+    <member refid="utils_8h_1a813cab5091fdbda38384e483172e3c2c" kind="variable"><name>ONE_HOUR</name></member>
+    <member refid="utils_8h_1a247b6bc37a0e06431ae95afb6bc3b61d" kind="variable"><name>EIGHT_HOURS</name></member>
+    <member refid="utils_8h_1aa2abca07ccb3987b980ce206493729da" kind="variable"><name>SIXTEEN_HOURS</name></member>
+    <member refid="utils_8h_1a94ce56f8ab86567375238da641870f7f" kind="variable"><name>SIXTY_FOUR_HOURS</name></member>
+    <member refid="utils_8h_1a1ee37c83bd4f92d55d2d3374fdf3f9f9" kind="variable"><name>ONE_DAY</name></member>
+    <member refid="utils_8h_1a5a0860638f950f934ec161da0a0f153f" kind="variable"><name>REQUESTS_SPAN</name></member>
+    <member refid="utils_8h_1a9e57d40821a59b3e128aacaea1f0a1a5" kind="variable"><name>REQUESTS_SPAN_MIN</name></member>
+    <member refid="utils_8h_1aec86709be66c81189a47eb5143c68bc6" kind="variable"><name>REQUESTS_SPAN_MAX</name></member>
+    <member refid="utils_8h_1a922ea9938b27158961175da47eacbdcb" kind="function"><name>generate_random</name></member>
+    <member refid="utils_8h_1a005b8a9907ecda6a5d1cc679f359c4eb" kind="function"><name>generate_random</name></member>
+    <member refid="utils_8h_1abf4b1e0b40143d203b5f8383e0a22236" kind="function"><name>generate_random</name></member>
+    <member refid="utils_8h_1a154e11312aa498d684ee7ed9d425439a" kind="function"><name>is_weekend</name></member>
+    <member refid="utils_8h_1ac3420a318a42603ec9c9d32d4748b98b" kind="function"><name>is_weekend</name></member>
+    <member refid="utils_8h_1a2a95cd9f87463141a0996904e313a46a" kind="function"><name>advance_weekend</name></member>
+    <member refid="utils_8h_1acb74aab2b1555fecd2bd0956b352dcd6" kind="function"><name>advance_to_friday</name></member>
+    <member refid="utils_8h_1a7aab7e0568d3e2b2fdee79807d1010c6" kind="function"><name>get_back_to_monday</name></member>
+  </compound>
+  <compound refid="dir_c0c660403857de30af390a37b30851fb" kind="dir"><name>supercomputer/src/configuration</name>
+  </compound>
+  <compound refid="dir_ffc1c282919a7939021c4958788a88f5" kind="dir"><name>supercomputer/src/jobs</name>
+  </compound>
+  <compound refid="dir_72da662a057f9c81b01c2003c4a8e1b4" kind="dir"><name>supercomputer/src</name>
+  </compound>
+  <compound refid="dir_39eea0a0948f69909ecb9529f2f5cfd2" kind="dir"><name>supercomputer/src/statistics</name>
+  </compound>
+  <compound refid="dir_821b73758bf5b0f45191671ef32dd6ca" kind="dir"><name>supercomputer</name>
+  </compound>
+  <compound refid="dir_bb4e50360caea51d918ae2716a021531" kind="dir"><name>supercomputer/src/system</name>
+  </compound>
+  <compound refid="dir_cb8bab6310f2ebff9fcaa3cb6d027de3" kind="dir"><name>supercomputer/src/users</name>
+  </compound>
+  <compound refid="dir_4d0d101ba66f7aac1c66262c2e95ca6c" kind="dir"><name>supercomputer/src/utils</name>
+  </compound>
+</doxygenindex>

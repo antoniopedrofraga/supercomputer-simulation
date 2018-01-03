@@ -1,0 +1,446 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classState" kind="class" language="C++" prot="public">
+    <compoundname>State</compoundname>
+    <includes refid="state_8h" local="no">state.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classState_1ae786e9d4ba2b480f63ee093608f9c2cf" prot="private" static="no" mutable="no">
+        <type>long long int</type>
+        <definition>long long int State::short_cores</definition>
+        <argsstring></argsstring>
+        <name>short_cores</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="18" column="1" bodyfile="supercomputer/src/system/state.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classState_1aa3b1abc9f8e198957a39066e803b7f7c" prot="private" static="no" mutable="no">
+        <type>long long int</type>
+        <definition>long long int State::medium_cores</definition>
+        <argsstring></argsstring>
+        <name>medium_cores</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private long long int. Number of short cores available. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="19" column="1" bodyfile="supercomputer/src/system/state.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classState_1a3f1fddb729970b483628c7f9a36155da" prot="private" static="no" mutable="no">
+        <type>long long int</type>
+        <definition>long long int State::large_cores</definition>
+        <argsstring></argsstring>
+        <name>large_cores</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private long long int. Number of medium cores available. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="20" column="1" bodyfile="supercomputer/src/system/state.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classState_1af2ec4b552e56f35ef964ba8adf55834e" prot="private" static="no" mutable="no">
+        <type>long long int</type>
+        <definition>long long int State::total_cores</definition>
+        <argsstring></argsstring>
+        <name>total_cores</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private long long int. Number of large cores available. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="21" column="1" bodyfile="supercomputer/src/system/state.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classState_1a1289d1e8fdeae6c9105dcbb47497a3ef" prot="private" static="no" mutable="no">
+        <type>long long int</type>
+        <definition>long long int State::used_cores</definition>
+        <argsstring></argsstring>
+        <name>used_cores</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private long long int. Number of huge cores available. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="23" column="1" bodyfile="supercomputer/src/system/state.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classState_1aa05bb456342bbc527d6ffa9ce3be3292" prot="private" static="no" mutable="no">
+        <type>StateType</type>
+        <definition>StateType State::state_type</definition>
+        <argsstring></argsstring>
+        <name>state_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private long long int. Total number of used cores. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="25" column="1" bodyfile="supercomputer/src/system/state.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classState_1a11ba16d1da2c8136f4814ae4b4dfa3a1" prot="private" static="no" mutable="no">
+        <type>time_t</type>
+        <definition>time_t State::time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private StateType. Type defining whether it is a start or an end. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="27" column="1" bodyfile="supercomputer/src/system/state.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classState_1a08aed9caf1cc4d3be0ba98ec6ce361b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>State::State</definition>
+        <argsstring>(long long int total_cores, time_t time, StateType state_type)</argsstring>
+        <name>State</name>
+        <param>
+          <type>long long int</type>
+          <declname>total_cores</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>StateType</type>
+          <declname>state_type</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classState" kindref="compound">State</ref> object default contructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Private time_t. Time which this state occurs reprensented in UNIX timestamp.</para><para>Initializes a <ref refid="classJob" kindref="compound">Job</ref> object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>long</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>long int total_cores. Total number of system cores. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time. Date of occurence. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>StateType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>state_type. StateType indicating whether a job starts or ends.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Default contructor of <ref refid="classState" kindref="compound">State</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="36" column="1" bodyfile="supercomputer/src/system/state.cpp" bodystart="6" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classState_1a5c1f8c662bc19d86e5b63104b7be9a1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>State::State</definition>
+        <argsstring>(State state, time_t time, StateType state_type)</argsstring>
+        <name>State</name>
+        <param>
+          <type><ref refid="classState" kindref="compound">State</ref></type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>StateType</type>
+          <declname>state_type</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classState" kindref="compound">State</ref> object alternative contructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes a <ref refid="classJob" kindref="compound">Job</ref> object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classState" kindref="compound">State</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>state. <ref refid="classState" kindref="compound">State</ref> to copy cat. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time. Date of occurence. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>StateType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>state_type. StateType indicating whether a job starts or ends.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Alternative contructor of <ref refid="classState" kindref="compound">State</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="45" column="1" bodyfile="supercomputer/src/system/state.cpp" bodystart="20" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classState_1a576b0286b5b9bb517b45c29749f5563c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void State::set_period</definition>
+        <argsstring>(time_t start, time_t end)</argsstring>
+        <name>set_period</name>
+        <param>
+          <type>time_t</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Defines the period of life of a state. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start. Starting time. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>end. Ending time. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="52" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classState_1a03e0b92997f17eed2272c67cfcdd889a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void State::insert_job</definition>
+        <argsstring>(Job job)</argsstring>
+        <name>insert_job</name>
+        <param>
+          <type><ref refid="classJob" kindref="compound">Job</ref></type>
+          <declname>job</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Decreases number of available cores according to job type. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classJob" kindref="compound">Job</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>job. <ref refid="classJob" kindref="compound">Job</ref> object containing information about what amount of computational resources to be decreased.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Decreases the available number of a computational resources available in the system according to type of job. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="58" column="1" bodyfile="supercomputer/src/system/state.cpp" bodystart="34" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classState_1a5307764c6bd8793d84b791c47e847635" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool State::can_insert_job</definition>
+        <argsstring>(Job job)</argsstring>
+        <name>can_insert_job</name>
+        <param>
+          <type><ref refid="classJob" kindref="compound">Job</ref></type>
+          <declname>job</declname>
+        </param>
+        <briefdescription>
+<para>Public method. Indicates whether a job can be inserted in this state or not. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classJob" kindref="compound">Job</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>job. <ref refid="classJob" kindref="compound">Job</ref> object containing information about what amount of computational resources to be decreased. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool. True if job can be inserted, false if can not.</para></simplesect>
+Indicates whether a job can run with the available computational resources at this system state. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="65" column="1" bodyfile="supercomputer/src/system/state.cpp" bodystart="52" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classState_1a5fa477c55eb40f020372974f84b7a5e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>time_t</type>
+        <definition>time_t State::get_time</definition>
+        <argsstring>()</argsstring>
+        <name>get_time</name>
+        <briefdescription>
+<para>Public method. Returns the state time of occurence. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>time_t. Date in UNIX timestamp.</para></simplesect>
+Returns time of ocurrence. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="71" column="1" bodyfile="supercomputer/src/system/state.cpp" bodystart="66" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classState_1ae179223944551fda8ffadbde68972a4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string State::get_name</definition>
+        <argsstring>()</argsstring>
+        <name>get_name</name>
+        <briefdescription>
+<para>Public method. Returns the state time of occurence. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>time_t. Date in UNIX timestamp. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="77" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classState_1a59a20bf57d4ffb9748cbf3b1c051c071" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>StateType</type>
+        <definition>StateType State::get_type</definition>
+        <argsstring>()</argsstring>
+        <name>get_type</name>
+        <briefdescription>
+<para>Public method. Returns type of state. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>StateType. Start or End.</para></simplesect>
+Returns state type. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="83" column="1" bodyfile="supercomputer/src/system/state.cpp" bodystart="73" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classState_1a29689f616cf6fca4c07b5a7952c324a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long long int</type>
+        <definition>long long int State::get_short_cores</definition>
+        <argsstring>()</argsstring>
+        <name>get_short_cores</name>
+        <briefdescription>
+<para>Public method. Returns available number of cores reserved for short jobs. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>ong long int. Number of cores.</para></simplesect>
+Returns the amount of available computational resources for short jobs. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="89" column="1" bodyfile="supercomputer/src/system/state.cpp" bodystart="80" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classState_1a6f260fbc2e8cf6ffeb9249808e07c525" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long long int</type>
+        <definition>long long int State::get_medium_cores</definition>
+        <argsstring>()</argsstring>
+        <name>get_medium_cores</name>
+        <briefdescription>
+<para>Public method. Returns available number of cores reserved for medium jobs. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>ong long int. Number of cores.</para></simplesect>
+Returns the amount of available computational resources for medium jobs. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="95" column="1" bodyfile="supercomputer/src/system/state.cpp" bodystart="85" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classState_1a97489ea52b70c2a2630ce80655c94d16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long long int</type>
+        <definition>long long int State::get_large_cores</definition>
+        <argsstring>()</argsstring>
+        <name>get_large_cores</name>
+        <briefdescription>
+<para>Public method. Returns available number of cores reserved for large jobs. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>ong long int. Number of cores.</para></simplesect>
+Returns the amount of available computational resources for large jobs. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="101" column="1" bodyfile="supercomputer/src/system/state.cpp" bodystart="90" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classState_1a3b5789fd6d375e09066b3119f994a536" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long long int</type>
+        <definition>long long int State::get_total_cores</definition>
+        <argsstring>()</argsstring>
+        <name>get_total_cores</name>
+        <briefdescription>
+<para>Public method. Returns total number of cores. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>ong long int. Number of cores.</para></simplesect>
+Returns the total number of cores. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="107" column="1" bodyfile="supercomputer/src/system/state.cpp" bodystart="95" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classState_1a3be179b26f26137117e2e303d7b1bbdc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long long int</type>
+        <definition>long long int State::get_used_cores</definition>
+        <argsstring>()</argsstring>
+        <name>get_used_cores</name>
+        <briefdescription>
+<para>Public method. Returns total number of used cores. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>ong long int. Number of cores.</para></simplesect>
+Returns the number of used cores. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="113" column="1" bodyfile="supercomputer/src/system/state.cpp" bodystart="100" bodyend="100"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classState_1a3d174276607841e38f2c6291a46c1c8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend bool</type>
+        <definition>bool operator&lt;</definition>
+        <argsstring>(State const &amp;a, State const &amp;b)</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type><ref refid="classState" kindref="compound">State</ref> const &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="classState" kindref="compound">State</ref> const &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Operator overload. Overloads the &lt; operator according to time of ocurence. </para>        </briefdescription>
+        <detaileddescription>
+<para>&lt; Operator overload. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/state.h" line="116" column="1" bodyfile="supercomputer/src/system/state.cpp" bodystart="106" bodyend="108"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classState" kindref="compound">State</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>This object represents a the number of cores available in each queue at every start time and end time of a job. </para>    </detaileddescription>
+    <location file="supercomputer/src/system/state.h" line="16" column="1" bodyfile="supercomputer/src/system/state.h" bodystart="16" bodyend="117"/>
+    <listofallmembers>
+      <member refid="classState_1a5307764c6bd8793d84b791c47e847635" prot="public" virt="non-virtual"><scope>State</scope><name>can_insert_job</name></member>
+      <member refid="classState_1a97489ea52b70c2a2630ce80655c94d16" prot="public" virt="non-virtual"><scope>State</scope><name>get_large_cores</name></member>
+      <member refid="classState_1a6f260fbc2e8cf6ffeb9249808e07c525" prot="public" virt="non-virtual"><scope>State</scope><name>get_medium_cores</name></member>
+      <member refid="classState_1ae179223944551fda8ffadbde68972a4f" prot="public" virt="non-virtual"><scope>State</scope><name>get_name</name></member>
+      <member refid="classState_1a29689f616cf6fca4c07b5a7952c324a4" prot="public" virt="non-virtual"><scope>State</scope><name>get_short_cores</name></member>
+      <member refid="classState_1a5fa477c55eb40f020372974f84b7a5e6" prot="public" virt="non-virtual"><scope>State</scope><name>get_time</name></member>
+      <member refid="classState_1a3b5789fd6d375e09066b3119f994a536" prot="public" virt="non-virtual"><scope>State</scope><name>get_total_cores</name></member>
+      <member refid="classState_1a59a20bf57d4ffb9748cbf3b1c051c071" prot="public" virt="non-virtual"><scope>State</scope><name>get_type</name></member>
+      <member refid="classState_1a3be179b26f26137117e2e303d7b1bbdc" prot="public" virt="non-virtual"><scope>State</scope><name>get_used_cores</name></member>
+      <member refid="classState_1a03e0b92997f17eed2272c67cfcdd889a" prot="public" virt="non-virtual"><scope>State</scope><name>insert_job</name></member>
+      <member refid="classState_1a3f1fddb729970b483628c7f9a36155da" prot="private" virt="non-virtual"><scope>State</scope><name>large_cores</name></member>
+      <member refid="classState_1aa3b1abc9f8e198957a39066e803b7f7c" prot="private" virt="non-virtual"><scope>State</scope><name>medium_cores</name></member>
+      <member refid="classState_1a3d174276607841e38f2c6291a46c1c8f" prot="public" virt="non-virtual"><scope>State</scope><name>operator&lt;</name></member>
+      <member refid="classState_1a576b0286b5b9bb517b45c29749f5563c" prot="public" virt="non-virtual"><scope>State</scope><name>set_period</name></member>
+      <member refid="classState_1ae786e9d4ba2b480f63ee093608f9c2cf" prot="private" virt="non-virtual"><scope>State</scope><name>short_cores</name></member>
+      <member refid="classState_1a08aed9caf1cc4d3be0ba98ec6ce361b6" prot="public" virt="non-virtual"><scope>State</scope><name>State</name></member>
+      <member refid="classState_1a5c1f8c662bc19d86e5b63104b7be9a1c" prot="public" virt="non-virtual"><scope>State</scope><name>State</name></member>
+      <member refid="classState_1aa05bb456342bbc527d6ffa9ce3be3292" prot="private" virt="non-virtual"><scope>State</scope><name>state_type</name></member>
+      <member refid="classState_1a11ba16d1da2c8136f4814ae4b4dfa3a1" prot="private" virt="non-virtual"><scope>State</scope><name>time</name></member>
+      <member refid="classState_1af2ec4b552e56f35ef964ba8adf55834e" prot="private" virt="non-virtual"><scope>State</scope><name>total_cores</name></member>
+      <member refid="classState_1a1289d1e8fdeae6c9105dcbb47497a3ef" prot="private" virt="non-virtual"><scope>State</scope><name>used_cores</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

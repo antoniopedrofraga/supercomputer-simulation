@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group_8h" kind="file" language="C++">
+    <compoundname>group.h</compoundname>
+    <includedby refid="user_8h" local="yes">supercomputer/src/users/user.h</includedby>
+    <invincdepgraph>
+      <node id="230">
+        <label>supercomputer/src/users/user.h</label>
+        <link refid="user_8h_source"/>
+        <childnode refid="231" relation="include">
+        </childnode>
+      </node>
+      <node id="231">
+        <label>supercomputer/src/system/system.h</label>
+        <link refid="system_8h_source"/>
+        <childnode refid="232" relation="include">
+        </childnode>
+      </node>
+      <node id="229">
+        <label>supercomputer/src/users/group.h</label>
+        <link refid="group.h"/>
+        <childnode refid="230" relation="include">
+        </childnode>
+      </node>
+      <node id="232">
+        <label>supercomputer/mainwindow.h</label>
+        <link refid="mainwindow_8h_source"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group_8h_1ace1050b29fb6a0619ecf018e6cb26bce" prot="public" static="no">
+        <name>Group</name>
+        <enumvalue id="group_8h_1ace1050b29fb6a0619ecf018e6cb26bcea579471a63617350f7c574a8052b47674" prot="public">
+          <name>ITsupport</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group_8h_1ace1050b29fb6a0619ecf018e6cb26bcea9d0ca090f2033c04f4d0292a5158956e" prot="public">
+          <name>Researcher</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group_8h_1ace1050b29fb6a0619ecf018e6cb26bcea8f93cb182dbf4c782e36176192066403" prot="public">
+          <name>Student</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Group enum. </para>        </briefdescription>
+        <detaileddescription>
+<para>Enum. Defining the groups that an <ref refid="classUser" kindref="compound">User</ref> can be part of. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/users/group.h" line="8" column="1" bodyfile="supercomputer/src/users/group.h" bodystart="8" bodyend="8"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>GROUP_H<sp/>//Define<sp/>header<sp/>if<sp/>it&apos;s<sp/>not<sp/>defined</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GROUP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"></codeline>
+<codeline lineno="8"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>Group<sp/>{<sp/>ITsupport,<sp/>Researcher,<sp/>Student<sp/>};</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="supercomputer/src/users/group.h"/>
+  </compounddef>
+</doxygen>

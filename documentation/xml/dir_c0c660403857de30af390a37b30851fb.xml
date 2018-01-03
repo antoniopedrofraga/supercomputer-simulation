@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_c0c660403857de30af390a37b30851fb" kind="dir">
+    <compoundname>supercomputer/src/configuration</compoundname>
+    <innerfile refid="configuration_8cpp">configuration.cpp</innerfile>
+    <innerfile refid="configuration_8h">configuration.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="supercomputer/src/configuration/"/>
+  </compounddef>
+</doxygen>

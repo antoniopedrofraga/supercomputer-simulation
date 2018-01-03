@@ -1,0 +1,469 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classSystem" kind="class" language="C++" prot="public">
+    <compoundname>System</compoundname>
+    <includes refid="system_8h" local="no">system.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSystem_1af8c7478dc5ce6a5d0d67808398cf3d59" prot="private" static="no" mutable="no">
+        <type>vector&lt; <ref refid="classUser" kindref="compound">User</ref> * &gt;</type>
+        <definition>vector&lt;User *&gt; System::users</definition>
+        <argsstring></argsstring>
+        <name>users</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/system.h" line="25" column="1" bodyfile="supercomputer/src/system/system.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystem_1a21b6c08ac66bec893308c2296c1641c2" prot="private" static="no" mutable="no">
+        <type>vector&lt; <ref refid="classJob" kindref="compound">Job</ref> &gt;</type>
+        <definition>vector&lt;Job&gt; System::jobs</definition>
+        <argsstring></argsstring>
+        <name>jobs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private vector&lt;User *&gt;. Vector of simulated users. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/system.h" line="26" column="1" bodyfile="supercomputer/src/system/system.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystem_1ac1aab5e5d10edd46a02c80bd09cbd962" prot="private" static="no" mutable="no">
+        <type>vector&lt; <ref refid="classState" kindref="compound">State</ref> &gt;</type>
+        <definition>vector&lt;State&gt; System::states</definition>
+        <argsstring></argsstring>
+        <name>states</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private vector&lt;Job&gt;. Vector of simulated jobs. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/system.h" line="27" column="1" bodyfile="supercomputer/src/system/system.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystem_1afe583672228301d8c014193581113ce5" prot="private" static="no" mutable="no">
+        <type><ref refid="classConfiguration" kindref="compound">Configuration</ref> *</type>
+        <definition>Configuration* System::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private vector&lt;State&gt;. Vector of states. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/system.h" line="29" column="1" bodyfile="supercomputer/src/system/system.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystem_1aa8a2a97f7c88d8e90a4c57c041dde328" prot="private" static="no" mutable="no">
+        <type><ref refid="classStatistics" kindref="compound">Statistics</ref> *</type>
+        <definition>Statistics* System::statistics</definition>
+        <argsstring></argsstring>
+        <name>statistics</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private <ref refid="classConfiguration" kindref="compound">Configuration</ref>. Object containing the configuration of the simulation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/system.h" line="30" column="1" bodyfile="supercomputer/src/system/system.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystem_1a2e2632d738814f6e0edd6b6bf9ed3ec1" prot="private" static="no" mutable="no">
+        <type>unsigned long long int</type>
+        <definition>unsigned long long int System::total_cores_nr</definition>
+        <argsstring></argsstring>
+        <name>total_cores_nr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private <ref refid="classStatistics" kindref="compound">Statistics</ref>. Object containing organized and structured information about the simulation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/system.h" line="32" column="1" bodyfile="supercomputer/src/system/system.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classSystem_1abf6998bc798ae4175912cf3890dd94cb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void System::insert_state</definition>
+        <argsstring>(size_t &amp;index, Job job)</argsstring>
+        <name>insert_state</name>
+        <param>
+          <type>size_t &amp;</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="classJob" kindref="compound">Job</ref></type>
+          <declname>job</declname>
+        </param>
+        <briefdescription>
+<para>Private method. Inserts a state in the states vector. </para>        </briefdescription>
+        <detaileddescription>
+<para>Private unsigned long long int. <ref refid="classSystem" kindref="compound">System</ref> total number of cores.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>size_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp;index. Index of the new state. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="classJob" kindref="compound">Job</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>job. <ref refid="classJob" kindref="compound">Job</ref> related to state.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Inserts states from job in the states vector. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/system.h" line="39" column="1" bodyfile="supercomputer/src/system/system.cpp" bodystart="182" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystem_1a136738e68bfea8bc682da068ad5e891b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void System::insert_week_state</definition>
+        <argsstring>(time_t start, size_t i, Job job)</argsstring>
+        <name>insert_week_state</name>
+        <param>
+          <type>time_t</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type><ref refid="classJob" kindref="compound">Job</ref></type>
+          <declname>job</declname>
+        </param>
+        <briefdescription>
+<para>Private method. Inserts a short, medium or large job according to its characteristics (submission date, duration, computational resources). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start. Submission date. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>i. Index to start iterate in the states vector. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="classJob" kindref="compound">Job</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>job. <ref refid="classJob" kindref="compound">Job</ref> to be inserted.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Inserts a short, medium or large job according to its characteristics (submission date, duration, computational resources). These jobs can&apos;t run on weekends. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/system.h" line="47" column="1" bodyfile="supercomputer/src/system/system.cpp" bodystart="120" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystem_1a27d7d03e89bd4c1589969a289d4125f3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void System::insert_weekend_state</definition>
+        <argsstring>(time_t start, size_t i, Job job)</argsstring>
+        <name>insert_weekend_state</name>
+        <param>
+          <type>time_t</type>
+          <declname>start</declname>
+          <defname>s</defname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>i</declname>
+          <defname>index</defname>
+        </param>
+        <param>
+          <type><ref refid="classJob" kindref="compound">Job</ref></type>
+          <declname>job</declname>
+        </param>
+        <briefdescription>
+<para>Private method. Inserts a huge job according to its characteristics (submission date, duration, computational resources). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start. Submission date. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>i. Index to start iterate in the states vector. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="classJob" kindref="compound">Job</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>job. <ref refid="classJob" kindref="compound">Job</ref> to be inserted.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Inserts a huge job according to its characteristics (submission date, duration, computational resources). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/system.h" line="55" column="1" bodyfile="supercomputer/src/system/system.cpp" bodystart="163" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystem_1a1be88dda3e490fb6b38c478f26dab588" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool System::exist_negatives</definition>
+        <argsstring>()</argsstring>
+        <name>exist_negatives</name>
+        <briefdescription>
+<para>Private method. Returns true if simulation has states with negative computational resources. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>bool. True if yes, false if no. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/system.h" line="61" column="1" bodyfile="supercomputer/src/system/system.cpp" bodystart="38" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystem_1a69790f4f0e86d6dded0bc527877d1d7e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void System::create_users</definition>
+        <argsstring>()</argsstring>
+        <name>create_users</name>
+        <briefdescription>
+<para>Private method. Populates vector of users. </para>        </briefdescription>
+        <detaileddescription>
+<para>Populates the vector of users, assuring that there&apos;s at least a researcher. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/system.h" line="64" column="1" bodyfile="supercomputer/src/system/system.cpp" bodystart="52" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystem_1a4e358d5db37a23a1dd8a6ecff6607aad" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void System::create_jobs</definition>
+        <argsstring>()</argsstring>
+        <name>create_jobs</name>
+        <briefdescription>
+<para>Private method. Populates vector of jobs. </para>        </briefdescription>
+        <detaileddescription>
+<para>Populates the vector of jobs. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/system.h" line="67" column="1" bodyfile="supercomputer/src/system/system.cpp" bodystart="63" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystem_1aa8b59180946dea446bfad513eeb3e9fa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void System::calculate_op_cost</definition>
+        <argsstring>()</argsstring>
+        <name>calculate_op_cost</name>
+        <briefdescription>
+<para>Private method. Calculates operational cost and updates the statistics object. </para>        </briefdescription>
+        <detaileddescription>
+<para>Calculates the operational costs of the simulation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/system.h" line="70" column="1" bodyfile="supercomputer/src/system/system.cpp" bodystart="210" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystem_1a6fab1b2ea6af0e0b934c9a0c50056919" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void System::schedule</definition>
+        <argsstring>()</argsstring>
+        <name>schedule</name>
+        <briefdescription>
+<para>Private method. Runs scheduler algorithm. </para>        </briefdescription>
+        <detaileddescription>
+<para>Runs the scheduler algorithm. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/system.h" line="73" column="1" bodyfile="supercomputer/src/system/system.cpp" bodystart="200" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystem_1a11cee9111236f7abf556bf82eb4ce623" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void System::insert_state_and_update</definition>
+        <argsstring>(size_t i, size_t j, time_t start, time_t end, Job job)</argsstring>
+        <name>insert_state_and_update</name>
+        <param>
+          <type>size_t</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type><ref refid="classJob" kindref="compound">Job</ref></type>
+          <declname>job</declname>
+        </param>
+        <briefdescription>
+<para>Private method. Inserts state in vector of states, updating the computational resources in every state from index i to j. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>size_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>i. Lower bound of states to be updated. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>j. Upper bound of states to be updated. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start. Starting time of job. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>end. Ending time of job. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="classJob" kindref="compound">Job</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>job. <ref refid="classJob" kindref="compound">Job</ref> to be inserted.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Inserts state in vector of states, updating the computational resources in every state from index i to j. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/system.h" line="83" column="1" bodyfile="supercomputer/src/system/system.cpp" bodystart="102" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSystem_1a38c393cf990b65c13bf926c6e25c4f0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>System::System</definition>
+        <argsstring>(Configuration *config)</argsstring>
+        <name>System</name>
+        <param>
+          <type><ref refid="classConfiguration" kindref="compound">Configuration</ref> *</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classSystem" kindref="compound">System</ref> object default contructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes a <ref refid="classSystem" kindref="compound">System</ref> object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classConfiguration" kindref="compound">Configuration</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>* config. <ref refid="classConfiguration" kindref="compound">Configuration</ref> to be followed by the simulation.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Default contructor of <ref refid="classSystem" kindref="compound">System</ref> object. Populates vector of users and jobs. Runs the scheduler algorithm and calculates the operating cost of the system. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/system.h" line="90" column="1" bodyfile="supercomputer/src/system/system.cpp" bodystart="6" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystem_1a4d2006a8a392e1c198fb988a7d125ac8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>System::System</definition>
+        <argsstring>(Configuration *config, vector&lt; User * &gt; users, vector&lt; Job &gt; jobs)</argsstring>
+        <name>System</name>
+        <param>
+          <type><ref refid="classConfiguration" kindref="compound">Configuration</ref> *</type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>vector&lt; <ref refid="classUser" kindref="compound">User</ref> * &gt;</type>
+          <declname>users</declname>
+        </param>
+        <param>
+          <type>vector&lt; <ref refid="classJob" kindref="compound">Job</ref> &gt;</type>
+          <declname>jobs</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classSystem" kindref="compound">System</ref> object contructor for custom tests. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes a <ref refid="classSystem" kindref="compound">System</ref> object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classConfiguration" kindref="compound">Configuration</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>* config. <ref refid="classConfiguration" kindref="compound">Configuration</ref> to be followed by the simulation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vector&lt;User*&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>users. Simulated users vector. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vector&lt;Job&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>jobs. Simulated jobs vector.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Alternative contructor of <ref refid="classSystem" kindref="compound">System</ref> object, indicated for testing purposes. Runs the scheduler algorithm and calculates the operating cost of the system. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/system.h" line="99" column="1" bodyfile="supercomputer/src/system/system.cpp" bodystart="19" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystem_1adbb7e0745a7a25f8a598eaa6b04dd4ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string System::get_results</definition>
+        <argsstring>()</argsstring>
+        <name>get_results</name>
+        <briefdescription>
+<para>Public method. Fetchs results of statistics object, returning a string with a specific format. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>string. String with information about the outputs of the simulation.</para></simplesect>
+Returns string with informations about the outputs of the simulation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="supercomputer/src/system/system.h" line="105" column="1" bodyfile="supercomputer/src/system/system.cpp" bodystart="234" bodyend="247"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classSystem" kindref="compound">System</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>This object represents the computing system. </para>    </detaileddescription>
+    <location file="supercomputer/src/system/system.h" line="23" column="1" bodyfile="supercomputer/src/system/system.h" bodystart="23" bodyend="106"/>
+    <listofallmembers>
+      <member refid="classSystem_1aa8b59180946dea446bfad513eeb3e9fa" prot="private" virt="non-virtual"><scope>System</scope><name>calculate_op_cost</name></member>
+      <member refid="classSystem_1afe583672228301d8c014193581113ce5" prot="private" virt="non-virtual"><scope>System</scope><name>config</name></member>
+      <member refid="classSystem_1a4e358d5db37a23a1dd8a6ecff6607aad" prot="private" virt="non-virtual"><scope>System</scope><name>create_jobs</name></member>
+      <member refid="classSystem_1a69790f4f0e86d6dded0bc527877d1d7e" prot="private" virt="non-virtual"><scope>System</scope><name>create_users</name></member>
+      <member refid="classSystem_1a1be88dda3e490fb6b38c478f26dab588" prot="private" virt="non-virtual"><scope>System</scope><name>exist_negatives</name></member>
+      <member refid="classSystem_1adbb7e0745a7a25f8a598eaa6b04dd4ed" prot="public" virt="non-virtual"><scope>System</scope><name>get_results</name></member>
+      <member refid="classSystem_1abf6998bc798ae4175912cf3890dd94cb" prot="private" virt="non-virtual"><scope>System</scope><name>insert_state</name></member>
+      <member refid="classSystem_1a11cee9111236f7abf556bf82eb4ce623" prot="private" virt="non-virtual"><scope>System</scope><name>insert_state_and_update</name></member>
+      <member refid="classSystem_1a136738e68bfea8bc682da068ad5e891b" prot="private" virt="non-virtual"><scope>System</scope><name>insert_week_state</name></member>
+      <member refid="classSystem_1a27d7d03e89bd4c1589969a289d4125f3" prot="private" virt="non-virtual"><scope>System</scope><name>insert_weekend_state</name></member>
+      <member refid="classSystem_1a21b6c08ac66bec893308c2296c1641c2" prot="private" virt="non-virtual"><scope>System</scope><name>jobs</name></member>
+      <member refid="classSystem_1a6fab1b2ea6af0e0b934c9a0c50056919" prot="private" virt="non-virtual"><scope>System</scope><name>schedule</name></member>
+      <member refid="classSystem_1ac1aab5e5d10edd46a02c80bd09cbd962" prot="private" virt="non-virtual"><scope>System</scope><name>states</name></member>
+      <member refid="classSystem_1aa8a2a97f7c88d8e90a4c57c041dde328" prot="private" virt="non-virtual"><scope>System</scope><name>statistics</name></member>
+      <member refid="classSystem_1a38c393cf990b65c13bf926c6e25c4f0a" prot="public" virt="non-virtual"><scope>System</scope><name>System</name></member>
+      <member refid="classSystem_1a4d2006a8a392e1c198fb988a7d125ac8" prot="public" virt="non-virtual"><scope>System</scope><name>System</name></member>
+      <member refid="classSystem_1a2e2632d738814f6e0edd6b6bf9ed3ec1" prot="private" virt="non-virtual"><scope>System</scope><name>total_cores_nr</name></member>
+      <member refid="classSystem_1af8c7478dc5ce6a5d0d67808398cf3d59" prot="private" virt="non-virtual"><scope>System</scope><name>users</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
