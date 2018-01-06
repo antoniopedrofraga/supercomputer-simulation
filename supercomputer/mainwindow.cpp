@@ -149,12 +149,17 @@ void MainWindow::on_constantJobs_valueChanged(int arg1)
 }
 
 
+void MainWindow::on_simulateButton_pressed()
+{
+    ui->simulateButton->setDisabled(true);
+}
 
 void MainWindow::on_simulateButton_released()
 {
     System * system = new System(config);
     QString qstr = QString::fromStdString(system->get_results());
     ui->outputBox->setText(qstr);
+    ui->simulateButton->setEnabled(true);
 }
 
 void MainWindow::set_initial_values() {
@@ -326,3 +331,4 @@ void MainWindow::on_toResearcher_valueChanged(double arg1)
     ui->fromResearcher->setValue(from);
     ui->toResearcher->setValue(to);
 }
+

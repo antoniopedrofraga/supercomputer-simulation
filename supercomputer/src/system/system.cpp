@@ -35,17 +35,6 @@ System::System(Configuration * config, vector<User*> users, vector<Job> jobs) {
     calculate_op_cost();
 }
 
-bool System::exist_negatives() {
-    for (size_t i = 0; i < states.size(); i++) {
-        if (states[i].get_short_cores() < 0 ||
-            states[i].get_medium_cores() < 0 ||
-            states[i].get_large_cores() < 0) {
-            return true;
-    }
-}
-return false;
-}
-
 /*!
   Populates the vector of users, assuring that there's at least a researcher.
 */
@@ -233,8 +222,6 @@ void System::calculate_op_cost() {
 */
 string System::get_results() {
     stringstream results;
-    results << "Is sorted: " << (std::is_sorted(states.begin(),states.end()) ? "true" : "false") << endl << endl;
-    results << "Exist negatives: " << (exist_negatives() ? "true" : "false") << endl << endl;
     results << "Machine time consumed by jobs: " << statistics->get_machine_time() << endl << endl;
     results << "Price paid by users: £" << statistics->get_usage_price() << endl << endl;
     results << "Operational Cost: £" << statistics->get_operational_cost() << endl << endl;

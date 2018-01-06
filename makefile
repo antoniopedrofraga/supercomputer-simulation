@@ -1,5 +1,5 @@
 all: ./supercomputer/src/*.cpp
-	g++ -std=c++14 ./supercomputer/src/*.cpp ./supercomputer/src/*/*.cpp -o ./bin/supercomputer -lboost_iostreams -lboost_system -lboost_filesystem
+	g++ -std=c++14 ./supercomputer/src/*.cpp ./supercomputer/src/*/*.cpp -o ./bin/supercomputer 
 run:
 	make all
 	./bin/supercomputer

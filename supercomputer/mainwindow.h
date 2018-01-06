@@ -205,6 +205,8 @@ private slots:
     */
     void on_toResearcher_valueChanged(double arg1);
 
+    void on_simulateButton_pressed();
+
 private:
     Ui::MainWindow *ui; /*! Private Ui::MainWindow *ui. The GUI. */
     Configuration * config; /*! Private Configuration. Object containing the configuration of the simulation. */

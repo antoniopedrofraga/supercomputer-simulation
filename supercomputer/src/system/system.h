@@ -54,12 +54,6 @@ private:
   */
 	void insert_weekend_state(time_t start, size_t i, Job job);
 
-	//! Private method. Returns true if simulation has states with negative computational resources.
-  /*!
-    \return bool. True if yes, false if no.
-  */
-	bool exist_negatives();
-
 	//! Private method. Populates vector of users.
 	void create_users();
 
