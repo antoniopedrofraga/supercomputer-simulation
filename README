@@ -1,0 +1,9 @@
+Author: António Pedro Araújo Fraga, s279654, Cranfield Univeristy
+
+- Executable files with compiled GUIs, both for windows and Linux (Debian family), were created under ./bin/
+
+- A code coverage folder, containing an html file is considered as the test results document under ./docs/test\ results/. The rest of the specification documents, Software Requirements Specification and Tests Plan are under ./docs/
+
+- The source code is entirely under ./supercomputer/. Apart from tests, which is under ./testing/. Note that the code related with the actual aplication core is on ./supercomputer/src/.
+
+- Documentation is under ./code\ documentation/. A markdown document was created which explains the system API in detail. This document can be easily uploaded to websites and version control systems like GitHub. A doxygen document containing useful information was also generated under this folder.

@@ -99,10 +99,3 @@ long long int State::get_total_cores() { return this->total_cores; }
 */
 long long int State::get_used_cores() { return this->used_cores; }
 
-
-/*!
-  < Operator overload. 
-*/
-bool operator<(State const& a, State const& b) {
-    return a.time < b.time;
-}

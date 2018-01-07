@@ -1,5 +1,9 @@
 all: ./supercomputer/src/*.cpp
-	g++ -std=c++14 ./supercomputer/src/*.cpp ./supercomputer/src/*/*.cpp -o ./bin/supercomputer 
+	g++ -std=c++14 ./supercomputer/src/*.cpp ./supercomputer/src/*/*.cpp -o ./bin/supercomputer-console 
+linux-gui:
+	qmake ./supercomputer/supercomputer.pro -r -spec linux-g++-64 CONFIG+=release -o ./bin/linux-gui
+windows-gui:
+	qmake ./supercomputer/supercomputer.pro -spec win32-g++ CONFIG+=release -o ./bin/windows-gui
 run:
 	make all
 	./bin/supercomputer

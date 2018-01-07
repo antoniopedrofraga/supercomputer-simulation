@@ -112,8 +112,6 @@ public:
     */
 	long long int get_used_cores();
 
-	//! Operator overload. Overloads the < operator according to time of ocurence.
-	friend bool operator<(State const& a, State const& b);
 };
 
 #endif

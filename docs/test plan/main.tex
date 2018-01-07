@@ -35,6 +35,10 @@
 \usepackage{listings}
 \usepackage{color}
 
+\usepackage{longtable}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
@@ -66,6 +70,7 @@
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
 \titlespacing*{\paragraph}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
 
 %-------------------------------------------------------------------------------
 % HEADER & FOOTER
@@ -165,11 +170,47 @@ These requirements are specified in the \textbf{System Requirements Specificatio
 
 This test plan is based on the \textbf{IEEE 829 format}, regarding to a test plan outline. 
 
+\pagebreak
+
 \section*{Types of Testing}
 \addcontentsline{toc}{section}{Types of Testing}
 
 \subsection*{Acceptance Testing}
 \addcontentsline{toc}{subsection}{Acceptance Testing}
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=\linewidth]{GUI.png}
+\end{figure}
+
+\begin{itemize}  
+\item \textbf{AT01} A user is able to change the number of simulated users by changing the spin box labelled with \textbf{1}.
+
+\item \textbf{AT02} A user is able to change the number of simulated jobs by changing the spin box labelled with \textbf{2}.
+
+\item \textbf{AT03} A user is able to change the student budget by changing the spin box labelled with \textbf{3}. This spin box supports two decimal places.
+
+\item \textbf{AT04} A user is able to change the researcher budget by changing the spin box labelled with \textbf{4}. This spin box supports two decimal places.
+ 
+\item \textbf{AT05} A user is able to alternate between the present and a different date by hitting the checkbox labelled with \textbf{5}. If this checkbox is unchecked, the user is able to define a date by changing the date picker value labelled with \textbf{6}.
+
+\item \textbf{AT06} A user is able to change the requests span value by changing the spin box labelled with \textbf{7}.
+
+\item \textbf{AT07} A user is able to change the usage price per core value by changing the spin box labelled with \textbf{8}. This spin box supports six decimal places.
+
+\item \textbf{AT08} A user is able to change the operational cost per core value by changing the spin box labelled with \textbf{9}. This spin box supports six decimal places.
+
+\item \textbf{AT09} A user is able to change the number of nodes by changing the spin box labelled with \textbf{10}.
+
+\item \textbf{AT10} A user is able to change the number of cores by changing the spin box labelled with \textbf{11}.
+
+\item \textbf{AT11} A user is able to run the simulation by pressing the button labelled with \textbf{12}. The user is able to observe the simulation output in the "Output box".
+
+\end{itemize}
+
+
+
+
 
 \subsection*{Functional \& System Level Tests}
 \addcontentsline{toc}{subsection}{Functional \& System Level Tests}

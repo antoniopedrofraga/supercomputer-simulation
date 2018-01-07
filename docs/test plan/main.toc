@@ -5,13 +5,13 @@
 \contentsline {subsection}{Items to be tested}{3}
 \contentsline {subsection}{Features and Functions to test}{4}
 \contentsline {subsection}{References \& Standards}{4}
-\contentsline {section}{Types of Testing}{4}
-\contentsline {subsection}{Acceptance Testing}{4}
-\contentsline {subsection}{Functional \& System Level Tests}{4}
-\contentsline {subsection}{Boundary Tests}{5}
-\contentsline {subsection}{Integration \& Regression Tests}{5}
-\contentsline {subsection}{Compatibility Tests}{5}
-\contentsline {section}{Code Coverage}{6}
-\contentsline {section}{Test Schedule}{6}
-\contentsline {section}{Item Pass/Fail Criteria}{6}
-\contentsline {section}{Test Plan Review}{6}
+\contentsline {section}{Types of Testing}{5}
+\contentsline {subsection}{Acceptance Testing}{5}
+\contentsline {subsection}{Functional \& System Level Tests}{6}
+\contentsline {subsection}{Boundary Tests}{7}
+\contentsline {subsection}{Integration \& Regression Tests}{7}
+\contentsline {subsection}{Compatibility Tests}{7}
+\contentsline {section}{Code Coverage}{8}
+\contentsline {section}{Test Schedule}{8}
+\contentsline {section}{Item Pass/Fail Criteria}{8}
+\contentsline {section}{Test Plan Review}{8}
